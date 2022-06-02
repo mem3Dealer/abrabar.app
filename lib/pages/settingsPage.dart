@@ -15,17 +15,12 @@ class SettingsPage extends StatelessWidget {
         leading: IconButton(
             onPressed: () {},
             icon: IconButton(
-              splashColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              // icon: Image.asset('assets/images/close.png')
-              icon: const Icon(
-                Icons.close,
-                color: Color(0xffFFBE3F),
-              ),
-            )),
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                icon: Image.asset('assets/images/close.png'))),
       ),
       body: Center(
         child: Column(

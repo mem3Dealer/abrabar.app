@@ -11,16 +11,20 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   late TabController _tabController;
+  late TextEditingController controller;
+  bool isSearch = false;
 
   @override
   void initState() {
     super.initState();
+    controller = TextEditingController();
     _tabController = TabController(length: 5, vsync: this);
   }
 
   @override
   void dispose() {
     _tabController.dispose();
+    controller.dispose();
     super.dispose();
   }
 
@@ -34,6 +38,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     List<Tab> _tabS() {
       List<Tab> _r = [];
       for (var name in _names) {
@@ -42,6 +47,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           child: Container(
             child: Text(
               name,
+              // style: theme.textTheme.subtitle1!.copyWith(color: null),
             ),
           ),
         ));
@@ -49,42 +55,27 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       return _r;
     }
 
-    final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-            splashColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            icon: Image.asset('assets/images/gaika.png'),
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute<void>(
-                  builder: (BuildContext context) => const SettingsPage(),
-                ),
-              );
-            }),
-        // centerTitle: true,
-        // backgroundColor: const Color(0xff242320),
+        leading: isSearch ? closeSearhButton() : settingsButton(context),
         title: Text(
-          'ABRABAR',
+          isSearch ? 'ПОИСК' : 'ABRABAR',
           style: theme.textTheme.headline1,
         ),
         actions: [
-          IconButton(
-              splashColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              onPressed: () {},
-              icon: Image.asset('assets/images/loopa.png'))
+          !isSearch
+              ? IconButton(
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onPressed: () {
+                    setState(() {
+                      isSearch = true;
+                    });
+                  },
+                  icon: Image.asset('assets/images/loopa.png'))
+              : Container()
         ],
-        bottom: TabBar(
-          padding: const EdgeInsets.all(10),
-          labelColor: Colors.black,
-          indicator: const BoxDecoration(color: Colors.white),
-          unselectedLabelColor: const Color(0xffFFBE3F),
-          isScrollable: true,
-          controller: _tabController,
-          tabs: _tabS(),
-        ),
+        bottom: isSearch ? searchMode(context) : tabBar(_tabS),
       ),
       body: SafeArea(
         child: TabBarView(
@@ -92,6 +83,33 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           children: views,
         ),
       ),
+    );
+  }
+
+  IconButton settingsButton(BuildContext context) {
+    return IconButton(
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        icon: Image.asset('assets/images/gaika.png'),
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute<void>(
+              builder: (BuildContext context) => const SettingsPage(),
+            ),
+          );
+        });
+  }
+
+  TabBar tabBar(List<Tab> _tabS()) {
+    return TabBar(
+      labelStyle: const TextStyle(fontSize: 20, fontFamily: 'zet_regular'),
+      padding: const EdgeInsets.all(10),
+      labelColor: Colors.black,
+      indicator: const BoxDecoration(color: Colors.white),
+      unselectedLabelColor: const Color(0xffFFBE3F),
+      isScrollable: true,
+      controller: _tabController,
+      tabs: _tabS(),
     );
   }
 
@@ -108,4 +126,51 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     ),
     SeasonView()
   ];
+
+  PreferredSizeWidget searchMode(BuildContext context) {
+    final theme = Theme.of(context);
+    return AppBar(
+      title: Padding(
+        padding: const EdgeInsets.only(bottom: 20.0),
+        child: TextField(
+          cursorColor: Colors.white,
+          controller: controller,
+          style: theme.textTheme.headline1!.copyWith(fontSize: 32),
+          decoration: InputDecoration(
+              suffixIconConstraints:
+                  const BoxConstraints(minHeight: 15, minWidth: 20),
+              suffixIcon: TextButton(
+                  style: ButtonStyle(
+                      shape: MaterialStateProperty.all(
+                          const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.zero)),
+                      overlayColor:
+                          MaterialStateProperty.all(Colors.transparent),
+                      side: MaterialStateProperty.all(BorderSide(
+                          color: const Color(0xffFFBE3F).withOpacity(0.3)))),
+                  onPressed: () => controller.clear(),
+                  child: const Text(
+                    'УДАЛИТЬ',
+                    style: TextStyle(
+                        color: Color(0xffFFBE3F),
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400),
+                  ))),
+        ),
+      ),
+    );
+  }
+
+  IconButton closeSearhButton() {
+    return IconButton(
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      onPressed: () {
+        setState(() {
+          isSearch = false;
+        });
+      },
+      icon: Image.asset('assets/images/close.png'),
+    );
+  }
 }
