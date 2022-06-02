@@ -45,10 +45,9 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         _r.add(Tab(
           height: 32,
           child: Container(
-            child: Text(
-              name,
-              // style: theme.textTheme.subtitle1!.copyWith(color: null),
-            ),
+            child: Text(name
+                //никакого стиля потому что табБары определяют стиль лучше
+                ),
           ),
         ));
       }
