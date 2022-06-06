@@ -1,0 +1,10 @@
+{
+    "search":"Search",
+    "delete": "Delete",
+    "settings": "Settings",
+    "ingredients": "INGREDIENTS",
+    "favs":"FAVS",
+    "classic": "CLASSIC",
+    "popular": "POPULAR",
+    "season": "SEASON"
+}

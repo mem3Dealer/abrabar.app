@@ -2,6 +2,7 @@ import 'package:abrabar/pages/homePage/classic_view.dart';
 import 'package:abrabar/pages/homePage/season_view.dart';
 import 'package:abrabar/pages/settingsPage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localz.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -13,7 +14,9 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   late TabController _tabController;
   late TextEditingController controller;
   bool isSearch = false;
-
+  final double _tabHeight = 32;
+  final BoxConstraints _deleteButtonMinConst =
+      const BoxConstraints(minHeight: 15, minWidth: 20);
   @override
   void initState() {
     super.initState();
@@ -28,22 +31,23 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     super.dispose();
   }
 
-  final List<String> _names = [
-    'INGREDIENTS',
-    'FAVS',
-    'CLASSIC',
-    'POPULAR',
-    'SEASON'
-  ];
-
   @override
   Widget build(BuildContext context) {
+    var t = AppLocalizations.of(context)!;
+    final List<String> _names = [
+      t.ingredients,
+      t.favs,
+      t.classic,
+      t.popular,
+      t.season
+    ];
+
     final theme = Theme.of(context);
     List<Tab> _tabS() {
       List<Tab> _r = [];
       for (var name in _names) {
         _r.add(Tab(
-          height: 32,
+          height: _tabHeight,
           child: Container(
             child: Text(name
                 //никакого стиля потому что табБары определяют стиль лучше
@@ -58,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       appBar: AppBar(
         leading: isSearch ? closeSearhButton() : settingsButton(context),
         title: Text(
-          isSearch ? 'ПОИСК' : 'ABRABAR',
+          isSearch ? t.search : 'ABRABAR',
           style: theme.textTheme.headline1,
         ),
         actions: [
@@ -100,8 +104,9 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   }
 
   TabBar tabBar(List<Tab> _tabS()) {
+    final theme = Theme.of(context).textTheme;
     return TabBar(
-      labelStyle: const TextStyle(fontSize: 20, fontFamily: 'zet_regular'),
+      labelStyle: theme.subtitle1,
       padding: const EdgeInsets.all(10),
       labelColor: Colors.black,
       indicator: const BoxDecoration(color: Colors.white),
@@ -127,6 +132,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   ];
 
   PreferredSizeWidget searchMode(BuildContext context) {
+    var t = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     return AppBar(
       title: Padding(
@@ -136,8 +142,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           controller: controller,
           style: theme.textTheme.headline1!.copyWith(fontSize: 32),
           decoration: InputDecoration(
-              suffixIconConstraints:
-                  const BoxConstraints(minHeight: 15, minWidth: 20),
+              suffixIconConstraints: _deleteButtonMinConst,
               suffixIcon: TextButton(
                   style: ButtonStyle(
                       shape: MaterialStateProperty.all(
@@ -148,12 +153,9 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                       side: MaterialStateProperty.all(BorderSide(
                           color: const Color(0xffFFBE3F).withOpacity(0.3)))),
                   onPressed: () => controller.clear(),
-                  child: const Text(
-                    'УДАЛИТЬ',
-                    style: TextStyle(
-                        color: Color(0xffFFBE3F),
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400),
+                  child: Text(
+                    t.delete,
+                    style: theme.textTheme.subtitle1!.copyWith(fontSize: 12),
                   ))),
         ),
       ),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AbrabarTheme {
   static ThemeData get lightTheme {
     return ThemeData(
-      scaffoldBackgroundColor: Color(0xff242320),
+      scaffoldBackgroundColor: const Color(0xff242320),
       appBarTheme: const AppBarTheme(
           backgroundColor: Color(0xff242320),
           elevation: 0.0,

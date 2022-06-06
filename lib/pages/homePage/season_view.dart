@@ -33,7 +33,8 @@ class SeasonView extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        height: 161,
+        height:
+            161, //не выношу в отдельную константу, потому что потом это будет наверняка отдельный виджет.
         color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
         child: Padding(
           padding:

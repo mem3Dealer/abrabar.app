@@ -16,11 +16,9 @@ class ClassicView extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return GridView.builder(
-        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 200,
-            // childAspectRatio: 1,
-            crossAxisSpacing: 0,
-            mainAxisSpacing: 0),
+        // physics: const BouncingScrollPhysics(),
+        gridDelegate:
+            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemCount: _names.length,
         itemBuilder: (BuildContext ctx, index) {
           return Container(
@@ -29,7 +27,6 @@ class ClassicView extends StatelessWidget {
             child: Text(
               _names[index],
               textAlign: TextAlign.center,
-              // overflow,
               style: theme.textTheme.headline2,
             ),
           );

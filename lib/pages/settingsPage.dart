@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localz.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var t = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
+    const double sizedBoxHeight = 168;
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'НАСТРОЙКИ',
+          t.settings,
           style: theme.textTheme.headline3,
         ),
         leading: IconButton(
@@ -36,7 +39,7 @@ class SettingsPage extends StatelessWidget {
                   style: theme.textTheme.headline1,
                 )),
             const SizedBox(
-              height: 168,
+              height: sizedBoxHeight,
             ),
             TextButton(
                 style: ButtonStyle(
