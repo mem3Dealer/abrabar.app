@@ -1,8 +1,8 @@
 import 'package:abrabar/shared/theme.dart';
 import 'package:flutter/material.dart';
-// import 'l10n/l10n.dart';
 import 'package:flutter_gen/gen_l10n/app_localz.dart';
 import 'pages/homePage/homePage.dart';
+import 'pages/splashScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +17,6 @@ class MyApp extends StatelessWidget {
         supportedLocales: AppLocalizations.supportedLocales,
         theme: AbrabarTheme.lightTheme,
         title: 'Flutter Demo',
-        home: const MyHomePage());
+        home: const SplashScreen());
   }
 }

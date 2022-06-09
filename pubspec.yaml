@@ -6,6 +6,8 @@ environment:
   sdk: ">=2.17.1 <3.0.0"
 
 dependencies:
+  flutter_svg: ^1.1.0
+  sizer: ^2.0.15
   flutter:
     sdk: flutter
   flutter_localizations:
@@ -27,6 +29,7 @@ flutter:
   assets:
         - assets/
         - assets/images/
+        - assets/images/splash/
   uses-material-design: true
   fonts: 
     - family: zet_regular
