@@ -4,6 +4,7 @@ class AbrabarTheme {
   static ThemeData get lightTheme {
     return ThemeData(
       scaffoldBackgroundColor: const Color(0xff242320),
+      primaryColor: const Color(0xffFF3F6D),
       appBarTheme: const AppBarTheme(
           backgroundColor: Color(0xff242320),
           elevation: 0.0,
@@ -18,6 +19,10 @@ class AbrabarTheme {
             color: Color(0xff242320)),
         headline3: TextStyle(
             fontWeight: FontWeight.w400, fontSize: 24, color: Colors.white),
+        headline4: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: 24,
+            color: Color(0xffC9C6BF)),
         subtitle1: TextStyle(
             fontWeight: FontWeight.w400,
             fontSize: 20,

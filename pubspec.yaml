@@ -29,7 +29,7 @@ flutter:
   assets:
         - assets/
         - assets/images/
-        - assets/images/splash/
+        - assets/images/parts/
   uses-material-design: true
   fonts: 
     - family: zet_regular

@@ -1,3 +1,4 @@
+import 'package:abrabar/pages/coctailPage.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
@@ -21,13 +22,23 @@ class ClassicView extends StatelessWidget {
             const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemCount: _names.length,
         itemBuilder: (BuildContext ctx, index) {
-          return Container(
-            alignment: Alignment.center,
-            color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
-            child: Text(
-              _names[index],
-              textAlign: TextAlign.center,
-              style: theme.textTheme.headline2,
+          return InkWell(
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute<void>(
+                builder: (BuildContext context) => CoctailPage(
+                  name: _names[index],
+                ),
+              ),
+            ),
+            child: Container(
+              alignment: Alignment.center,
+              color:
+                  Colors.primaries[Random().nextInt(Colors.primaries.length)],
+              child: Text(
+                _names[index],
+                textAlign: TextAlign.center,
+                style: theme.textTheme.headline2,
+              ),
             ),
           );
         });
