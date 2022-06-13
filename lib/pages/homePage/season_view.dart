@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'package:sizer/sizer.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
@@ -33,8 +33,7 @@ class SeasonView extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        height:
-            161, //не выношу в отдельную константу, потому что потом это будет наверняка отдельный виджет.
+        height: 22.1.h,
         color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
         child: Padding(
           padding:

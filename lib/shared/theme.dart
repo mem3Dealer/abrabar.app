@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class AbrabarTheme {
   static ThemeData get lightTheme {
@@ -10,27 +11,27 @@ class AbrabarTheme {
           elevation: 0.0,
           centerTitle: true),
       fontFamily: 'zet_regular',
-      textTheme: const TextTheme(
+      textTheme: TextTheme(
         headline1: TextStyle(
-            fontWeight: FontWeight.w400, color: Colors.white, fontSize: 36),
+            fontWeight: FontWeight.w400, color: Colors.white, fontSize: 36.sp),
         headline2: TextStyle(
             fontWeight: FontWeight.w400,
-            fontSize: 40,
-            color: Color(0xff242320)),
+            fontSize: 40.sp,
+            color: const Color(0xff242320)),
         headline3: TextStyle(
-            fontWeight: FontWeight.w400, fontSize: 24, color: Colors.white),
+            fontWeight: FontWeight.w400, fontSize: 24.sp, color: Colors.white),
         headline4: TextStyle(
             fontWeight: FontWeight.w400,
-            fontSize: 24,
-            color: Color(0xffC9C6BF)),
+            fontSize: 24.sp,
+            color: const Color(0xffC9C6BF)),
         subtitle1: TextStyle(
             fontWeight: FontWeight.w400,
-            fontSize: 20,
-            color: Color(0xffFFBE3F)),
+            fontSize: 20.sp,
+            color: const Color(0xffFFBE3F)),
         subtitle2: TextStyle(
             fontWeight: FontWeight.w400,
-            fontSize: 20,
-            color: Color(0xff242320)),
+            fontSize: 20.sp,
+            color: const Color(0xff242320)),
       ),
       inputDecorationTheme: const InputDecorationTheme(
         labelStyle: TextStyle(color: Colors.white),

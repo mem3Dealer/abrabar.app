@@ -33,8 +33,24 @@ class CoctailPage extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
+        leading: Padding(
+          padding: EdgeInsets.only(left: 3.w),
+          child: SizedBox(
+            width: 4.w,
+            height: 4.h,
+            child: GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+                child: SvgPicture.asset('assets/images/back_arrow.svg')),
+          ),
+        ),
+        toolbarHeight: 9.25.h,
         backgroundColor: theme.primaryColor,
-        title: Text(title),
+        title: Text(
+          title,
+          style: theme.textTheme.headline3,
+        ),
       ),
       body: ListView(
         scrollDirection: Axis.vertical,
@@ -49,7 +65,7 @@ class CoctailPage extends StatelessWidget {
                 SizedBox(
                   height: 2.h,
                 ),
-                Container(
+                SizedBox(
                     // color: Colors.black,
                     width: 90.w,
                     height: 90.w,
@@ -107,11 +123,11 @@ class CoctailPage extends StatelessWidget {
                 ),
                 Text(
                   name,
-                  style: theme.textTheme.headline1!.copyWith(fontSize: 32),
+                  style: theme.textTheme.headline1!.copyWith(fontSize: 32.sp),
                 ),
                 Text(
                   'Горький ∙ Билд',
-                  style: theme.textTheme.headline1!.copyWith(fontSize: 20),
+                  style: theme.textTheme.headline1!.copyWith(fontSize: 20.sp),
                 ),
                 SizedBox(
                   height: 2.5.h,
@@ -120,10 +136,16 @@ class CoctailPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     SizedBox(
+                      // color: Colors.white,
                       width: 22.5.w,
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: SvgPicture.asset('assets/images/star.svg')),
+                      child: SizedBox(
+                        height: 3.75.h,
+                        width: 8.3.w,
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: SvgPicture.asset('assets/images/star.svg'),
+                        ),
+                      ),
                     ),
                     SizedBox(
                       width: 55.w,
@@ -138,7 +160,7 @@ class CoctailPage extends StatelessWidget {
                                   const Color(0xffFFBE3F))),
                           child: Text('КАК ГОТОВИТЬ',
                               style: theme.textTheme.subtitle2!
-                                  .copyWith(fontSize: 24))),
+                                  .copyWith(fontSize: 24.sp))),
                     ),
                     SizedBox(
                       width: 22.5.w,

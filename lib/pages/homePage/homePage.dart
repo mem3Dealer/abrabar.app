@@ -1,8 +1,12 @@
+import 'package:abrabar/logic/bloc/bloc/coctail_bloc.dart';
 import 'package:abrabar/pages/homePage/classic_view.dart';
 import 'package:abrabar/pages/homePage/season_view.dart';
 import 'package:abrabar/pages/settingsPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localz.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get_it/get_it.dart';
+import 'package:sizer/sizer.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -11,15 +15,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
+  final cockBloc = GetIt.I.get<CoctailBloc>();
   late TabController _tabController;
   late TextEditingController controller;
   bool isSearch = false;
-  final double _tabHeight = 32;
-  final BoxConstraints _deleteButtonMinConst =
-      const BoxConstraints(minHeight: 15, minWidth: 20);
+  final double _tabHeight = 5.h;
+
   @override
   void initState() {
     super.initState();
+    // cockBloc.add(CoctailsInitialize());
     controller = TextEditingController();
     _tabController = TabController(length: 5, vsync: this);
   }
@@ -60,23 +65,33 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
     return Scaffold(
       appBar: AppBar(
-        leading: isSearch ? closeSearhButton() : settingsButton(context),
+        toolbarHeight: 9.25.h,
+        leading: isSearch ? closeSearhButton() : Container(),
         title: Text(
           isSearch ? t.search : 'ABRABAR',
           style: theme.textTheme.headline1,
         ),
         actions: [
-          !isSearch
-              ? IconButton(
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onPressed: () {
+          if (!isSearch)
+            Padding(
+              padding: EdgeInsets.only(
+                right: 3.5.w,
+              ),
+              child: SizedBox(
+                width: 6.1.w,
+                height: 2.75.h,
+                child: GestureDetector(
+                  onTap: () {
                     setState(() {
                       isSearch = true;
                     });
                   },
-                  icon: Image.asset('assets/images/loopa.png'))
-              : Container()
+                  child: SvgPicture.asset("assets/images/loopa.svg"),
+                ),
+              ),
+            )
+          else
+            Container()
         ],
         bottom: isSearch ? searchMode(context) : tabBar(_tabS),
       ),
@@ -87,20 +102,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         ),
       ),
     );
-  }
-
-  IconButton settingsButton(BuildContext context) {
-    return IconButton(
-        splashColor: Colors.transparent,
-        highlightColor: Colors.transparent,
-        icon: Image.asset('assets/images/gaika.png'),
-        onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute<void>(
-              builder: (BuildContext context) => const SettingsPage(),
-            ),
-          );
-        });
   }
 
   TabBar tabBar(List<Tab> _tabS()) {
@@ -134,35 +135,60 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   PreferredSizeWidget searchMode(BuildContext context) {
     var t = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    return AppBar(
-      title: Padding(
-        padding: const EdgeInsets.only(bottom: 20.0),
+    return PreferredSize(
+      preferredSize: const Size.fromHeight(110),
+      child: Padding(
+        padding: EdgeInsets.only(left: 4.2.w, right: 4.2.w, bottom: 2.2.h),
         child: TextField(
           cursorColor: Colors.white,
           controller: controller,
           style: theme.textTheme.headline1!.copyWith(fontSize: 32),
           decoration: InputDecoration(
-              suffixIconConstraints: _deleteButtonMinConst,
-              suffixIcon: TextButton(
-                  style: ButtonStyle(
-                      shape: MaterialStateProperty.all(
-                          const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.zero)),
-                      overlayColor:
-                          MaterialStateProperty.all(Colors.transparent),
-                      side: MaterialStateProperty.all(BorderSide(
-                          color: const Color(0xffFFBE3F).withOpacity(0.3)))),
-                  onPressed: () => controller.clear(),
-                  child: Text(
-                    t.delete,
-                    style: theme.textTheme.subtitle1!.copyWith(fontSize: 12),
-                  ))),
+              // suffixIconConstraints: _deleteButtonMinConst,
+              suffixIcon: Padding(
+            padding: EdgeInsets.only(bottom: 1.h),
+            child: TextButton(
+                style: ButtonStyle(
+                    fixedSize: MaterialStateProperty.all(Size(15.2.w, 3.h)),
+                    shape: MaterialStateProperty.all(
+                        const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero)),
+                    overlayColor: MaterialStateProperty.all(Colors.transparent),
+                    side: MaterialStateProperty.all(BorderSide(
+                        color: const Color(0xffFFBE3F).withOpacity(0.3)))),
+                onPressed: () => controller.clear(),
+                child: Text(
+                  t.delete,
+                  style: theme.textTheme.subtitle1!.copyWith(fontSize: 12.sp),
+                )),
+          )),
         ),
       ),
     );
+    // return AppBar(
+    //   toolbarHeight: 4.h,
+    //   title:
+    // );
   }
 
-  IconButton closeSearhButton() {
+  //TODO
+  // надо доаботать чтобы не делать три разные кнопки
+  // Widget myIconButton(String path, Function onTap, bool isLeft) {
+  //   return Padding(
+  //     padding:
+  //         isLeft ? EdgeInsets.only(left: 3.5.w) : EdgeInsets.only(right: 3.5.w),
+  //     child: SizedBox(
+  //       width: 6.1.w,
+  //       height: 2.75.h,
+  //       child: GestureDetector(
+  //         onTap: onTap(),
+  //         child: SvgPicture.asset(path),
+  //       ),
+  //     ),
+  //   );
+  // }
+
+  Widget closeSearhButton() {
     return IconButton(
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
@@ -171,7 +197,21 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           isSearch = false;
         });
       },
-      icon: Image.asset('assets/images/close.png'),
+      icon: SvgPicture.asset('assets/images/close.svg'),
     );
   }
+}
+
+IconButton settingsButton(BuildContext context) {
+  return IconButton(
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      icon: Image.asset('assets/images/gaika.png'),
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute<void>(
+            builder: (BuildContext context) => const SettingsPage(),
+          ),
+        );
+      });
 }
