@@ -3,8 +3,7 @@ import 'package:abrabar/logic/coctail.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/services.dart';
-import 'package:meta/meta.dart';
-import 'dart:convert';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:equatable/equatable.dart';
 part 'coctail_event.dart';
 part 'coctail_state.dart';
@@ -15,7 +14,9 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
     on<CoctailsInitialize>(_onCoctailInitialize);
     on<SelectCoctail>(_onSelectCoctail);
     on<AnotherStep>(_onAnotherStep);
+    on<ChangeFavorite>(_onChangeFav);
   }
+  static const storage = FlutterSecureStorage();
 
   Future<void> _onCoctailInitialize(
       CoctailsInitialize event, Emitter emitter) async {
@@ -43,5 +44,18 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
     });
     emitter(state.copyWith(currentIngredients: fuck));
     // print(_what);
+  }
+
+  Future<void> _onChangeFav(ChangeFavorite event, Emitter emitter) async {
+    if (event.isFav == true) {
+      await storage.write(
+          key: event.coctail.name!, value: event.isFav.toString());
+      emitter(state.copyWith(
+          currentCoctail: event.coctail.copyWith(isFav: event.isFav)));
+    } else {
+      await storage.delete(key: event.coctail.name!);
+      emitter(
+          state.copyWith(currentCoctail: event.coctail.copyWith(isFav: false)));
+    }
   }
 }

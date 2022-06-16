@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
 import '../logic/bloc/bloc/coctail_bloc.dart';
+import '../logic/coctail.dart';
 import 'homePage/homePage.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -19,9 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   final Duration duration = const Duration(seconds: 2);
   @override
   Widget build(BuildContext context) {
-    cockBloc.add(CoctailsInitialize());
     Future.delayed(duration, () {
-      cockBloc.add(SelectCoctail(cockBloc.state.allCoctails.first));
       Navigator.of(context).pushReplacement(
         MaterialPageRoute<void>(
           builder: (BuildContext context) => const MyHomePage(),

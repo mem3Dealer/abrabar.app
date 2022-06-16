@@ -11,7 +11,8 @@ import 'package:sizer/sizer.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 Future<void> main() async {
-  GetIt.instance.registerSingleton<CoctailBloc>(CoctailBloc());
+  GetIt.instance
+      .registerSingleton<CoctailBloc>(CoctailBloc()..add(CoctailsInitialize()));
 
   runApp(MyApp());
 }

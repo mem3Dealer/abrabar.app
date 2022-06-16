@@ -1,6 +1,5 @@
 part of 'coctail_bloc.dart';
 
-@immutable
 class CoctailState extends Equatable {
   List<Coctail> allCoctails = [];
   Coctail currentCoctail;

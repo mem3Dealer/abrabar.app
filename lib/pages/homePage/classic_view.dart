@@ -1,6 +1,9 @@
 import 'package:abrabar/pages/coctailPage.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'dart:math';
+
+import '../../logic/bloc/bloc/coctail_bloc.dart';
 
 class ClassicView extends StatelessWidget {
   final List<String> _names = [
@@ -15,6 +18,7 @@ class ClassicView extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
+    final cockBloc = GetIt.I.get<CoctailBloc>();
     final theme = Theme.of(context);
     return GridView.builder(
         // physics: const BouncingScrollPhysics(),
@@ -23,13 +27,15 @@ class ClassicView extends StatelessWidget {
         itemCount: _names.length,
         itemBuilder: (BuildContext ctx, index) {
           return InkWell(
-            onTap: () => Navigator.of(context).push(
-              MaterialPageRoute<void>(
-                builder: (BuildContext context) => CoctailPage(
-                  name: _names[index],
-                ),
-              ),
-            ),
+            onTap: () {
+              cockBloc.add(SelectCoctail(cockBloc.state.allCoctails.first));
+              Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                    builder: (BuildContext context) => CoctailPage(
+                          name: _names[index],
+                        )),
+              );
+            },
             child: Container(
               alignment: Alignment.center,
               color:

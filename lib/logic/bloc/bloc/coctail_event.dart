@@ -1,6 +1,5 @@
 part of 'coctail_bloc.dart';
 
-@immutable
 abstract class CoctailEvent {}
 
 class CoctailsInitialize extends CoctailEvent {}
@@ -14,5 +13,14 @@ class AnotherStep extends CoctailEvent {
   int index;
   AnotherStep({
     required this.index,
+  });
+}
+
+class ChangeFavorite extends CoctailEvent {
+  Coctail coctail;
+  bool isFav;
+  ChangeFavorite({
+    required this.coctail,
+    required this.isFav,
   });
 }

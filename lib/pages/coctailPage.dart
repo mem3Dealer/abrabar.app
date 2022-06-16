@@ -69,66 +69,13 @@ class CoctailPage extends StatelessWidget {
                     SizedBox(
                       height: 2.h,
                     ),
-                    SizedBox(
+                    Container(
                       // color: Colors.black,
-                      width: 90.w,
-                      height: 90.w,
+                      width: 100.w,
+                      height: 100.w,
                       child: IngredientNet(
                         isPreview: true,
                       ),
-                      // child: Stack(
-                      //   fit: StackFit.expand,
-                      //   children: [
-                      //     Align(
-                      //       alignment: const Alignment(-0.35, -0.72),
-                      //       child: SizedBox(
-                      //           width: 19.4.w,
-                      //           height: 8.1.h,
-                      //           child:
-                      //               SvgPicture.asset("${_way}bubbles.svg")),
-                      //     ),
-                      //     Align(
-                      //       alignment: const Alignment(-0.35, 0.1),
-                      //       child: SizedBox(
-                      //         width: 28.w,
-                      //         height: 9.h,
-                      //         child: SvgPicture.asset("${_way}wine.svg"),
-                      //       ),
-                      //     ),
-                      //     Align(
-                      //       alignment: Alignment.center,
-                      //       child: SizedBox(
-                      //           // color: Colors.green,
-                      //           width: 20.w,
-                      //           height: 34.h,
-                      //           child: SvgPicture.asset(
-                      //               '${_way}high_glass.svg')),
-                      //     ),
-                      //     Align(
-                      //         alignment: const Alignment(0.2, -0.9),
-                      //         child: SizedBox(
-                      //             // color: Colors.green,
-                      //             width: 29.5.w,
-                      //             height: 13.6.h,
-                      //             child:
-                      //                 SvgPicture.asset('${_way}orange.svg'))),
-                      //     Align(
-                      //         alignment: const Alignment(-0.2, -0.1),
-                      //         child: SizedBox(
-                      //             // color: Colors.green,
-                      //             width: 16.6.w,
-                      //             height: 5.3.h,
-                      //             child:
-                      //                 SvgPicture.asset('${_way}pinky.svg'))),
-                      //     Align(
-                      //         alignment: const Alignment(0.2, 0.01),
-                      //         child: SizedBox(
-                      //             // color: Colors.green,
-                      //             width: 14.5.w,
-                      //             height: 6.5.h,
-                      //             child: SvgPicture.asset('${_way}ice.svg'))),
-                      //   ],
-                      // )
                     ),
                     SizedBox(
                       height: 5.h,
@@ -156,8 +103,14 @@ class CoctailPage extends StatelessWidget {
                             height: 3.75.h,
                             width: 8.3.w,
                             child: GestureDetector(
-                              onTap: () {},
-                              child: SvgPicture.asset('assets/images/star.svg'),
+                              onTap: () {
+                                cockBloc.add(ChangeFavorite(
+                                    coctail: coc,
+                                    isFav: !state.currentCoctail.isFav));
+                              },
+                              child: SvgPicture.asset(state.currentCoctail.isFav
+                                  ? 'assets/images/star_filled.svg'
+                                  : 'assets/images/star_empty.svg'),
                             ),
                           ),
                         ),
