@@ -6,7 +6,11 @@ class CoctailsInitialize extends CoctailEvent {}
 
 class SelectCoctail extends CoctailEvent {
   Coctail coctail;
-  SelectCoctail(this.coctail);
+  BuildContext context;
+  SelectCoctail(
+    this.coctail,
+    this.context,
+  );
 }
 
 class AnotherStep extends CoctailEvent {

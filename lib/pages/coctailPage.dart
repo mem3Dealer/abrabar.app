@@ -1,9 +1,8 @@
 import 'package:abrabar/logic/coctail.dart';
 import 'package:abrabar/pages/cookingPage.dart';
 import 'package:abrabar/shared/ingredientNet.dart';
+import 'package:abrabar/shared/picPaths.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -14,22 +13,17 @@ import '../logic/bloc/bloc/coctail_bloc.dart';
 
 class CoctailPage extends StatelessWidget {
   String title = 'CLASSIC';
-  String name;
   CoctailPage({
     Key? key,
-    // required this.title,
-    required this.name,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    const storage = FlutterSecureStorage();
+    final paths = PicPath();
     final cockBloc = GetIt.I.get<CoctailBloc>();
     cockBloc.add(AnotherStep(index: 0));
     // print();
     final theme = Theme.of(context);
-    String _way = 'assets/images/parts/';
-
     return BlocConsumer<CoctailBloc, CoctailState>(
       listener: (context, state) {},
       builder: (context, state) {
@@ -48,7 +42,7 @@ class CoctailPage extends StatelessWidget {
                       Navigator.of(context).pop();
                     },
                     child: SvgPicture.asset(
-                      'assets/images/back_arrow.svg',
+                      '${paths.systemImages}back_arrow.svg',
                       fit: BoxFit.scaleDown,
                     )),
               ),
@@ -112,10 +106,10 @@ class CoctailPage extends StatelessWidget {
                                       coctail: coc,
                                       isFav: !state.currentCoctail.isFav));
                                 },
-                                child: SvgPicture.asset(
-                                    state.currentCoctail.isFav
-                                        ? 'assets/images/star_filled.svg'
-                                        : 'assets/images/star_empty.svg')),
+                                child: SvgPicture.asset(state
+                                        .currentCoctail.isFav
+                                    ? '${paths.systemImages}star_filled.svg'
+                                    : '${paths.systemImages}star_empty.svg')),
                           ),
                         ),
                         SizedBox(

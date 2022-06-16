@@ -33,9 +33,9 @@ flutter:
   generate: true
   assets:
         - assets/
-        - assets/images/
         - assets/images/parts/
         - assets/images/test/
+        - assets/images/system/
   uses-material-design: true
   fonts: 
     - family: zet_regular

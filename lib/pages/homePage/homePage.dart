@@ -2,6 +2,7 @@ import 'package:abrabar/logic/bloc/bloc/coctail_bloc.dart';
 import 'package:abrabar/pages/homePage/classic_view.dart';
 import 'package:abrabar/pages/homePage/season_view.dart';
 import 'package:abrabar/pages/settingsPage.dart';
+import 'package:abrabar/shared/picPaths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localz.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -16,6 +17,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   final cockBloc = GetIt.I.get<CoctailBloc>();
+  final paths = PicPath();
   late TabController _tabController;
   late TextEditingController controller;
   bool isSearch = false;
@@ -85,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                       isSearch = true;
                     });
                   },
-                  child: SvgPicture.asset("assets/images/loopa.svg"),
+                  child: SvgPicture.asset("${paths.systemImages}loopa.svg"),
                 ),
               ),
             )
@@ -196,7 +198,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           isSearch = false;
         });
       },
-      icon: SvgPicture.asset('assets/images/close.svg'),
+      icon: SvgPicture.asset('${paths.systemImages}close.svg'),
     );
   }
 }

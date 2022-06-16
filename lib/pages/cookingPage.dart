@@ -1,4 +1,5 @@
 import 'package:abrabar/shared/ingredientNet.dart';
+import 'package:abrabar/shared/picPaths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -6,6 +7,7 @@ import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
 import '../logic/bloc/bloc/coctail_bloc.dart';
 import '../logic/coctail.dart';
+import 'dart:math' as math;
 
 class CookingPage extends StatefulWidget {
   const CookingPage({Key? key}) : super(key: key);
@@ -17,7 +19,7 @@ class CookingPage extends StatefulWidget {
 class _CookingPageState extends State<CookingPage> {
   final cockBloc = GetIt.I.get<CoctailBloc>();
   late PageController controller;
-
+  int pageIndex = 0;
   @override
   void initState() {
     controller = PageController();
@@ -30,32 +32,15 @@ class _CookingPageState extends State<CookingPage> {
     super.dispose();
   }
 
-  List<Widget> _stepsSquares() {
-    Coctail curcoc = cockBloc.state.currentCoctail;
-    List<Widget> aga = [];
-    for (var i = 0; i < curcoc.steps!.length; i++) {
-      aga.add(Container(
-        color: Colors.white,
-        width: 7.3.w,
-        height: 4.5.h,
-        child: Text(
-          '${i + 1}',
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 20.sp),
-        ),
-      ));
-    }
-    return aga;
-  }
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-
+    final paths = PicPath();
     return BlocConsumer<CoctailBloc, CoctailState>(
       listener: (context, state) {},
       builder: (context, state) {
         Coctail _curCoc = state.currentCoctail;
+
         return SafeArea(
           child: Scaffold(
               appBar: AppBar(
@@ -92,7 +77,7 @@ class _CookingPageState extends State<CookingPage> {
                             padding: EdgeInsets.only(top: 3.h, bottom: 2.3.h),
                             child: Center(
                               child: Text(
-                                '4 ШАГ ИЗ ${_curCoc.steps!.length}',
+                                '${pageIndex + 1} ШАГ ИЗ ${_curCoc.steps!.length}',
                                 style: theme.textTheme.headline3!.copyWith(
                                     color: Colors.white.withOpacity(0.5)),
                               ),
@@ -104,6 +89,7 @@ class _CookingPageState extends State<CookingPage> {
                             height: 25.h,
                             child: PageView.builder(
                               onPageChanged: (index) {
+                                pageIndex = index;
                                 cockBloc.add(AnotherStep(index: index));
                               },
                               controller: controller,
@@ -126,9 +112,39 @@ class _CookingPageState extends State<CookingPage> {
                       child: Padding(
                         padding: EdgeInsets.only(top: 3.h, bottom: 5.6.h),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: _stepsSquares(),
-                        ),
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              IconButton(
+                                  // onPressed: null,
+                                  onPressed: () => controller.previousPage(
+                                      duration: Duration(milliseconds: 1000),
+                                      curve: Curves.ease),
+                                  splashColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  icon: Transform(
+                                    alignment: Alignment.center,
+                                    transform: Matrix4.rotationY(math.pi),
+                                    child: SvgPicture.asset(
+                                      '${paths.systemImages}cooking_arrow.svg',
+                                      color: pageIndex == 0
+                                          ? Colors.white.withOpacity(0.5)
+                                          : null,
+                                    ),
+                                  )),
+                              IconButton(
+                                  onPressed: () => controller.nextPage(
+                                      duration: Duration(milliseconds: 1000),
+                                      curve: Curves.ease),
+                                  splashColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  icon: SvgPicture.asset(
+                                    '${paths.systemImages}cooking_arrow.svg',
+                                    color:
+                                        pageIndex == _curCoc.steps!.length - 1
+                                            ? Colors.white.withOpacity(0.5)
+                                            : null,
+                                  )),
+                            ]),
                       ),
                     )
                   ],

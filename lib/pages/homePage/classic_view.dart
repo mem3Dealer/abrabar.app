@@ -27,14 +27,9 @@ class ClassicView extends StatelessWidget {
         itemCount: _names.length,
         itemBuilder: (BuildContext ctx, index) {
           return InkWell(
-            onTap: () {
-              cockBloc.add(SelectCoctail(cockBloc.state.allCoctails.first));
-              Navigator.of(context).push(
-                MaterialPageRoute<void>(
-                    builder: (BuildContext context) => CoctailPage(
-                          name: _names[index],
-                        )),
-              );
+            onTap: () async {
+              cockBloc.add(
+                  SelectCoctail(cockBloc.state.allCoctails.first, context));
             },
             child: Container(
               alignment: Alignment.center,
