@@ -9,14 +9,15 @@ part 'coctail_event.dart';
 part 'coctail_state.dart';
 
 class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
+  static const storage = FlutterSecureStorage();
   CoctailBloc()
-      : super(CoctailState(allCoctails: [], currentCoctail: Coctail())) {
+      : super(CoctailState(
+            allCoctails: [], currentCoctail: Coctail(isFav: false))) {
     on<CoctailsInitialize>(_onCoctailInitialize);
     on<SelectCoctail>(_onSelectCoctail);
     on<AnotherStep>(_onAnotherStep);
     on<ChangeFavorite>(_onChangeFav);
   }
-  static const storage = FlutterSecureStorage();
 
   Future<void> _onCoctailInitialize(
       CoctailsInitialize event, Emitter emitter) async {
@@ -32,7 +33,9 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
   }
 
   Future<void> _onSelectCoctail(SelectCoctail event, Emitter emitter) async {
-    emitter(state.copyWith(currentCoctail: event.coctail));
+    emitter(state.copyWith(
+        currentCoctail: event.coctail.copyWith(
+            isFav: await storage.containsKey(key: event.coctail.name!))));
   }
 
   Future<void> _onAnotherStep(AnotherStep event, Emitter emitter) async {

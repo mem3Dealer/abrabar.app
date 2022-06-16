@@ -7,7 +7,7 @@ class Coctail {
   String? name;
   String? picPreview;
   String? description;
-  bool isFav = false;
+  bool isFav;
   List<String>? categories;
   List<Map<String, dynamic>>? steps;
   List<Map<String, dynamic>>? ingredients;
@@ -16,7 +16,7 @@ class Coctail {
     this.name,
     this.picPreview,
     this.description,
-    this.isFav = false,
+    required this.isFav,
     this.categories,
     this.steps,
     this.ingredients,
