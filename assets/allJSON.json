@@ -1,7 +1,9 @@
 [{
     "name": "Кровавая Мэри",
     "picPreview":"bloody_mary_prev.svg",
-        "category":[
+    "description" : "Классический билд",
+    
+        "categories":[
             "classic", "new_year"
         ],
         "steps":[
@@ -10,23 +12,23 @@
                 "step": "Возьмите высокий стакан"
             },
             {
-                "images": ["ice.svg"],
+                "images": ["high_glass.svg","ice.svg"],
                 "step": "Добавьте три кубика льда"
             },
             {
-                "images": ["vodka.svg"],
+                "images": ["high_glass.svg","ice.svg","vodka.svg"],
                 "step": "Добавьте две стопки водки"
             },
             {
-                "images": ["tomato_juice.svg"],
+                "images": ["high_glass.svg","ice.svg","vodka.svg","tomato_juice.svg"],
                 "step": "Добавьте 100г томатного сока, перемешайте"
             },
             {
-                "images": ["salt.svg", "black_pepper.svg"],
+                "images": ["high_glass.svg","ice.svg","vodka.svg","tomato_juice.svg","salt.svg", "black_pepper.svg"],
                 "step": "Добавьте соль и черный перец по вкусу (побольше)"
             },
             {
-                "images": ["celery.dart"],
+                "images": ["high_glass.svg","ice.svg","vodka.svg","tomato_juice.svg","salt.svg", "black_pepper.svg","celery.svg"],
                 "step": "Добавьте кусок сельдерея и готово!"
             }            
         ],

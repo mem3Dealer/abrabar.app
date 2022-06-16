@@ -3,22 +3,26 @@ import 'dart:convert';
 import 'package:collection/collection.dart';
 
 class Coctail {
-  String name;
-  String picPreview;
-  List<String> categories;
-  List<Map<String, dynamic>> steps;
-  List<Map<String, dynamic>> ingredients;
+  String? name;
+  String? picPreview;
+  String? description;
+  List<String>? categories;
+  List<Map<String, dynamic>>? steps;
+  List<Map<String, dynamic>>? ingredients;
+
   Coctail({
-    required this.name,
-    required this.picPreview,
-    required this.categories,
-    required this.steps,
-    required this.ingredients,
+    this.name,
+    this.picPreview,
+    this.description,
+    this.categories,
+    this.steps,
+    this.ingredients,
   });
 
   Coctail copyWith({
     String? name,
     String? picPreview,
+    String? description,
     List<String>? categories,
     List<Map<String, dynamic>>? steps,
     List<Map<String, dynamic>>? ingredients,
@@ -26,6 +30,7 @@ class Coctail {
     return Coctail(
       name: name ?? this.name,
       picPreview: picPreview ?? this.picPreview,
+      description: description ?? this.description,
       categories: categories ?? this.categories,
       steps: steps ?? this.steps,
       ingredients: ingredients ?? this.ingredients,
@@ -36,6 +41,7 @@ class Coctail {
     return {
       'name': name,
       'picPreview': picPreview,
+      'description': description,
       'categories': categories,
       'steps': steps,
       'ingredients': ingredients,
@@ -44,13 +50,18 @@ class Coctail {
 
   factory Coctail.fromMap(Map<String, dynamic> map) {
     return Coctail(
-      name: map['name'] ?? '',
-      picPreview: map['picPreview'] ?? '',
-      categories: List<String>.from(map['category']),
-      steps: List<Map<String, dynamic>>.from(
-          map['steps']?.map((x) => Map<String, dynamic>.from(x))),
-      ingredients: List<Map<String, dynamic>>.from(
-          map['ingredients']?.map((x) => Map<String, dynamic>.from(x))),
+      name: map['name'],
+      picPreview: map['picPreview'],
+      description: map['description'],
+      categories: List<String>.from(map['categories']),
+      steps: map['steps'] != null
+          ? List<Map<String, dynamic>>.from(
+              map['steps']?.map((x) => Map<String, dynamic>.from(x)))
+          : null,
+      ingredients: map['ingredients'] != null
+          ? List<Map<String, dynamic>>.from(
+              map['ingredients']?.map((x) => Map<String, dynamic>.from(x)))
+          : null,
     );
   }
 
@@ -61,7 +72,7 @@ class Coctail {
 
   @override
   String toString() {
-    return 'Coctail(name: $name, picPreview: $picPreview, categories: $categories, steps: $steps, ingredients: $ingredients)';
+    return 'Coctail(name: $name, picPreview: $picPreview, description: $description, categories: $categories, steps: $steps, ingredients: $ingredients)';
   }
 
   @override
@@ -72,6 +83,7 @@ class Coctail {
     return other is Coctail &&
         other.name == name &&
         other.picPreview == picPreview &&
+        other.description == description &&
         listEquals(other.categories, categories) &&
         listEquals(other.steps, steps) &&
         listEquals(other.ingredients, ingredients);
@@ -81,6 +93,7 @@ class Coctail {
   int get hashCode {
     return name.hashCode ^
         picPreview.hashCode ^
+        description.hashCode ^
         categories.hashCode ^
         steps.hashCode ^
         ingredients.hashCode;

@@ -8,8 +8,9 @@ import 'package:get_it/get_it.dart';
 import 'pages/homePage/homePage.dart';
 import 'pages/splashScreen.dart';
 import 'package:sizer/sizer.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
+Future<void> main() async {
   GetIt.instance.registerSingleton<CoctailBloc>(CoctailBloc());
 
   runApp(MyApp());
@@ -21,17 +22,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    cockBloc.add(CoctailsInitialize());
-    return Sizer(builder: (context, orientation, deviceType) {
-      return MaterialApp(
-          builder: (context, child) {
-            return ScrollConfiguration(behavior: MyBehavior(), child: child!);
-          },
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
-          supportedLocales: AppLocalizations.supportedLocales,
-          theme: AbrabarTheme.lightTheme,
-          title: 'Flutter Demo',
-          home: const CookingPage());
-    });
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<CoctailBloc>(
+          create: (context) => cockBloc,
+        ),
+      ],
+      child: Sizer(builder: (context, orientation, deviceType) {
+        return MaterialApp(
+            builder: (context, child) {
+              return ScrollConfiguration(behavior: MyBehavior(), child: child!);
+            },
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            supportedLocales: AppLocalizations.supportedLocales,
+            theme: AbrabarTheme.lightTheme,
+            title: 'Flutter Demo',
+            home: const SplashScreen());
+      }),
+    );
   }
 }

@@ -24,7 +24,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    // cockBloc.add(CoctailsInitialize());
     controller = TextEditingController();
     _tabController = TabController(length: 5, vsync: this);
   }

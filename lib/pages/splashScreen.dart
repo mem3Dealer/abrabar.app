@@ -1,6 +1,9 @@
+import 'package:abrabar/pages/cookingPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
+import '../logic/bloc/bloc/coctail_bloc.dart';
 import 'homePage/homePage.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -11,24 +14,25 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  final cockBloc = GetIt.I.get<CoctailBloc>();
   final String _way = 'assets/images/parts/';
-  final Duration duration = const Duration(seconds: 3);
+  final Duration duration = const Duration(seconds: 2);
   @override
   Widget build(BuildContext context) {
-    Future.delayed(
-        duration,
-        () => Navigator.of(context).pushReplacement(
-              MaterialPageRoute<void>(
-                builder: (BuildContext context) => const MyHomePage(),
-              ),
-            ));
+    cockBloc.add(CoctailsInitialize());
+    Future.delayed(duration, () {
+      cockBloc.add(SelectCoctail(cockBloc.state.allCoctails.first));
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute<void>(
+          builder: (BuildContext context) => const MyHomePage(),
+        ),
+      );
+    });
     final theme = Theme.of(context);
     return SafeArea(
         child: Scaffold(
       body: Center(
           child: Container(
-
-              // color: Colors.lightGreen,
               color: theme.scaffoldBackgroundColor,
               child: Column(
                 children: [

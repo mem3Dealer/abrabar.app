@@ -17,6 +17,7 @@ dependencies:
   bloc: ^8.0.3
   get_it: ^7.2.0
   equatable: ^2.0.3
+  flutter_bloc: ^8.0.1
 
 dev_dependencies:
   flutter_test:
@@ -33,6 +34,7 @@ flutter:
         - assets/
         - assets/images/
         - assets/images/parts/
+        - assets/images/test/
   uses-material-design: true
   fonts: 
     - family: zet_regular
