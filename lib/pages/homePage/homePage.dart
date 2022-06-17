@@ -2,12 +2,15 @@ import 'package:abrabar/logic/bloc/bloc/coctail_bloc.dart';
 import 'package:abrabar/pages/homePage/classic_view.dart';
 import 'package:abrabar/pages/homePage/season_view.dart';
 import 'package:abrabar/pages/settingsPage.dart';
-import 'package:abrabar/shared/picPaths.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localz.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
+
+import '../../shared/picPaths.dart';
+import 'favs_view.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -17,7 +20,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   final cockBloc = GetIt.I.get<CoctailBloc>();
-  final paths = PicPath();
+  final paths = PicPaths();
   late TabController _tabController;
   late TextEditingController controller;
   bool isSearch = false;
@@ -66,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 9.25.h,
+        // toolbarHeight: 9.25.h,
         leading: isSearch ? closeSearhButton() : Container(),
         title: Text(
           isSearch ? t.search : 'ABRABAR',
@@ -96,11 +99,16 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         ],
         bottom: isSearch ? searchMode(context) : tabBar(_tabS),
       ),
-      body: SafeArea(
-        child: TabBarView(
-          controller: _tabController,
-          children: views,
-        ),
+      body: BlocConsumer<CoctailBloc, CoctailState>(
+        listener: (context, state) {},
+        builder: (context, state) {
+          return SafeArea(
+            child: TabBarView(
+              controller: _tabController,
+              children: views,
+            ),
+          );
+        },
       ),
     );
   }
@@ -123,9 +131,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     const Center(
       child: Text('По ингридиентам'),
     ),
-    const Center(
-      child: Text('Избранное'),
-    ),
+    const FavoritesView(),
     ClassicView(),
     const Center(
       child: Text('Популярное'),

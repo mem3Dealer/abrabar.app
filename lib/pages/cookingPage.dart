@@ -35,7 +35,7 @@ class _CookingPageState extends State<CookingPage> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final paths = PicPath();
+    final paths = PicPaths();
     return BlocConsumer<CoctailBloc, CoctailState>(
       listener: (context, state) {},
       builder: (context, state) {
@@ -44,7 +44,7 @@ class _CookingPageState extends State<CookingPage> {
         return SafeArea(
           child: Scaffold(
               appBar: AppBar(
-                toolbarHeight: 8.h,
+                // toolbarHeight: 8.h,
                 // backgroundColor: Colors.blue,
                 backgroundColor: Colors.transparent,
                 centerTitle: true,

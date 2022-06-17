@@ -2,6 +2,12 @@ import 'dart:convert';
 
 import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get_it/get_it.dart';
+import 'package:sizer/sizer.dart';
+import 'bloc/bloc/coctail_bloc.dart';
 
 class Coctail {
   String? name;
@@ -21,6 +27,37 @@ class Coctail {
     this.steps,
     this.ingredients,
   });
+
+  isItFavorite() {}
+
+  Widget createGridCell(
+      {required BuildContext context,
+      // required Function onTap,
+      required Widget child,
+      required Coctail coctail}) {
+    bool isFav;
+    // final storage = FlutterSecureStorage();
+    // isFav = await storage.containsKey(key: coctailName);
+    final cockBloc = GetIt.I.get<CoctailBloc>();
+    isFav = cockBloc.state.favoriteCoctails.contains(coctail);
+    return InkWell(
+        onTap: () => cockBloc.add(SelectCoctail(coctail, context)),
+        child: Stack(
+          children: [
+            child,
+            isFav
+                ? Padding(
+                    padding: EdgeInsets.only(right: 3.w, top: 1.5.h),
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: SvgPicture.asset(
+                          'assets/images/system/white_star.svg'),
+                    ),
+                  )
+                : const SizedBox.shrink()
+          ],
+        ));
+  }
 
   Coctail copyWith({
     String? name,

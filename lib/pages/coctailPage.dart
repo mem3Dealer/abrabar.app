@@ -1,7 +1,6 @@
 import 'package:abrabar/logic/coctail.dart';
 import 'package:abrabar/pages/cookingPage.dart';
 import 'package:abrabar/shared/ingredientNet.dart';
-import 'package:abrabar/shared/picPaths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -10,6 +9,7 @@ import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
 
 import '../logic/bloc/bloc/coctail_bloc.dart';
+import '../shared/picPaths.dart';
 
 class CoctailPage extends StatelessWidget {
   String title = 'CLASSIC';
@@ -19,7 +19,7 @@ class CoctailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final paths = PicPath();
+    final paths = PicPaths();
     final cockBloc = GetIt.I.get<CoctailBloc>();
     cockBloc.add(AnotherStep(index: 0));
     // print();
@@ -38,7 +38,8 @@ class CoctailPage extends StatelessWidget {
                 width: 4.w,
                 height: 4.h,
                 child: GestureDetector(
-                    onTap: () {
+                    onTap: () async {
+                      // await cockBloc.noCurrent(context);
                       Navigator.of(context).pop();
                     },
                     child: SvgPicture.asset(
@@ -47,7 +48,7 @@ class CoctailPage extends StatelessWidget {
                     )),
               ),
             ),
-            toolbarHeight: 9.25.h,
+            // toolbarHeight: 9.25.h,
             backgroundColor: theme.primaryColor,
             title: Text(
               title,
@@ -79,7 +80,7 @@ class CoctailPage extends StatelessWidget {
                       height: 5.h,
                     ),
                     Text(
-                      coc.name!,
+                      coc.name ?? '',
                       style:
                           theme.textTheme.headline1!.copyWith(fontSize: 32.sp),
                     ),

@@ -6,8 +6,9 @@ class AbrabarTheme {
     return ThemeData(
       scaffoldBackgroundColor: const Color(0xff242320),
       primaryColor: const Color(0xffFF3F6D),
-      appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xff242320),
+      appBarTheme: AppBarTheme(
+          toolbarHeight: 8.h,
+          backgroundColor: const Color(0xff242320),
           elevation: 0.0,
           centerTitle: true),
       fontFamily: 'zet_regular',

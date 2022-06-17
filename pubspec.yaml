@@ -36,6 +36,8 @@ flutter:
         - assets/images/parts/
         - assets/images/test/
         - assets/images/system/
+        - assets/images/previews/
+        - assets/images/category_pic/
   uses-material-design: true
   fonts: 
     - family: zet_regular
