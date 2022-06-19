@@ -1,10 +1,8 @@
-import 'package:abrabar/pages/cookingPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
 import '../logic/bloc/bloc/coctail_bloc.dart';
-import '../logic/coctail.dart';
 import 'homePage/homePage.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -39,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     child: Stack(
                       children: [
                         Align(
-                          alignment: Alignment(1, -1.35),
+                          alignment: const Alignment(1, -1.35),
                           child: SizedBox(
                             width: 56.3.w,
                             height: 26.h,
@@ -47,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
                           ),
                         ),
                         Align(
-                          alignment: Alignment(-1.31, -0.5),
+                          alignment: const Alignment(-1.31, -0.5),
                           child: FractionallySizedBox(
                             widthFactor: 0.46,
                             heightFactor: 0.183,
@@ -66,7 +64,7 @@ class _SplashScreenState extends State<SplashScreen> {
                           ),
                         ),
                         Align(
-                          alignment: Alignment(0.75, 0.3),
+                          alignment: const Alignment(0.75, 0.3),
                           child: FractionallySizedBox(
                             widthFactor: 0.3,
                             heightFactor: 0.13,
@@ -74,7 +72,7 @@ class _SplashScreenState extends State<SplashScreen> {
                           ),
                         ),
                         Align(
-                          alignment: Alignment(-1.1, 1.03),
+                          alignment: const Alignment(-1.1, 1.03),
                           child: FractionallySizedBox(
                             widthFactor: 0.53,
                             heightFactor: 0.17,
@@ -85,7 +83,7 @@ class _SplashScreenState extends State<SplashScreen> {
                           ),
                         ),
                         Align(
-                          alignment: Alignment(0, 0.80),
+                          alignment: const Alignment(0, 0.80),
                           child: FractionallySizedBox(
                             widthFactor: 0.36,
                             heightFactor: 0.3,

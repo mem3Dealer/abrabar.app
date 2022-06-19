@@ -1,9 +1,6 @@
 import 'dart:convert';
-
-import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
@@ -28,12 +25,10 @@ class Coctail {
     this.ingredients,
   });
 
-  isItFavorite() {}
-
   Widget createGridCell(
       {required BuildContext context,
       // required Function onTap,
-      required Widget child,
+      // required Widget child,
       required Coctail coctail}) {
     bool isFav;
     // final storage = FlutterSecureStorage();
@@ -44,7 +39,8 @@ class Coctail {
         onTap: () => cockBloc.add(SelectCoctail(coctail, context)),
         child: Stack(
           children: [
-            child,
+            // child,
+            SvgPicture.asset('assets/images/previews/${coctail.picPreview}'),
             isFav
                 ? Padding(
                     padding: EdgeInsets.only(right: 3.w, top: 1.5.h),

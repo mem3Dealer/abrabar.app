@@ -1,14 +1,9 @@
-import 'dart:convert';
-import 'dart:math';
-
+import 'package:abrabar/shared/picPaths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
-
-import 'package:abrabar/logic/coctail.dart';
-
 import '../logic/bloc/bloc/coctail_bloc.dart';
 
 class IngredientNet extends StatelessWidget {
@@ -18,7 +13,7 @@ class IngredientNet extends StatelessWidget {
     required this.isPreview,
   }) : super(key: key);
   final cockBloc = GetIt.I.get<CoctailBloc>();
-
+  final picPaths = PicPaths();
   String path = 'assets/images/test/';
 
   @override
@@ -48,7 +43,7 @@ class IngredientNet extends StatelessWidget {
                 width: 72.5.w,
                 height: 35.h,
                 // color: Colors.red,
-                child: SvgPicture.asset(path +
+                child: SvgPicture.asset(picPaths.glassPics +
                     cockBloc.state.currentCoctail.steps!
                         .elementAt(0)['images']
                         .first)),
@@ -128,7 +123,7 @@ class IngredientNet extends StatelessWidget {
     required double size,
     String? image,
   }) {
-    return Container(
+    return SizedBox(
       width: size,
       height: size,
       child: Center(

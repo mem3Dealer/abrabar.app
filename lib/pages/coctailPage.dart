@@ -3,7 +3,7 @@ import 'package:abrabar/pages/cookingPage.dart';
 import 'package:abrabar/shared/ingredientNet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
@@ -152,15 +152,15 @@ class CoctailPage extends StatelessWidget {
                 shrinkWrap: true,
                 itemCount: coc.ingredients!.length,
                 itemBuilder: (BuildContext context, int index) {
-                  var _pos = coc.ingredients![index];
+                  var pos = coc.ingredients![index];
                   return ListTile(
                     tileColor: Colors.transparent,
                     title: Text(
-                      _pos['what']!,
+                      pos['what']!,
                       style: theme.textTheme.headline4,
                     ),
                     trailing: Text(
-                      _pos['howMuch'].toString(),
+                      pos['howMuch'].toString(),
                       style: theme.textTheme.subtitle1!
                           .copyWith(color: const Color(0xff86837B)),
                     ),

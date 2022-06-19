@@ -6,5 +6,18 @@
     "favs":"ИЗБРАННОЕ",
     "classic": "КЛАССИКА",
     "popular": "ПОПУЛЯРНОЕ",
-    "season": "СЕЗОННЫЕ"
+    "season": "СЕЗОННЫЕ",
+    "authors":"АВТОРСКИЕ",
+    "occasional": "ДЛЯ СОБЫТИЙ",
+    "winter":"ЗИМА",
+    "autumn":"ОСЕНЬ",
+    "spring":"ВЕСНА",
+    "summer": "ЛЕТО",
+    "new_year":"НОВЫЙ ГОД",
+    "birthday": "ДЕНЬ РОЖДЕНИЯ",
+    "wedding": "СВАДЬБА",
+    "graduation": "ВЫПУСКНОЙ",
+    "womensDay": "8 МАРТА",
+    "stPatrick":"ДЕНЬ СВЯТОГО ПАТРИКА",
+    "allCoctails": "ВСЕ КОКТЕЙЛИ"
 }

@@ -6,5 +6,18 @@
     "favs":"FAVS",
     "classic": "CLASSIC",
     "popular": "POPULAR",
-    "season": "SEASON"
+    "season": "SEASON",
+    "authors":"AUTHOR'S",
+    "occasional": "OCCASIONAL",
+    "winter":"WINTER",
+    "autumn":"AUTUMN",
+    "spring":"SPRING",
+    "summer": "SUMMTER",
+    "new_year":"NEW YEAR ",
+    "birthday": "BIRTHDAY",
+    "wedding": "WEDDING",
+    "graduation": "GRADUATION",
+    "womensDay": "WOMENS DAY",
+    "stPatrick":"ST. PATRICKS",
+    "allCoctails": "ALL COCTAILS"
 }

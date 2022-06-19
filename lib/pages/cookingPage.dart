@@ -39,7 +39,7 @@ class _CookingPageState extends State<CookingPage> {
     return BlocConsumer<CoctailBloc, CoctailState>(
       listener: (context, state) {},
       builder: (context, state) {
-        Coctail _curCoc = state.currentCoctail;
+        Coctail curCoc = state.currentCoctail;
 
         return SafeArea(
           child: Scaffold(
@@ -77,7 +77,7 @@ class _CookingPageState extends State<CookingPage> {
                             padding: EdgeInsets.only(top: 3.h, bottom: 2.3.h),
                             child: Center(
                               child: Text(
-                                '${pageIndex + 1} ШАГ ИЗ ${_curCoc.steps!.length}',
+                                '${pageIndex + 1} ШАГ ИЗ ${curCoc.steps!.length}',
                                 style: theme.textTheme.headline3!.copyWith(
                                     color: Colors.white.withOpacity(0.5)),
                               ),
@@ -93,10 +93,10 @@ class _CookingPageState extends State<CookingPage> {
                                 cockBloc.add(AnotherStep(index: index));
                               },
                               controller: controller,
-                              itemCount: _curCoc.steps!.length,
+                              itemCount: curCoc.steps!.length,
                               itemBuilder: (context, position) {
                                 return Text(
-                                  _curCoc.steps![position]['step'],
+                                  curCoc.steps![position]['step'],
                                   textAlign: TextAlign.center,
                                   style: theme.textTheme.headline1!
                                       .copyWith(fontSize: 32.sp),
@@ -117,7 +117,8 @@ class _CookingPageState extends State<CookingPage> {
                               IconButton(
                                   // onPressed: null,
                                   onPressed: () => controller.previousPage(
-                                      duration: Duration(milliseconds: 1000),
+                                      duration:
+                                          const Duration(milliseconds: 1000),
                                       curve: Curves.ease),
                                   splashColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
@@ -133,16 +134,16 @@ class _CookingPageState extends State<CookingPage> {
                                   )),
                               IconButton(
                                   onPressed: () => controller.nextPage(
-                                      duration: Duration(milliseconds: 1000),
+                                      duration:
+                                          const Duration(milliseconds: 1000),
                                       curve: Curves.ease),
                                   splashColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   icon: SvgPicture.asset(
                                     '${paths.systemImages}cooking_arrow.svg',
-                                    color:
-                                        pageIndex == _curCoc.steps!.length - 1
-                                            ? Colors.white.withOpacity(0.5)
-                                            : null,
+                                    color: pageIndex == curCoc.steps!.length - 1
+                                        ? Colors.white.withOpacity(0.5)
+                                        : null,
                                   )),
                             ]),
                       ),

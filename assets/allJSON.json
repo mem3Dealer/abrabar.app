@@ -8,27 +8,27 @@
         ],
         "steps":[
             {
-                "images": ["high_glass.svg"],
+                "images": ["highball_big.svg"],
                 "step": "Возьмите высокий стакан"
             },
             {
-                "images": ["high_glass.svg","ice.svg"],
+                "images": ["highball_big.svg","ice.svg"],
                 "step": "Добавьте три кубика льда"
             },
             {
-                "images": ["high_glass.svg","ice.svg","vodka.svg"],
+                "images": ["highball_big.svg","ice.svg","vodka.svg"],
                 "step": "Добавьте две стопки водки"
             },
             {
-                "images": ["high_glass.svg","ice.svg","vodka.svg","tomato_juice.svg"],
+                "images": ["highball_big.svg","ice.svg","vodka.svg","tomato_juice.svg"],
                 "step": "Добавьте 100г томатного сока, перемешайте"
             },
             {
-                "images": ["high_glass.svg","ice.svg","vodka.svg","tomato_juice.svg","salt.svg", "black_pepper.svg"],
+                "images": ["highball_big.svg","ice.svg","vodka.svg","tomato_juice.svg","salt.svg", "black_pepper.svg"],
                 "step": "Добавьте соль и черный перец по вкусу (побольше)"
             },
             {
-                "images": ["high_glass.svg","ice.svg","vodka.svg","tomato_juice.svg","salt.svg", "black_pepper.svg","celery.svg"],
+                "images": ["highball_big.svg","ice.svg","vodka.svg","tomato_juice.svg","salt.svg", "black_pepper.svg","celery.svg"],
                 "step": "Добавьте кусок сельдерея и готово!"
             }            
         ],
@@ -65,27 +65,27 @@
         ],
         "steps":[
             {
-                "images": ["high_glass.svg"],
+                "images": ["mug.svg"],
                 "step": "Возьмите высокий стакан"
             },
             {
-                "images": ["high_glass.svg","ice.svg"],
+                "images": ["mug.svg","ice.svg"],
                 "step": "Добавьте три кубика льда"
             },
             {
-                "images": ["high_glass.svg","ice.svg","vodka.svg"],
+                "images": ["mug.svg","ice.svg","vodka.svg"],
                 "step": "Добавьте две стопки водки"
             },
             {
-                "images": ["high_glass.svg","ice.svg","vodka.svg","tomato_juice.svg"],
+                "images": ["mug.svg","ice.svg","vodka.svg","tomato_juice.svg"],
                 "step": "Добавьте 100г томатного сока, перемешайте"
             },
             {
-                "images": ["high_glass.svg","ice.svg","vodka.svg","tomato_juice.svg","salt.svg", "black_pepper.svg"],
+                "images": ["mug.svg","ice.svg","vodka.svg","tomato_juice.svg","salt.svg", "black_pepper.svg"],
                 "step": "Добавьте соль и черный перец по вкусу (побольше)"
             },
             {
-                "images": ["high_glass.svg","ice.svg","vodka.svg","tomato_juice.svg","salt.svg", "black_pepper.svg","celery.svg"],
+                "images": ["mug.svg","ice.svg","vodka.svg","tomato_juice.svg","salt.svg", "black_pepper.svg","celery.svg"],
                 "step": "Добавьте кусок сельдерея и готово!"
             }            
         ],
@@ -118,31 +118,31 @@
     "description" : "Ебни кофейку братка",
     
         "categories":[
-            "classic", "autumn", "winter", "patrik", "wedding"
+            "classic", "autumn", "winter", "patrik", "wedding", "patrick"
         ],
         "steps":[
             {
-                "images": ["high_glass.svg"],
+                "images": ["mulled_wine.svg"],
                 "step": "Возьмите высокий стакан"
             },
             {
-                "images": ["high_glass.svg","ice.svg"],
+                "images": ["mulled_wine.svg","ice.svg"],
                 "step": "Добавьте три кубика льда"
             },
             {
-                "images": ["high_glass.svg","ice.svg","vodka.svg"],
+                "images": ["mulled_wine.svg","ice.svg","vodka.svg"],
                 "step": "Добавьте две стопки водки"
             },
             {
-                "images": ["high_glass.svg","ice.svg","vodka.svg","tomato_juice.svg"],
+                "images": ["mulled_wine.svg","ice.svg","vodka.svg","tomato_juice.svg"],
                 "step": "Добавьте 100г томатного сока, перемешайте"
             },
             {
-                "images": ["high_glass.svg","ice.svg","vodka.svg","tomato_juice.svg","salt.svg", "black_pepper.svg"],
+                "images": ["mulled_wine.svg","ice.svg","vodka.svg","tomato_juice.svg","salt.svg", "black_pepper.svg"],
                 "step": "Добавьте соль и черный перец по вкусу (побольше)"
             },
             {
-                "images": ["high_glass.svg","ice.svg","vodka.svg","tomato_juice.svg","salt.svg", "black_pepper.svg","celery.svg"],
+                "images": ["mulled_wine.svg","ice.svg","vodka.svg","tomato_juice.svg","salt.svg", "black_pepper.svg","celery.svg"],
                 "step": "Добавьте кусок сельдерея и готово!"
             }            
         ],

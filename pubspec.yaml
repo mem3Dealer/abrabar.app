@@ -38,6 +38,8 @@ flutter:
         - assets/images/system/
         - assets/images/previews/
         - assets/images/category_pic/
+        - assets/images/ingredients/glass/
+        - assets/images/ingredients/
   uses-material-design: true
   fonts: 
     - family: zet_regular

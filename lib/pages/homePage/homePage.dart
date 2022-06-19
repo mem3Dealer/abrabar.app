@@ -1,7 +1,9 @@
 import 'package:abrabar/logic/bloc/bloc/coctail_bloc.dart';
+import 'package:abrabar/pages/homePage/allCoctails_view.dart';
+import 'package:abrabar/pages/homePage/authorts_view.dart';
 import 'package:abrabar/pages/homePage/classic_view.dart';
+import 'package:abrabar/pages/homePage/occasional_view.dart';
 import 'package:abrabar/pages/homePage/season_view.dart';
-import 'package:abrabar/pages/settingsPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localz.dart';
@@ -30,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     controller = TextEditingController();
-    _tabController = TabController(length: 5, vsync: this);
+    _tabController = TabController(length: 6, vsync: this);
   }
 
   @override
@@ -43,28 +45,25 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     var t = AppLocalizations.of(context)!;
-    final List<String> _names = [
-      t.ingredients,
+    final List<String> names = [
+      t.allCoctails,
       t.favs,
       t.classic,
-      t.popular,
+      t.authors,
+      t.occasional,
       t.season
     ];
 
     final theme = Theme.of(context);
     List<Tab> _tabS() {
-      List<Tab> _r = [];
-      for (var name in _names) {
-        _r.add(Tab(
+      List<Tab> r = [];
+      for (var name in names) {
+        r.add(Tab(
           height: _tabHeight,
-          child: Container(
-            child: Text(name
-                //никакого стиля потому что табБары определяют стиль лучше
-                ),
-          ),
+          child: Text(name),
         ));
       }
-      return _r;
+      return r;
     }
 
     return Scaffold(
@@ -128,14 +127,11 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   }
 
   List<Widget> views = [
-    const Center(
-      child: Text('По ингридиентам'),
-    ),
+    const AllCotailsView(),
     const FavoritesView(),
     ClassicView(),
-    const Center(
-      child: Text('Популярное'),
-    ),
+    const AuthortsView(),
+    const OccasionalView(),
     SeasonView()
   ];
 
@@ -209,16 +205,16 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   }
 }
 
-IconButton settingsButton(BuildContext context) {
-  return IconButton(
-      splashColor: Colors.transparent,
-      highlightColor: Colors.transparent,
-      icon: Image.asset('assets/images/gaika.png'),
-      onPressed: () {
-        Navigator.of(context).push(
-          MaterialPageRoute<void>(
-            builder: (BuildContext context) => const SettingsPage(),
-          ),
-        );
-      });
-}
+// IconButton settingsButton(BuildContext context) {
+//   return IconButton(
+//       splashColor: Colors.transparent,
+//       highlightColor: Colors.transparent,
+//       icon: Image.asset('assets/images/gaika.png'),
+//       onPressed: () {
+//         Navigator.of(context).push(
+//           MaterialPageRoute<void>(
+//             builder: (BuildContext context) => const SettingsPage(),
+//           ),
+//         );
+//       });
+// }
