@@ -1,9 +1,11 @@
 import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
+
 import 'bloc/bloc/coctail_bloc.dart';
 
 class Coctail {
@@ -11,6 +13,7 @@ class Coctail {
   String? picPreview;
   String? description;
   bool isFav;
+  List<String>? searchWords;
   List<String>? categories;
   List<Map<String, dynamic>>? steps;
   List<Map<String, dynamic>>? ingredients;
@@ -20,24 +23,22 @@ class Coctail {
     this.picPreview,
     this.description,
     required this.isFav,
+    this.searchWords,
     this.categories,
     this.steps,
     this.ingredients,
   });
 
   Widget createGridCell(
-      {required BuildContext context,
-      // required Function onTap,
-      // required Widget child,
-      required Coctail coctail}) {
+      {required BuildContext context, required Coctail coctail}) {
     bool isFav;
-    // final storage = FlutterSecureStorage();
-    // isFav = await storage.containsKey(key: coctailName);
+
     final cockBloc = GetIt.I.get<CoctailBloc>();
     isFav = cockBloc.state.favoriteCoctails.contains(coctail);
     return InkWell(
         onTap: () => cockBloc.add(SelectCoctail(coctail, context)),
         child: Stack(
+          fit: StackFit.expand,
           children: [
             // child,
             SvgPicture.asset('assets/images/previews/${coctail.picPreview}'),
@@ -60,6 +61,7 @@ class Coctail {
     String? picPreview,
     String? description,
     bool? isFav,
+    List<String>? searchWords,
     List<String>? categories,
     List<Map<String, dynamic>>? steps,
     List<Map<String, dynamic>>? ingredients,
@@ -69,6 +71,7 @@ class Coctail {
       picPreview: picPreview ?? this.picPreview,
       description: description ?? this.description,
       isFav: isFav ?? this.isFav,
+      searchWords: searchWords ?? this.searchWords,
       categories: categories ?? this.categories,
       steps: steps ?? this.steps,
       ingredients: ingredients ?? this.ingredients,
@@ -81,6 +84,7 @@ class Coctail {
       'picPreview': picPreview,
       'description': description,
       'isFav': isFav,
+      'searchWords': searchWords,
       'categories': categories,
       'steps': steps,
       'ingredients': ingredients,
@@ -93,6 +97,7 @@ class Coctail {
       picPreview: map['picPreview'],
       description: map['description'],
       isFav: map['isFav'] ?? false,
+      searchWords: List<String>.from(map['searchWords']),
       categories: List<String>.from(map['categories']),
       steps: map['steps'] != null
           ? List<Map<String, dynamic>>.from(
@@ -112,7 +117,7 @@ class Coctail {
 
   @override
   String toString() {
-    return 'Coctail(name: $name, picPreview: $picPreview, description: $description, isFav: $isFav, categories: $categories, steps: $steps, ingredients: $ingredients)';
+    return 'Coctail(name: $name, picPreview: $picPreview, description: $description, isFav: $isFav, searchWords: $searchWords, categories: $categories, steps: $steps, ingredients: $ingredients)';
   }
 
   @override
@@ -124,6 +129,7 @@ class Coctail {
         other.picPreview == picPreview &&
         other.description == description &&
         other.isFav == isFav &&
+        listEquals(other.searchWords, searchWords) &&
         listEquals(other.categories, categories) &&
         listEquals(other.steps, steps) &&
         listEquals(other.ingredients, ingredients);
@@ -135,6 +141,7 @@ class Coctail {
         picPreview.hashCode ^
         description.hashCode ^
         isFav.hashCode ^
+        searchWords.hashCode ^
         categories.hashCode ^
         steps.hashCode ^
         ingredients.hashCode;

@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
-
 import '../logic/bloc/bloc/coctail_bloc.dart';
 import '../logic/coctail.dart';
 import 'picPaths.dart';
@@ -112,55 +111,60 @@ class SeasonPage extends StatelessWidget {
 
         return Scaffold(
           appBar: AppBar(
-            // toolbarHeight: 8.h,
-            backgroundColor: color,
+            elevation: 0,
+            bottomOpacity: 0,
+            backgroundColor: Colors.transparent,
           ),
-          // backgroundColor: color,
-          body: ListView(
-            shrinkWrap: true,
-            children: [
-              Container(
-                width: 100.w,
-                height: 40.h,
-                color: color,
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(top: 6.25.h, left: 6.1.w),
-                      child: Align(
-                        alignment: Alignment.topLeft,
-                        child: Text(
-                          title,
-                          style: theme.textTheme.headline2!.copyWith(
-                              color: isWhite
-                                  ? Colors.white
-                                  : const Color(0xff242320)),
+          backgroundColor: color,
+          body: Container(
+            // color: Colors.black,
+            child: ListView(
+              shrinkWrap: true,
+              children: [
+                Container(
+                  width: 100.w,
+                  height: 40.h,
+                  color: color,
+                  child: Stack(
+                    fit: StackFit.loose,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: 6.25.h, left: 6.1.w),
+                        child: Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            title,
+                            style: theme.textTheme.headline2!.copyWith(
+                                color: isWhite
+                                    ? Colors.white
+                                    : const Color(0xff242320)),
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 25.h,
-                      width: 60.w,
-                      child: Align(
-                        alignment: const Alignment(1, 1),
-                        child: SvgPicture.asset(
-                            "${paths.categoryPics}$categoryName.svg"),
-                      ),
-                    )
-                  ],
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: SizedBox(
+                          height: 25.h,
+                          width: 60.w,
+                          child: SvgPicture.asset(
+                              "${paths.categoryPics}$categoryName.svg"),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-              GridView.builder(
-                  shrinkWrap: true,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2),
-                  itemCount: categoryCoctails.length,
-                  itemBuilder: (BuildContext ctx, index) {
-                    return categoryCoctails[index].createGridCell(
-                        coctail: categoryCoctails[index], context: context);
-                  }),
-            ],
+                GridView.builder(
+                    shrinkWrap: true,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2),
+                    itemCount: categoryCoctails.length,
+                    itemBuilder: (BuildContext ctx, index) {
+                      return categoryCoctails[index].createGridCell(
+                          coctail: categoryCoctails[index], context: context);
+                    }),
+              ],
+            ),
           ),
         );
       },

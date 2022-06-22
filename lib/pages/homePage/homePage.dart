@@ -4,6 +4,7 @@ import 'package:abrabar/pages/homePage/authorts_view.dart';
 import 'package:abrabar/pages/homePage/classic_view.dart';
 import 'package:abrabar/pages/homePage/occasional_view.dart';
 import 'package:abrabar/pages/homePage/season_view.dart';
+import 'package:abrabar/shared/search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localz.dart';
@@ -67,36 +68,43 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        // toolbarHeight: 9.25.h,
-        leading: isSearch ? closeSearhButton() : Container(),
-        title: Text(
-          isSearch ? t.search : 'ABRABAR',
-          style: theme.textTheme.headline1,
-        ),
-        actions: [
-          if (!isSearch)
-            Padding(
-              padding: EdgeInsets.only(
-                right: 3.5.w,
-              ),
-              child: SizedBox(
-                width: 6.1.w,
-                height: 2.75.h,
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      isSearch = true;
-                    });
-                  },
-                  child: SvgPicture.asset("${paths.systemImages}loopa.svg"),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(18.h),
+        child: AppBar(
+          // toolbarHeight: 7.25.h,
+          // leading: isSearch ? closeSearhButton() : Container(),
+          title: Text(
+            isSearch ? t.search : 'ABRABAR',
+            style: theme.textTheme.headline1,
+          ),
+          actions: [
+            if (!isSearch)
+              Padding(
+                padding: EdgeInsets.only(
+                  right: 3.5.w,
                 ),
-              ),
-            )
-          else
-            Container()
-        ],
-        bottom: isSearch ? searchMode(context) : tabBar(_tabS),
+                child: SizedBox(
+                  width: 6.1.w,
+                  height: 2.75.h,
+                  child: GestureDetector(
+                    onTap: () {
+                      showSearch(
+                          context: context,
+                          delegate: SearchCoctails(
+                              allCoctails: cockBloc.state.allCoctails));
+                      // setState(() {
+                      //   isSearch = true;
+                      // });
+                    },
+                    child: SvgPicture.asset("${paths.systemImages}loopa.svg"),
+                  ),
+                ),
+              )
+            else
+              Container()
+          ],
+          bottom: isSearch ? searchMode(context) : tabBar(_tabS),
+        ),
       ),
       body: BlocConsumer<CoctailBloc, CoctailState>(
         listener: (context, state) {},

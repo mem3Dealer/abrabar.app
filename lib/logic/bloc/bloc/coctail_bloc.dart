@@ -23,12 +23,6 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
     on<ChangeFavorite>(_onChangeFav);
   }
 
-  // Future<void> noCurrent(BuildContext context) async {
-  //   emit(state.copyWith(currentCoctail: Coctail(isFav: false)));
-  //   Navigator.of(context).pop();
-  //   print(state.currentCoctail);
-  // }
-
   Future<void> _onCoctailInitialize(
       CoctailsInitialize event, Emitter emitter) async {
     final String source = await rootBundle.loadString('assets/allJSON.json');

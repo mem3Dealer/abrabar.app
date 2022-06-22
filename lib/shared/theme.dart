@@ -7,7 +7,7 @@ class AbrabarTheme {
       scaffoldBackgroundColor: const Color(0xff242320),
       primaryColor: const Color(0xffFF3F6D),
       appBarTheme: AppBarTheme(
-          toolbarHeight: 8.h,
+          toolbarHeight: 9.h,
           backgroundColor: const Color(0xff242320),
           elevation: 0.0,
           centerTitle: true),

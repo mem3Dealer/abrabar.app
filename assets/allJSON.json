@@ -6,6 +6,7 @@
         "categories":[
             "classic", "new_year"
         ],
+        "searchWords":["водка", "лед", "томатный", "сок", "соль", "черный перец", "сельдерей"],
         "steps":[
             {
                 "images": ["highball_big.svg"],
@@ -59,7 +60,9 @@
     "name": "Мохито",
     "picPreview":"mohito.svg",
     "description" : "Летняя легкость бля",
-    
+    "searchWords":[
+        "лайм", "ром", "лимон", "лед", "мята", "спрайт"
+    ],
         "categories":[
             "classic", "summer", "wedding", "birthday"
         ],
@@ -116,7 +119,9 @@
     "name": "Ирландский кофе",
     "picPreview":"irish_coffee.svg",
     "description" : "Ебни кофейку братка",
-    
+    "searchWords": [
+        "кофе", "ликер", "водка", "ром"
+    ],
         "categories":[
             "classic", "autumn", "winter", "patrik", "wedding", "patrick"
         ],
