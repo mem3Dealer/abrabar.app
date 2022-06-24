@@ -12,7 +12,6 @@ import '../logic/bloc/bloc/coctail_bloc.dart';
 import '../shared/picPaths.dart';
 
 class CoctailPage extends StatelessWidget {
-  String title = 'CLASSIC';
   CoctailPage({
     Key? key,
   }) : super(key: key);
@@ -49,12 +48,13 @@ class CoctailPage extends StatelessWidget {
               ),
             ),
             // toolbarHeight: 9.25.h,
-            backgroundColor: theme.primaryColor,
-            title: Text(
-              title,
-              style: theme.textTheme.headline3,
-            ),
+            backgroundColor: Colors.transparent,
+            // title: Text(
+            //   title,
+            //   style: theme.textTheme.headline3,
+            // ),
           ),
+          backgroundColor: theme.primaryColor,
           body: ListView(
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
@@ -118,12 +118,10 @@ class CoctailPage extends StatelessWidget {
                           height: 8.h,
                           child: ElevatedButton(
                               onPressed: () {
-                                Navigator.of(context).push<void>(
-                                  MaterialPageRoute<void>(
-                                    builder: (BuildContext context) =>
-                                        const CookingPage(),
-                                  ),
-                                );
+                                cockBloc.add(StartAndEndCooking(
+                                    coctail: coc,
+                                    isStart: true,
+                                    context: context));
                               },
                               style: ButtonStyle(
                                   shape: MaterialStateProperty.all(
@@ -146,26 +144,29 @@ class CoctailPage extends StatelessWidget {
                   ],
                 ),
               ),
-              ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                itemCount: coc.ingredients!.length,
-                itemBuilder: (BuildContext context, int index) {
-                  var pos = coc.ingredients![index];
-                  return ListTile(
-                    tileColor: Colors.transparent,
-                    title: Text(
-                      pos['what']!,
-                      style: theme.textTheme.headline4,
-                    ),
-                    trailing: Text(
-                      pos['howMuch'].toString(),
-                      style: theme.textTheme.subtitle1!
-                          .copyWith(color: const Color(0xff86837B)),
-                    ),
-                  );
-                },
+              Container(
+                color: theme.scaffoldBackgroundColor,
+                child: ListView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  itemCount: coc.ingredients!.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    var pos = coc.ingredients![index];
+                    return ListTile(
+                      tileColor: Colors.transparent,
+                      title: Text(
+                        pos['what']!,
+                        style: theme.textTheme.headline4,
+                      ),
+                      trailing: Text(
+                        pos['howMuch'].toString(),
+                        style: theme.textTheme.subtitle1!
+                            .copyWith(color: const Color(0xff86837B)),
+                      ),
+                    );
+                  },
+                ),
               )
             ],
           ),

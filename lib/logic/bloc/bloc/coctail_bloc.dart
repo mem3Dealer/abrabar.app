@@ -1,17 +1,18 @@
 import 'dart:convert';
 import 'package:abrabar/logic/coctail.dart';
+import 'package:abrabar/logic/recipes_api.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-
 import '../../../pages/coctailPage.dart';
+import '../../../pages/cookingPage.dart';
 part 'coctail_event.dart';
 part 'coctail_state.dart';
 
 class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
   static const storage = FlutterSecureStorage();
+
   CoctailBloc()
       : super(CoctailState(
             allCoctails: [],
@@ -21,18 +22,20 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
     on<SelectCoctail>(_onSelectCoctail);
     on<AnotherStep>(_onAnotherStep);
     on<ChangeFavorite>(_onChangeFav);
+    on<StartAndEndCooking>(_onStartAndEndCooking);
   }
 
   Future<void> _onCoctailInitialize(
       CoctailsInitialize event, Emitter emitter) async {
-    final String source = await rootBundle.loadString('assets/allJSON.json');
-    List data = await json.decode(source);
-    data.forEach((element) {
-      state.allCoctails.add(Coctail.fromMap(element));
-    });
-    emitter(state.copyWith(
-      allCoctails: state.allCoctails,
-    ));
+    List<Coctail> fetchedCocs = [];
+    fetchedCocs = await RecipesApi.fetchRecipes();
+    // final String source = await rootBundle.loadString('assets/allJSON.json');
+    // List data = await json.decode(source);
+    // data.forEach((element) {
+    //   state.allCoctails.add(Coctail.fromMap(element));
+    // });
+
+    emitter(state.copyWith(allCoctails: fetchedCocs));
 
     List list = [];
     Map<String, String> allValues = await storage.readAll();
@@ -105,6 +108,22 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
           currentCoctail: updated,
           allCoctails: state.allCoctails,
           favoriteCoctails: state.favoriteCoctails));
+    }
+  }
+
+  Future<void> _onStartAndEndCooking(
+      StartAndEndCooking event, Emitter emitter) async {
+    if (event.isStart == true) {
+      emitter(state.copyWith(
+          currentIngredients: event.coctail.steps!.first['images']));
+      Navigator.of(event.context).push<void>(
+        MaterialPageRoute<void>(
+          builder: (BuildContext context) => const CookingPage(),
+        ),
+      );
+    } else if (event.isStart == false) {
+      emitter(state.copyWith(currentIngredients: []));
+      Navigator.of(event.context).pop();
     }
   }
 }

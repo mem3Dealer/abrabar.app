@@ -1,3 +1,4 @@
+import 'package:abrabar/logic/recipes_api.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
@@ -18,6 +19,8 @@ class _SplashScreenState extends State<SplashScreen> {
   final Duration duration = const Duration(seconds: 2);
   @override
   Widget build(BuildContext context) {
+    // RecipesApi.fetchRecipes();
+    // print("???");
     Future.delayed(duration, () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute<void>(

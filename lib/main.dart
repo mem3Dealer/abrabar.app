@@ -4,11 +4,14 @@ import 'package:abrabar/shared/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localz.dart';
 import 'package:get_it/get_it.dart';
+import 'logic/recipes_api.dart';
 import 'pages/splashScreen.dart';
 import 'package:sizer/sizer.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await RecipesApi.init();
   GetIt.instance
       .registerSingleton<CoctailBloc>(CoctailBloc()..add(CoctailsInitialize()));
 

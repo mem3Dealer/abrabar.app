@@ -14,7 +14,7 @@ class IngredientNet extends StatelessWidget {
   }) : super(key: key);
   final cockBloc = GetIt.I.get<CoctailBloc>();
   final picPaths = PicPaths();
-  String path = 'assets/images/test/';
+  // String path = 'assets/images/ingredients/';
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +23,52 @@ class IngredientNet extends StatelessWidget {
       builder: (context, state) {
         String? image(index) {
           if (isPreview == true) {
-            if (index <= state.currentCoctail.steps!.length) {
-              return state.currentCoctail.steps!.last['images'][index];
+            // print(state.currentCoctail.steps!.last['images']);
+
+            // print(index);
+            // index = state.currentCoctail.steps!.last['images'].length - 1;
+            if (index <=
+                state.currentCoctail.steps!.last['images'].length - 1) {
+              return state.currentCoctail.steps!.last["images"][index];
             } else {
               return null;
             }
+            // print();
+            // print(index);
+            // for (var i in ) {
+            //   print('VOZVRAT: $i');
+            //   return i;
+            // }
+            // if (index <= state.currentCoctail.steps!.length) {
+
+            //   // print(state.currentCoctail.steps!.last["images"][index]);
+            //   // return state.currentCoctail.steps!.last['images'][5];
+            //   // for (var i in state.currentCoctail.steps!.last['images']) {
+            //   //   print("$i = $index");
+            //   //   return i;
+            //   // }
+            // } else {
+            //   return null;
+            // }
           } else if (index <= state.currentIngredients!.length - 1) {
             return state.currentIngredients!.elementAt(index);
           } else {
             return null;
           }
+        }
+
+        Widget? element({
+          required double size,
+          String? image,
+        }) {
+          return SizedBox(
+            width: size,
+            height: size,
+            child: Center(
+                child: image != null
+                    ? SvgPicture.asset('assets/images/ingredients/$image')
+                    : Container()),
+          );
         }
 
         return Stack(
@@ -43,6 +79,7 @@ class IngredientNet extends StatelessWidget {
                 width: 72.5.w,
                 height: 35.h,
                 // color: Colors.red,
+                // child: SvgPicture.asset(''),
                 child: SvgPicture.asset(picPaths.glassPics +
                     cockBloc.state.currentCoctail.steps!
                         .elementAt(0)['images']
@@ -116,20 +153,6 @@ class IngredientNet extends StatelessWidget {
           ],
         );
       },
-    );
-  }
-
-  Widget? element({
-    required double size,
-    String? image,
-  }) {
-    return SizedBox(
-      width: size,
-      height: size,
-      child: Center(
-          child: image != null
-              ? SvgPicture.asset('assets/images/test/$image')
-              : Container()),
     );
   }
 }

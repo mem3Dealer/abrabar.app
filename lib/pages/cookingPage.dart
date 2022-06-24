@@ -40,7 +40,6 @@ class _CookingPageState extends State<CookingPage> {
       listener: (context, state) {},
       builder: (context, state) {
         Coctail curCoc = state.currentCoctail;
-
         return SafeArea(
           child: Scaffold(
               appBar: AppBar(
@@ -52,11 +51,13 @@ class _CookingPageState extends State<CookingPage> {
                   state.currentCoctail.name!,
                   style: theme.textTheme.headline3,
                 ),
-                // leading: SizedBox(
-                //   width: 5.5.w,
-                //   height: 2.5.h,
-                //   child: SvgPicture.asset('assets/images/close.svg'),
-                // ),
+                leading: IconButton(
+                  onPressed: () {
+                    cockBloc.add(StartAndEndCooking(
+                        coctail: curCoc, isStart: false, context: context));
+                  },
+                  icon: SvgPicture.asset('assets/images/system/close.svg'),
+                ),
               ),
               backgroundColor: theme.primaryColor,
               body: Center(
