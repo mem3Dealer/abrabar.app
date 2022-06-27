@@ -33,23 +33,6 @@ class IngredientNet extends StatelessWidget {
             } else {
               return null;
             }
-            // print();
-            // print(index);
-            // for (var i in ) {
-            //   print('VOZVRAT: $i');
-            //   return i;
-            // }
-            // if (index <= state.currentCoctail.steps!.length) {
-
-            //   // print(state.currentCoctail.steps!.last["images"][index]);
-            //   // return state.currentCoctail.steps!.last['images'][5];
-            //   // for (var i in state.currentCoctail.steps!.last['images']) {
-            //   //   print("$i = $index");
-            //   //   return i;
-            //   // }
-            // } else {
-            //   return null;
-            // }
           } else if (index <= state.currentIngredients!.length - 1) {
             return state.currentIngredients!.elementAt(index);
           } else {
@@ -71,86 +54,95 @@ class IngredientNet extends StatelessWidget {
           );
         }
 
-        return Stack(
-          alignment: Alignment.bottomCenter,
-          // fit: StackFit.,
-          children: [
-            SizedBox(
-                width: 72.5.w,
-                height: 35.h,
-                // color: Colors.red,
-                // child: SvgPicture.asset(''),
-                child: SvgPicture.asset(picPaths.glassPics +
-                    cockBloc.state.currentCoctail.steps!
-                        .elementAt(0)['images']
-                        .first)),
+        return Container(
+          // color: Colors.green,
+          child: Stack(
+            alignment: Alignment.bottomCenter,
+            fit: StackFit.expand,
+            children: [
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                    // color: Colors.black,
+                    width: 80.w,
+                    height: 80.w,
+                    // child: Image.asset(picPaths.glassPics +
+                    //     cockBloc.state.currentCoctail.steps!
+                    //         .elementAt(0)['images']
 
-            //6
-            Align(
-              alignment: const Alignment(0.5, 0.54),
-              child: element(image: image(6), size: 13.8.w),
-            ),
+                    child: SvgPicture.asset(picPaths.glassPics +
+                        cockBloc.state.currentCoctail.steps!
+                            .elementAt(0)['images']
+                            .first)),
+              ),
 
-            //1
-            Align(
-              alignment: const Alignment(0.45, 0.15),
-              child: element(image: image(1), size: 25.8.w),
-            ),
+              //6
+              Align(
+                alignment: const Alignment(0.5, 0.54),
+                child: element(image: image(6), size: 13.8.w),
+              ),
 
-            //2
-            Align(
-              alignment: const Alignment(-0.45, 0.65),
-              child: element(image: image(2), size: 23.w),
-            ),
+              //1
+              Align(
+                alignment: const Alignment(0.45, 0.15),
+                child: element(image: image(1), size: 25.8.w),
+              ),
 
-            //3
-            Align(
-              alignment: const Alignment(-0.24, -0.3),
-              child: element(image: image(3), size: 19.7.w),
-            ),
+              //2
+              Align(
+                alignment: const Alignment(-0.45, 0.65),
+                child: element(image: image(2), size: 23.w),
+              ),
 
-            //4
-            Align(
-              alignment: const Alignment(0.6, -0.15),
-              child: element(image: image(4), size: 14.1.w),
-            ),
+              //3
+              Align(
+                alignment: const Alignment(-0.24, -0.3),
+                child: element(image: image(3), size: 19.7.w),
+              ),
 
-            //5
-            Align(
-              alignment: const Alignment(-0.4, 0.05),
-              child: element(image: image(5), size: 13.8.w),
-            ),
+              //4
+              Align(
+                alignment: const Alignment(0.6, -0.15),
+                child: element(image: image(4), size: 14.1.w),
+              ),
 
-            //7
-            Align(
-              alignment: const Alignment(0.32, -0.45),
-              child: element(image: image(7), size: 19.7.w),
-            ),
+              //5
+              Align(
+                alignment: const Alignment(-0.4, 0.05),
+                child: element(image: image(5), size: 13.8.w),
+              ),
 
-            //8
-            Align(
-              alignment: const Alignment(-0.45, -0.5),
-              child: element(image: image(8), size: 14.2.w),
-            ),
+              //7
+              Align(
+                alignment: const Alignment(0.32, -0.45),
+                child: element(image: image(7), size: 19.7.w),
+              ),
 
-            //9
-            Align(
-              alignment: const Alignment(-0.0, -0.7),
-              child: element(image: image(9), size: 16.1.w),
-            ),
+              //8
+              Align(
+                alignment: const Alignment(-0.45, -0.5),
+                child: element(image: image(8), size: 14.2.w),
+              ),
 
-            //10
-            Align(
-              alignment: const Alignment(-0.35, -0.8),
-              child: element(image: image(10), size: 10.w),
-            ),
+              //9
+              Align(
+                alignment: const Alignment(-0.0, -0.7),
+                child: element(image: image(9), size: 16.1.w),
+              ),
 
-            //11
-            Align(
-              alignment: const Alignment(0.35, -0.9),
-              child: element(image: image(11), size: 11.4.w),
-            ),
-          ],
+              //10
+              Align(
+                alignment: const Alignment(-0.35, -0.8),
+                child: element(image: image(10), size: 10.w),
+              ),
+
+              //11
+              Align(
+                alignment: const Alignment(0.35, -0.9),
+                child: element(image: image(11), size: 11.4.w),
+              ),
+            ],
+          ),
         );
       },
     );
