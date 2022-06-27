@@ -29,6 +29,57 @@ class Coctail {
     this.ingredients,
   });
 
+  factory Coctail.fromGSheets(Map<String, String> json) {
+    List<String>? categories = [];
+    List<String>? searchWords = [];
+    List<Map<String, dynamic>> steps = [];
+    List<Map<String, dynamic>> ingredients = [];
+
+    json["searchWords"]!.split(",").forEach((element) {
+      searchWords.add(element.trim());
+    });
+
+    json['categories']!.split(',').forEach((element) {
+      categories.add(element.trim());
+    });
+    // print(json);
+    List<String> presteps = json['steps']!.split('///');
+
+    presteps.forEach((step) {
+      List<String> images = step.split(':')[1].split(",");
+      List<String> trimmed = [];
+      images.forEach((el) {
+        trimmed.add(el.trim());
+      });
+
+      Map<String, dynamic> mappedStep = {
+        "step": step.split(':')[0].trim(),
+        "images": trimmed
+      };
+      steps.add(mappedStep);
+    });
+
+    List<String> preIngredients = json['ingredients']!.split('///');
+    preIngredients.forEach((elemnt) {
+      Map<String, dynamic> mappedIngredient = {
+        "what": elemnt.split(":")[0].trim(),
+        "howMuch": elemnt.split(":")[1].trim()
+      };
+      ingredients.add(mappedIngredient);
+    });
+
+    return Coctail(
+      name: json['name']!.trim(),
+      picPreview: json['picPreview']!.trim(),
+      description: json['description']!.trim(),
+      isFav: false,
+      searchWords: searchWords,
+      categories: categories,
+      steps: steps,
+      ingredients: ingredients,
+    );
+  }
+
   Widget createGridCell(
       {required BuildContext context, required Coctail coctail}) {
     bool isFav;
@@ -48,7 +99,7 @@ class Coctail {
                     child: Align(
                       alignment: Alignment.topRight,
                       child: SvgPicture.asset(
-                          'assets/images/system/white_star.svg'),
+                          'assets/images/system/white_gold_star.svg'),
                     ),
                   )
                 : const SizedBox.shrink()

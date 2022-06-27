@@ -51,6 +51,7 @@ class AbrabarWidgets {
                 child: Text(
                   seasonName,
                   style: theme.textTheme.headline2!.copyWith(
+                      fontSize: 37.sp,
                       color: isWhite ? Colors.white : const Color(0xff242320)),
                 ),
               ),
@@ -113,9 +114,13 @@ class SeasonPage extends StatelessWidget {
           appBar: AppBar(
             elevation: 0,
             bottomOpacity: 0,
-            backgroundColor: Colors.transparent,
+            backgroundColor: color,
+            leading: IconButton(
+              onPressed: (() => Navigator.of(context).pop()),
+              icon: SvgPicture.asset("${paths.systemImages}back_arrow.svg"),
+            ),
           ),
-          backgroundColor: color,
+          backgroundColor: theme.scaffoldBackgroundColor,
           body: Container(
             // color: Colors.black,
             child: ListView(
@@ -126,7 +131,7 @@ class SeasonPage extends StatelessWidget {
                   height: 40.h,
                   color: color,
                   child: Stack(
-                    fit: StackFit.loose,
+                    // fit: StackFit.loose,
                     children: [
                       Padding(
                         padding: EdgeInsets.only(top: 6.25.h, left: 6.1.w),
@@ -145,7 +150,7 @@ class SeasonPage extends StatelessWidget {
                         alignment: Alignment.bottomRight,
                         child: SizedBox(
                           height: 25.h,
-                          width: 60.w,
+                          width: 45.w,
                           child: SvgPicture.asset(
                               "${paths.categoryPics}$categoryName.svg"),
                         ),
@@ -153,16 +158,19 @@ class SeasonPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                GridView.builder(
-                    shrinkWrap: true,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2),
-                    itemCount: categoryCoctails.length,
-                    itemBuilder: (BuildContext ctx, index) {
-                      return categoryCoctails[index].createGridCell(
-                          coctail: categoryCoctails[index], context: context);
-                    }),
+                Container(
+                  color: theme.scaffoldBackgroundColor,
+                  child: GridView.builder(
+                      shrinkWrap: true,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2),
+                      itemCount: categoryCoctails.length,
+                      itemBuilder: (BuildContext ctx, index) {
+                        return categoryCoctails[index].createGridCell(
+                            coctail: categoryCoctails[index], context: context);
+                      }),
+                ),
               ],
             ),
           ),

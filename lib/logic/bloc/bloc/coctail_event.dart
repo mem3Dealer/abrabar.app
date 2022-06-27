@@ -28,3 +28,14 @@ class ChangeFavorite extends CoctailEvent {
     required this.isFav,
   });
 }
+
+class StartAndEndCooking extends CoctailEvent {
+  Coctail coctail;
+  bool isStart;
+  BuildContext context;
+  StartAndEndCooking({
+    required this.coctail,
+    required this.isStart,
+    required this.context,
+  });
+}
