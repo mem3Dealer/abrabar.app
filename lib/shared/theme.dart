@@ -39,7 +39,9 @@ class AbrabarTheme {
             fontSize: 20.sp,
             color: const Color(0xffFFBE3F)),
         subtitle2: TextStyle(
-            fontWeight: FontWeight.w400, fontSize: 20.sp, color: Colors.white),
+            fontWeight: FontWeight.w400,
+            fontSize: 20.sp,
+            color: Color(0xff242320)),
       ),
       inputDecorationTheme: InputDecorationTheme(
         hintStyle: TextStyle(color: Colors.white.withOpacity(0.8)),

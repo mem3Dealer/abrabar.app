@@ -41,6 +41,7 @@ class _CookingPageState extends State<CookingPage> {
       builder: (context, state) {
         Coctail curCoc = state.currentCoctail;
         return SafeArea(
+          top: false,
           child: Scaffold(
               appBar: AppBar(
                 // toolbarHeight: 8.h,
@@ -68,7 +69,7 @@ class _CookingPageState extends State<CookingPage> {
                         shrinkWrap: true,
                         children: [
                           Container(
-                              color: Colors.black,
+                              // color: Colors.black,
                               width: 100.w,
                               height: 100.w,
                               child: IngredientNet(
