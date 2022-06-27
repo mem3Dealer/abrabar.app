@@ -1,4 +1,4 @@
-package com.example.abrabar
+package com.adchampagne.abrabar
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -5,6 +5,7 @@ class CoctailState extends Equatable {
   List<Coctail> favoriteCoctails = [];
   Coctail currentCoctail;
   List<String>? currentIngredients;
+
   CoctailState({
     required this.allCoctails,
     required this.favoriteCoctails,

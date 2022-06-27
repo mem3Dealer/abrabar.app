@@ -1,6 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.abrabar">
-   <application
+    package="com.adchampagne.abrabar">
+
+    <uses-permission android:name="android.permission.INTERNET"/> <!-- Add this -->
+
+    <application
         android:label="abrabar"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
