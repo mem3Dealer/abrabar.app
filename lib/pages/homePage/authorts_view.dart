@@ -1,11 +1,15 @@
+import 'package:abrabar/shared/picPaths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../logic/bloc/bloc/coctail_bloc.dart';
+import '../../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
 import '../../logic/coctail.dart';
+import '../paywallScreen.dart';
 
 class AuthortsView extends StatelessWidget {
-  const AuthortsView({Key? key}) : super(key: key);
+  AuthortsView({Key? key}) : super(key: key);
+  final paths = PicPaths();
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +24,36 @@ class AuthortsView extends StatelessWidget {
                 authors.add(coc);
               }
             }
-            return GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2),
-                itemCount: authors.length,
-                itemBuilder: (BuildContext ctx, index) {
-                  return authors[index].createGridCell(
-                      context: context, coctail: authors[index]);
-                });
+            return Stack(
+              fit: StackFit.expand,
+              children: [
+                GridView.builder(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2),
+                    itemCount: authors.length,
+                    itemBuilder: (BuildContext ctx, index) {
+                      return authors[index].createGridCell(
+                          context: context, coctail: authors[index]);
+                    }),
+                Container(
+                  color: Colors.black.withOpacity(0.5),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: InkWell(
+                        onTap: () =>
+                            Navigator.of(context).push(MaterialPageRoute<void>(
+                              builder: (BuildContext context) =>
+                                  const PaywallScreen(),
+                              settings:
+                                  const RouteSettings(name: 'PaywallScreen'),
+                            )),
+                        child:
+                            SvgPicture.asset('${paths.systemImages}lock.svg')),
+                  ),
+                )
+              ],
+            );
           },
         ),
       ),

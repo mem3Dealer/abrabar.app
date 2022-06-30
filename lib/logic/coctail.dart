@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
-
-import 'bloc/bloc/coctail_bloc.dart';
+import 'bloc/bloc/coctailBloc/coctail_bloc.dart';
 
 class Coctail {
   String? name;

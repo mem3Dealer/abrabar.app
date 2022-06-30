@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "704531474168",
+    "project_id": "abrabarandroid",
+    "storage_bucket": "abrabarandroid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704531474168:android:987547511be0d71a963d0d",
+        "android_client_info": {
+          "package_name": "com.adchampagne.abrabar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704531474168-1dn0c7a38ur52loh8kv3gde74ka84jnn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjNtOnwneKT8bv0FodwRDaAjRhl3t9ev4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704531474168-1dn0c7a38ur52loh8kv3gde74ka84jnn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

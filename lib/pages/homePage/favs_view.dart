@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../logic/bloc/bloc/coctail_bloc.dart';
+import '../../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
 
 class FavoritesView extends StatelessWidget {
   const FavoritesView({Key? key}) : super(key: key);

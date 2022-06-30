@@ -1,18 +1,21 @@
 import 'dart:convert';
 import 'package:abrabar/logic/coctail.dart';
-import 'package:abrabar/logic/recipes_api.dart';
+import 'package:abrabar/logic/api/recipes_api.dart';
+import 'package:abrabar/logic/services/analytic_service.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import '../../../pages/coctailPage.dart';
-import '../../../pages/cookingPage.dart';
+import 'package:get_it/get_it.dart';
+
+import '../../../../pages/coctailPage.dart';
+import '../../../../pages/cookingPage.dart';
+
 part 'coctail_event.dart';
 part 'coctail_state.dart';
 
 class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
   static const storage = FlutterSecureStorage();
-
   CoctailBloc()
       : super(CoctailState(
             allCoctails: [],
@@ -24,6 +27,7 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
     on<ChangeFavorite>(_onChangeFav);
     on<StartAndEndCooking>(_onStartAndEndCooking);
   }
+  final anal = GetIt.I.get<AnalyticsService>();
 
   Future<void> _onCoctailInitialize(
       CoctailsInitialize event, Emitter emitter) async {
@@ -59,7 +63,8 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
         .copyWith(isFav: await storage.containsKey(key: event.coctail.name!));
     emitter(state.copyWith(currentCoctail: thisCoctail));
     Navigator.of(event.context).push(MaterialPageRoute<void>(
-        builder: (BuildContext context) => CoctailPage()));
+        builder: (BuildContext context) => CoctailPage(),
+        settings: RouteSettings(name: 'CoctailPage')));
   }
 
   Future<void> _onAnotherStep(AnotherStep event, Emitter emitter) async {
@@ -118,9 +123,10 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
           currentIngredients: event.coctail.steps!.first['images']));
       Navigator.of(event.context).push<void>(
         MaterialPageRoute<void>(
-          builder: (BuildContext context) => const CookingPage(),
-        ),
+            builder: (BuildContext context) => const CookingPage(),
+            settings: RouteSettings(name: 'CoctailPage')),
       );
+      anal.sendSelectedCoctail(event.coctail);
     } else if (event.isStart == false) {
       emitter(state.copyWith(currentIngredients: []));
       Navigator.of(event.context).pop();

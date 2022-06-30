@@ -3,7 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
-import '../logic/bloc/bloc/coctail_bloc.dart';
+import '../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
+
 import '../logic/coctail.dart';
 import 'picPaths.dart';
 
@@ -29,13 +30,13 @@ class AbrabarWidgets {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute<void>(
-            builder: (BuildContext context) => SeasonPage(
-              isWhite: isWhite,
-              title: seasonName,
-              categoryName: assetName,
-              color: color,
-            ),
-          ),
+              builder: (BuildContext context) => SeasonPage(
+                    isWhite: isWhite,
+                    title: seasonName,
+                    categoryName: assetName,
+                    color: color,
+                  ),
+              settings: RouteSettings(name: 'CategoryPage: $seasonName')),
         );
       },
       child: Container(

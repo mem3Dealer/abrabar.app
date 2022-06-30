@@ -1,4 +1,4 @@
-import 'package:abrabar/logic/bloc/bloc/coctail_bloc.dart';
+import '../../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
 import 'package:abrabar/pages/homePage/allCoctails_view.dart';
 import 'package:abrabar/pages/homePage/authorts_view.dart';
 import 'package:abrabar/pages/homePage/classic_view.dart';
@@ -11,7 +11,7 @@ import 'package:flutter_gen/gen_l10n/app_localz.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
-
+import '../../logic/bloc/bloc/monetizationBloc/monetization_bloc.dart';
 import '../../shared/picPaths.dart';
 import 'favs_view.dart';
 
@@ -23,6 +23,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   final cockBloc = GetIt.I.get<CoctailBloc>();
+  final moneyBloc = GetIt.I.get<MonetizationBloc>();
   final paths = PicPaths();
   late TabController _tabController;
   late TextEditingController controller;
@@ -34,6 +35,9 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     super.initState();
     controller = TextEditingController();
     _tabController = TabController(length: 6, vsync: this);
+    if (moneyBloc.state.isPurchased == false) {
+      _tabController.animateTo(2);
+    }
   }
 
   @override
@@ -92,9 +96,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                           context: context,
                           delegate: SearchCoctails(
                               allCoctails: cockBloc.state.allCoctails));
-                      // setState(() {
-                      //   isSearch = true;
-                      // });
                     },
                     child: SvgPicture.asset("${paths.systemImages}loopa.svg"),
                   ),
@@ -103,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
             else
               Container()
           ],
-          bottom: isSearch ? searchMode(context) : tabBar(_tabS),
+          bottom: tabBar(_tabS),
         ),
       ),
       body: BlocConsumer<CoctailBloc, CoctailState>(
@@ -138,66 +139,10 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     const AllCotailsView(),
     const FavoritesView(),
     ClassicView(),
-    const AuthortsView(),
+    AuthortsView(),
     const OccasionalView(),
     SeasonView()
   ];
-
-  PreferredSizeWidget searchMode(BuildContext context) {
-    var t = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    return PreferredSize(
-      preferredSize: const Size.fromHeight(110),
-      child: Padding(
-        padding: EdgeInsets.only(left: 4.2.w, right: 4.2.w, bottom: 2.2.h),
-        child: TextField(
-          cursorColor: Colors.white,
-          controller: controller,
-          style: theme.textTheme.headline1!.copyWith(fontSize: 32),
-          decoration: InputDecoration(
-              // suffixIconConstraints: _deleteButtonMinConst,
-              suffixIcon: Padding(
-            padding: EdgeInsets.only(bottom: 1.h),
-            child: TextButton(
-                style: ButtonStyle(
-                    fixedSize: MaterialStateProperty.all(Size(15.2.w, 3.h)),
-                    shape: MaterialStateProperty.all(
-                        const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.zero)),
-                    overlayColor: MaterialStateProperty.all(Colors.transparent),
-                    side: MaterialStateProperty.all(BorderSide(
-                        color: const Color(0xffFFBE3F).withOpacity(0.3)))),
-                onPressed: () => controller.clear(),
-                child: Text(
-                  t.delete,
-                  style: theme.textTheme.subtitle1!.copyWith(fontSize: 12.sp),
-                )),
-          )),
-        ),
-      ),
-    );
-    // return AppBar(
-    //   toolbarHeight: 4.h,
-    //   title:
-    // );
-  }
-
-  //TODO
-  // надо доаботать чтобы не делать три разные кнопки
-  // Widget myIconButton(String path, Function onTap, bool isLeft) {
-  //   return Padding(
-  //     padding:
-  //         isLeft ? EdgeInsets.only(left: 3.5.w) : EdgeInsets.only(right: 3.5.w),
-  //     child: SizedBox(
-  //       width: 6.1.w,
-  //       height: 2.75.h,
-  //       child: GestureDetector(
-  //         onTap: onTap(),
-  //         child: SvgPicture.asset(path),
-  //       ),
-  //     ),
-  //   );
-  // }
 
   Widget closeSearhButton() {
     return IconButton(
@@ -212,17 +157,3 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     );
   }
 }
-
-// IconButton settingsButton(BuildContext context) {
-//   return IconButton(
-//       splashColor: Colors.transparent,
-//       highlightColor: Colors.transparent,
-//       icon: Image.asset('assets/images/gaika.png'),
-//       onPressed: () {
-//         Navigator.of(context).push(
-//           MaterialPageRoute<void>(
-//             builder: (BuildContext context) => const SettingsPage(),
-//           ),
-//         );
-//       });
-// }

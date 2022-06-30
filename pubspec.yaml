@@ -20,6 +20,10 @@ dependencies:
   flutter_bloc: ^8.0.1
   flutter_secure_storage: ^5.0.2
   gsheets: ^0.4.2
+  firebase_core: ^1.18.0
+  firebase_messaging: ^11.4.2
+  awesome_notifications: ^0.6.21
+  firebase_analytics: ^9.1.10
  
 
 dev_dependencies:

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:get_it/get_it.dart';
-import '../../logic/bloc/bloc/coctail_bloc.dart';
+import '../../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
 import '../../logic/coctail.dart';
 
 class ClassicView extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../logic/bloc/bloc/coctail_bloc.dart';
+import '../../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
 
 class AllCotailsView extends StatelessWidget {
   const AllCotailsView({Key? key}) : super(key: key);

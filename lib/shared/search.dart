@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:abrabar/logic/coctail.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
-
-import '../logic/bloc/bloc/coctail_bloc.dart';
+import '../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
 
 class SearchCoctails extends SearchDelegate<String> {
   final cockBloc = GetIt.I.get<CoctailBloc>();
@@ -50,7 +49,7 @@ class SearchCoctails extends SearchDelegate<String> {
     List<Coctail> resultCoctails = [];
 
     resultCoctails = allCoctails.where((coctail) {
-      return coctail.searchWords!.contains(query.toLowerCase());
+      return coctail.searchWords!.contains(query.toLowerCase().trim());
     }).toList();
 
     return Padding(

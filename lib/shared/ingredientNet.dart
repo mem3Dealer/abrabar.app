@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
-import '../logic/bloc/bloc/coctail_bloc.dart';
+import '../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
 
 class IngredientNet extends StatelessWidget {
   bool isPreview;

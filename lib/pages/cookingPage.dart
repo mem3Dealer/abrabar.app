@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
-import '../logic/bloc/bloc/coctail_bloc.dart';
+import '../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
 import '../logic/coctail.dart';
 import 'dart:math' as math;
 
@@ -91,7 +91,9 @@ class _CookingPageState extends State<CookingPage> {
                             height: 25.h,
                             child: PageView.builder(
                               onPageChanged: (index) {
-                                pageIndex = index;
+                                setState(() {
+                                  pageIndex = index;
+                                });
                                 cockBloc.add(AnotherStep(index: index));
                               },
                               controller: controller,
@@ -112,7 +114,7 @@ class _CookingPageState extends State<CookingPage> {
                     Align(
                       alignment: Alignment.bottomCenter,
                       child: Padding(
-                        padding: EdgeInsets.only(top: 3.h, bottom: 5.6.h),
+                        padding: EdgeInsets.only(bottom: 5.h),
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [

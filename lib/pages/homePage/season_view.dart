@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import '../../logic/bloc/bloc/coctail_bloc.dart';
+import '../../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
 import '../../shared/picPaths.dart';
 import 'package:flutter_gen/gen_l10n/app_localz.dart';
 import '../../shared/widgets.dart';
