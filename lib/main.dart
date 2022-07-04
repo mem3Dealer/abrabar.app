@@ -31,14 +31,14 @@ Future<void> main() async {
         enableLights: true,
         enableVibration: true,
         importance: NotificationImportance.Max),
-    // NotificationChannel(
-    //     channelKey: 'default_notification_channel_id',
-    //     channelName: 'default_notification_channel_id',
-    //     channelDescription: '?????',
-    //     playSound: true,
-    //     enableLights: true,
-    //     enableVibration: true,
-    //     importance: NotificationImportance.Max),
+    //   // NotificationChannel(
+    //   //     channelKey: 'default_notification_channel_id',
+    //   //     channelName: 'default_notification_channel_id',
+    //   //     channelDescription: '?????',
+    //   //     playSound: true,
+    //   //     enableLights: true,
+    //   //     enableVibration: true,
+    //   //     importance: NotificationImportance.Max),
   ]);
   notes.subscribeToNotes();
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);

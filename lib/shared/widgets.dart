@@ -98,8 +98,18 @@ class SeasonPage extends StatelessWidget {
   final cockBloc = GetIt.I.get<CoctailBloc>();
   final paths = PicPaths();
 
+  List<String> whoIsWhite = [
+    'spring',
+    'autumn',
+    'new_year',
+    'patrick',
+    'graduation'
+  ];
+
   @override
   Widget build(BuildContext context) {
+    bool isWhite = whoIsWhite.contains(categoryName);
+
     return BlocConsumer<CoctailBloc, CoctailState>(
       listener: (context, state) {},
       builder: (context, state) {
@@ -118,62 +128,63 @@ class SeasonPage extends StatelessWidget {
             backgroundColor: color,
             leading: IconButton(
               onPressed: (() => Navigator.of(context).pop()),
-              icon: SvgPicture.asset("${paths.systemImages}back_arrow.svg"),
+              icon: SvgPicture.asset(
+                "${paths.systemImages}back_arrow.svg",
+                color: isWhite ? Colors.white : Colors.black,
+              ),
             ),
           ),
           backgroundColor: theme.scaffoldBackgroundColor,
-          body: Container(
-            // color: Colors.black,
-            child: ListView(
-              shrinkWrap: true,
-              children: [
-                Container(
-                  width: 100.w,
-                  height: 40.h,
-                  color: color,
-                  child: Stack(
-                    // fit: StackFit.loose,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(top: 6.25.h, left: 6.1.w),
-                        child: Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            title,
-                            style: theme.textTheme.headline2!.copyWith(
-                                color: isWhite
-                                    ? Colors.white
-                                    : const Color(0xff242320)),
-                          ),
+          body: ListView(
+            shrinkWrap: true,
+            children: [
+              Container(
+                width: 100.w,
+                height: 40.h,
+                color: color,
+                child: Stack(
+                  // fit: StackFit.loose,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(top: 6.25.h, left: 6.1.w),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          title,
+                          style: theme.textTheme.headline2!.copyWith(
+                              color: isWhite
+                                  ? Colors.white
+                                  : const Color(0xff242320)),
                         ),
                       ),
-                      Align(
-                        alignment: Alignment.bottomRight,
-                        child: SizedBox(
-                          height: 25.h,
-                          width: 45.w,
-                          child: SvgPicture.asset(
-                              "${paths.categoryPics}$categoryName.svg"),
-                        ),
-                      )
-                    ],
-                  ),
+                    ),
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: SizedBox(
+                        height: 25.h,
+                        width: 45.w,
+                        child: SvgPicture.asset(
+                            "${paths.categoryPics}$categoryName.svg"),
+                      ),
+                    )
+                  ],
                 ),
-                Container(
-                  color: theme.scaffoldBackgroundColor,
-                  child: GridView.builder(
-                      shrinkWrap: true,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2),
-                      itemCount: categoryCoctails.length,
-                      itemBuilder: (BuildContext ctx, index) {
-                        return categoryCoctails[index].createGridCell(
-                            coctail: categoryCoctails[index], context: context);
-                      }),
-                ),
-              ],
-            ),
+              ),
+              Container(
+                color: theme.scaffoldBackgroundColor,
+                child: GridView.builder(
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2),
+                    itemCount: categoryCoctails.length,
+                    itemBuilder: (BuildContext ctx, index) {
+                      return categoryCoctails[index].createGridCell(
+                          coctail: categoryCoctails[index], context: context);
+                    }),
+              ),
+            ],
           ),
         );
       },

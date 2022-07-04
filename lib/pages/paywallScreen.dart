@@ -36,7 +36,9 @@ class PaywallScreen extends StatelessWidget {
         leading: IconButton(
           splashColor: Colors.transparent,
           hoverColor: Colors.transparent,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
           icon: SvgPicture.asset(
             "${paths.systemImages}close.svg",
             color: Colors.white,

@@ -20,15 +20,18 @@ class _CookingPageState extends State<CookingPage> {
   final cockBloc = GetIt.I.get<CoctailBloc>();
   late PageController controller;
   int pageIndex = 0;
+  final listController = ScrollController();
   @override
   void initState() {
     controller = PageController();
+    // listController.jumpTo(0.0);
     super.initState();
   }
 
   @override
   void dispose() {
     controller.dispose();
+    listController.dispose();
     super.dispose();
   }
 
@@ -61,53 +64,67 @@ class _CookingPageState extends State<CookingPage> {
                 ),
               ),
               backgroundColor: theme.primaryColor,
+              // backgroundColor: Colors.black54,
               body: Center(
                 child: Column(
                   children: [
                     Expanded(
-                      child: ListView(
-                        shrinkWrap: true,
+                      child: Stack(
                         children: [
-                          Container(
-                              // color: Colors.black,
-                              width: 100.w,
-                              height: 100.w,
-                              child: IngredientNet(
-                                isPreview: false,
-                              )),
-                          Padding(
-                            padding: EdgeInsets.only(top: 3.h, bottom: 2.3.h),
-                            child: Center(
-                              child: Text(
-                                '${pageIndex + 1} ШАГ ИЗ ${curCoc.steps!.length}',
-                                style: theme.textTheme.headline3!.copyWith(
-                                    color: Colors.white.withOpacity(0.5)),
+                          ListView(
+                            controller: listController,
+                            shrinkWrap: true,
+                            children: [
+                              Container(
+                                  // color: Colors.black,
+                                  width: 100.w,
+                                  height: 100.w,
+                                  child: IngredientNet(
+                                    isPreview: false,
+                                  )),
+                              Padding(
+                                padding:
+                                    EdgeInsets.only(top: 3.h, bottom: 2.3.h),
+                                child: Center(
+                                  child: Text(
+                                    '${pageIndex + 1} ШАГ ИЗ ${curCoc.steps!.length}',
+                                    style: theme.textTheme.headline3!.copyWith(
+                                        color: Colors.white.withOpacity(0.5)),
+                                  ),
+                                ),
                               ),
-                            ),
+                              Container(
+                                // color: Colors.green,
+                                width: 100.w,
+                                height: 25.h,
+                                child: PageView.builder(
+                                  onPageChanged: (index) {
+                                    setState(() {
+                                      pageIndex = index;
+                                    });
+                                    cockBloc.add(AnotherStep(index: index));
+                                  },
+                                  controller: controller,
+                                  itemCount: curCoc.steps!.length,
+                                  itemBuilder: (context, position) {
+                                    return Text(
+                                      curCoc.steps![position]['step'],
+                                      textAlign: TextAlign.center,
+                                      style: theme.textTheme.headline1!
+                                          .copyWith(fontSize: 32.sp),
+                                    );
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
-                          Container(
-                            // color: Colors.green,
-                            width: 100.w,
-                            height: 25.h,
-                            child: PageView.builder(
-                              onPageChanged: (index) {
-                                setState(() {
-                                  pageIndex = index;
-                                });
-                                cockBloc.add(AnotherStep(index: index));
-                              },
-                              controller: controller,
-                              itemCount: curCoc.steps!.length,
-                              itemBuilder: (context, position) {
-                                return Text(
-                                  curCoc.steps![position]['step'],
-                                  textAlign: TextAlign.center,
-                                  style: theme.textTheme.headline1!
-                                      .copyWith(fontSize: 32.sp),
-                                );
-                              },
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Image.asset(
+                              '${paths.systemImages}grade1.png',
+                              // color: Colors.white.withOpacity(0.8),
                             ),
-                          ),
+                          )
                         ],
                       ),
                     ),
@@ -115,41 +132,46 @@ class _CookingPageState extends State<CookingPage> {
                       alignment: Alignment.bottomCenter,
                       child: Padding(
                         padding: EdgeInsets.only(bottom: 5.h),
-                        child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              IconButton(
-                                  // onPressed: null,
-                                  onPressed: () => controller.previousPage(
-                                      duration:
-                                          const Duration(milliseconds: 1000),
-                                      curve: Curves.ease),
-                                  splashColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  icon: Transform(
-                                    alignment: Alignment.center,
-                                    transform: Matrix4.rotationY(math.pi),
-                                    child: SvgPicture.asset(
-                                      '${paths.systemImages}cooking_arrow.svg',
-                                      color: pageIndex == 0
-                                          ? Colors.white.withOpacity(0.5)
-                                          : null,
-                                    ),
-                                  )),
-                              IconButton(
-                                  onPressed: () => controller.nextPage(
-                                      duration:
-                                          const Duration(milliseconds: 1000),
-                                      curve: Curves.ease),
-                                  splashColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  icon: SvgPicture.asset(
-                                    '${paths.systemImages}cooking_arrow.svg',
-                                    color: pageIndex == curCoc.steps!.length - 1
-                                        ? Colors.white.withOpacity(0.5)
-                                        : null,
-                                  )),
-                            ]),
+                        child: Column(
+                          children: [
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  IconButton(
+                                      // onPressed: null,
+                                      onPressed: () => controller.previousPage(
+                                          duration: const Duration(
+                                              milliseconds: 1000),
+                                          curve: Curves.ease),
+                                      splashColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      icon: Transform(
+                                        alignment: Alignment.center,
+                                        transform: Matrix4.rotationY(math.pi),
+                                        child: SvgPicture.asset(
+                                          '${paths.systemImages}cooking_arrow.svg',
+                                          color: pageIndex == 0
+                                              ? Colors.white.withOpacity(0.5)
+                                              : null,
+                                        ),
+                                      )),
+                                  IconButton(
+                                      onPressed: () => controller.nextPage(
+                                          duration: const Duration(
+                                              milliseconds: 1000),
+                                          curve: Curves.ease),
+                                      splashColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      icon: SvgPicture.asset(
+                                        '${paths.systemImages}cooking_arrow.svg',
+                                        color: pageIndex ==
+                                                curCoc.steps!.length - 1
+                                            ? Colors.white.withOpacity(0.5)
+                                            : null,
+                                      )),
+                                ]),
+                          ],
+                        ),
                       ),
                     )
                   ],

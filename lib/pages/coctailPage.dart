@@ -1,5 +1,4 @@
 import 'package:abrabar/logic/coctail.dart';
-import 'package:abrabar/pages/cookingPage.dart';
 import 'package:abrabar/shared/ingredientNet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,6 +22,31 @@ class CoctailPage extends StatefulWidget {
 
 class _CoctailPageState extends State<CoctailPage>
     with SingleTickerProviderStateMixin {
+  late ScrollController controller;
+
+  @override
+  void initState() {
+    controller = ScrollController();
+    //TODO
+    // сделать чтобы прыгал на границу с черным блоком ингредиентов
+    // if (controller.hasClients) {
+    //   Future.delayed(Duration(milliseconds: 50), () {
+    //     controller.jumpTo(70);
+    //     print('assdasd');
+    //   });
+    // }
+    // controller.addListener(() {
+    //   print(controller.position);
+    // });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final paths = PicPaths();
@@ -80,6 +104,7 @@ class _CoctailPageState extends State<CoctailPage>
       CoctailState state, PicPaths paths, BuildContext context) {
     return ListView(
       scrollDirection: Axis.vertical,
+      controller: controller,
       shrinkWrap: true,
       children: [
         Container(
@@ -102,9 +127,13 @@ class _CoctailPageState extends State<CoctailPage>
               SizedBox(
                 height: 5.h,
               ),
-              Text(
-                coc.name ?? '',
-                style: theme.textTheme.headline1!.copyWith(fontSize: 32.sp),
+              Padding(
+                padding: EdgeInsets.only(left: 4.w, right: 4.w),
+                child: Text(
+                  coc.name ?? '',
+                  textAlign: TextAlign.center,
+                  style: theme.textTheme.headline1!.copyWith(fontSize: 32.sp),
+                ),
               ),
               Text(
                 coc.description!,

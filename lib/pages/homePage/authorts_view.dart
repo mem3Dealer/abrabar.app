@@ -36,20 +36,23 @@ class AuthortsView extends StatelessWidget {
                       return authors[index].createGridCell(
                           context: context, coctail: authors[index]);
                     }),
-                Container(
-                  color: Colors.black.withOpacity(0.5),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: InkWell(
-                        onTap: () =>
-                            Navigator.of(context).push(MaterialPageRoute<void>(
-                              builder: (BuildContext context) =>
-                                  const PaywallScreen(),
-                              settings:
-                                  const RouteSettings(name: 'PaywallScreen'),
-                            )),
-                        child:
-                            SvgPicture.asset('${paths.systemImages}lock.svg')),
+                GestureDetector(
+                  behavior: HitTestBehavior.translucent,
+                  child: Container(
+                    color: Colors.black.withOpacity(0.5),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: InkWell(
+                          onTap: () => Navigator.of(context)
+                                  .push(MaterialPageRoute<void>(
+                                builder: (BuildContext context) =>
+                                    const PaywallScreen(),
+                                settings:
+                                    const RouteSettings(name: 'PaywallScreen'),
+                              )),
+                          child: SvgPicture.asset(
+                              '${paths.systemImages}lock.svg')),
+                    ),
                   ),
                 )
               ],
