@@ -19,5 +19,15 @@
     "graduation": "GRADUATION",
     "womensDay": "WOMENS DAY",
     "stPatrick":"ST. PATRICKS",
-    "allCoctails": "ALL COCTAILS"
+    "allCoctails": "ALL COCTAILS",
+    "getAccess":"GET ACCESS TO ALL COCKTAIL RECIPES",
+    "moreThan":"MORE THAN 150 RECIPES!",
+    "coctailsOccaisonal":"OCCASIONAL COCTAILS",
+    "coctailsSeasonal":"SEASON COCTAILS",
+    "coctailsAuthor": "AUTHOR'S COCTAILS",
+    "onlyfor":"ONLY FOR ",
+  
+    "onceAndForEver":"ONCE AND FOREVER!",
+    "continue1":"CONTINUE"
+    
 }

@@ -47,8 +47,6 @@ class _CookingPageState extends State<CookingPage> {
           top: false,
           child: Scaffold(
               appBar: AppBar(
-                // toolbarHeight: 8.h,
-                // backgroundColor: Colors.blue,
                 backgroundColor: Colors.transparent,
                 centerTitle: true,
                 title: Text(

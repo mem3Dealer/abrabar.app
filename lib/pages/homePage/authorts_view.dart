@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
+import '../../logic/bloc/bloc/monetizationBloc/monetization_bloc.dart';
 import '../../logic/coctail.dart';
 import '../paywallScreen.dart';
 
@@ -36,24 +37,32 @@ class AuthortsView extends StatelessWidget {
                       return authors[index].createGridCell(
                           context: context, coctail: authors[index]);
                     }),
-                GestureDetector(
-                  behavior: HitTestBehavior.translucent,
-                  child: Container(
-                    color: Colors.black.withOpacity(0.5),
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: InkWell(
-                          onTap: () => Navigator.of(context)
-                                  .push(MaterialPageRoute<void>(
-                                builder: (BuildContext context) =>
-                                    const PaywallScreen(),
-                                settings:
-                                    const RouteSettings(name: 'PaywallScreen'),
-                              )),
-                          child: SvgPicture.asset(
-                              '${paths.systemImages}lock.svg')),
-                    ),
-                  ),
+                BlocBuilder<MonetizationBloc, MonetizationState>(
+                  builder: (context, state) {
+                    if (state.isPurchased == false) {
+                      return GestureDetector(
+                        behavior: HitTestBehavior.translucent,
+                        child: Container(
+                          color: Colors.black.withOpacity(0.5),
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: InkWell(
+                                onTap: () => Navigator.of(context)
+                                        .push(MaterialPageRoute<void>(
+                                      builder: (BuildContext context) =>
+                                          const PaywallScreen(),
+                                      settings: const RouteSettings(
+                                          name: 'PaywallScreen'),
+                                    )),
+                                child: SvgPicture.asset(
+                                    '${paths.systemImages}lock.svg')),
+                          ),
+                        ),
+                      );
+                    } else {
+                      return const SizedBox.shrink();
+                    }
+                  },
                 )
               ],
             );

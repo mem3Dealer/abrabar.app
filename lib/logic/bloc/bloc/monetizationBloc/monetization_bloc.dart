@@ -6,6 +6,11 @@ part 'monetization_state.dart';
 
 class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
   MonetizationBloc() : super(MonetizationInitial(false)) {
-    on<MonetizationEvent>((event, emit) {});
+    on<MonetizationPurchase>(_onMonetizationPurchase);
+  }
+
+  Future<void> _onMonetizationPurchase(
+      MonetizationPurchase event, Emitter emitter) async {
+    emitter(state.copyWith(isPurchased: true));
   }
 }

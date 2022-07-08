@@ -27,8 +27,10 @@ class _CoctailPageState extends State<CoctailPage>
   @override
   void initState() {
     controller = ScrollController();
+
     //TODO
     // сделать чтобы прыгал на границу с черным блоком ингредиентов
+
     // if (controller.hasClients) {
     //   Future.delayed(Duration(milliseconds: 50), () {
     //     controller.jumpTo(70);
@@ -51,6 +53,7 @@ class _CoctailPageState extends State<CoctailPage>
   Widget build(BuildContext context) {
     final paths = PicPaths();
     final cockBloc = GetIt.I.get<CoctailBloc>();
+
     cockBloc.add(AnotherStep(index: 0));
     final theme = Theme.of(context);
     return BlocConsumer<CoctailBloc, CoctailState>(
@@ -63,49 +66,51 @@ class _CoctailPageState extends State<CoctailPage>
               backgroundColor: theme.primaryColor,
               // body: buildBody(theme, coc, cockBloc, state, paths, context),
               body: NestedScrollView(
-                headerSliverBuilder:
-                    ((BuildContext context, innerBoxIsScrolled) {
-                  return [
-                    SliverAppBar(
-                      pinned: true,
-                      floating: true,
-                      forceElevated: innerBoxIsScrolled,
-                      backgroundColor: Colors.transparent,
-                      leading: Padding(
-                        padding: EdgeInsets.only(left: 3.w),
-                        child: SizedBox(
-                          width: 4.w,
-                          height: 4.h,
-                          child: IconButton(
-                              hoverColor: Colors.transparent,
-                              splashColor: Colors.transparent,
-                              onPressed: () async {
-                                // await cockBloc.noCurrent(context);
-                                Navigator.of(context).pop();
-                              },
-                              icon: SvgPicture.asset(
-                                '${paths.systemImages}back_arrow.svg',
-                                fit: BoxFit.scaleDown,
-                              )),
+                  controller: controller,
+                  floatHeaderSlivers: true,
+                  headerSliverBuilder:
+                      (BuildContext context, bool innerBoxIsScrolled) {
+                    return <Widget>[
+                      // buildSliver(innerBoxIsScrolled, context, paths)
+                      SliverAppBar(
+                        floating: true,
+                        // pinned: true,
+                        backgroundColor: Colors.transparent,
+                        // backgroundColor: Colors.blue,
+                        leading: Padding(
+                          padding: EdgeInsets.only(left: 3.w),
+                          child: SizedBox(
+                            width: 4.w,
+                            height: 4.h,
+                            child: IconButton(
+                                hoverColor: Colors.transparent,
+                                splashColor: Colors.transparent,
+                                onPressed: () async {
+                                  // await cockBloc.noCurrent(context);
+                                  Navigator.of(context).pop();
+                                },
+                                icon: SvgPicture.asset(
+                                  '${paths.systemImages}back_arrow.svg',
+                                  fit: BoxFit.scaleDown,
+                                )),
+                          ),
                         ),
-                      ),
-                    )
-                  ];
-                }),
-                body: buildBody(theme, coc, cockBloc, state, paths, context),
-              ),
+                      )
+                    ];
+                  },
+                  body: buildBody(theme, coc, cockBloc, state, paths, context)),
             ));
       },
     );
   }
 
-  // Padding buildAppBar(BuildContext context, PicPaths paths) {
   ListView buildBody(ThemeData theme, Coctail coc, CoctailBloc cockBloc,
       CoctailState state, PicPaths paths, BuildContext context) {
     return ListView(
-      scrollDirection: Axis.vertical,
-      controller: controller,
-      shrinkWrap: true,
+      padding: EdgeInsets.zero,
+      // scrollDirection: Axis.vertical,;
+      // controller: controller,
+      // shrinkWrap: true,
       children: [
         Container(
           color: theme.primaryColor,
@@ -113,9 +118,6 @@ class _CoctailPageState extends State<CoctailPage>
           //     AppBar().preferredSize.height,
           child: Column(
             children: [
-              SizedBox(
-                height: 2.h,
-              ),
               Container(
                 // color: Colors.black,
                 width: 100.w,

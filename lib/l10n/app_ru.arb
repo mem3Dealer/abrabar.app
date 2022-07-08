@@ -19,5 +19,15 @@
     "graduation": "ВЫПУСКНОЙ",
     "womensDay": "8 МАРТА",
     "stPatrick":"ДЕНЬ СВЯТОГО ПАТРИКА",
-    "allCoctails": "ВСЕ КОКТЕЙЛИ"
+    "allCoctails": "ВСЕ КОКТЕЙЛИ",
+    "getAccess":"ПОЛУЧИ ДОСТУП КО ВСЕМ РЕЦЕПТАМ КОКТЕЙЛЕЙ",
+    "moreThan":"БОЛЕЕ 150 РЕЦЕПТОВ!",
+    "coctailsOccaisonal":"КОКТЕЙЛИ ДЛЯ СОБЫТИЙ",
+    "coctailsSeasonal":"СЕЗОННЫЕ КОКТЕЙЛИ",
+    "coctailsAuthor": "АВТОРСКИЕ КОКТЕЙЛИ",
+    "onlyfor":"ВСЕГО ЗА ",
+
+    "onceAndForEver":"ОДИН РАЗ И НАВСЕГДА!",
+    "continue1":"ПРОДОЛЖИТЬ"
+    
 }
