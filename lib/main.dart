@@ -29,9 +29,17 @@ const AndroidNotificationChannel channel = AndroidNotificationChannel(
 final FlutterLocalNotificationsPlugin flnPlugin =
     FlutterLocalNotificationsPlugin();
 
+final initializationSettingsAndroid =
+    AndroidInitializationSettings('@drawable/ic_abrabar_note');
+final initializationSettingsIOS = IOSInitializationSettings();
+final initializationSettings = InitializationSettings(
+  android: initializationSettingsAndroid,
+  iOS: initializationSettingsIOS,
+);
+
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
-  log('BG MESSAGE ARRIVED: ${message.data}');
+  log('bg message here: ${message.notification!.title}');
 }
 
 var notes = Notifications();
@@ -49,6 +57,7 @@ Future<void> main() async {
 
   await FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(
       alert: true, badge: true, sound: true);
+
   GetIt.instance
     ..registerSingleton<AnalyticsService>(AnalyticsService())
     ..registerSingleton<CoctailBloc>(CoctailBloc()..add(CoctailsInitialize()))
@@ -88,7 +97,6 @@ class MyApp extends StatelessWidget {
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
             theme: AbrabarTheme.lightTheme,
-            title: 'Flutter Demo',
             home: const SplashScreen());
       }),
     );

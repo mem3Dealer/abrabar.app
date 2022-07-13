@@ -28,7 +28,7 @@ class Coctail {
     this.ingredients,
   });
 
-  factory Coctail.fromGSheets(Map<String, String> json) {
+  factory Coctail.fromGSheets(Map json) {
     List<String>? categories = [];
     List<String>? searchWords = [];
     List<Map<String, dynamic>> steps = [];

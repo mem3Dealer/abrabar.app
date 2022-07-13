@@ -23,7 +23,8 @@ class Notifications {
             note.body,
             NotificationDetails(
                 android: AndroidNotificationDetails(channel.id, channel.name,
-                    color: Colors.pink, icon: '@mipmap/ic_launcher')));
+                    color: Color(0xff4CB469),
+                    icon: '@drawable/ic_abrabar_note')));
       }
     });
 
@@ -36,16 +37,4 @@ class Notifications {
       }
     });
   }
-
-  // void onBackGroundNotification(RemoteMessage message) async {
-  //   await Firebase.initializeApp();
-  //   // print(message.)
-  //   await AwesomeNotifications().createNotification(
-  //       content: NotificationContent(
-  //           id: _rndId,
-  //           wakeUpScreen: true,
-  //           channelKey: "basic_key",
-  //           title: 'пуш через жопу ${message.data['title']}',
-  //           body: message.data['body']));
-  // }
 }

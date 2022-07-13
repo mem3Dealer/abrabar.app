@@ -136,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   }
 
   List<Widget> views = [
-    const AllCotailsView(),
+    AllCotailsView(),
     const FavoritesView(),
     ClassicView(),
     AuthortsView(),

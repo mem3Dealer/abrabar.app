@@ -1,5 +1,9 @@
+import 'dart:developer';
+
 import 'package:abrabar/logic/coctail.dart';
 import 'package:gsheets/gsheets.dart';
+import 'dart:convert';
+import 'dart:io';
 
 class RecipesApi {
   static const credentials = r'''
@@ -17,19 +21,23 @@ class RecipesApi {
 }
 ''';
   static const spreadSheetId = '11V0Rjnbj8ZrH7hIa9DFakQmwAcW_KByVcij-PTW5bQw';
+
   static final gsheets = GSheets(credentials);
-  static Worksheet? recipesSheet;
+  static Worksheet? russianRecipes;
+  static Worksheet? englishRecipes;
 
   static Future<List<Coctail>> fetchRecipes() async {
     List<Map<String, String>>? res;
+    List<Map<String, String>>? engRes;
     // res = await recipesSheet?.values.allColumns();
 
-    res = await recipesSheet!.values.map.allRows();
+    res = await russianRecipes!.values.map.allRows();
+    engRes = await englishRecipes!.values.map.allRows();
 
     List<Coctail> allCocs = [];
-
-    if (res != null) {
-      res.forEach((element) {
+    // await writeJson(res!);
+    if (engRes != null) {
+      engRes.forEach((element) {
         allCocs.add(Coctail.fromGSheets(element));
       });
       // print(allCocs[1].categories);
@@ -39,9 +47,33 @@ class RecipesApi {
     }
   }
 
+  // static Future<void> writeJson(List<Map<String, dynamic>> import) async {
+  //   final directory = await getApplicationDocumentsDirectory();
+  //   final path = directory.path;
+  //   final File file = File("${path}/recepies_ru.json");
+
+  //   // String path =
+  //   //     'C:/Users/Iaroslav/AndroidStudioProjects/Abrabar/abrabar/assets/';
+  //   // final File file = File(
+  //   //     'C:/Users/Iaroslav/AndroidStudioProjects/Abrabar/abrabar/assets/recepies_ru.json');
+  //   // if (await file.exists() == false) {
+  //   String json = jsonEncode(import);
+  //   log(json);
+  //   //   File anotherFile =
+  //   //       await File("${path}recepes_ru.json").create(recursive: true);
+  //   //   anotherFile.writeAsStringSync(json);
+  //   // }
+  //   print(await file.exists());
+  //   file.writeAsString(json).then((value) {
+  //     print('written');
+  //   });
+  //   // print(json);
+  // }
+
   static Future init() async {
     final spreadsheet = await gsheets.spreadsheet(spreadSheetId);
-    recipesSheet = await getSheet(spreadsheet, title: "recipes");
+    russianRecipes = await getSheet(spreadsheet, title: "recipes");
+    englishRecipes = await getSheet(spreadsheet, title: "recipes_eng");
   }
 
   static Future<Worksheet> getSheet(Spreadsheet spreadsheet,

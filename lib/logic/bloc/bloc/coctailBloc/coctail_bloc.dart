@@ -5,6 +5,7 @@ import 'package:abrabar/logic/services/analytic_service.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 
@@ -32,14 +33,16 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
   Future<void> _onCoctailInitialize(
       CoctailsInitialize event, Emitter emitter) async {
     List<Coctail> fetchedCocs = [];
-    fetchedCocs = await RecipesApi.fetchRecipes();
-    // final String source = await rootBundle.loadString('assets/allJSON.json');
-    // List data = await json.decode(source);
-    // data.forEach((element) {
-    //   state.allCoctails.add(Coctail.fromMap(element));
-    // });
+    // fetchedCocs = await RecipesApi.fetchRecipes();
+    final String source =
+        await rootBundle.loadString('assets/recepies_ru.json');
+    List data = await json.decode(source);
 
-    emitter(state.copyWith(allCoctails: fetchedCocs));
+    data.forEach((element) {
+      state.allCoctails.add(Coctail.fromGSheets(element));
+    });
+
+    emitter(state.copyWith(allCoctails: state.allCoctails));
 
     List list = [];
     Map<String, String> allValues = await storage.readAll();
