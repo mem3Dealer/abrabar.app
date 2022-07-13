@@ -1,3 +1,4 @@
+import 'package:abrabar/logic/services/analytic_service.dart';
 import 'package:abrabar/shared/picPaths.dart';
 import 'package:flutter/material.dart';
 
@@ -8,11 +9,16 @@ import '../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
 
 class SearchCoctails extends SearchDelegate<String> {
   final cockBloc = GetIt.I.get<CoctailBloc>();
+  final anal = GetIt.I.get<AnalyticsService>();
   final paths = PicPaths();
   List<Coctail> allCoctails = [];
   SearchCoctails({
     required this.allCoctails,
   });
+
+  @override
+  // TODO: implement textInputAction
+  TextInputAction get textInputAction => TextInputAction.search;
 
   @override
   ThemeData appBarTheme(BuildContext context) {
@@ -51,6 +57,7 @@ class SearchCoctails extends SearchDelegate<String> {
     resultCoctails = allCoctails.where((coctail) {
       return coctail.searchWords!.contains(query.toLowerCase().trim());
     }).toList();
+    anal.search(query);
 
     return Padding(
       padding: EdgeInsets.only(top: 8.0),

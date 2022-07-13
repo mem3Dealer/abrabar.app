@@ -1,3 +1,5 @@
+import 'package:abrabar/logic/services/analytic_service.dart';
+
 import '../../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
 import 'package:abrabar/pages/homePage/allCoctails_view.dart';
 import 'package:abrabar/pages/homePage/authorts_view.dart';
@@ -24,20 +26,39 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   final cockBloc = GetIt.I.get<CoctailBloc>();
   final moneyBloc = GetIt.I.get<MonetizationBloc>();
+  final anal = GetIt.I.get<AnalyticsService>();
   final paths = PicPaths();
   late TabController _tabController;
   late TextEditingController controller;
   bool isSearch = false;
   final double _tabHeight = 5.h;
+  List<String> collectionNames = [
+    'all_cocktails',
+    'favs',
+    'classic',
+    'authors',
+    'occasional',
+    'season'
+  ];
 
   @override
   void initState() {
     super.initState();
     controller = TextEditingController();
     _tabController = TabController(length: 6, vsync: this);
+    _tabController.addListener(() {
+      if (!_tabController.animation!.isCompleted ||
+          _tabController.indexIsChanging) {
+        anal.changeCollection(getTarget());
+      }
+    });
     if (moneyBloc.state.isPurchased == false) {
       _tabController.animateTo(2);
     }
+  }
+
+  String getTarget() {
+    return collectionNames[_tabController.index];
   }
 
   @override
@@ -75,8 +96,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(18.h),
         child: AppBar(
-          // toolbarHeight: 7.25.h,
-          // leading: isSearch ? closeSearhButton() : Container(),
           title: Text(
             isSearch ? t.search : 'ABRABAR',
             style: theme.textTheme.headline1,
@@ -143,17 +162,4 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     const OccasionalView(),
     SeasonView()
   ];
-
-  Widget closeSearhButton() {
-    return IconButton(
-      splashColor: Colors.transparent,
-      highlightColor: Colors.transparent,
-      onPressed: () {
-        setState(() {
-          isSearch = false;
-        });
-      },
-      icon: SvgPicture.asset('${paths.systemImages}close.svg'),
-    );
-  }
 }

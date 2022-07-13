@@ -17,6 +17,8 @@ part 'coctail_state.dart';
 
 class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
   static const storage = FlutterSecureStorage();
+  final anal = GetIt.I.get<AnalyticsService>();
+
   CoctailBloc()
       : super(CoctailState(
             allCoctails: [],
@@ -28,7 +30,6 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
     on<ChangeFavorite>(_onChangeFav);
     on<StartAndEndCooking>(_onStartAndEndCooking);
   }
-  final anal = GetIt.I.get<AnalyticsService>();
 
   Future<void> _onCoctailInitialize(
       CoctailsInitialize event, Emitter emitter) async {
@@ -83,7 +84,7 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
 
   Future<void> _onChangeFav(ChangeFavorite event, Emitter emitter) async {
     Coctail updated = event.coctail.copyWith(isFav: event.isFav);
-
+    anal.star(event.coctail);
     state.allCoctails[state.allCoctails
         .indexWhere((element) => element.name == event.coctail.name)] = updated;
     if (event.isFav == true) {
@@ -122,6 +123,7 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
   Future<void> _onStartAndEndCooking(
       StartAndEndCooking event, Emitter emitter) async {
     if (event.isStart == true) {
+      anal.howToCook(event.coctail);
       emitter(state.copyWith(
           currentIngredients: event.coctail.steps!.first['images']));
       Navigator.of(event.context).push<void>(
@@ -129,7 +131,6 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
             builder: (BuildContext context) => const CookingPage(),
             settings: RouteSettings(name: 'CoctailPage')),
       );
-      anal.sendSelectedCoctail(event.coctail);
     } else if (event.isStart == false) {
       emitter(state.copyWith(currentIngredients: []));
       Navigator.of(event.context).pop();

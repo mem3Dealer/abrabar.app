@@ -1,3 +1,4 @@
+import 'package:abrabar/logic/services/analytic_service.dart';
 import 'package:abrabar/shared/ingredientNet.dart';
 import 'package:abrabar/shared/picPaths.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,8 @@ class CookingPage extends StatefulWidget {
 
 class _CookingPageState extends State<CookingPage> {
   final cockBloc = GetIt.I.get<CoctailBloc>();
+  final anal = GetIt.I.get<AnalyticsService>();
+  final paths = PicPaths();
   late PageController controller;
   int pageIndex = 0;
   final listController = ScrollController();
@@ -58,7 +61,7 @@ class _CookingPageState extends State<CookingPage> {
                     cockBloc.add(StartAndEndCooking(
                         coctail: curCoc, isStart: false, context: context));
                   },
-                  icon: SvgPicture.asset('assets/images/system/close.svg'),
+                  icon: SvgPicture.asset('${paths.systemImages}close.svg'),
                 ),
               ),
               backgroundColor: theme.primaryColor,
@@ -137,10 +140,19 @@ class _CookingPageState extends State<CookingPage> {
                                 children: [
                                   IconButton(
                                       // onPressed: null,
-                                      onPressed: () => controller.previousPage(
-                                          duration: const Duration(
-                                              milliseconds: 1000),
-                                          curve: Curves.ease),
+                                      onPressed: pageIndex == 0
+                                          ? null
+                                          : () {
+                                              anal.stepChanged(false,
+                                                  name: curCoc.name!,
+                                                  stepNum: pageIndex,
+                                                  totalSteps:
+                                                      curCoc.steps!.length);
+                                              controller.previousPage(
+                                                  duration: const Duration(
+                                                      milliseconds: 1000),
+                                                  curve: Curves.ease);
+                                            },
                                       splashColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       icon: Transform(
@@ -154,10 +166,20 @@ class _CookingPageState extends State<CookingPage> {
                                         ),
                                       )),
                                   IconButton(
-                                      onPressed: () => controller.nextPage(
-                                          duration: const Duration(
-                                              milliseconds: 1000),
-                                          curve: Curves.ease),
+                                      onPressed:
+                                          pageIndex == curCoc.steps!.length - 1
+                                              ? null
+                                              : () {
+                                                  controller.nextPage(
+                                                      duration: const Duration(
+                                                          milliseconds: 1000),
+                                                      curve: Curves.ease);
+                                                  anal.stepChanged(true,
+                                                      name: curCoc.name!,
+                                                      stepNum: pageIndex + 2,
+                                                      totalSteps:
+                                                          curCoc.steps!.length);
+                                                },
                                       splashColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       icon: SvgPicture.asset(
