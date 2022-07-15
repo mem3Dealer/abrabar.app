@@ -11,9 +11,6 @@ class AllCotailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Coctail> list = [];
-    list = cockBloc.state.allCoctails;
-    list.shuffle();
     return SafeArea(
         child: Center(
       child: BlocConsumer<CoctailBloc, CoctailState>(
@@ -23,13 +20,13 @@ class AllCotailsView extends StatelessWidget {
               // physics: const BouncingScrollPhysics(),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2),
-              itemCount: list.length,
+              itemCount: state.allCoctails.length,
               itemBuilder: (BuildContext ctx, index) {
-                return list[index].createGridCell(
+                return state.allCoctails[index].createGridCell(
                     collectionName: 'all_cocktails',
                     setName: null,
                     context: context,
-                    coctail: list[index]);
+                    coctail: state.allCoctails[index]);
               });
         },
       ),

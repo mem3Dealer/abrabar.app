@@ -42,7 +42,7 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
     data.forEach((element) {
       state.allCoctails.add(Coctail.fromGSheets(element));
     });
-
+    state.allCoctails.shuffle();
     emitter(state.copyWith(allCoctails: state.allCoctails));
 
     List list = [];
