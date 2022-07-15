@@ -36,7 +36,7 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
     // List<Coctail> fetchedCocs = [];
     // fetchedCocs = await RecipesApi.fetchRecipes();
     final String source =
-        await rootBundle.loadString('assets/recepies_ru.json');
+        await rootBundle.loadString('assets/recepies_eng.json');
     List data = await json.decode(source);
 
     data.forEach((element) {
