@@ -1,12 +1,9 @@
 import 'package:abrabar/shared/picPaths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
 import '../../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
-import '../../logic/bloc/bloc/monetizationBloc/monetization_bloc.dart';
 import '../../logic/coctail.dart';
-import '../paywallScreen.dart';
+import '../../shared/widgets.dart';
 
 class AuthortsView extends StatelessWidget {
   AuthortsView({Key? key}) : super(key: key);
@@ -40,33 +37,7 @@ class AuthortsView extends StatelessWidget {
                           context: context,
                           coctail: authors[index]);
                     }),
-                BlocBuilder<MonetizationBloc, MonetizationState>(
-                  builder: (context, state) {
-                    if (state.isPurchased == false) {
-                      return GestureDetector(
-                        behavior: HitTestBehavior.translucent,
-                        child: Container(
-                          color: Colors.black.withOpacity(0.5),
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: InkWell(
-                                onTap: () => Navigator.of(context)
-                                        .push(MaterialPageRoute<void>(
-                                      builder: (BuildContext context) =>
-                                          PaywallScreen(),
-                                      settings: const RouteSettings(
-                                          name: 'PaywallScreen'),
-                                    )),
-                                child: SvgPicture.asset(
-                                    '${paths.systemImages}lock.svg')),
-                          ),
-                        ),
-                      );
-                    } else {
-                      return const SizedBox.shrink();
-                    }
-                  },
-                )
+                OverlayWithLock(isSeasonal: false)
               ],
             );
           },

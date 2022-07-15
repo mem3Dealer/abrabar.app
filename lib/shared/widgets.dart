@@ -1,12 +1,15 @@
-import 'package:abrabar/logic/services/analytic_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
-import '../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
 
+import 'package:abrabar/logic/services/analytic_service.dart';
+
+import '../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
+import '../logic/bloc/bloc/monetizationBloc/monetization_bloc.dart';
 import '../logic/coctail.dart';
+import '../pages/paywallScreen.dart';
 import 'picPaths.dart';
 
 class AbrabarWidgets {
@@ -74,8 +77,10 @@ class AbrabarWidgets {
               child: SizedBox(
                   height: 20.h,
                   width: 21.h,
-                  child:
-                      SvgPicture.asset("${paths.categoryPics}$assetName.svg")),
+                  child: SvgPicture.asset(
+                    "${paths.categoryPics}$assetName.svg",
+                    alignment: Alignment.bottomRight,
+                  )),
             )
           ],
         ),
@@ -126,8 +131,9 @@ class SeasonPage extends StatelessWidget {
         return 'season';
       } else if (occasions.contains(categoryName)) {
         return 'occasional';
-      } else
+      } else {
         return '';
+      }
     }
 
     anal.selectSet(categoryName, collectionName(categoryName));
@@ -165,10 +171,13 @@ class SeasonPage extends StatelessWidget {
                 height: 40.h,
                 color: color,
                 child: Stack(
-                  // fit: StackFit.loose,
+                  fit: StackFit.expand,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(top: 6.25.h, left: 6.1.w),
+                      padding: EdgeInsets.only(
+                        top: 6.25.h,
+                        left: 6.1.w,
+                      ),
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: Text(
@@ -186,32 +195,83 @@ class SeasonPage extends StatelessWidget {
                         height: 25.h,
                         width: 45.w,
                         child: SvgPicture.asset(
-                            "${paths.categoryPics}$categoryName.svg"),
+                          "${paths.categoryPics}$categoryName.svg",
+                          alignment: Alignment.bottomRight,
+                        ),
                       ),
                     )
                   ],
                 ),
               ),
-              Container(
-                color: theme.scaffoldBackgroundColor,
-                child: GridView.builder(
-                    physics: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2),
-                    itemCount: categoryCoctails.length,
-                    itemBuilder: (BuildContext ctx, index) {
-                      return categoryCoctails[index].createGridCell(
-                          collectionName: collectionName(categoryName),
-                          setName: categoryName,
-                          coctail: categoryCoctails[index],
-                          context: context);
-                    }),
+              Stack(
+                children: [
+                  GridView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2),
+                      itemCount: categoryCoctails.length,
+                      itemBuilder: (BuildContext ctx, index) {
+                        return categoryCoctails[index].createGridCell(
+                            collectionName: collectionName(categoryName),
+                            setName: categoryName,
+                            coctail: categoryCoctails[index],
+                            context: context);
+                      }),
+                  Positioned.fill(
+                      child: OverlayWithLock(
+                    isSeasonal: true,
+                  ))
+                  // OverlayWithLock()
+                ],
               ),
             ],
           ),
         );
+      },
+    );
+  }
+}
+
+class OverlayWithLock extends StatelessWidget {
+  bool isSeasonal;
+  OverlayWithLock({
+    Key? key,
+    required this.isSeasonal,
+  }) : super(key: key);
+
+  final PicPaths paths = PicPaths();
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<MonetizationBloc, MonetizationState>(
+      builder: (context, state) {
+        if (state.isPurchased == false) {
+          return Stack(
+            // fit: StackFit.expand,
+            children: [
+              IgnorePointer(
+                child: Container(
+                  color: Colors.black.withOpacity(0.5),
+                ),
+              ),
+              Align(
+                alignment:
+                    isSeasonal ? const Alignment(0, -0.80) : Alignment.center,
+                child: GestureDetector(
+                    onTap: () =>
+                        Navigator.of(context).push(MaterialPageRoute<void>(
+                          builder: (BuildContext context) => PaywallScreen(),
+                          settings: const RouteSettings(name: 'PaywallScreen'),
+                        )),
+                    child: SvgPicture.asset('${paths.systemImages}lock.svg')),
+              ),
+            ],
+          );
+        } else {
+          return const SizedBox.shrink();
+        }
       },
     );
   }

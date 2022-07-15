@@ -33,7 +33,7 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
 
   Future<void> _onCoctailInitialize(
       CoctailsInitialize event, Emitter emitter) async {
-    List<Coctail> fetchedCocs = [];
+    // List<Coctail> fetchedCocs = [];
     // fetchedCocs = await RecipesApi.fetchRecipes();
     final String source =
         await rootBundle.loadString('assets/recepies_ru.json');
@@ -42,6 +42,7 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
     data.forEach((element) {
       state.allCoctails.add(Coctail.fromGSheets(element));
     });
+
     state.allCoctails.shuffle();
     emitter(state.copyWith(allCoctails: state.allCoctails));
 

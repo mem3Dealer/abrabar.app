@@ -1,9 +1,11 @@
 import 'dart:convert';
 
+import 'package:abrabar/logic/bloc/bloc/monetizationBloc/monetization_bloc.dart';
 import 'package:abrabar/logic/services/analytic_service.dart';
 import 'package:abrabar/shared/picPaths.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
@@ -89,31 +91,45 @@ class Coctail {
     bool isFav;
     final paths = PicPaths();
     final cockBloc = GetIt.I.get<CoctailBloc>();
+    final moneyBloc = GetIt.I.get<MonetizationBloc>();
     final anal = GetIt.I.get<AnalyticsService>();
     isFav = cockBloc.state.favoriteCoctails.contains(coctail);
 
-    return InkWell(
-        onTap: () {
-          cockBloc.add(SelectCoctail(coctail, context));
+    bool isTappable = coctail.categories!.contains('classic') ||
+        moneyBloc.state.isPurchased == true;
 
-          anal.selectItem(coctail, collectionName, setName ?? "null");
-        },
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            SvgPicture.asset(paths.previews + coctail.picPreview!),
-            isFav
-                ? Padding(
-                    padding: EdgeInsets.only(right: 3.w, top: 1.5.h),
-                    child: Align(
-                      alignment: Alignment.topRight,
-                      child: SvgPicture.asset(
-                          '${paths.systemImages}white_gold_star.svg'),
-                    ),
-                  )
-                : const SizedBox.shrink()
-          ],
-        ));
+    return BlocConsumer<MonetizationBloc, MonetizationState>(
+      listener: (context, state) {
+        if (state.isPurchased == true) {
+          isTappable = true;
+        }
+      },
+      builder: (context, state) {
+        return InkWell(
+            onTap: isTappable
+                ? () {
+                    cockBloc.add(SelectCoctail(coctail, context));
+                    anal.selectItem(coctail, collectionName, setName ?? "null");
+                  }
+                : null,
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                SvgPicture.asset(paths.previews + coctail.picPreview!),
+                isFav
+                    ? Padding(
+                        padding: EdgeInsets.only(right: 3.w, top: 1.5.h),
+                        child: Align(
+                          alignment: Alignment.topRight,
+                          child: SvgPicture.asset(
+                              '${paths.systemImages}white_gold_star.svg'),
+                        ),
+                      )
+                    : const SizedBox.shrink()
+              ],
+            ));
+      },
+    );
   }
 
   Coctail copyWith({
