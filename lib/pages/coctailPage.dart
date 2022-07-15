@@ -189,6 +189,8 @@ class _CoctailPageState extends State<CoctailPage>
                                           backgroundColor:
                                               MaterialStateProperty.all(
                                                   const Color(0xffFFBE3F))),
+
+                                      //TODO перевести надо
                                       child: Text('КАК ГОТОВИТЬ',
                                           style: theme.textTheme.subtitle2!
                                               .copyWith(fontSize: 24.sp))),

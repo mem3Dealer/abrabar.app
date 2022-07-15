@@ -111,6 +111,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                   height: 2.75.h,
                   child: GestureDetector(
                     onTap: () {
+                      //TODO повесить вывод пейвола при нажатии
                       showSearch(
                           context: context,
                           delegate: SearchCoctails(
