@@ -35,7 +35,10 @@ class AuthortsView extends StatelessWidget {
                     itemCount: authors.length,
                     itemBuilder: (BuildContext ctx, index) {
                       return authors[index].createGridCell(
-                          context: context, coctail: authors[index]);
+                          collectionName: 'authors',
+                          setName: null,
+                          context: context,
+                          coctail: authors[index]);
                     }),
                 BlocBuilder<MonetizationBloc, MonetizationState>(
                   builder: (context, state) {
@@ -50,7 +53,7 @@ class AuthortsView extends StatelessWidget {
                                 onTap: () => Navigator.of(context)
                                         .push(MaterialPageRoute<void>(
                                       builder: (BuildContext context) =>
-                                          const PaywallScreen(),
+                                          PaywallScreen(),
                                       settings: const RouteSettings(
                                           name: 'PaywallScreen'),
                                     )),

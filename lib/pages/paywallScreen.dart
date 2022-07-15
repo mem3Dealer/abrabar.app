@@ -6,9 +6,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_gen/gen_l10n/app_localz.dart';
 
 import '../logic/bloc/bloc/monetizationBloc/monetization_bloc.dart';
+import '../logic/services/analytic_service.dart';
 
 class PaywallScreen extends StatelessWidget {
-  const PaywallScreen({Key? key}) : super(key: key);
+  PaywallScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -111,6 +112,7 @@ class PaywallScreen extends StatelessWidget {
                         child: ElevatedButton(
                             onPressed: () {
                               moneyBloc.add(MonetizationPurchase());
+
                               Navigator.of(context).pop();
                             },
                             style: ButtonStyle(

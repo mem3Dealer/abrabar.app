@@ -26,7 +26,10 @@ class ClassicView extends StatelessWidget {
             itemCount: classicCoctails.length,
             itemBuilder: (BuildContext ctx, index) {
               return classicCoctails[index].createGridCell(
-                  context: context, coctail: classicCoctails[index]);
+                  collectionName: 'classic',
+                  setName: null,
+                  context: context,
+                  coctail: classicCoctails[index]);
             });
       },
     );

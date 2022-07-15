@@ -68,7 +68,10 @@ class SearchCoctails extends SearchDelegate<String> {
           itemCount: resultCoctails.length,
           itemBuilder: (BuildContext ctx, index) {
             return resultCoctails[index].createGridCell(
-                context: context, coctail: resultCoctails[index]);
+                setName: null,
+                collectionName: 'search',
+                context: context,
+                coctail: resultCoctails[index]);
           }),
     );
   }
@@ -87,8 +90,11 @@ class SearchCoctails extends SearchDelegate<String> {
             const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemCount: allCoctails.length,
         itemBuilder: (BuildContext ctx, index) {
-          return allCoctails[index]
-              .createGridCell(context: context, coctail: allCoctails[index]);
+          return allCoctails[index].createGridCell(
+              setName: null,
+              collectionName: 'search',
+              context: context,
+              coctail: allCoctails[index]);
         });
   }
 }

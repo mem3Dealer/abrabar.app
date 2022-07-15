@@ -25,8 +25,11 @@ class AllCotailsView extends StatelessWidget {
                   crossAxisCount: 2),
               itemCount: list.length,
               itemBuilder: (BuildContext ctx, index) {
-                return list[index]
-                    .createGridCell(context: context, coctail: list[index]);
+                return list[index].createGridCell(
+                    collectionName: 'all_cocktails',
+                    setName: null,
+                    context: context,
+                    coctail: list[index]);
               });
         },
       ),

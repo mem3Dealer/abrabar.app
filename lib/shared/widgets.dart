@@ -1,3 +1,4 @@
+import 'package:abrabar/logic/services/analytic_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -97,6 +98,7 @@ class SeasonPage extends StatelessWidget {
   }) : super(key: key);
   final cockBloc = GetIt.I.get<CoctailBloc>();
   final paths = PicPaths();
+  final anal = GetIt.I.get<AnalyticsService>();
 
   List<String> whoIsWhite = [
     'spring',
@@ -109,6 +111,26 @@ class SeasonPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isWhite = whoIsWhite.contains(categoryName);
+
+    String collectionName(String categoryName) {
+      List<String> seasons = ['winter', 'spring', 'summer', 'autumn'];
+      List<String> occasions = [
+        'new_year',
+        'wedding',
+        'patrick',
+        'womensDay',
+        'graduation',
+        'birthday'
+      ];
+      if (seasons.contains(categoryName)) {
+        return 'season';
+      } else if (occasions.contains(categoryName)) {
+        return 'occasional';
+      } else
+        return '';
+    }
+
+    anal.selectSet(categoryName, collectionName(categoryName));
 
     return BlocConsumer<CoctailBloc, CoctailState>(
       listener: (context, state) {},
@@ -181,7 +203,10 @@ class SeasonPage extends StatelessWidget {
                     itemCount: categoryCoctails.length,
                     itemBuilder: (BuildContext ctx, index) {
                       return categoryCoctails[index].createGridCell(
-                          coctail: categoryCoctails[index], context: context);
+                          collectionName: collectionName(categoryName),
+                          setName: categoryName,
+                          coctail: categoryCoctails[index],
+                          context: context);
                     }),
               ),
             ],

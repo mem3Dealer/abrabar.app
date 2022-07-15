@@ -46,7 +46,7 @@ var notes = Notifications();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  await RecipesApi.init();
+
   notes.subscribeToNotes(flnPlugin, channel);
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 

@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:abrabar/logic/services/analytic_service.dart';
+import 'package:abrabar/shared/picPaths.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -80,25 +82,33 @@ class Coctail {
   }
 
   Widget createGridCell(
-      {required BuildContext context, required Coctail coctail}) {
+      {required BuildContext context,
+      required Coctail coctail,
+      required String collectionName,
+      required String? setName}) {
     bool isFav;
-
+    final paths = PicPaths();
     final cockBloc = GetIt.I.get<CoctailBloc>();
+    final anal = GetIt.I.get<AnalyticsService>();
     isFav = cockBloc.state.favoriteCoctails.contains(coctail);
+
     return InkWell(
-        onTap: () => cockBloc.add(SelectCoctail(coctail, context)),
+        onTap: () {
+          cockBloc.add(SelectCoctail(coctail, context));
+
+          anal.selectItem(coctail, collectionName, setName ?? "null");
+        },
         child: Stack(
           fit: StackFit.expand,
           children: [
-            // child,
-            SvgPicture.asset('assets/images/previews/${coctail.picPreview}'),
+            SvgPicture.asset(paths.previews + coctail.picPreview!),
             isFav
                 ? Padding(
                     padding: EdgeInsets.only(right: 3.w, top: 1.5.h),
                     child: Align(
                       alignment: Alignment.topRight,
                       child: SvgPicture.asset(
-                          'assets/images/system/white_gold_star.svg'),
+                          '${paths.systemImages}white_gold_star.svg'),
                     ),
                   )
                 : const SizedBox.shrink()

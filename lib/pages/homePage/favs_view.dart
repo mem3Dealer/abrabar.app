@@ -17,7 +17,10 @@ class FavoritesView extends StatelessWidget {
             itemCount: state.favoriteCoctails.length,
             itemBuilder: (BuildContext ctx, index) {
               return state.favoriteCoctails[index].createGridCell(
-                  context: context, coctail: state.favoriteCoctails[index]);
+                  collectionName: 'favs',
+                  setName: null,
+                  context: context,
+                  coctail: state.favoriteCoctails[index]);
             });
       },
     );

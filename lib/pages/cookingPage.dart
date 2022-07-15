@@ -143,7 +143,8 @@ class _CookingPageState extends State<CookingPage> {
                                       onPressed: pageIndex == 0
                                           ? null
                                           : () {
-                                              anal.stepChanged(false,
+                                              anal.stepChanged(
+                                                  isForward: false,
                                                   name: curCoc.name!,
                                                   stepNum: pageIndex,
                                                   totalSteps:
@@ -174,7 +175,8 @@ class _CookingPageState extends State<CookingPage> {
                                                       duration: const Duration(
                                                           milliseconds: 1000),
                                                       curve: Curves.ease);
-                                                  anal.stepChanged(true,
+                                                  anal.stepChanged(
+                                                      isForward: true,
                                                       name: curCoc.name!,
                                                       stepNum: pageIndex + 2,
                                                       totalSteps:

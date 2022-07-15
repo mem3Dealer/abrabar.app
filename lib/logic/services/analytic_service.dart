@@ -15,8 +15,9 @@ class AnalyticsService {
     analytics.logEvent(name: 'search', parameters: {"query": query});
   }
 
-  Future<void> stepChanged(bool isForward,
-      {required String name,
+  Future<void> stepChanged(
+      {required bool isForward,
+      required String name,
       required int stepNum,
       required int totalSteps}) async {
     analytics.logEvent(
@@ -37,19 +38,19 @@ class AnalyticsService {
         .logEvent(name: 'read_ingridients', parameters: {'item': coctail.name});
   }
 
-  //TBD
-  Future<void> selectItem(Coctail coctail, String? collectionName) async {
+  Future<void> selectItem(
+      Coctail coctail, String? collectionName, String setName) async {
     analytics.logEvent(name: 'select_item', parameters: {
       'item': coctail.name,
       "collection": collectionName,
-      "set": '',
+      "set": setName,
     });
   }
 
-  //TBD
-  Future<void> selectSet(String setName) async {
+  Future<void> selectSet(String setName, String collectionName) async {
     analytics.logEvent(
-        name: 'select_set', parameters: {'collection': '', 'set': setName});
+        name: 'select_set',
+        parameters: {'collection': collectionName, 'set': setName});
   }
 
   Future<void> changeCollection(String target) async {
@@ -69,7 +70,6 @@ class AnalyticsService {
     analytics.logEvent(name: 'purchase_faulure');
   }
 
-//TBD
   Future<void> buyApp(num actualPrice, num basePice) async {
     analytics.logEvent(
         name: 'buy_app',
