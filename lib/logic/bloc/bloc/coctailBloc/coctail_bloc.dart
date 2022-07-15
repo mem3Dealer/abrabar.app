@@ -1,6 +1,7 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'package:abrabar/logic/coctail.dart';
-import 'package:abrabar/logic/api/recipes_api.dart';
+import 'dart:io';
 import 'package:abrabar/logic/services/analytic_service.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
@@ -33,10 +34,13 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
 
   Future<void> _onCoctailInitialize(
       CoctailsInitialize event, Emitter emitter) async {
+    final String defaultLocale = Platform.localeName;
+
     // List<Coctail> fetchedCocs = [];
     // fetchedCocs = await RecipesApi.fetchRecipes();
-    final String source =
-        await rootBundle.loadString('assets/recepies_eng.json');
+    final String source = await rootBundle.loadString(defaultLocale == 'ru_RU'
+        ? 'assets/recepies_ru.json'
+        : 'assets/recepies_eng.json');
     List data = await json.decode(source);
 
     data.forEach((element) {
