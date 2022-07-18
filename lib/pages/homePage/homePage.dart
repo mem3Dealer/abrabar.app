@@ -1,5 +1,4 @@
 import 'package:abrabar/logic/services/analytic_service.dart';
-
 import '../../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
 import 'package:abrabar/pages/homePage/allCoctails_view.dart';
 import 'package:abrabar/pages/homePage/authorts_view.dart';

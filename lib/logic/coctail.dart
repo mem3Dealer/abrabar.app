@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:abrabar/logic/bloc/bloc/monetizationBloc/monetization_bloc.dart';
 import 'package:abrabar/logic/services/analytic_service.dart';
@@ -105,6 +106,8 @@ class Coctail {
         }
       },
       builder: (context, state) {
+        final String defaultLocale = Platform.localeName;
+
         return InkWell(
             onTap: isTappable
                 ? () {
@@ -115,7 +118,9 @@ class Coctail {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                SvgPicture.asset(paths.previews + coctail.picPreview!),
+                SvgPicture.asset(defaultLocale == 'Ru_ru'
+                    ? paths.previewsRu + coctail.picPreview!
+                    : paths.previewsEng + coctail.picPreview!),
                 isFav
                     ? Padding(
                         padding: EdgeInsets.only(right: 3.w, top: 1.5.h),

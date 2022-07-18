@@ -12,6 +12,7 @@ import 'package:get_it/get_it.dart';
 
 import '../../../../pages/coctailPage.dart';
 import '../../../../pages/cookingPage.dart';
+import '../../../api/recipes_api.dart';
 
 part 'coctail_event.dart';
 part 'coctail_state.dart';

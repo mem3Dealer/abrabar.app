@@ -42,10 +42,12 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   log('bg message here: ${message.notification!.title}');
 }
 
+var api = RecipesApi();
 var notes = Notifications();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  // await RecipesApi.init();
 
   notes.subscribeToNotes(flnPlugin, channel);
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
@@ -62,6 +64,7 @@ Future<void> main() async {
     ..registerSingleton<AnalyticsService>(AnalyticsService())
     ..registerSingleton<CoctailBloc>(CoctailBloc()..add(CoctailsInitialize()))
     ..registerSingleton<MonetizationBloc>(MonetizationBloc());
+
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent, // transparent status bar
   ));

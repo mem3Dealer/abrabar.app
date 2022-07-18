@@ -33,17 +33,19 @@ class RecipesApi {
     res = await russianRecipes!.values.map.allRows();
     engRes = await englishRecipes!.values.map.allRows();
 
+    String json = jsonEncode(engRes);
+    log(json);
     List<Coctail> allCocs = [];
     // await writeJson(res!);
-    if (engRes != null) {
-      engRes.forEach((element) {
-        allCocs.add(Coctail.fromGSheets(element));
-      });
-      // print(allCocs[1].categories);
-      return allCocs;
-    } else {
-      return [];
-    }
+    // if (engRes != null) {
+    //   engRes.forEach((element) {
+    //     allCocs.add(Coctail.fromGSheets(element));
+    //   });
+    //   // print(allCocs[1].categories);
+    //   return allCocs;
+    // } else {
+    return [];
+    // }
   }
 
   // static Future<void> writeJson(List<Map<String, dynamic>> import) async {
@@ -70,6 +72,7 @@ class RecipesApi {
   // }
 
   static Future init() async {
+    print('haha');
     final spreadsheet = await gsheets.spreadsheet(spreadSheetId);
     russianRecipes = await getSheet(spreadsheet, title: "recipes");
     englishRecipes = await getSheet(spreadsheet, title: "recipes_eng");

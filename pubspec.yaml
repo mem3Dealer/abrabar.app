@@ -45,7 +45,8 @@ flutter:
         - assets/images/parts/
         - assets/images/test/
         - assets/images/system/
-        - assets/images/previews/
+        - assets/images/previews/ru/
+        - assets/images/previews/eng/
         - assets/images/category_pic/
         - assets/images/ingredients/glass/
         - assets/images/ingredients/
