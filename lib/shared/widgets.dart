@@ -1,9 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localz.dart';
 import 'package:abrabar/logic/services/analytic_service.dart';
 
 import '../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
@@ -16,7 +18,8 @@ class AbrabarWidgets {
   Widget seasonTile({
     required String seasonName,
     required String assetName,
-    required int amounOfCocks,
+    required String subtitle,
+    int? amounOfCocks,
     required Color color,
     required BuildContext context,
   }) {
@@ -29,7 +32,9 @@ class AbrabarWidgets {
       'patrick',
       'graduation'
     ];
+    var t = AppLocalizations.of(context)!;
     bool isWhite = whoIsWhite.contains(assetName);
+    final String defaultLocale = Platform.localeName;
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(
@@ -66,7 +71,7 @@ class AbrabarWidgets {
               child: Align(
                 alignment: Alignment.bottomLeft,
                 child: Text(
-                  '$amounOfCocks коктейлей',
+                  subtitle,
                   style: theme.textTheme.subtitle2!.copyWith(
                       color: isWhite ? Colors.white : const Color(0xff242320)),
                 ),

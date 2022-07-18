@@ -14,6 +14,7 @@ import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
 import '../../logic/bloc/bloc/monetizationBloc/monetization_bloc.dart';
 import '../../shared/picPaths.dart';
+import '../paywallScreen.dart';
 import 'favs_view.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -108,15 +109,29 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                 child: SizedBox(
                   width: 6.1.w,
                   height: 2.75.h,
-                  child: GestureDetector(
-                    onTap: () {
-                      //TODO повесить вывод пейвола при нажатии
-                      showSearch(
-                          context: context,
-                          delegate: SearchCoctails(
-                              allCoctails: cockBloc.state.allCoctails));
+                  child: BlocConsumer<MonetizationBloc, MonetizationState>(
+                    listener: (context, state) {},
+                    builder: (context, state) {
+                      return GestureDetector(
+                        onTap: state.isPurchased == true
+                            ? () {
+                                showSearch(
+                                    context: context,
+                                    delegate: SearchCoctails(
+                                        allCoctails:
+                                            cockBloc.state.allCoctails));
+                              }
+                            : () => Navigator.of(context)
+                                    .push(MaterialPageRoute<void>(
+                                  builder: (BuildContext context) =>
+                                      PaywallScreen(),
+                                  settings: const RouteSettings(
+                                      name: 'PaywallScreen'),
+                                )),
+                        child:
+                            SvgPicture.asset("${paths.systemImages}loopa.svg"),
+                      );
                     },
-                    child: SvgPicture.asset("${paths.systemImages}loopa.svg"),
                   ),
                 ),
               )

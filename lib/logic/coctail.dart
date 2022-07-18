@@ -118,7 +118,7 @@ class Coctail {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                SvgPicture.asset(defaultLocale == 'Ru_ru'
+                SvgPicture.asset(defaultLocale == 'ru_RU'
                     ? paths.previewsRu + coctail.picPreview!
                     : paths.previewsEng + coctail.picPreview!),
                 isFav

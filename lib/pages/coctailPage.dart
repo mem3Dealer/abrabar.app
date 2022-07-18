@@ -24,7 +24,6 @@ class _CoctailPageState extends State<CoctailPage>
   final anal = GetIt.I.get<AnalyticsService>();
   final cockBloc = GetIt.I.get<CoctailBloc>();
   late ScrollController controller;
-  late ScrollController listController;
 
   @override
   void initState() {
@@ -45,7 +44,6 @@ class _CoctailPageState extends State<CoctailPage>
   @override
   void dispose() {
     controller.dispose();
-    listController.dispose();
     super.dispose();
   }
 

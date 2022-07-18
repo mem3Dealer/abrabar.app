@@ -105,7 +105,7 @@
     "categories": "authors",
     "searchWords": "author's, milk, rum, caramel, syrup, lemon, cookies, hand, benyo, benyo's hand",
     "steps": "Add oatmeal cookies to a bottle of rum and infuse for 2 hours:round_glass.svg, rum_white.svg, oatmeal_cookie.svg///Strain the rum into a glass:round_glass.svg, rum_white.svg, oatmeal_cookie.svg///Add syrup and lemon juice, stir:round_glass.svg, rum_white.svg, oatmeal_cookie.svg, syrup_caramel_salty.svg, juice_lemon.svg///Add milk and stir again:round_glass.svg, rum_white.svg, oatmeal_cookie.svg, syrup_caramel_salty.svg, juice_lemon.svg, milk.svg///Serve chilled:round_glass.svg, rum_white.svg, oatmeal_cookie.svg, syrup_caramel_salty.svg, juice_lemon.svg, milk.svg",
-    "ingredients": "White rum:100 ml///Oatmeal cookies:30 gr//Salted caramel syrup:25 ml///Lemon juice:25 ml///Milk:30 ml"
+    "ingredients": "White rum:100 ml///Oatmeal cookies:30 gr///Salted caramel syrup:25 ml///Lemon juice:25 ml///Milk:30 ml"
   },
   {
     "name": "Good night",
@@ -1091,7 +1091,7 @@
   {
     "name": "Sparkling passion",
     "description": "Sweet build",
-    "picPreview": "playful_passion.svg",
+    "picPreview": "playful_passion_eng.svg",
     "categories": "wedding",
     "searchWords": "wedding, passion, sparkling, sparkling passion, sparkling wine, champagne, campari, grapefruit, juice, orange, raspberry",
     "steps": "Pour campari, grapefruit juice, and then champagne into a chilled glass:champagne.svg, liquor_campari.svg, juice_grapefruit.svg, wine_playful.svg///Stir with a cocktail spoon:champagne.svg, liquor_campari.svg, juice_grapefruit.svg, wine_playful.svg///Украсьте долькой апельсина и малиной:champagne.svg, liquor_campari.svg, juice_grapefruit.svg, wine_playful.svg, orange_piece.svg, raspberry.svg",

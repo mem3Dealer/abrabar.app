@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import '../../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
@@ -12,31 +14,33 @@ class SeasonView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String defaultLocale = Platform.localeName;
+    bool isRu = defaultLocale == 'ru_RU';
     var t = AppLocalizations.of(context)!;
     return Center(
       child: ListView(
         children: [
           abrabarWidget.seasonTile(
               seasonName: t.winter,
-              amounOfCocks: 12,
+              subtitle: isRu ? '10 коктейлей' : "10 coctails",
               color: const Color(0xffA7C8E0),
               assetName: 'winter',
               context: context),
           abrabarWidget.seasonTile(
               seasonName: t.spring,
-              amounOfCocks: 9,
+              subtitle: isRu ? '9 коктейлей' : "9 coctails",
               color: const Color(0xffF2521F),
               assetName: 'spring',
               context: context),
           abrabarWidget.seasonTile(
               seasonName: t.summer,
-              amounOfCocks: 10,
+              subtitle: isRu ? '10 коктейлей' : "10 coctails",
               color: const Color(0xff46C56A),
               assetName: 'summer',
               context: context),
           abrabarWidget.seasonTile(
               seasonName: t.autumn,
-              amounOfCocks: 15,
+              subtitle: isRu ? '10 коктейлей' : "10 coctails",
               color: const Color(0xffF2AA1F),
               assetName: 'autumn',
               context: context),
