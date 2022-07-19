@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:abrabar/logic/bloc/bloc/monetizationBloc/monetization_bloc.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-
+import 'package:flutter_branch_sdk/flutter_branch_sdk.dart';
 import '../../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
 import 'package:abrabar/logic/services/analytic_service.dart';
 import 'package:abrabar/shared/sharedExtensions.dart';
@@ -46,6 +46,8 @@ var api = RecipesApi();
 var notes = Notifications();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  FlutterBranchSdk.initSession().listen((data) {});
+  // FlutterBranchSdk.validateSDKIntegration();
   await Firebase.initializeApp();
   // await RecipesApi.init();
 

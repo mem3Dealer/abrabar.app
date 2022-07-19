@@ -1,8 +1,10 @@
 import 'package:abrabar/logic/coctail.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:flutter_branch_sdk/flutter_branch_sdk.dart';
 
 class AnalyticsService {
   static FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+  static FlutterBranchSdk branch = FlutterBranchSdk();
 
   FirebaseAnalyticsObserver getAnalyticsObserver() =>
       FirebaseAnalyticsObserver(analytics: analytics);
@@ -71,6 +73,12 @@ class AnalyticsService {
   }
 
   Future<void> buyApp(num actualPrice, num basePice) async {
+    BranchEvent eventCustom = BranchEvent.customEvent('buy_app');
+    eventCustom.addCustomData('base_price', basePice.toString());
+    eventCustom.addCustomData('actual_price', actualPrice.toString());
+
+    FlutterBranchSdk.trackContentWithoutBuo(branchEvent: eventCustom);
+    print('well we at least here');
     analytics.logEvent(
         name: 'buy_app',
         parameters: {'base_price': basePice, 'actual_price': actualPrice});

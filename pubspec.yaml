@@ -24,6 +24,7 @@ dependencies:
   firebase_messaging: ^11.4.2
   firebase_analytics: ^9.1.10
   flutter_local_notifications: ^9.7.0
+  flutter_branch_sdk: ^6.0.0
  
 
 dev_dependencies:
