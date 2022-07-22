@@ -32,6 +32,7 @@ class AllCotailsView extends StatelessWidget {
                         coctail: state.allCoctails[index]);
                   }),
               OverlayWithLock(
+                screenName: 'all_coctails',
                 isSeasonal: false,
               )
             ],

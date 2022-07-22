@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:abrabar/logic/services/analytic_service.dart';
 import 'package:abrabar/shared/ingredientNet.dart';
 import 'package:abrabar/shared/picPaths.dart';
@@ -24,6 +26,7 @@ class _CookingPageState extends State<CookingPage> {
   late PageController controller;
   int pageIndex = 0;
   final listController = ScrollController();
+  final String defaultLocale = Platform.localeName;
   @override
   void initState() {
     controller = PageController();
@@ -66,137 +69,164 @@ class _CookingPageState extends State<CookingPage> {
               ),
               backgroundColor: theme.primaryColor,
               // backgroundColor: Colors.black54,
-              body: Center(
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: Stack(
-                        children: [
-                          ListView(
-                            controller: listController,
-                            shrinkWrap: true,
-                            children: [
-                              Container(
-                                  // color: Colors.black,
-                                  width: 100.w,
-                                  height: 100.w,
-                                  child: IngredientNet(
-                                    isPreview: false,
-                                  )),
-                              Padding(
-                                padding:
-                                    EdgeInsets.only(top: 3.h, bottom: 2.3.h),
-                                child: Center(
-                                  child: Text(
-                                    '${pageIndex + 1} ШАГ ИЗ ${curCoc.steps!.length}',
-                                    style: theme.textTheme.headline3!.copyWith(
-                                        color: Colors.white.withOpacity(0.5)),
+              body: GestureDetector(
+                onPanUpdate: (details) {
+                  // Swiping in right direction.
+                  if (details.delta.dx > 0) {
+                    controller.previousPage(
+                        duration: const Duration(milliseconds: 1000),
+                        curve: Curves.ease);
+                  }
+                  // Swiping in left direction.
+                  if (details.delta.dx < 0) {
+                    controller.nextPage(
+                        duration: const Duration(milliseconds: 1000),
+                        curve: Curves.ease);
+                  }
+                },
+                child: Center(
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: Stack(
+                          children: [
+                            ListView(
+                              controller: listController,
+                              shrinkWrap: true,
+                              children: [
+                                Container(
+                                    // color: Colors.black,
+                                    width: 100.w,
+                                    height: 100.w,
+                                    child: IngredientNet(
+                                      isPreview: false,
+                                    )),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(top: 3.h, bottom: 2.3.h),
+                                  child: Center(
+                                    child: Text(
+                                      defaultLocale == 'ru_RU'
+                                          ? '${pageIndex + 1} ШАГ ИЗ ${curCoc.steps!.length}'
+                                          : 'Step ${pageIndex + 1} OUT OF ${curCoc.steps!.length}',
+                                      style: theme.textTheme.headline3!
+                                          .copyWith(
+                                              color: Colors.white
+                                                  .withOpacity(0.5)),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Container(
-                                // color: Colors.green,
-                                width: 100.w,
-                                height: 25.h,
-                                child: PageView.builder(
-                                  onPageChanged: (index) {
-                                    setState(() {
-                                      pageIndex = index;
-                                    });
-                                    cockBloc.add(AnotherStep(index: index));
-                                  },
-                                  controller: controller,
-                                  itemCount: curCoc.steps!.length,
-                                  itemBuilder: (context, position) {
-                                    return Text(
-                                      curCoc.steps![position]['step'],
-                                      textAlign: TextAlign.center,
-                                      style: theme.textTheme.headline1!
-                                          .copyWith(fontSize: 32.sp),
-                                    );
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                          Align(
-                            alignment: Alignment.bottomCenter,
-                            child: Image.asset(
-                              '${paths.systemImages}grade1.png',
-                              // color: Colors.white.withOpacity(0.8),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Padding(
-                        padding: EdgeInsets.only(bottom: 5.h),
-                        child: Column(
-                          children: [
-                            Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  IconButton(
-                                      // onPressed: null,
-                                      onPressed: pageIndex == 0
-                                          ? null
-                                          : () {
-                                              anal.stepChanged(
-                                                  isForward: false,
-                                                  name: curCoc.name!,
-                                                  stepNum: pageIndex,
-                                                  totalSteps:
-                                                      curCoc.steps!.length);
-                                              controller.previousPage(
-                                                  duration: const Duration(
-                                                      milliseconds: 1000),
-                                                  curve: Curves.ease);
-                                            },
-                                      splashColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      icon: Transform(
-                                        alignment: Alignment.center,
-                                        transform: Matrix4.rotationY(math.pi),
-                                        child: SvgPicture.asset(
-                                          '${paths.systemImages}cooking_arrow.svg',
-                                          color: pageIndex == 0
-                                              ? Colors.white.withOpacity(0.5)
-                                              : null,
+                                Container(
+                                  // color: Colors.green,
+                                  width: 100.w,
+                                  height: 25.h,
+                                  child: PageView.builder(
+                                    onPageChanged: (index) {
+                                      setState(() {
+                                        pageIndex = index;
+                                      });
+                                      cockBloc.add(AnotherStep(index: index));
+                                    },
+                                    controller: controller,
+                                    itemCount: curCoc.steps!.length,
+                                    itemBuilder: (context, position) {
+                                      return Padding(
+                                        padding: const EdgeInsets.only(
+                                          left: 16,
+                                          right: 16,
+                                          top: 15,
                                         ),
-                                      )),
-                                  IconButton(
-                                      onPressed:
-                                          pageIndex == curCoc.steps!.length - 1
-                                              ? null
-                                              : () {
-                                                  controller.nextPage(
-                                                      duration: const Duration(
-                                                          milliseconds: 1000),
-                                                      curve: Curves.ease);
-                                                  anal.stepChanged(
-                                                      isForward: true,
-                                                      name: curCoc.name!,
-                                                      stepNum: pageIndex + 2,
-                                                      totalSteps:
-                                                          curCoc.steps!.length);
-                                                },
-                                      splashColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      icon: SvgPicture.asset(
-                                        '${paths.systemImages}cooking_arrow.svg',
-                                        color: pageIndex ==
-                                                curCoc.steps!.length - 1
-                                            ? Colors.white.withOpacity(0.5)
-                                            : null,
-                                      )),
-                                ]),
+                                        child: Text(
+                                          curCoc.steps![position]['step'],
+                                          textAlign: TextAlign.center,
+                                          style: theme.textTheme.headline1!
+                                              .copyWith(fontSize: 28.sp),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Image.asset(
+                                '${paths.systemImages}grade1.png',
+                                // color: Colors.white.withOpacity(0.8),
+                              ),
+                            )
                           ],
                         ),
                       ),
-                    )
-                  ],
+                      Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 5.h),
+                          child: Column(
+                            children: [
+                              Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    IconButton(
+                                        // onPressed: null,
+                                        onPressed: pageIndex == 0
+                                            ? null
+                                            : () {
+                                                anal.stepChanged(
+                                                    isForward: false,
+                                                    name: curCoc.name!,
+                                                    stepNum: pageIndex,
+                                                    totalSteps:
+                                                        curCoc.steps!.length);
+                                                controller.previousPage(
+                                                    duration: const Duration(
+                                                        milliseconds: 1000),
+                                                    curve: Curves.ease);
+                                              },
+                                        splashColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        icon: Transform(
+                                          alignment: Alignment.center,
+                                          transform: Matrix4.rotationY(math.pi),
+                                          child: SvgPicture.asset(
+                                            '${paths.systemImages}cooking_arrow.svg',
+                                            color: pageIndex == 0
+                                                ? Colors.white.withOpacity(0.5)
+                                                : null,
+                                          ),
+                                        )),
+                                    IconButton(
+                                        onPressed: pageIndex ==
+                                                curCoc.steps!.length - 1
+                                            ? null
+                                            : () {
+                                                controller.nextPage(
+                                                    duration: const Duration(
+                                                        milliseconds: 1000),
+                                                    curve: Curves.ease);
+                                                anal.stepChanged(
+                                                    isForward: true,
+                                                    name: curCoc.name!,
+                                                    stepNum: pageIndex + 2,
+                                                    totalSteps:
+                                                        curCoc.steps!.length);
+                                              },
+                                        splashColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        icon: SvgPicture.asset(
+                                          '${paths.systemImages}cooking_arrow.svg',
+                                          color: pageIndex ==
+                                                  curCoc.steps!.length - 1
+                                              ? Colors.white.withOpacity(0.5)
+                                              : null,
+                                        )),
+                                  ]),
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               )),
         );

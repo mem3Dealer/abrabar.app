@@ -93,6 +93,7 @@ class MyApp extends StatelessWidget {
       ],
       child: Sizer(builder: (context, orientation, deviceType) {
         return MaterialApp(
+            title: 'abrabar',
             builder: (context, child) {
               return ScrollConfiguration(behavior: MyBehavior(), child: child!);
             },

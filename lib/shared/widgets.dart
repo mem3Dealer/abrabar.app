@@ -2,10 +2,11 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localz.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
-import 'package:flutter_gen/gen_l10n/app_localz.dart';
+
 import 'package:abrabar/logic/services/analytic_service.dart';
 
 import '../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
@@ -226,6 +227,7 @@ class SeasonPage extends StatelessWidget {
                       }),
                   Positioned.fill(
                       child: OverlayWithLock(
+                    screenName: categoryName,
                     isSeasonal: true,
                   ))
                   // OverlayWithLock()
@@ -241,12 +243,15 @@ class SeasonPage extends StatelessWidget {
 
 class OverlayWithLock extends StatelessWidget {
   bool isSeasonal;
+  String screenName;
   OverlayWithLock({
     Key? key,
     required this.isSeasonal,
+    required this.screenName,
   }) : super(key: key);
 
   final PicPaths paths = PicPaths();
+  final anal = GetIt.I.get<AnalyticsService>();
 
   @override
   Widget build(BuildContext context) {
@@ -265,11 +270,16 @@ class OverlayWithLock extends StatelessWidget {
                 alignment:
                     isSeasonal ? const Alignment(0, -0.80) : Alignment.center,
                 child: GestureDetector(
-                    onTap: () =>
-                        Navigator.of(context).push(MaterialPageRoute<void>(
-                          builder: (BuildContext context) => PaywallScreen(),
-                          settings: const RouteSettings(name: 'PaywallScreen'),
-                        )),
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute<void>(
+                        builder: (BuildContext context) => PaywallScreen(),
+                        settings: const RouteSettings(name: 'PaywallScreen'),
+                      ));
+                      anal.paywallOpened(
+                          fromWhere: screenName,
+                          basePrice: 399,
+                          actualPrice: 999);
+                    },
                     child: SvgPicture.asset('${paths.systemImages}lock.svg')),
               ),
             ],

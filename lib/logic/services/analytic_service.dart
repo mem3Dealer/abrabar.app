@@ -13,6 +13,10 @@ class AnalyticsService {
     analytics.logEvent(name: 'star', parameters: {"item": coc.name});
   }
 
+  Future<void> unstar(Coctail coc) async {
+    analytics.logEvent(name: 'unstar', parameters: {"item": coc.name});
+  }
+
   Future<void> search(String query) async {
     analytics.logEvent(name: 'search', parameters: {"query": query});
   }
@@ -78,9 +82,19 @@ class AnalyticsService {
     eventCustom.addCustomData('actual_price', actualPrice.toString());
 
     FlutterBranchSdk.trackContentWithoutBuo(branchEvent: eventCustom);
-    print('well we at least here');
     analytics.logEvent(
         name: 'buy_app',
         parameters: {'base_price': basePice, 'actual_price': actualPrice});
+  }
+
+  Future<void> paywallOpened(
+      {required String fromWhere,
+      required int basePrice,
+      required int actualPrice}) async {
+    analytics.logEvent(name: 'paywall_opened', parameters: {
+      'fromWhere': fromWhere,
+      'base_price': basePrice,
+      'actual_price': actualPrice
+    });
   }
 }

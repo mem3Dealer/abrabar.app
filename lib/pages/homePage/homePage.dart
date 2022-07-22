@@ -121,13 +121,19 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                                         allCoctails:
                                             cockBloc.state.allCoctails));
                               }
-                            : () => Navigator.of(context)
+                            : () {
+                                Navigator.of(context)
                                     .push(MaterialPageRoute<void>(
                                   builder: (BuildContext context) =>
                                       PaywallScreen(),
                                   settings: const RouteSettings(
                                       name: 'PaywallScreen'),
-                                )),
+                                ));
+                                anal.paywallOpened(
+                                    fromWhere: 'search',
+                                    basePrice: 399,
+                                    actualPrice: 999);
+                              },
                         child:
                             SvgPicture.asset("${paths.systemImages}loopa.svg"),
                       );

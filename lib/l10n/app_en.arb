@@ -17,7 +17,7 @@
     "birthday": "BIRTHDAY",
     "wedding": "WEDDING",
     "graduation": "GRADUATION",
-    "womensDay": "WOMENS DAY",
+    "womensDay": "WOMEN'S DAY",
     "stPatrick":"ST. PATRICKS",
     "allCoctails": "ALL COCTAILS",
     "getAccess":"GET ACCESS TO ALL COCKTAIL RECIPES",
@@ -31,5 +31,4 @@
     "continue1":"CONTINUE",
     "howToCook":"HOW TO COOK",
     "coctails": "COCTAILS"
-
 }

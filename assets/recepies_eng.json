@@ -131,7 +131,7 @@
     "picPreview": "zamkadie_eng.svg",
     "categories": "authors",
     "searchWords": "author's, shake, sweet, honey, honey wine, liquor, banana, lemon, syrup, egg, white, suburbs",
-    "steps": "Shake mead, liquor, lemon juice, honey syrup and egg white in a shaker:whiskey.svg, honey.svg, liquor_banana.svg, juice_lemon.svg, syrup_honey.svg, egg_white.svg///Pour into a chilled glass:whiskey.svg, honey.svg, liquor_banana.svg, juice_lemon.svg, syrup_honey.svg, egg_white.svg///Украсьте цедрой апельсина:whiskey.svg, honey.svg, liquor_banana.svg, juice_lemon.svg, syrup_honey.svg, egg_white.svg, zest_orange.svg",
+    "steps": "Shake mead, liquor, lemon juice, honey syrup and egg white in a shaker:whiskey.svg, honey.svg, liquor_banana.svg, juice_lemon.svg, syrup_honey.svg, egg_white.svg///Pour into a chilled glass:whiskey.svg, honey.svg, liquor_banana.svg, juice_lemon.svg, syrup_honey.svg, egg_white.svg///Decorate with orange zest:whiskey.svg, honey.svg, liquor_banana.svg, juice_lemon.svg, syrup_honey.svg, egg_white.svg, zest_orange.svg",
     "ingredients": "Honey wine:40 ml///Banana liquor:20 ml///Lemon juice:20 ml///Honey syrup:15 ml///Egg white:1 pcs///Orange zest:1 pcs"
   },
   {
@@ -207,7 +207,7 @@
     "ingredients": "Tequila:50 ml///Orange liquor:25 ml///Sugar syrup:10ml///Lime juice:30 ml///Lime:10 gr///Salt:2 gr///Ice:200 gr"
   },
   {
-    "name": "Ling island ice tea",
+    "name": "Long island ice tea",
     "description": "Sweet build",
     "picPreview": "long_island_eng.svg",
     "categories": "classic",
@@ -266,7 +266,7 @@
     "picPreview": "screw_eng.svg",
     "categories": "classic",
     "searchWords": "classic, screwdriver, orange, juice, vodka, ice",
-    "steps": "Pour vodka into a glass with ice:highball_big.svg, ice.svg, vodka.svg///Влейте апельсиновый сок:highball_big.svg, ice.svg, vodka.svg, juice_orange.svg///Stir to combine and garnishe with orange slice:highball_big.svg, ice.svg, vodka.svg, juice_orange.svg, orange_piece.svg",
+    "steps": "Pour vodka into a glass with ice:highball_big.svg, ice.svg, vodka.svg///Pour in the orange juice:highball_big.svg, ice.svg, vodka.svg, juice_orange.svg///Stir to combine and garnishe with orange slice:highball_big.svg, ice.svg, vodka.svg, juice_orange.svg, orange_piece.svg",
     "ingredients": "Vodka:50 ml///Orange juice:150 ml///Orange:30 gr///Ice:180 gr"
   },
   {

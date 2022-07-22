@@ -37,7 +37,10 @@ class AuthortsView extends StatelessWidget {
                           context: context,
                           coctail: authors[index]);
                     }),
-                OverlayWithLock(isSeasonal: false)
+                OverlayWithLock(
+                  isSeasonal: false,
+                  screenName: 'authors',
+                )
               ],
             );
           },

@@ -61,17 +61,18 @@ class _CoctailPageState extends State<CoctailPage>
         return SafeArea(
             top: false,
             child: Scaffold(
-              backgroundColor: theme.primaryColor,
+              backgroundColor: theme.scaffoldBackgroundColor,
               body: NestedScrollView(
+                  floatHeaderSlivers: true,
                   controller: controller,
                   headerSliverBuilder:
                       (BuildContext context, bool innerBoxIsScrolled) {
                     return <Widget>[
                       SliverAppBar(
-                        forceElevated: innerBoxIsScrolled,
+                        // forceElevated: innerBoxIsScrolled,
                         floating: true,
-                        pinned: false,
-                        backgroundColor: Colors.transparent,
+                        // pinned: false,
+                        backgroundColor: theme.primaryColor,
                         // backgroundColor: Colors.blue,
                         leading: Padding(
                           padding: EdgeInsets.only(left: 3.w),
@@ -107,129 +108,132 @@ class _CoctailPageState extends State<CoctailPage>
                                 .readIngredients(cockBloc.state.currentCoctail);
                       }
                     });
-                    return ListView(
+                    // var pic =
+                    //     SvgPicture.asset(paths.previewsEng + coc.picPreview!);
+                    // print(pic.);
+                    return SingleChildScrollView(
                       padding: EdgeInsets.zero,
-                      // scrollDirection: Axis.vertical,;
-                      // controller: listController,
-                      // shrinkWrap: true,
-                      children: [
-                        Container(
-                          color: theme.primaryColor,
-                          // height: MediaQuery.of(context).size.height -
-                          //     AppBar().preferredSize.height,
-                          child: Column(
-                            children: [
-                              Container(
-                                // color: Colors.black,
-                                width: 100.w,
-                                height: 100.w,
-                                child: IngredientNet(
-                                  isPreview: true,
+                      child: Column(
+                        children: [
+                          Container(
+                            color: theme.primaryColor,
+                            child: Column(
+                              children: [
+                                Container(
+                                  // color: Colors.black,
+                                  width: 100.w,
+                                  height: 100.w,
+
+                                  child: IngredientNet(
+                                    isPreview: true,
+                                  ),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 5.h,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 4.w, right: 4.w),
-                                child: Text(
-                                  coc.name ?? '',
-                                  textAlign: TextAlign.center,
+                                SizedBox(
+                                  height: 5.h,
+                                ),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(left: 4.w, right: 4.w),
+                                  child: Text(
+                                    coc.name ?? '',
+                                    textAlign: TextAlign.center,
+                                    style: theme.textTheme.headline1!
+                                        .copyWith(fontSize: 32.sp),
+                                  ),
+                                ),
+                                Text(
+                                  coc.description!,
                                   style: theme.textTheme.headline1!
-                                      .copyWith(fontSize: 32.sp),
+                                      .copyWith(fontSize: 20.sp),
                                 ),
-                              ),
-                              Text(
-                                coc.description!,
-                                style: theme.textTheme.headline1!
-                                    .copyWith(fontSize: 20.sp),
-                              ),
-                              SizedBox(
-                                height: 2.5.h,
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  SizedBox(
-                                    // color: Colors.white,
-                                    width: 22.5.w,
-                                    child: SizedBox(
-                                      height: 3.75.h,
-                                      width: 8.3.w,
-                                      child: GestureDetector(
-                                          onTap: () {
-                                            cockBloc.add(ChangeFavorite(
-                                                coctail: coc,
-                                                isFav: !state
-                                                    .currentCoctail.isFav));
-                                          },
-                                          child: SvgPicture.asset(state
-                                                  .currentCoctail.isFav
-                                              ? '${paths.systemImages}star_filled.svg'
-                                              : '${paths.systemImages}star_empty.svg')),
+                                SizedBox(
+                                  height: 2.5.h,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    SizedBox(
+                                      // color: Colors.white,
+                                      width: 22.5.w,
+                                      child: SizedBox(
+                                        height: 3.75.h,
+                                        width: 8.3.w,
+                                        child: GestureDetector(
+                                            onTap: () {
+                                              cockBloc.add(ChangeFavorite(
+                                                  coctail: coc,
+                                                  isFav: !state
+                                                      .currentCoctail.isFav));
+                                            },
+                                            child: SvgPicture.asset(state
+                                                    .currentCoctail.isFav
+                                                ? '${paths.systemImages}star_filled.svg'
+                                                : '${paths.systemImages}star_empty.svg')),
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    width: 55.w,
-                                    height: 8.h,
-                                    child: ElevatedButton(
-                                        onPressed: () {
-                                          cockBloc.add(StartAndEndCooking(
-                                              coctail: coc,
-                                              isStart: true,
-                                              context: context));
-                                        },
-                                        style: ButtonStyle(
-                                            shape: MaterialStateProperty.all(
-                                                const RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.zero)),
-                                            backgroundColor:
-                                                MaterialStateProperty.all(
-                                                    const Color(0xffFFBE3F))),
-                                        child: Text(t.howToCook,
-                                            style: theme.textTheme.subtitle2!
-                                                .copyWith(fontSize: 24.sp))),
-                                  ),
-                                  SizedBox(
-                                    width: 22.5.w,
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                height: 5.1.h,
-                              )
-                            ],
-                          ),
-                        ),
-                        Container(
-                          color: theme.scaffoldBackgroundColor,
-                          child: ListView.builder(
-                            padding: EdgeInsets.zero,
-                            physics: const NeverScrollableScrollPhysics(),
-                            scrollDirection: Axis.vertical,
-                            shrinkWrap: true,
-                            itemCount: coc.ingredients!.length,
-                            itemBuilder: (BuildContext context, int index) {
-                              var pos = coc.ingredients![index];
-                              controller = ScrollController();
-                              return ListTile(
-                                tileColor: Colors.transparent,
-                                title: Text(
-                                  pos['what']!,
-                                  style: theme.textTheme.headline4,
+                                    SizedBox(
+                                      width: 55.w,
+                                      height: 8.h,
+                                      child: ElevatedButton(
+                                          onPressed: () {
+                                            cockBloc.add(StartAndEndCooking(
+                                                coctail: coc,
+                                                isStart: true,
+                                                context: context));
+                                          },
+                                          style: ButtonStyle(
+                                              shape: MaterialStateProperty.all(
+                                                  const RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.zero)),
+                                              backgroundColor:
+                                                  MaterialStateProperty.all(
+                                                      const Color(0xffFFBE3F))),
+                                          child: Text(t.howToCook,
+                                              style: theme.textTheme.subtitle2!
+                                                  .copyWith(fontSize: 24.sp))),
+                                    ),
+                                    SizedBox(
+                                      width: 22.5.w,
+                                    )
+                                  ],
                                 ),
-                                trailing: Text(
-                                  pos['howMuch'].toString(),
-                                  style: theme.textTheme.subtitle1!
-                                      .copyWith(color: const Color(0xff86837B)),
+                                SizedBox(
+                                  height: 5.1.h,
                                 ),
-                              );
-                            },
+                              ],
+                            ),
                           ),
-                        )
-                      ],
+                          Container(
+                            color: theme.scaffoldBackgroundColor,
+                            // color: Colors.black,
+                            // height: MediaQuery.of(context).size.height,
+                            child: ListView.builder(
+                              padding: EdgeInsets.zero,
+                              physics: const NeverScrollableScrollPhysics(),
+                              scrollDirection: Axis.vertical,
+                              shrinkWrap: true,
+                              itemCount: coc.ingredients!.length,
+                              itemBuilder: (BuildContext context, int index) {
+                                var pos = coc.ingredients![index];
+                                controller = ScrollController();
+                                return ListTile(
+                                  title: Text(
+                                    pos['what']!,
+                                    style: theme.textTheme.headline4,
+                                  ),
+                                  trailing: Text(
+                                    pos['howMuch'].toString(),
+                                    style: theme.textTheme.subtitle1!.copyWith(
+                                        color: const Color(0xff86837B)),
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
                     );
                   })),
             ));

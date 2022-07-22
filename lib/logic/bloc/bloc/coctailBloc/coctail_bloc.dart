@@ -119,6 +119,7 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
         }
       }
       state.favoriteCoctails.remove(cocToRemove);
+      anal.unstar(event.coctail);
       emitter(state.copyWith(
           currentCoctail: updated,
           allCoctails: state.allCoctails,
