@@ -67,12 +67,14 @@ class _CoctailPageState extends State<CoctailPage>
                   controller: controller,
                   headerSliverBuilder:
                       (BuildContext context, bool innerBoxIsScrolled) {
+                    Color color = coc.color!;
+
                     return <Widget>[
                       SliverAppBar(
                         // forceElevated: innerBoxIsScrolled,
                         floating: true,
                         // pinned: false,
-                        backgroundColor: theme.primaryColor,
+                        backgroundColor: color,
                         // backgroundColor: Colors.blue,
                         leading: Padding(
                           padding: EdgeInsets.only(left: 3.w),
@@ -108,6 +110,7 @@ class _CoctailPageState extends State<CoctailPage>
                                 .readIngredients(cockBloc.state.currentCoctail);
                       }
                     });
+                    Color color = coc.color!;
                     // var pic =
                     //     SvgPicture.asset(paths.previewsEng + coc.picPreview!);
                     // print(pic.);
@@ -116,7 +119,7 @@ class _CoctailPageState extends State<CoctailPage>
                       child: Column(
                         children: [
                           Container(
-                            color: theme.primaryColor,
+                            color: color,
                             child: Column(
                               children: [
                                 Container(

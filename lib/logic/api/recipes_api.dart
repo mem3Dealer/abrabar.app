@@ -33,7 +33,7 @@ class RecipesApi {
     res = await russianRecipes!.values.map.allRows();
     engRes = await englishRecipes!.values.map.allRows();
 
-    String json = jsonEncode(engRes);
+    String json = jsonEncode(res);
     log(json);
     List<Coctail> allCocs = [];
     // await writeJson(res!);
@@ -72,7 +72,6 @@ class RecipesApi {
   // }
 
   static Future init() async {
-    print('haha');
     final spreadsheet = await gsheets.spreadsheet(spreadSheetId);
     russianRecipes = await getSheet(spreadsheet, title: "recipes");
     englishRecipes = await getSheet(spreadsheet, title: "recipes_eng");

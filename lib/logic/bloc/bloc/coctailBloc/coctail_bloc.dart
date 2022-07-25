@@ -110,7 +110,9 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
 
     } else {
       await storage.delete(key: event.coctail.name!);
-      Coctail cocToRemove = Coctail(isFav: false);
+      Coctail cocToRemove = Coctail(
+        isFav: false,
+      );
       // if (state.favoriteCoctails.contains(event.coctail)) {
       for (Coctail coc in state.favoriteCoctails) {
         if (coc.name == event.coctail.name) {

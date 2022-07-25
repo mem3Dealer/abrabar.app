@@ -67,7 +67,7 @@ class _CookingPageState extends State<CookingPage> {
                   icon: SvgPicture.asset('${paths.systemImages}close.svg'),
                 ),
               ),
-              backgroundColor: theme.primaryColor,
+              backgroundColor: state.currentCoctail.color,
               // backgroundColor: Colors.black54,
               body: GestureDetector(
                 onPanUpdate: (details) {
@@ -151,9 +151,10 @@ class _CookingPageState extends State<CookingPage> {
                             Align(
                               alignment: Alignment.bottomCenter,
                               child: Image.asset(
-                                '${paths.systemImages}grade1.png',
-                                // color: Colors.white.withOpacity(0.8),
-                              ),
+                                  '${paths.systemImages}grade1.png',
+                                  color: state.currentCoctail.color
+                                  // color: Colors.white.withOpacity(0.8),
+                                  ),
                             )
                           ],
                         ),

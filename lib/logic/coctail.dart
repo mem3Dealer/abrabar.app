@@ -1,15 +1,17 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:abrabar/logic/bloc/bloc/monetizationBloc/monetization_bloc.dart';
-import 'package:abrabar/logic/services/analytic_service.dart';
-import 'package:abrabar/shared/picPaths.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
+
+import 'package:abrabar/logic/bloc/bloc/monetizationBloc/monetization_bloc.dart';
+import 'package:abrabar/logic/services/analytic_service.dart';
+import 'package:abrabar/shared/picPaths.dart';
+
 import 'bloc/bloc/coctailBloc/coctail_bloc.dart';
 import 'bloc/bloc/monetizationBloc/monetization_state.dart';
 
@@ -17,6 +19,7 @@ class Coctail {
   String? name;
   String? picPreview;
   String? description;
+  Color? color;
   bool isFav;
   List<String>? searchWords;
   List<String>? categories;
@@ -27,6 +30,7 @@ class Coctail {
     this.name,
     this.picPreview,
     this.description,
+    this.color,
     required this.isFav,
     this.searchWords,
     this.categories,
@@ -39,6 +43,10 @@ class Coctail {
     List<String>? searchWords = [];
     List<Map<String, dynamic>> steps = [];
     List<Map<String, dynamic>> ingredients = [];
+    Color color;
+    String st = '0xff';
+    st = st + json['colorCode']!.trim();
+    color = Color(int.parse(st));
 
     json["searchWords"]!.split(",").forEach((element) {
       searchWords.add(element.trim());
@@ -77,6 +85,7 @@ class Coctail {
       name: json['name']!.trim(),
       picPreview: json['picPreview']!.trim(),
       description: json['description']!.trim(),
+      color: color,
       isFav: false,
       searchWords: searchWords,
       categories: categories,
@@ -142,6 +151,7 @@ class Coctail {
     String? name,
     String? picPreview,
     String? description,
+    Color? color,
     bool? isFav,
     List<String>? searchWords,
     List<String>? categories,
@@ -152,6 +162,7 @@ class Coctail {
       name: name ?? this.name,
       picPreview: picPreview ?? this.picPreview,
       description: description ?? this.description,
+      color: color ?? this.color,
       isFav: isFav ?? this.isFav,
       searchWords: searchWords ?? this.searchWords,
       categories: categories ?? this.categories,
@@ -165,6 +176,7 @@ class Coctail {
       'name': name,
       'picPreview': picPreview,
       'description': description,
+      'color': color!.value,
       'isFav': isFav,
       'searchWords': searchWords,
       'categories': categories,
@@ -178,6 +190,7 @@ class Coctail {
       name: map['name'],
       picPreview: map['picPreview'],
       description: map['description'],
+      color: Color(map['color']),
       isFav: map['isFav'] ?? false,
       searchWords: List<String>.from(map['searchWords']),
       categories: List<String>.from(map['categories']),
@@ -199,7 +212,7 @@ class Coctail {
 
   @override
   String toString() {
-    return 'Coctail(name: $name, picPreview: $picPreview, description: $description, isFav: $isFav, searchWords: $searchWords, categories: $categories, steps: $steps, ingredients: $ingredients)';
+    return 'Coctail(name: $name, picPreview: $picPreview, description: $description, color: $color, isFav: $isFav, searchWords: $searchWords, categories: $categories, steps: $steps, ingredients: $ingredients)';
   }
 
   @override
@@ -210,6 +223,7 @@ class Coctail {
         other.name == name &&
         other.picPreview == picPreview &&
         other.description == description &&
+        other.color == color &&
         other.isFav == isFav &&
         listEquals(other.searchWords, searchWords) &&
         listEquals(other.categories, categories) &&
@@ -222,6 +236,7 @@ class Coctail {
     return name.hashCode ^
         picPreview.hashCode ^
         description.hashCode ^
+        color.hashCode ^
         isFav.hashCode ^
         searchWords.hashCode ^
         categories.hashCode ^
