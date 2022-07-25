@@ -13,6 +13,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
 import '../../logic/bloc/bloc/monetizationBloc/monetization_bloc.dart';
+import '../../logic/bloc/bloc/monetizationBloc/monetization_state.dart';
 import '../../shared/picPaths.dart';
 import '../paywallScreen.dart';
 import 'favs_view.dart';

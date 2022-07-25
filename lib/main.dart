@@ -1,8 +1,10 @@
 import 'dart:developer';
 
 import 'package:abrabar/logic/bloc/bloc/monetizationBloc/monetization_bloc.dart';
+import 'package:abrabar/logic/services/purchase_service.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_branch_sdk/flutter_branch_sdk.dart';
+import 'package:in_app_purchase/in_app_purchase.dart';
 import '../../logic/bloc/bloc/coctailBloc/coctail_bloc.dart';
 import 'package:abrabar/logic/services/analytic_service.dart';
 import 'package:abrabar/shared/sharedExtensions.dart';
@@ -39,15 +41,16 @@ final initializationSettings = InitializationSettings(
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
-  log('bg message here: ${message.notification!.title}');
 }
 
 var api = RecipesApi();
 var notes = Notifications();
+var purchase = PurchaseService();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   FlutterBranchSdk.initSession().listen((data) {});
   // FlutterBranchSdk.validateSDKIntegration();
+
   await Firebase.initializeApp();
   // await RecipesApi.init();
 
@@ -65,7 +68,8 @@ Future<void> main() async {
   GetIt.instance
     ..registerSingleton<AnalyticsService>(AnalyticsService())
     ..registerSingleton<CoctailBloc>(CoctailBloc()..add(CoctailsInitialize()))
-    ..registerSingleton<MonetizationBloc>(MonetizationBloc());
+    ..registerSingleton<MonetizationBloc>(
+        MonetizationBloc()..add(MonetizationInit()));
 
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent, // transparent status bar
@@ -77,9 +81,16 @@ Future<void> main() async {
 //   notes.onBackGroundNotification(message);
 // }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   final cockBloc = GetIt.I.get<CoctailBloc>();
+
   final moneyBloc = GetIt.I.get<MonetizationBloc>();
 
   @override

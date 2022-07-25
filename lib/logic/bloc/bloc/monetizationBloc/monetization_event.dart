@@ -7,3 +7,5 @@ abstract class MonetizationEvent {
 class MonetizationInit extends MonetizationEvent {}
 
 class MonetizationPurchase extends MonetizationEvent {}
+
+class Monetization extends MonetizationEvent {}
