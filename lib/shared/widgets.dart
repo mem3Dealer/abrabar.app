@@ -75,7 +75,8 @@ class AbrabarWidgets {
                 child: Text(
                   subtitle,
                   style: theme.textTheme.subtitle2!.copyWith(
-                      color: isWhite ? Colors.white : const Color(0xff242320)),
+                      color: isWhite ? Colors.white : const Color(0xff242320),
+                      fontFamily: 'zet_light'),
                 ),
               ),
             ),

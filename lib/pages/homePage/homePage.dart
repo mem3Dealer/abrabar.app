@@ -99,7 +99,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         child: AppBar(
           title: Text(
             isSearch ? t.search : 'ABRABAR',
-            style: theme.textTheme.headline1,
+            style: theme.textTheme.headline1!
+                .copyWith(fontFamily: 'zet_expanded', fontSize: 30.sp),
           ),
           actions: [
             if (!isSearch)

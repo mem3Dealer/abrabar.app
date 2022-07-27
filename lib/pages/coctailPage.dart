@@ -146,8 +146,8 @@ class _CoctailPageState extends State<CoctailPage>
                                 ),
                                 Text(
                                   coc.description!,
-                                  style: theme.textTheme.headline1!
-                                      .copyWith(fontSize: 20.sp),
+                                  style: theme.textTheme.headline1!.copyWith(
+                                      fontSize: 20.sp, fontFamily: 'zet_light'),
                                 ),
                                 SizedBox(
                                   height: 2.5.h,
@@ -229,7 +229,8 @@ class _CoctailPageState extends State<CoctailPage>
                                   trailing: Text(
                                     pos['howMuch'].toString(),
                                     style: theme.textTheme.subtitle1!.copyWith(
-                                        color: const Color(0xff86837B)),
+                                        color: const Color(0xff86837B),
+                                        fontFamily: 'zet_light'),
                                   ),
                                 );
                               },

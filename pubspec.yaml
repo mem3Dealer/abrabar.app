@@ -56,4 +56,10 @@ flutter:
   fonts: 
     - family: zet_regular
       fonts:
-        - asset: assets/zet_regular.otf
+        - asset: assets/fonts/zet_regular.otf
+    - family: zet_expanded
+      fonts:
+        - asset: assets/fonts/zet_expanded.otf
+    - family: zet_light
+      fonts:
+        - asset: assets/fonts/zet_light.otf
