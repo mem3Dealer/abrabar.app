@@ -1,7 +1,5 @@
-import 'dart:developer';
-
 import 'package:abrabar/logic/bloc/bloc/monetizationBloc/monetization_bloc.dart';
-import 'package:abrabar/logic/services/purchase_service.dart';
+
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_branch_sdk/flutter_branch_sdk.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
@@ -45,14 +43,13 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 
 var api = RecipesApi();
 var notes = Notifications();
-var purchase = PurchaseService();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   FlutterBranchSdk.initSession().listen((data) {});
   // FlutterBranchSdk.validateSDKIntegration();
 
   await Firebase.initializeApp();
-  // await RecipesApi.init();
+  // await Reci pesApi.init();
 
   notes.subscribeToNotes(flnPlugin, channel);
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);

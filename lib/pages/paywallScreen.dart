@@ -125,7 +125,6 @@ class PaywallScreen extends StatelessWidget {
                             child: ElevatedButton(
                                 onPressed: () {
                                   moneyBloc.add(MonetizationPurchase());
-                                  // _buyProduct(prod);
                                   Navigator.of(context).pop();
                                 },
                                 style: ButtonStyle(
