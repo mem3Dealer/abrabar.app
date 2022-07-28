@@ -33,7 +33,7 @@ class RecipesApi {
     res = await russianRecipes!.values.map.allRows();
     engRes = await englishRecipes!.values.map.allRows();
 
-    String json = jsonEncode(res);
+    String json = jsonEncode(engRes);
     log(json);
     List<Coctail> allCocs = [];
     // await writeJson(res!);

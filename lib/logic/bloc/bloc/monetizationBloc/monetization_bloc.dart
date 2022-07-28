@@ -18,17 +18,20 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
   }
   final anal = GetIt.I.get<AnalyticsService>();
   InAppPurchase iap = InAppPurchase.instance;
-  final String productId = 'test_purchase';
+  final String productId = 'test_purchase1';
   late StreamSubscription<List<PurchaseDetails>> _subscription;
 
   Future<void> _onMonetizationPurchase(
       MonetizationPurchase event, Emitter emitter) async {
     final PurchaseParam purchaseParam =
         PurchaseParam(productDetails: state.products.first);
-    await iap.buyNonConsumable(purchaseParam: purchaseParam).then((value) {
-      anal.buyApp(999, 888);
-      emitter(state.copyWith(isPurchased: true));
-    });
+
+    {
+      await iap.buyNonConsumable(purchaseParam: purchaseParam).then((value) {
+        anal.buyApp(999, 888);
+        // emitter(state.copyWith(isPurchased: true));
+      });
+    }
   }
 
   FutureOr<void> _onMonetizationInit(
@@ -52,12 +55,12 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
 
   Future<void> verifyPurchase(PurchaseDetails? purchase) async {
     // PurchaseDetails? purchase = hasPurchased(productId);
-    print(purchase.toString());
     purchase ??= hasPurchased(productId);
+    log(purchase!.status.toString());
     if (purchase != null) {
       if (purchase.pendingCompletePurchase ||
           purchase.status == PurchaseStatus.purchased ||
-          purchase.status == PurchaseStatus.error) {
+          purchase.status == PurchaseStatus.restored) {
         log('DO WE EVEN GET HERE?');
         await iap.completePurchase(purchase).then((value) => print(
             'PURCHASE COMPLETED ${purchase?.purchaseID},' +
@@ -66,7 +69,7 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
         log('HERE?...');
       }
     } else {
-      log('no purchase, null');
+      log('no purchase');
     }
   }
 
@@ -84,6 +87,9 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
   Future<void> _getProducts() async {
     Set<String> ids = Set.from([productId]);
     ProductDetailsResponse response = await iap.queryProductDetails(ids);
+    if (response.productDetails.isEmpty) {
+      log('THERE ARE NO PRODUCTS');
+    }
     emit(state.copyWith(products: response.productDetails));
   }
 

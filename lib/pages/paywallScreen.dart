@@ -66,6 +66,7 @@ class PaywallScreen extends StatelessWidget {
         listener: (context, state) {},
         builder: (context, state) {
           print(state.purchases);
+          print(state.products);
           return SafeArea(
               top: false,
               child: Center(

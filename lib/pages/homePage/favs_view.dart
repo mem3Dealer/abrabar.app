@@ -20,7 +20,7 @@ class FavoritesView extends StatelessWidget {
           return Stack(
             children: [
               Align(
-                  alignment: Alignment(0, -0.85),
+                  alignment: const Alignment(0, -0.85),
                   child: Text(
                     t.zombieSays,
                     textAlign: TextAlign.center,
