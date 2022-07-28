@@ -15,33 +15,15 @@ import '../logic/services/analytic_service.dart';
 
 class PaywallScreen extends StatelessWidget {
   PaywallScreen({Key? key}) : super(key: key);
-  late bool tf;
-
-  Future<bool?> _internetCheckUp() async {
-    try {
-      final result = await InternetAddress.lookup('example.com');
-      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
-        print('we trued');
-        tf = true;
-        return true;
-      }
-    } on SocketException catch (_) {
-      tf = false;
-      return false;
-    }
-    return null;
-  }
 
   @override
   Widget build(BuildContext context) {
-    _internetCheckUp();
     final theme = Theme.of(context);
     final paths = PicPaths();
     var t = AppLocalizations.of(context)!;
     final moneyBloc = GetIt.I.get<MonetizationBloc>();
     final String defaultLocale = Platform.localeName;
-    late bool isAvailable = true;
-    print(isAvailable);
+
     Widget buildTextRow(String text) {
       return Padding(
         padding: EdgeInsets.only(bottom: 2.5.h, left: 10.w),
@@ -78,10 +60,10 @@ class PaywallScreen extends StatelessWidget {
       ),
       backgroundColor: theme.scaffoldBackgroundColor,
       body: BlocConsumer<MonetizationBloc, MonetizationState>(
-        listener: (context, state) {},
+        listener: (context, state) async {},
         builder: (context, state) {
           ProductDetails product = state.products.first;
-
+          moneyBloc.internetCheckUp();
           return SafeArea(
               top: false,
               child: Center(
@@ -112,7 +94,7 @@ class PaywallScreen extends StatelessWidget {
                         SizedBox(
                           height: 3.h,
                         ),
-                        isAvailable
+                        state.isAppAvailableToBuy
                             ? Padding(
                                 padding: const EdgeInsets.only(
                                   left: 16,

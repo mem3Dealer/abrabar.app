@@ -41,6 +41,7 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
       MonetizationInit event, Emitter emitter) async {
     await _wasAppPurchased();
     bool available = await iap.isAvailable();
+    emitter(state.copyWith(isAppAvailableToBuy: available));
     if (available && state.isPurchased == false) {
       await _getProducts();
       await _getPastPurchases();
@@ -141,5 +142,26 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
 
   Future<void> _getPastPurchases() async {
     await iap.restorePurchases();
+  }
+
+  Future<void> internetCheckUp() async {
+    bool isThereInternet = true;
+    bool available = await iap.isAvailable();
+    try {
+      final result = await InternetAddress.lookup('example.com');
+      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
+        print('we cheked, its true');
+
+        isThereInternet = true;
+      }
+    } on SocketException catch (_) {
+      isThereInternet = false;
+    }
+
+    if (isThereInternet == true && available == true) {
+      emit(state.copyWith(isAppAvailableToBuy: true));
+    } else {
+      emit(state.copyWith(isAppAvailableToBuy: false));
+    }
   }
 }
