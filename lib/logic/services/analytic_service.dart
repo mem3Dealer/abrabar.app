@@ -76,15 +76,18 @@ class AnalyticsService {
     analytics.logEvent(name: 'purchase_faulure');
   }
 
-  Future<void> buyApp(num actualPrice, num basePice) async {
+  Future<void> buyApp(
+      num actualPrice, num basePice, String currencySymbol) async {
     BranchEvent eventCustom = BranchEvent.customEvent('buy_app');
     eventCustom.addCustomData('base_price', basePice.toString());
     eventCustom.addCustomData('actual_price', actualPrice.toString());
 
     FlutterBranchSdk.trackContentWithoutBuo(branchEvent: eventCustom);
-    analytics.logEvent(
-        name: 'buy_app',
-        parameters: {'base_price': basePice, 'actual_price': actualPrice});
+    analytics.logEvent(name: 'buy_app', parameters: {
+      'base_price': basePice,
+      'actual_price': actualPrice,
+      "currency_Symbol": currencySymbol
+    }).then((value) => print(currencySymbol));
   }
 
   Future<void> paywallOpened(

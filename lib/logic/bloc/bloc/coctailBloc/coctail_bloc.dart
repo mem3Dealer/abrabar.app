@@ -96,9 +96,6 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
     if (event.isFav == true) {
       await storage.write(
           key: event.coctail.name!, value: event.isFav.toString());
-      // await storage.write(
-      //     key: "TEST SHIT",
-      //     value: '{"name": "TEST SHIT", "isFav":"${event.isFav.toString()}"}');
 
       state.favoriteCoctails.add(updated);
       emitter(state.copyWith(

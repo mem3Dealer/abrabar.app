@@ -6,7 +6,8 @@
     "categories": "classic",
     "searchWords": "vodka, tomatoe, juice, tabasco, bloody, mary, bloody mare",
     "steps": "Place ice into a shaker:highball_big.svg, ice.svg///Pour all the ingredients and stir:highball_big.svg, ice.svg, vodka.svg, juice_tomato.svg, juice_lemon.svg, sauce_tabasco.svg, salt.svg, pepper.svg///Garnish with a slice of lemon and a celery:highball_big.svg, ice.svg, vodka.svg, juice_tomato.svg, juice_lemon.svg, sauce_tabasco.svg, salt.svg, pepper.svg, lemon_piece.svg, celery.svg",
-    "ingredients": "Vodka: 45 ml///Tomatoe juice: 90 ml///Lemon juice: 15 ml///Tabasco: 2-3 drops///Salt and pepper: a pinch///Ice: some cubes"
+    "ingredients": "Vodka: 45 ml///Tomatoe juice: 90 ml///Lemon juice: 15 ml///Tabasco: 2-3 drops///Salt and pepper: a pinch///Ice: some cubes",
+    "colorCode": "242320"
   },
   {
     "name": "I am done",
@@ -15,7 +16,8 @@
     "categories": "authors",
     "searchWords": "rum, liquor, I, orange, spices, done, I am done",
     "steps": "Dip glass stem into a syrup first and into confectionnary powder after:wide_glass_with_thin_leg.svg, syrup_white_peach.svg, confectionery_topping.svg///In a separate bowl, stir together the rum, cider and liquor with a spoon:wide_glass_with_thin_leg.svg, rum.svg, cider_dry.svg, liquor_orange.svg///Pour carefully into the glass:wide_glass_with_thin_leg.svg, syrup_white_peach.svg, confectionery_topping.svg, rum.svg, cider_dry.svg, liquor_orange.svg",
-    "ingredients": "Spiced rum:40 ml///Dry cider:40 ml///orange liquor:10 ml///White peach syrup:15 мл///Confectionnary topping:10 gr"
+    "ingredients": "Spiced rum:40 ml///Dry cider:40 ml///orange liquor:10 ml///White peach syrup:15 ml///Confectionnary topping:10 gr",
+    "colorCode": "CC4163"
   },
   {
     "name": "Deliroscope",
@@ -24,7 +26,8 @@
     "categories": "authors",
     "searchWords": "vodka, cranberry, drink, deliroscope, author's, lemon, chocolate",
     "steps": "In a shaker, mix vodka, fruit drink, egg white, lemon juice and sugar syrup, and pour into a glass.: coctail.svg, juice_cranberry.svg, egg_white.svg, juice_lemon.svg, syrup_shugar.svg///Garnish with chocolate wedges.:coctail.svg, juice_cranberry.svg, egg_white.svg, juice_lemon.svg, syrup_shugar.svg, chocolate_bitter.svg",
-    "ingredients": "Vodka:50 ml///Cranberry drink:70 ml///Egg white:1 pcs///Lemon juice:20 ml///Sugar syrup:10ml///Bitter chocolate:2 slices"
+    "ingredients": "Vodka:50 ml///Cranberry drink:70 ml///Egg white:1 pcs///Lemon juice:20 ml///Sugar syrup:10ml///Bitter chocolate:2 slices",
+    "colorCode": "1F6981"
   },
   {
     "name": "Ilona Musk",
@@ -33,7 +36,8 @@
     "categories": "authors",
     "searchWords": "rum, strawberry, author's, lemon, ilona, musk, ilona musk",
     "steps": "Put the strawberry puree in the bottom of the glass:wine.svg, strawberry.svg///Mix rum, pineapple and lemon juices and syrup in a shaker:wine.svg, rum.svg, juice_lemon.svg, juice_pineapple.svg, syrup_bubble_gum.svg///Pour into a glass, garnish with a pineapple wedge if desired:wine.svg, strawberry.svg, rum.svg, juice_lemon.svg, juice_pineapple.svg, syrup_bubble_gum.svg, pineapple_piece.svg",
-    "ingredients": "Rum:50 ml///Strawberry puree:30 ml///Pineapple juice:25 ml///Lemon juice:25 ml///Bubble gum syrup:20 ml"
+    "ingredients": "Rum:50 ml///Strawberry puree:30 ml///Pineapple juice:25 ml///Lemon juice:25 ml///Bubble gum syrup:20 ml",
+    "colorCode": "713FFF"
   },
   {
     "name": "Rough and tumble",
@@ -42,7 +46,8 @@
     "categories": "authors",
     "searchWords": "tequila, author's, prunes, lemon, caramel, mint, rough, tubmle, rough and tumble",
     "steps": "Mix prune puree, tequila, syrup, sauce and fresh juice in a shaker:whiskey.svg, puree_prunes.svg, tequila.svg, syrup_caramel.svg, sauce_balsamic.svg, juice_lemon.svg///Pour the resulting cocktail into a chilled glass:whiskey.svg, puree_prunes.svg, tequila.svg, syrup_caramel.svg, sauce_balsamic.svg, juice_lemon.svg///Garnish with citrus zest and mint:whiskey.svg, puree_prunes.svg, tequila.svg, syrup_caramel.svg, sauce_balsamic.svg, juice_lemon.svg, zest_orange.svg, mint.svg",
-    "ingredients": "Tequila:50ml///Prune puree:50 ml///Caramel syrup:10ml///Balsamic sauce:10 ml///Lemon juice:20 ml///Orange zest:1 pcs///Mint leaves:3 pcs///Prunes:2 pcs"
+    "ingredients": "Tequila:50ml///Prune puree:50 ml///Caramel syrup:10ml///Balsamic sauce:10 ml///Lemon juice:20 ml///Orange zest:1 pcs///Mint leaves:3 pcs///Prunes:2 pcs",
+    "colorCode": "6B291A"
   },
   {
     "name": "Be my quarantine",
@@ -51,7 +56,8 @@
     "categories": "authors",
     "searchWords": "author's, vodka, honey, grapefruit, lemon, cranberry, quarantine, quarantine",
     "steps": "Shake vodka, honey syrup, grapefruit, lemon and cranberry juices thoroughly in a shaker:whiskey.svg, vodka.svg, syrup_honey.svg, juice_grapefruit.svg, juice_lemon.svg, juice_cranberry.svg///Pour into a glass:whiskey.svg, vodka.svg, syrup_honey.svg, juice_grapefruit.svg, juice_lemon.svg, juice_cranberry.svg///Garnish with grapefruit zest:whiskey.svg, vodka.svg, syrup_honey.svg, juice_grapefruit.svg, juice_lemon.svg, juice_cranberry.svg, zest_grapefruit.svg",
-    "ingredients": "Vodka:60 ml///Honey syrup:40 ml///Grapefruit juice:70 ml///Lemon juice:25 ml///Cranberry juice:25 ml///Grapefruit zest:1 pcs"
+    "ingredients": "Vodka:60 ml///Honey syrup:40 ml///Grapefruit juice:70 ml///Lemon juice:25 ml///Cranberry juice:25 ml///Grapefruit zest:1 pcs",
+    "colorCode": "1E6CA5"
   },
   {
     "name": "Rustic",
@@ -60,7 +66,8 @@
     "categories": "authors",
     "searchWords": "rum, coconut, liquor, author's, pineapple, cucumber, fresh, rustic",
     "steps": "Whisk rum, liquor, sesame oil, cucumber, pineapple and lime juices in a shaker:whiskey.svg, rum_white.svg, liquor_coconout.svg, oil_sesame.svg, juice_cucumber.svg, juice_pineapple.svg, juice_lime.svg///Pour the mixture into a chilled glass:whiskey.svg, rum_white.svg, liquor_coconout.svg, oil_sesame.svg, juice_cucumber.svg, juice_pineapple.svg, juice_lime.svg///Garnish with a cucumber slice:whiskey.svg, rum_white.svg, liquor_coconout.svg, oil_sesame.svg, juice_cucumber.svg, juice_pineapple.svg, juice_lime.svg, cucumber.svg",
-    "ingredients": "White rum:45 ml///Coconut liquor:15 ml///Cucumber juice:15 ml///Pineapple juice:25 ml///Lime juice:45 ml///Seesame oil:2 drops///Cucumber:1 slice"
+    "ingredients": "White rum:45 ml///Coconut liquor:15 ml///Cucumber juice:15 ml///Pineapple juice:25 ml///Lime juice:45 ml///Seesame oil:2 drops///Cucumber:1 slice",
+    "colorCode": "421A14"
   },
   {
     "name": "Hedgehoge's ass",
@@ -69,7 +76,8 @@
     "categories": "authors",
     "searchWords": "sparkling wine, build, vodka, passion fruit, author's, vanilla, orange, tushy, hedgehog, hedgehog's tushy",
     "steps": "Fill the glass with ice:highball_middle.svg, ice.svg/// Pour in vodka, vanilla syrup, passion fruit puree:highball_middle.svg, ice.svg, vodka.svg, syrup_vanilla.svg, puree_passion_fruit.svg///Top with sparkling wine:highball_middle.svg, ice.svg, vodka.svg, syrup_vanilla.svg, puree_passion_fruit.svg, wine_playful.svg///Garnish with an orange slice:highball_middle.svg, ice.svg, vodka.svg, syrup_vanilla.svg, puree_passion_fruit.svg, wine_playful.svg, orange_piece.svg",
-    "ingredients": "Vodka:20 ml///Vanilla syrup:15 ml///Passion fruit puree:30 ml///Dry sparkling wine:100 ml///Ice:100 gr///Orange:1 slice"
+    "ingredients": "Vodka:20 ml///Vanilla syrup:15 ml///Passion fruit puree:30 ml///Dry sparkling wine:100 ml///Ice:100 gr///Orange:1 slice",
+    "colorCode": "D76950"
   },
   {
     "name": "Lack of money",
@@ -78,7 +86,8 @@
     "categories": "authors",
     "searchWords": "author's, tequila, pomegranate, lime, juice, liquor, mint, lack of money",
     "steps": "Whip all the ingredients with ice in a shaker:highball_small.svg, tequila.svg, juice_pomegranate.svg, juice_lime.svg, liquor_orange.svg, syrup_shugar.svg///Pour into a glass:highball_small.svg, tequila.svg, juice_pomegranate.svg, juice_lime.svg, liquor_orange.svg, syrup_shugar.svg///Garnish with mint and lime:highball_small.svg, tequila.svg, juice_pomegranate.svg, juice_lime.svg, liquor_orange.svg, syrup_shugar.svg, mint.svg, lime_piece.svg",
-    "ingredients": "Tequila:40 ml///Pomegranate juice:30 ml///Lime juice:30 ml///Orange liquor:20 ml///Sugar syrup:10 ml"
+    "ingredients": "Tequila:40 ml///Pomegranate juice:30 ml///Lime juice:30 ml///Orange liquor:20 ml///Sugar syrup:10 ml",
+    "colorCode": "6B291A"
   },
   {
     "name": "A fey from Bombay ",
@@ -87,7 +96,8 @@
     "categories": "authors",
     "searchWords": "author's, muddling, grape, liquor, vodka, rosemary, lemon, fay, bombay, fay from bombay",
     "steps": "Crush grapes in a shaker:martini.svg, green_grape.svg///Add vodka, lemon juice and liquor to it. Shake it up:martini.svg, green_grape.svg, vodka.svg, juice_lemon.svg, liquor_melon.svg///Pour through a strainer into a glass with ice:martini.svg, green_grape.svg, vodka.svg, juice_lemon.svg, liquor_melon.svg, ice.svg///Garnish with rosemary:martini.svg, green_grape.svg, vodka.svg, juice_lemon.svg, liquor_melon.svg, ice.svg, rosemary.svg",
-    "ingredients": "Melon liquor:30 ml///Vodka:30 ml///Lemon juice:15 ml///Green grapes:20 gr///Ice:20 gr///Rosemary:1 pcs"
+    "ingredients": "Melon liquor:30 ml///Vodka:30 ml///Lemon juice:15 ml///Green grapes:20 gr///Ice:20 gr///Rosemary:1 pcs",
+    "colorCode": "C15FC3"
   },
   {
     "name": "Grocery list",
@@ -96,7 +106,8 @@
     "categories": "authors",
     "searchWords": "author's, mint, vodka, milk, lemon, juice, tonic, list, grocery, grocery list",
     "steps": "Mix mint and vodka in a bottle and infuse for one day:whiskey.svg, mint.svg, vodka.svg///Add liquor, milk and lemon juice to the resulting tincture in a bottle:whiskey.svg, mint.svg, vodka.svg, liquor_mint.svg, milk.svg, juice_lemon.svg///Stir, add pea juice and mix again:whiskey.svg, mint.svg, vodka.svg, liquor_mint.svg, milk.svg, juice_lemon.svg, juice_peas_young.svg///Let it infuse for an hour:whiskey.svg, mint.svg, vodka.svg, liquor_mint.svg, milk.svg, juice_lemon.svg, juice_peas_young.svg///Add fructose syrup:whiskey.svg, mint.svg, vodka.svg, liquor_mint.svg, milk.svg, juice_lemon.svg, juice_peas_young.svg, syrup_fructose.svg///Pour into glasses and dilute in glasses with tonic:whiskey.svg, mint.svg, vodka.svg, liquor_mint.svg, milk.svg, juice_lemon.svg, juice_peas_young.svg, syrup_fructose.svg, tonic.svg",
-    "ingredients": "Vodka:250 ml///Mint liquor:60 ml///Milk:200 ml///Lemon juice:60 ml///Young pea juice:80 ml///Mint:15 gr///Fructose syrup:30 ml///Tonic:20 ml per portion"
+    "ingredients": "Vodka:250 ml///Mint liquor:60 ml///Milk:200 ml///Lemon juice:60 ml///Young pea juice:80 ml///Mint:15 gr///Fructose syrup:30 ml///Tonic:20 ml per portion",
+    "colorCode": "E99A89"
   },
   {
     "name": "Benyo's hand",
@@ -105,7 +116,8 @@
     "categories": "authors",
     "searchWords": "author's, milk, rum, caramel, syrup, lemon, cookies, hand, benyo, benyo's hand",
     "steps": "Add oatmeal cookies to a bottle of rum and infuse for 2 hours:round_glass.svg, rum_white.svg, oatmeal_cookie.svg///Strain the rum into a glass:round_glass.svg, rum_white.svg, oatmeal_cookie.svg///Add syrup and lemon juice, stir:round_glass.svg, rum_white.svg, oatmeal_cookie.svg, syrup_caramel_salty.svg, juice_lemon.svg///Add milk and stir again:round_glass.svg, rum_white.svg, oatmeal_cookie.svg, syrup_caramel_salty.svg, juice_lemon.svg, milk.svg///Serve chilled:round_glass.svg, rum_white.svg, oatmeal_cookie.svg, syrup_caramel_salty.svg, juice_lemon.svg, milk.svg",
-    "ingredients": "White rum:100 ml///Oatmeal cookies:30 gr///Salted caramel syrup:25 ml///Lemon juice:25 ml///Milk:30 ml"
+    "ingredients": "White rum:100 ml///Oatmeal cookies:30 gr//Salted caramel syrup:25 ml///Lemon juice:25 ml///Milk:30 ml",
+    "colorCode": "FF843F"
   },
   {
     "name": "Good night",
@@ -114,7 +126,8 @@
     "categories": "authors",
     "searchWords": "author's, build, sweet, calvados, campari, sparkling wine, sea ​​​​buckthorn, tincture, apple, good, night, good night",
     "steps": "Mix calvados, campari and tincture in a glass:wine.svg, calvados.svg, liquor_campari.svg, tincture_sea_buckthorn.svg///Top with sparkling wine:wine.svg, calvados.svg, liquor_campari.svg, tincture_sea_buckthorn.svg, wine_playful.svg///Garnish with apple:wine.svg, calvados.svg, liquor_campari.svg, tincture_sea_buckthorn.svg, wine_playful.svg, apple.svg",
-    "ingredients": "Calvados:20 ml///Campari:5 ml///Sparkling wine:70 ml///Sea buckthorn tincture:25 ml///Apple:1 slice"
+    "ingredients": "Calvados:20 ml///Campari:5 ml///Sparkling wine:70 ml///Sea buckthorn tincture:25 ml///Apple:1 slice",
+    "colorCode": "6B291A"
   },
   {
     "name": "Pixeliard",
@@ -123,7 +136,8 @@
     "categories": "authors",
     "searchWords": "author's, shake, sweet, ale, ginger, sambuca, cointreau, grenadine, lemon, cherry, pixeliard",
     "steps": "Mix sambuca, cointreau, ale and grenadine in a shaker:hurricane.svg, sambuca.svg, liquor_cointreau.svg, ale_ginger.svg, grenadine.svg///Pour into a glass with ice:hurricane.svg, sambuca.svg, liquor_cointreau.svg, ale_ginger.svg, grenadine.svg, ice.svg///Garnish with a lemon wedge and a cherry:hurricane.svg, sambuca.svg, liquor_cointreau.svg, ale_ginger.svg, grenadine.svg, ice.svg, lemon_piece.svg, cherry_coctail.svg",
-    "ingredients": "Sambuca:10 ml///Cointreau:30 ml///Ginger ale:120 ml///Grenadine:10 ml///Ice:150 gr///Lemon:1 slice///Cocktail cherry:1 pcs"
+    "ingredients": "Sambuca:10 ml///Cointreau:30 ml///Ginger ale:120 ml///Grenadine:10 ml///Ice:150 gr///Lemon:1 slice///Cocktail cherry:1 pcs",
+    "colorCode": "CC4163"
   },
   {
     "name": "Suburbs",
@@ -131,8 +145,9 @@
     "picPreview": "zamkadie_eng.svg",
     "categories": "authors",
     "searchWords": "author's, shake, sweet, honey, honey wine, liquor, banana, lemon, syrup, egg, white, suburbs",
-    "steps": "Shake mead, liquor, lemon juice, honey syrup and egg white in a shaker:whiskey.svg, honey.svg, liquor_banana.svg, juice_lemon.svg, syrup_honey.svg, egg_white.svg///Pour into a chilled glass:whiskey.svg, honey.svg, liquor_banana.svg, juice_lemon.svg, syrup_honey.svg, egg_white.svg///Decorate with orange zest:whiskey.svg, honey.svg, liquor_banana.svg, juice_lemon.svg, syrup_honey.svg, egg_white.svg, zest_orange.svg",
-    "ingredients": "Honey wine:40 ml///Banana liquor:20 ml///Lemon juice:20 ml///Honey syrup:15 ml///Egg white:1 pcs///Orange zest:1 pcs"
+    "steps": "Shake mead, liquor, lemon juice, honey syrup and egg white in a shaker:whiskey.svg, honey.svg, liquor_banana.svg, juice_lemon.svg, syrup_honey.svg, egg_white.svg///Pour into a chilled glass:whiskey.svg, honey.svg, liquor_banana.svg, juice_lemon.svg, syrup_honey.svg, egg_white.svg///Garnish with orange zest:whiskey.svg, honey.svg, liquor_banana.svg, juice_lemon.svg, syrup_honey.svg, egg_white.svg, zest_orange.svg",
+    "ingredients": "Honey wine:40 ml///Banana liquor:20 ml///Lemon juice:20 ml///Honey syrup:15 ml///Egg white:1 pcs///Orange zest:1 pcs",
+    "colorCode": "1F6981"
   },
   {
     "name": "Judy's riot",
@@ -141,7 +156,8 @@
     "categories": "authors",
     "searchWords": "author's, build, sweet and sour, lavender, syrup, lemon, liquor, gin, Judy, riot, Judy's riot",
     "steps": "Mix gin, liquor, syrup and lemon juice in a glass:whiskey.svg, gin.svg, liquor_berries.svg, syrup_lavender.svg, juice_lemon.svg///Garnish with lavender:whiskey.svg, gin.svg, liquor_berries.svg, syrup_lavender.svg, juice_lemon.svg, lavender_dry.svg",
-    "ingredients": "Gin:40 ml///Berry liquor:20 ml///Lavender syrup:10 ml///Lemon juice:10 ml///Dry lavender:1 gr"
+    "ingredients": "Gin:40 ml///Berry liquor:20 ml///Lavender syrup:10 ml///Lemon juice:10 ml///Dry lavender:1 gr",
+    "colorCode": "478358"
   },
   {
     "name": "It",
@@ -150,7 +166,8 @@
     "categories": "authors",
     "searchWords": "author's, shake, sour, lime, gin, lemon, juice, sparkling, wine, it",
     "steps": "Mix gin, lemon juice and 1 lime leaf in a shaker:champagne.svg, gin.svg, juice_lemon.svg, leaf_lime.svg///Pour into a glass:champagne.svg, gin.svg, juice_lemon.svg, leaf_lime.svg///Top with sparkling wine:champagne.svg, gin.svg, juice_lemon.svg, leaf_lime.svg, wine_playful.svg///Garnish with lime leaf:champagne.svg, gin.svg, juice_lemon.svg, leaf_lime.svg, wine_playful.svg",
-    "ingredients": "Gin:30 ml///Lemon juice:20 ml///Dry sparkling wine:100 ml///Lime leaf:2 pcs"
+    "ingredients": "Gin:30 ml///Lemon juice:20 ml///Dry sparkling wine:100 ml///Lime leaf:2 pcs",
+    "colorCode": "713FFF"
   },
   {
     "name": "Tester",
@@ -159,7 +176,8 @@
     "categories": "authors",
     "searchWords": "author's, shake, sweet, lilac, gin, liquorr, syrup, soda, egg, lime, tester, test",
     "steps": "Mix all ingredients in a shaker:highball_middle.svg, gin.svg, liquor_fruit.svg, syrup_lilac.svg, soda.svg, egg_white.svg, juice_lime.svg///Pour into a chilled glass:highball_middle.svg, gin.svg, liquor_fruit.svg, syrup_lilac.svg, soda.svg, egg_white.svg, juice_lime.svg",
-    "ingredients": "Gin:50 ml///Fruit liquor:10 ml///Lilac syrup:20 ml///Soda:50 ml///Egg white:1 pcs///Lime juice:25 ml"
+    "ingredients": "Gin:50 ml///Fruit liquor:10 ml///Lilac syrup:20 ml///Soda:50 ml///Egg white:1 pcs///Lime juice:25 ml",
+    "colorCode": "D76950"
   },
   {
     "name": "Prepayment",
@@ -168,7 +186,8 @@
     "categories": "authors",
     "searchWords": "author's, stir, sweet and sour, grapefruit, gin, whiskey, liquor, syrup, prepayment",
     "steps": "Pour gin, whiskey, liquor, syrup and bitters into a mixing glass and stir:wide_glass_with_thin_leg.svg, gin.svg, whiskey.svg, liquor_yellow.svg, syrup_shugar.svg, liquor_grapefruit_bitter.svg///Pour into glasses and garnish with zest:wide_glass_with_thin_leg.svg, gin.svg, whiskey.svg, liquor_yellow.svg, syrup_shugar.svg, liquor_grapefruit_bitter.svg, zest_grapefruit.svg",
-    "ingredients": "Gin:40 ml///Whiskey:20 ml///Yellow liquor:7 ml///Sugar syrup:5ml///Grapefruit bitter:1 drop///Grapefruit zest: pcs"
+    "ingredients": "Gin:40 ml///Whiskey:20 ml///Yellow liquor:7 ml///Sugar syrup:5ml///Grapefruit bitter:1 drop///Grapefruit zest: pcs",
+    "colorCode": "242320"
   },
   {
     "name": "Saint-Petersbourg style",
@@ -177,7 +196,8 @@
     "categories": "authors",
     "searchWords": "author's, shake, sweet, raspberry, liquor, vodka, rum, strawberry, amaretto, lime, Saint-Petersbourg,style",
     "steps": "Mix vodka, rum, strawberry puree and amaretto in a shaker:small_coctail_glass.svg, vodka.svg, rum_golden.svg, puree_strawberry.svg, liquor_amaretto.svg///Dip the rim of the shot glass into the lime juice and then into the powdered sugar:small_coctail_glass.svg, vodka.svg, rum_golden.svg, puree_strawberry.svg, liquor_amaretto.svg, juice_lime.svg, sugar_powdered.svg///Strain the cocktail into a shot:small_coctail_glass.svg, vodka.svg, rum_golden.svg, puree_strawberry.svg, liquor_amaretto.svg, juice_lime.svg, sugar_powdered.svg///Top with raspberry liquor:small_coctail_glass.svg, vodka.svg, rum_golden.svg, puree_strawberry.svg, liquor_amaretto.svg, juice_lime.svg, sugar_powdered.svg, liquor_raspberry.svg",
-    "ingredients": "Vodka:30 ml///Golden rum:30 ml///Strawberry puree:15 ml///Amaretto liquor:15 ml///Raspberry liquor:30 ml///Lime juice:5 ml///Sugar powder:5 gr"
+    "ingredients": "Vodka:30 ml///Golden rum:30 ml///Strawberry puree:15 ml///Amaretto liquor:15 ml///Raspberry liquor:30 ml///Lime juice:5 ml///Sugar powder:5 gr",
+    "colorCode": "3EC26B"
   },
   {
     "name": "See me dancing",
@@ -186,7 +206,8 @@
     "categories": "authors",
     "searchWords": "author's, shake, sour, lavender, syrup, gin, lime, orange, tonic, liquor, dancing, see me dancing",
     "steps": "Combine lavender syrup, gin, lime juice and orange liquor in a shaker:wine.svg, syrup_lavender.svg, gin.svg, juice_lime.svg, liquor_orange.svg///Pour into a glass:wine.svg, syrup_lavender.svg, gin.svg, juice_lime.svg, liquor_orange.svg///Pour tonic in:wine.svg, syrup_lavender.svg, gin.svg, juice_lime.svg, liquor_orange.svg, tonic.svg///Garnish with lavender:wine.svg, syrup_lavender.svg, gin.svg, juice_lime.svg, liquor_orange.svg, tonic.svg, lavender_dry.svg",
-    "ingredients": "Lavender syrup: 30 ml///Gin:50 ml///Lime juice:25 ml///Orange liquor:20 ml///Tonic:50 ml"
+    "ingredients": "Lavender syrup: 30 ml///Gin:50 ml///Lime juice:25 ml///Orange liquor:20 ml///Tonic:50 ml",
+    "colorCode": "304034"
   },
   {
     "name": "Mojito",
@@ -195,7 +216,8 @@
     "categories": "classic",
     "searchWords": "classic, muddling, sweet, rum, soda, mint, lime, mojito",
     "steps": "Put a lime in the bottom of the glass and crush it lightly:highball_big.svg, lime_piece.svg///Place mint and crushed ice into a glass:highball_big.svg, lime_piece.svg, mint.svg, ice_crumb.svg///Add rum and sugar syrup:highball_big.svg, lime_piece.svg, mint.svg, ice_crumb.svg, syrup_shugar.svg, rum_white.svg///Add soda and stir to combine:highball_big.svg, lime_piece.svg, mint.svg, ice_crumb.svg, syrup_shugar.svg, rum_white.svg, soda.svg///Garnish with mint and lime slice:highball_big.svg, lime_piece.svg, mint.svg, ice_crumb.svg, syrup_shugar.svg, rum_white.svg, soda.svg",
-    "ingredients": "White rum:50 ml///Sugar syrup:15 ml///Soda:100 ml///Lime:80 gr///Mint:3 gr///Ice:200 gr"
+    "ingredients": "White rum:50 ml///Sugar syrup:15 ml///Soda:100 ml///Lime:80 gr///Mint:3 gr///Ice:200 gr",
+    "colorCode": "A6C54F"
   },
   {
     "name": "Margarita",
@@ -204,16 +226,18 @@
     "categories": "classic",
     "searchWords": "classic, shake, margarita, tequila, liquor, lime",
     "steps": "Make a salty rim on the glass:margarita.svg,salt.svg///In a shaker, combine tequila, liquor, sugar syrup and lime juice:margarita.svg,salt.svg,tequila.svg, liquor_orange.svg, syrup_shugar.svg, juice_lime.svg///Pour the finished cocktail into a glass filled with ice and garnish with a lime wedge:margarita.svg,salt.svg,tequila.svg, liquor_orange.svg, syrup_shugar.svg, juice_lime.svg, ice.svg, lime_piece.svg",
-    "ingredients": "Tequila:50 ml///Orange liquor:25 ml///Sugar syrup:10ml///Lime juice:30 ml///Lime:10 gr///Salt:2 gr///Ice:200 gr"
+    "ingredients": "Tequila:50 ml///Orange liquor:25 ml///Sugar syrup:10ml///Lime juice:30 ml///Lime:10 gr///Salt:2 gr///Ice:200 gr",
+    "colorCode": "85263D"
   },
   {
-    "name": "Long island ice tea",
+    "name": "Ling island ice tea",
     "description": "Sweet build",
     "picPreview": "long_island_eng.svg",
     "categories": "classic",
     "searchWords": "classic, long island, ice tea, long island ice tea, sweet, rum, tequila, gin, liquor, coca-cola, lemon",
     "steps": "Pour lemon juice, sugar syrup and liquor into a glass with ice:highball_big.svg, ice.svg, syrup_shugar.svg, liquor_orange.svg, juice_lemon.svg///Add vodka, gin, rum and tequila:highball_big.svg, ice.svg, syrup_shugar.svg, liquor_orange.svg, juice_lemon.svg, vodka.svg, gin.svg, rum_white.svg, tequila.svg///Pour in the cola and stir gently:highball_big.svg, ice.svg, syrup_shugar.svg, liquor_orange.svg, juice_lemon.svg, vodka.svg, gin.svg, rum_white.svg, tequila.svg, cola.svg///Garnish with lemon slice:highball_big.svg, ice.svg, syrup_shugar.svg, liquor_orange.svg, juice_lemon.svg, vodka.svg, gin.svg, rum_white.svg, tequila.svg, cola.svg, lemon_piece.svg",
-    "ingredients": "Vodka:30 ml///White rum:30 ml///Tequila:30 ml///Gin:30 ml///Orange liquor:30 ml///Sugar syrup:30 ml///Lemon juice:30 ml///Coca-Cola:100 ml///Lemon:40 gr///Ice:300 gr"
+    "ingredients": "Vodka:30 ml///White rum:30 ml///Tequila:30 ml///Gin:30 ml///Orange liquor:30 ml///Sugar syrup:30 ml///Lemon juice:30 ml///Coca-Cola:100 ml///Lemon:40 gr///Ice:300 gr",
+    "colorCode": "3EC26B"
   },
   {
     "name": "B-52",
@@ -222,16 +246,18 @@
     "categories": "classic",
     "searchWords": "classic, fire, coffee, liquor, shot, b-52, b52, b 52, 52",
     "steps": "Pour coffee liquor into a glass:shot.svg, liquor_coffee.svg///Use a cocktail spoon to layer the Irish cream and orange liquor on top:shot.svg, liquor_coffee.svg, liquor_orange.svg, liquor_irish_cream.svg///Light up and enjoy:shot.svg, liquor_coffee.svg, liquor_orange.svg, liquor_irish_cream.svg",
-    "ingredients": "Coffee liquor:15 ml///Irish cream:15 ml///Orange liquor:15 ml"
+    "ingredients": "Coffee liquor:15 ml///Irish cream:15 ml///Orange liquor:15 ml",
+    "colorCode": "E1B37E"
   },
   {
     "name": "Cosmopolitain",
     "description": "Sour shake",
     "picPreview": "cosmopoliten_eng.svg",
     "categories": "classic",
-    "searchWords": "classic, vodka, liquor, orange, cranberry, juice, lime, космополитен, космополитэн",
+    "searchWords": "classic, vodka, liquor, orange, cranberry, juice, lime, Cosmopolitain",
     "steps": "In a shaker with ice, mix all the ingredients except the zest:coctail.svg, vodka_citrus.svg, liquor_orange.svg, juice_cranberry.svg, juice_lime.svg, ice.svg///Pour into a chilled glass:coctail.svg, vodka_citrus.svg, liquor_orange.svg, juice_cranberry.svg, juice_lime.svg, ice.svg///Garnish with orange zest:coctail.svg, vodka_citrus.svg, liquor_orange.svg, juice_cranberry.svg, juice_lime.svg, ice.svg, zest_orange.svg",
-    "ingredients": "Citrus vodka:40 ml///Orange liquor:20 ml///Cranberry juice:50 ml///Lime juice:10 ml///Orange zest:1 pcs///Ice:200 gr"
+    "ingredients": "Citrus vodka:40 ml///Orange liquor:20 ml///Cranberry juice:50 ml///Lime juice:10 ml///Orange zest:1 pcs///Ice:200 gr",
+    "colorCode": "4191CC"
   },
   {
     "name": "Daiquiri",
@@ -240,7 +266,8 @@
     "categories": "classic",
     "searchWords": "classic, rum, lime, ice, daiquiri",
     "steps": "Mix all the ingredients in a shaker:wide_glass_with_thin_leg.svg, rum_white.svg, syrup_shugar.svg, juice_lime.svg, ice.svg///Pour into a chilled glass:wide_glass_with_thin_leg.svg, rum_white.svg, syrup_shugar.svg, juice_lime.svg, ice.svg",
-    "ingredients": "White rum:60 ml///Sugar syrup:15 ml///Lime juice:30 ml///Ice:200 gr"
+    "ingredients": "White rum:60 ml///Sugar syrup:15 ml///Lime juice:30 ml///Ice:200 gr",
+    "colorCode": "BC7745"
   },
   {
     "name": "Manhattan",
@@ -249,7 +276,8 @@
     "categories": "classic",
     "searchWords": "classic, bourbon, vermouth, angostura, cherry, manhattan",
     "steps": "Mix all liquid ingredients in a mixing glass:coctail.svg, bourbon.svg, vermouth_red.svg, angostura_bitter.svg///Pour into a glass with ice:coctail.svg, bourbon.svg, vermouth_red.svg, angostura_bitter.svg, ice.svg///Garnish with a cocktail cherry:coctail.svg, bourbon.svg, vermouth_red.svg, angostura_bitter.svg, ice.svg, cherry_coctail.svg",
-    "ingredients": "Bourbon:50 ml///Red vermouth:25 ml///Angostura bitter:1 ml///Cocktail cherry:2 pcs///Ice:300 gr"
+    "ingredients": "Bourbon:50 ml///Red vermouth:25 ml///Angostura bitter:1 ml///Cocktail cherry:2 pcs///Ice:300 gr",
+    "colorCode": "85263D"
   },
   {
     "name": "Pina Colada",
@@ -258,7 +286,8 @@
     "categories": "classic",
     "searchWords": "classic, blend, pineapple, coconut, syrup, sweet, rum, lime, cherry, pina, colada, pina colada",
     "steps": "Squeeze 100 ml juice from a pineapple:hurricane.svg, juice_pineapple.svg///In a blender, mix everything but cherries and pineapple leaf:hurricane.svg, juice_pineapple.svg, rum_darth.svg, rum_white.svg, syrop_coconout.svg, ice,svg///Pour into a glass and garnish with a cocktail cherry and pineapple leaf:hurricane.svg, juice_pineapple.svg, rum_darth.svg, rum_white.svg, syrop_coconout.svg, ice.svg, cherry_coctail.svg, leaf_pineapple.svg",
-    "ingredients": "White rum:60 ml///Dark rum:15 ml///Coconut syrup:40 ml///Lime juice:20 ml///Pineapple leaves:1 pcs///Pineapple:1 kg///Cocktail cherry:2 pcs///Ice:60 gr"
+    "ingredients": "White rum:60 ml///Dark rum:15 ml///Coconut syrup:40 ml///Lime juice:20 ml///Pineapple leaves:1 pcs///Pineapple:1 kg///Cocktail cherry:2 pcs///Ice:60 gr",
+    "colorCode": "E1B37E"
   },
   {
     "name": "Screwdriver",
@@ -266,8 +295,9 @@
     "picPreview": "screw_eng.svg",
     "categories": "classic",
     "searchWords": "classic, screwdriver, orange, juice, vodka, ice",
-    "steps": "Pour vodka into a glass with ice:highball_big.svg, ice.svg, vodka.svg///Pour in the orange juice:highball_big.svg, ice.svg, vodka.svg, juice_orange.svg///Stir to combine and garnishe with orange slice:highball_big.svg, ice.svg, vodka.svg, juice_orange.svg, orange_piece.svg",
-    "ingredients": "Vodka:50 ml///Orange juice:150 ml///Orange:30 gr///Ice:180 gr"
+    "steps": "Pour vodka into a glass with ice:highball_big.svg, ice.svg, vodka.svg///Pour orange juice in:highball_big.svg, ice.svg, vodka.svg, juice_orange.svg///Stir to combine and garnishe with orange slice:highball_big.svg, ice.svg, vodka.svg, juice_orange.svg, orange_piece.svg",
+    "ingredients": "Vodka:50 ml///Orange juice:150 ml///Orange:30 gr///Ice:180 gr",
+    "colorCode": "B6002C"
   },
   {
     "name": "Whiskey sour",
@@ -276,7 +306,8 @@
     "categories": "classic",
     "searchWords": "classic, whiskey, bourbon, angostura, limon, cherry, whiskey sour, sour",
     "steps": "Mix everything in a shaker but ice and cherries:whiskey.svg, bourbon.svg, angostura_bitter.svg, syrup_shugar.svg, juice_lemon.svg, egg_white_quail.svg///Add ice to shaker and shake again:whiskey.svg, bourbon.svg, angostura_bitter.svg, syrup_shugar.svg, juice_lemon.svg, egg_white_quail.svg, ice.svg///Pour into a glass and garnish with a cherry:whiskey.svg, bourbon.svg, angostura_bitter.svg, syrup_shugar.svg, juice_lemon.svg, egg_white_quail.svg, ice.svg, cherry_coctail.svg",
-    "ingredients": "Bourbon:50 ml///Angostura bitter:1 ml///Sugar syrup:15 ml///Lemon juice:30 ml///Quail egg white:25 ml///Cocktail cherry:2 pcs///Ice:320 gr"
+    "ingredients": "Bourbon:50 ml///Angostura bitter:1 ml///Sugar syrup:15 ml///Lemon juice:30 ml///Quail egg white:25 ml///Cocktail cherry:2 pcs///Ice:320 gr",
+    "colorCode": "713FFF"
   },
   {
     "name": "Black russian",
@@ -285,7 +316,8 @@
     "categories": "classic",
     "searchWords": "classic, vodka, coffee, liquor, russian, black, black russian",
     "steps": "Fill the glass with ice:whiskey.svg, ice.svg///Add liquor, vodka and stir to combine:whiskey.svg, ice.svg, vodka.svg, liquor_coffee.svg",
-    "ingredients": "Vodka:50 ml///Coffee liquor:25 ml///Ice:120 gr"
+    "ingredients": "Vodka:50 ml///Coffee liquor:25 ml///Ice:120 gr",
+    "colorCode": "717171"
   },
   {
     "name": "Tequila sunrise",
@@ -294,7 +326,8 @@
     "categories": "classic",
     "searchWords": "classic, tequila, orange, juice, grenadine, sunrise, tequila sunrise",
     "steps": "Pour tequila into a glass with ice:hurricane.svg, ice.svg, tequila.svg///Then add orange juice and grenadine:hurricane.svg, ice.svg, tequila.svg, juice_orange.svg, grenadine.svg///Garnish with orange slice:hurricane.svg, ice.svg, tequila.svg, juice_orange.svg, grenadine.svg, orange_piece.svg",
-    "ingredients": "Tequila:45 ml///Orange juice:150 ml///Grenadine:10 ml///Ice:150 gr///Orange:1 slice"
+    "ingredients": "Tequila:45 ml///Orange juice:150 ml///Grenadine:10 ml///Ice:150 gr///Orange:1 slice",
+    "colorCode": "6B291A"
   },
   {
     "name": "Sex on the beach",
@@ -303,7 +336,8 @@
     "categories": "classic",
     "searchWords": "classic, vodka, peach, liquor, orange, juice, cranberry, sex, be, sex on the beach",
     "steps": "Pour all the ingredients one by one into the glass and stir gently:highball_small.svg, vodka.svg, liquor_peach.svg, juice_orange.svg, juice_cranberry.svg///Garnish with orange slice:highball_small.svg, vodka.svg, liquor_peach.svg, juice_orange.svg, juice_cranberry.svg, orange_piece.svg",
-    "ingredients": "Vodka:40 ml///Peach liquor:20 ml///Orange juice:40 ml///Cranberry juice:40 ml"
+    "ingredients": "Vodka:40 ml///Peach liquor:20 ml///Orange juice:40 ml///Cranberry juice:40 ml",
+    "colorCode": "D76950"
   },
   {
     "name": "Blue lagoon",
@@ -312,7 +346,8 @@
     "categories": "classic",
     "searchWords": "classic, curacao, soda, pineapple, vodka, lagoon, blue, blue lagoon",
     "steps": "Pour vodka and liquor into a glass with ice:hurricane.svg, vodka.svg, liquor_curacau_blue.svg, ice.svg///Gently pour soda in:hurricane.svg, vodka.svg, liquor_curacau_blue.svg, ice.svg,  soda.svg///Garnish with a pineapple slice:hurricane.svg, vodka.svg, ice.svg, liquor_curacau_blue.svg, soda.svg, pineapple_piece.svg",
-    "ingredients": "Vodka:50 ml///Blue curacao:20 ml///Soda:150 ml///Pineapple:1 slice///Ice:200 gr"
+    "ingredients": "Vodka:50 ml///Blue curacao:20 ml///Soda:150 ml///Pineapple:1 slice///Ice:200 gr",
+    "colorCode": "F0C3E9"
   },
   {
     "name": "Gin-tonic",
@@ -321,7 +356,8 @@
     "categories": "classic",
     "searchWords": "classic, gin, tonic, lime, gin tonic, gin-tonic",
     "steps": "Pour the gin and tonic into a glass filled with ice and stir gently:wide_glass_with_thin_leg.svg, gin.svg, tonic.svg, ice.svg///Garnish with a slice of lime:wide_glass_with_thin_leg.svg, gin.svg, tonic.svg, ice.svg, lime_piece.svg",
-    "ingredients": "Gin:50 ml///Tonic:150 ml///Lime:1 slice///Ice:180 gr"
+    "ingredients": "Gin:50 ml///Tonic:150 ml///Lime:1 slice///Ice:180 gr",
+    "colorCode": "1F6981"
   },
   {
     "name": "Negroni",
@@ -330,7 +366,8 @@
     "categories": "classic",
     "searchWords": "classic, gin, liquor, vermouth, orange, negroni",
     "steps": "Pour vermouth and liquor into a glass with ice and stir:rocks.svg, vermouth_red.svg, liquor_weed.svg, ice.svg///Add gin:rocks.svg, vermouth_red.svg, liquor_weed.svg, ice.svg, gin.svg///Stir and garnish with orange zest:rocks.svg, vermouth_red.svg, liquor_weed.svg, gin.svg, ice.svg, zest_orange.svg",
-    "ingredients": "Gin:30 ml///liquor:30 ml///Red vermouth:30 ml///Orange zest:1 pcs///Ice:120 gr"
+    "ingredients": "Gin:30 ml///liquor:30 ml///Red vermouth:30 ml///Orange zest:1 pcs///Ice:120 gr",
+    "colorCode": "85263D"
   },
   {
     "name": "Bellini",
@@ -339,7 +376,8 @@
     "categories": "classic",
     "searchWords": "classic, peach, sparkling wine, bellini, ",
     "steps": "Add peach puree to a chilled glass:champagne.svg, puree_peach.svg///Top with sparkling wine and stir to combine:champagne.svg, puree_peach.svg, wine_playful.svg",
-    "ingredients": "Sparkling wine:100 ml///Peach puree:50 ml"
+    "ingredients": "Sparkling wine:100 ml///Peach puree:50 ml",
+    "colorCode": "CC4163"
   },
   {
     "name": "Moscow mule",
@@ -348,7 +386,8 @@
     "categories": "classic",
     "searchWords": "classic, vodka, ginger, beer, lime, mule, moscow, moscow mule",
     "steps": "Pour vodka, beer and lime juice into a chilled glass:highball_middle.svg, vodka.svg, beer_ginger.svg, juice_lime.svg///Stir to combine and garnish with lime slices:highball_middle.svg, vodka.svg, beer_ginger.svg, juice_lime.svg, lime_piece.svg",
-    "ingredients": "Vodka:45 ml///Ginger beer:120 ml///Lime juice:5 ml///Lime:2 slices"
+    "ingredients": "Vodka:45 ml///Ginger beer:120 ml///Lime juice:5 ml///Lime:2 slices",
+    "colorCode": "D76950"
   },
   {
     "name": "Sea breeze",
@@ -357,7 +396,8 @@
     "categories": "classic",
     "searchWords": "classic, grapefruit, juice, vodka, cranberry, sea, breeze, sea breeze",
     "steps": "Mix all ingredients in a glass with ice:rocks.svg, ice.svg, vodka.svg, juice_cranberry.svg, juice_grapefruit.svg///Garnish with lime or grapefruit zest, if desired:rocks.svg, ice.svg, vodka.svg, juice_cranberry.svg, juice_grapefruit.svg, zest_lime.svg",
-    "ingredients": "Vodka:40 ml///Cranberry juice:120 ml///Grapefruit juice:30 ml///Ice:100 gr"
+    "ingredients": "Vodka:40 ml///Cranberry juice:120 ml///Grapefruit juice:30 ml///Ice:100 gr",
+    "colorCode": "4191CC"
   },
   {
     "name": "Raspberry hot wine",
@@ -366,7 +406,8 @@
     "categories": "winter",
     "searchWords": "winter, hot wine, raspberry, spices, wine, cranberry, drink, apple, hot, raspberry hot wine, raspberry",
     "steps": "Cut the lemon, orange, apple and raspberries into cubes and place in a saucepan:mulled_wine.svg, lemon_piece.svg, orange_piece.svg, apple.svg, raspberry.svg///Add fruit drink, cinnamon, cloves and top with wine:mulled_wine.svg, lemon_piece.svg, orange_piece.svg, apple.svg, raspberry.svg, cranberry_mors.svg, cinnamon.svg, carnation.svg, wine_pink_dry.svg///Heat over low heat, do not bring to a boil:mulled_wine.svg, lemon_piece.svg, orange_piece.svg, apple.svg, raspberry.svg, cranberry_mors.svg, cinnamon.svg, carnation.svg, wine_pink_dry.svg///Serve warm:mulled_wine.svg, lemon_piece.svg, orange_piece.svg, apple.svg, raspberry.svg, cranberry_mors.svg, cinnamon.svg, carnation.svg, wine_pink_dry.svg",
-    "ingredients": "Dry rosé:120 ml///Cranberry drink:50 ml///Lemon:20 gr///Orange:20 gr///Apple:10 gr///Raspberry:5 gr///Raspberry syrup:10 ml///Cinnamon:1 gr///Clove:1 gr"
+    "ingredients": "Dry rosé:120 ml///Cranberry drink:50 ml///Lemon:20 gr///Orange:20 gr///Apple:10 gr///Raspberry:5 gr///Raspberry syrup:10 ml///Cinnamon:1 gr///Clove:1 gr",
+    "colorCode": "713FFF"
   },
   {
     "name": "Eggnog",
@@ -375,7 +416,8 @@
     "categories": "winter",
     "searchWords": "winter, gin, tea, egg, almond, chocolate, hot, egg-nog, eggnog, egg nog",
     "steps": "Pour gin, cream, yolk, almond syrup and tea into a saucepan:mug.svg, gin.svg, cream.svg, yolk.svg, syrup_almond.svg, tea_earl_gray.svg///Heat up to 50-60 degrees:mug.svg, gin.svg, cream.svg, yolk.svg, syrup_almond.svg, tea_earl_gray.svg///Pour into a mug and garnish with whipped cream and chocolate sauce:mug.svg, gin.svg, cream.svg, yolk.svg, syrup_almond.svg, tea_earl_gray.svg, whipped_cream.svg, sauce_chocolate.svg",
-    "ingredients": "Gin:30 ml///Cream 11%:30 ml///Earl grey tea:30 ml///Egg yolk:1 pcs///Almond syrup:20 ml///Whipped cream:15 ml///Chocolate sauce:10 ml"
+    "ingredients": "Gin:30 ml///Cream 11%:30 ml///Earl grey tea:30 ml///Egg yolk:1 pcs///Almond syrup:20 ml///Whipped cream:15 ml///Chocolate sauce:10 ml",
+    "colorCode": "6B291A"
   },
   {
     "name": "Carribean chocolate",
@@ -384,7 +426,8 @@
     "categories": "winter",
     "searchWords": "winter, hot, rum, chocolate, spices, milk, carribean, carribean chocolate",
     "steps": "Place all ingredients in a saucepan:mug.svg, rum.svg, chocolate_dark.svg, cinnamon.svg, vanilla.svg, muscat.svg, milk.svg, cream.svg///Heat in a water bath until thickened:mug.svg, rum.svg, chocolate_dark.svg, cinnamon.svg, vanilla.svg, muscat.svg, milk.svg, cream.svg///Serve hot:mug.svg, rum.svg, chocolate_dark.svg, cinnamon.svg, vanilla.svg, muscat.svg, milk.svg, cream.svg",
-    "ingredients": "Rum:40 ml///Bitter chocolate:10 gr///Cinnamon, vanilla, nutmeg:a pinch of each///Milk:100 ml///Cream 22%:50 ml"
+    "ingredients": "Rum:40 ml///Bitter chocolate:10 gr///Cinnamon, vanilla, nutmeg:a pinch of each///Milk:100 ml///Cream 22%:50 ml",
+    "colorCode": "CC4163"
   },
   {
     "name": "Hot kirsch",
@@ -393,7 +436,8 @@
     "categories": "winter",
     "searchWords": "winter, hot, beer, orange, syrup, cherry, honey, cinnamon, hot kirsch, hot, kirsch",
     "steps": "Combine all ingredients but orange in a saucepan:mulled_wine.svg, beer_light.svg, syrup_orange.svg, juice_cherry.svg, honey.svg, cinnamon.svg///Heat not bringing to a boil:mulled_wine.svg, beer_light.svg, syrup_orange.svg, juice_cherry.svg, honey.svg, cinnamon.svg///Serve hot and garnish with orange:mulled_wine.svg, beer_light.svg, syrup_orange.svg, juice_cherry.svg, honey.svg, cinnamon.svg, orange_piece.svg",
-    "ingredients": "Light beer:100 ml///Orange syrup:20 ml///Cherry juice:50 ml///Honey:20 ml///Cinnamon:1 stick///Orange:1 slice"
+    "ingredients": "Light beer:100 ml///Orange syrup:20 ml///Cherry juice:50 ml///Honey:20 ml///Cinnamon:1 stick///Orange:1 slice",
+    "colorCode": "F6981"
   },
   {
     "name": "Apple Teddy",
@@ -402,7 +446,8 @@
     "categories": "winter",
     "searchWords": "winter, hot, whiskey, apple, juice, spices, honey, teddy, apple teddy",
     "steps": "Warm apple juice with whiskey:mulled_wine.svg, juice_apple.svg, whiskey.svg///Add apple, honey, cinnamon, cloves, star anise and cardamom:mulled_wine.svg, juice_apple.svg, whiskey.svg, apple.svg, honey.svg, cinnamon.svg, carnation.svg///Heat for 5 minutes without bringing to a boil:mulled_wine.svg, juice_apple.svg, whiskey.svg, apple.svg, honey.svg, cinnamon.svg, carnation.svg///Serve hot:mulled_wine.svg, juice_apple.svg, whiskey.svg, apple.svg, honey.svg, cinnamon.svg, carnation.svg",
-    "ingredients": "Whiskey:50 ml///Apple juice:200 ml///Cinnamon, cloves, star anise, cardamom:5 gr each///Apple:30 gr///Honey:30 gr"
+    "ingredients": "Whiskey:50 ml///Apple juice:200 ml///Cinnamon, cloves, star anise, cardamom:5 gr each///Apple:30 gr///Honey:30 gr",
+    "colorCode": "478358"
   },
   {
     "name": "Tender silk",
@@ -411,7 +456,8 @@
     "categories": "winter",
     "searchWords": "winter, hot, vodka, menthol, tincture, espresso, coffee, silk, tender, tender silk",
     "steps": "Mix all ingredients in a saucepan:mug.svg, vodka.svg, tincture_mentol.svg, syrop_maple.svg, espresso.svg///Heat up to 80 degrees:mug.svg, vodka.svg, tincture_mentol.svg, syrop_maple.svg, espresso.svg///Pour into glass and serve immediately:mug.svg, vodka.svg, tincture_mentol.svg, syrop_maple.svg, espresso.svg",
-    "ingredients": "Vodka:40 ml///Mint tincture:5 ml///Marple syrup:20 ml///Espresso:40 ml"
+    "ingredients": "Vodka:40 ml///Mint tincture:5 ml///Marple syrup:20 ml///Espresso:40 ml",
+    "colorCode": "F0C3E9"
   },
   {
     "name": "Cranberry grog",
@@ -420,7 +466,8 @@
     "categories": "winter",
     "searchWords": "winter, hot, brandy, liquor, cranberry, drink, apple, grog, cranberry, cranberry grog",
     "steps": "Heat all ingredients in a saucepan, do not bring to a boil:mulled_wine.svg, brandy.svg, liquor_nuts.svg, cranberry_mors.svg, apple.svg, zest_orange.svg///Serve warm:mulled_wine.svg, brandy.svg, liquor_nuts.svg, cranberry_mors.svg, apple.svg, zest_orange.svg",
-    "ingredients": "Brandy:20 ml///Nut liquor:15 ml///Cranberry drink:100 ml///Apple:15 gr///Orange zest:1 pcs"
+    "ingredients": "Brandy:20 ml///Nut liquor:15 ml///Cranberry drink:100 ml///Apple:15 gr///Orange zest:1 pcs",
+    "colorCode": "D76950"
   },
   {
     "name": "Irish coffee",
@@ -429,7 +476,8 @@
     "categories": "winter",
     "searchWords": "winter, hot, whiskey, coffee, sugar, irish, irish coffee",
     "steps": "Heat whiskey, coffee and sugar without boiling:mulled_wine.svg, whiskey.svg, coffee.svg, sugar.svg///Pour into a glass and garnish with whipped cream on top:mulled_wine.svg, whiskey.svg, coffee.svg, sugar.svg, whipped_cream.svg",
-    "ingredients": "Whiskey:50 ml///Coffee:140 ml///Sugar:2 tsp.///Whipped cream:20 ml"
+    "ingredients": "Whiskey:50 ml///Coffee:140 ml///Sugar:2 tsp.///Whipped cream:20 ml",
+    "colorCode": "6B291A"
   },
   {
     "name": "Caramel-apple mule",
@@ -438,7 +486,8 @@
     "categories": "winter",
     "searchWords": "winter, hot, cider, apple, vodka, caramel, ginger, ale, mule, caramel-apple mule, caramel-apple",
     "steps": "Mix cider, vodka and ale in a shaker:hurricane.svg, cider_apple.svg, vodka_caramel.svg, ale_ginger.svg///Put ginger at the bottom of the glass, pour ice and pour the cocktail:hurricane.svg, cider_apple.svg, vodka_caramel.svg, ale_ginger.svg, ginger.svg, ice.svg///Garnish with apple and cinnamon:hurricane.svg, cider_apple.svg, vodka_caramel.svg, ale_ginger.svg, ginger.svg, ice.svg, apple.svg, cinnamon.svg",
-    "ingredients": "Apple cider:150 ml///Caramel vodka:100 ml///Ginger ale:300 ml///Ginger:1 slice///Apple:1 pcs///Ice:100 gr///Cinnamon:5 gr"
+    "ingredients": "Apple cider:150 ml///Caramel vodka:100 ml///Ginger ale:300 ml///Ginger:1 slice///Apple:1 pcs///Ice:100 gr///Cinnamon:5 gr",
+    "colorCode": "3EC26B"
   },
   {
     "name": "Flower sbiten",
@@ -447,7 +496,8 @@
     "categories": "winter",
     "searchWords": "winter, hot, herbal, liquor, camomile, spices, mint, sbiten, flower, flower sbiten",
     "steps": "Heat all ingredients without boiling:mug.svg, liquor_weed.svg, water.svg, chamomile_dry.svg, pepper.svg, muscat.svg, cinnamon.svg, honey.svg///Strain into a mug:mug.svg, liquor_weed.svg, water.svg, chamomile_dry.svg, pepper.svg, muscat.svg, cinnamon.svg, honey.svg///Serve garnished with mint:mug.svg, liquor_weed.svg, water.svg, chamomile_dry.svg, pepper.svg, muscat.svg, cinnamon.svg, honey.svg, mint.svg",
-    "ingredients": "Herbal liquor:40 ml///Water:100 ml///Dry camomile:a pinch///Pepper, nutmeg, cinnamon:a pinch of each///Mint:20 gr///Honey:20 gr"
+    "ingredients": "Herbal liquor:40 ml///Water:100 ml///Dry camomile:a pinch///Pepper, nutmeg, cinnamon:a pinch of each///Mint:20 gr///Honey:20 gr",
+    "colorCode": "CC4163"
   },
   {
     "name": "Autumne fizz",
@@ -456,7 +506,8 @@
     "categories": "autumn",
     "searchWords": "autumn, vodka, sparkling wine, pumpkin, cinnamon, fizz, autumn, autumn fizz",
     "steps": "In a shaker, combine vodka, sparkling and pumpkin puree:martini.svg, vodka.svg, wine_white_playful.svg, puree_pumpkin.svg///Garnish the rim of the glass with brown sugar:martini.svg, vodka.svg, wine_white_playful.svg, puree_pumpkin.svg, sugar.svg///Serve the cocktail with a cinnamon stick:martini.svg, vodka.svg, wine_white_playful.svg, puree_pumpkin.svg, sugar.svg, cinnamon.svg",
-    "ingredients": "Vodka:25 ml///White sparkling wine:150 ml///Pumpkin puree:2 TSP.///Cinnamon:1 stick"
+    "ingredients": "Vodka:25 ml///White sparkling wine:150 ml///Pumpkin puree:2 TSP.///Cinnamon:1 stick",
+    "colorCode": "8F2E17"
   },
   {
     "name": "Irish Toddy",
@@ -465,7 +516,8 @@
     "categories": "autumn",
     "searchWords": "autumn, hot, whiskey, apple, juice, toddy, irish, irish toddy",
     "steps": "Heat apple juice, whiskey and syrup without boiling:mulled_wine.svg, juice_apple.svg, whiskey.svg, syrup_vanilla.svg///Pour into glass and garnish with star anise and zest:mulled_wine.svg, juice_apple.svg, whiskey.svg, syrup_vanilla.svg, zest_lemon.svg",
-    "ingredients": "Whiskey:40 ml///Apple juice:150 ml///Vanilla syrup:10 ml///Star anis:1 pcs///Lemon zest:1 pcs"
+    "ingredients": "Whiskey:40 ml///Apple juice:150 ml///Vanilla syrup:10 ml///Star anis:1 pcs///Lemon zest:1 pcs",
+    "colorCode": "6B291A"
   },
   {
     "name": "Pumpkin old-fashionned",
@@ -474,7 +526,8 @@
     "categories": "autumn",
     "searchWords": "autumn, bourbon, liquor, pumpkin, orange, old-fashionned, old, pumpkin old-fashionned",
     "steps": "Mix bourbon, liquor, pumpkin puree and ice in a shaker:rocks.svg, bourbon.svg, liquor_orange.svg, puree_pumpkin.svg, ice.svg///Serve garnished with cinnamon stick and zest:rocks.svg, bourbon.svg, liquor_orange.svg, puree_pumpkin.svg, ice.svg, cinnamon.svg, zest_lemon.svg",
-    "ingredients": "Bourbon:50 ml///Orange liquor:15 ml///Pumpkin puree:4 TSP.///Ice:100 gr///Cinnamon:1 stick///Lemon zest:1 pcs"
+    "ingredients": "Bourbon:50 ml///Orange liquor:15 ml///Pumpkin puree:4 TSP.///Ice:100 gr///Cinnamon:1 stick///Lemon zest:1 pcs",
+    "colorCode": "FF843F"
   },
   {
     "name": "Hot rum with butter",
@@ -483,7 +536,8 @@
     "categories": "autumn",
     "searchWords": "autumn, hot, rum, butter, sweet, spices, hot rum, rum with butter, hot rum with butter",
     "steps": "Add sugar, cloves and butter to the mug. Mix:mulled_wine.svg, sugar.svg, carnation.svg, butter.svg///Add rum and hot water and stir again:mulled_wine.svg, sugar.svg, carnation.svg, butter.svg, rum_darth.svg, water.svg///Serve hot garnished with cinnamon and cloves:mulled_wine.svg, sugar.svg, carnation.svg, butter.svg, rum_darth.svg, water.svg, cinnamon.svg",
-    "ingredients": "Dark rum:40 мл///Butter:25 gr///Hot water:80 ml///Sugar:1 tsp.///Cinnamon:1 stick///Clove:5 gr"
+    "ingredients": "Dark rum:40 ml///Butter:25 gr///Hot water:80 ml///Sugar:1 tsp.///Cinnamon:1 stick///Clove:5 gr",
+    "colorCode": "CC4163"
   },
   {
     "name": "Night in Tunisia",
@@ -492,7 +546,8 @@
     "categories": "autumn",
     "searchWords": "autumn, fire, absinthe, vermouth, vodka, liquor, orange, juice, tunisia, nigh, night in tunisia",
     "steps": "Mix vodka, liquor, vermouth, orange and grapefruit juice in a shaker:coctail.svg, vodka.svg, liquor_apricot.svg, vermouth_red.svg, juice_orange.svg, juice_grapefruit.svg///Pour into a glass:coctail.svg, vodka.svg, liquor_apricot.svg, vermouth_red.svg, juice_orange.svg, juice_grapefruit.svg///Pour absinthe and set it on fire:coctail.svg, vodka.svg, liquor_apricot.svg, vermouth_red.svg, juice_orange.svg, juice_grapefruit.svg, absinthe.svg///While the absinthe is burning, sprinkle the cocktail with cinnamon and zest:coctail.svg, vodka.svg, liquor_apricot.svg, vermouth_red.svg, juice_orange.svg, juice_grapefruit.svg, absinthe.svg, cinnamon.svg, zest_orange.svg",
-    "ingredients": "Vodka: 40 ml///Absinthe: 5 ml///Red vermouth: 20 ml///Apricot liquor: 10 ml///Orange juice: 20 ml///Grapefruit juice: 10 ml///Lemon zest: 1 pcs///Cinnamon: a pinch"
+    "ingredients": "Vodka: 40 ml///Absinthe: 5 ml///Red vermouth: 20 ml///Apricot liquor: 10 ml///Orange juice: 20 ml///Grapefruit juice: 10 ml///Lemon zest: 1 pcs///Cinnamon: a pinch",
+    "colorCode": "242320"
   },
   {
     "name": "Biblos old",
@@ -501,7 +556,8 @@
     "categories": "autumn",
     "searchWords": "autumn, bourbon, rum, coffee, liquor, bilbos, old, old bilbos, bilbos old",
     "steps": "Mix in a glass of bourbon, rum, coffee and liquor in a glass:rocks.svg, bourbon.svg, rum.svg, coffee.svg, liquor_cream.svg///Serve garnished with zest:rocks.svg, bourbon.svg, rum.svg, coffee.svg, liquor_cream.svg, zest_orange.svg",
-    "ingredients": "Bourbon: 30 ml///Rum: 10 ml///Coffee: 10 ml///liquor: 4-6 tsp.///Orange zest: 1 pcs"
+    "ingredients": "Bourbon: 30 ml///Rum: 10 ml///Coffee: 10 ml///liquor: 4-6 tsp.///Orange zest: 1 pcs",
+    "colorCode": "304034"
   },
   {
     "name": "Small bizon",
@@ -510,7 +566,8 @@
     "categories": "autumn",
     "searchWords": "autumn, vodka, juice, apple, aperol, cinnamon, bizon, small, small bizon",
     "steps": "Mix vodka, apple and lemon juices and aperol in a glass:coctail.svg, vodka.svg, juice_apple.svg, juice_lemon.svg, aperol.svg///Serve in a chilled glass, garnish with a cinnamon stick:coctail.svg, vodka.svg, juice_apple.svg, juice_lemon.svg, aperol.svg, cinnamon.svg",
-    "ingredients": "Vodka: 30 ml///Apple juice: 30 ml///Lemon juice: 10 ml///Aperol: 10 ml///Cinnamon: 1 stick"
+    "ingredients": "Vodka: 30 ml///Apple juice: 30 ml///Lemon juice: 10 ml///Aperol: 10 ml///Cinnamon: 1 stick",
+    "colorCode": "1F6981"
   },
   {
     "name": "Apple rum",
@@ -519,7 +576,8 @@
     "categories": "autumn",
     "searchWords": "autumn, rum, soda, apple, juice, apple, rum, apple",
     "steps": "Fill a glass with ice:highball_big.svg, ice.svg///Pour in the rum, soda and apple juice and stir gently:highball_big.svg, ice.svg, rum.svg, soda.svg, juice_apple.svg///Garnish with an apple slice:highball_big.svg, ice.svg, rum.svg, soda.svg, juice_apple.svg, apple.svg",
-    "ingredients": "Rum: 50 ml///Soda: 100 ml///Apple juice: 100 ml///Apple: 1 slice///Ice: 100 gr"
+    "ingredients": "Rum: 50 ml///Soda: 100 ml///Apple juice: 100 ml///Apple: 1 slice///Ice: 100 gr",
+    "colorCode": "3EC26B"
   },
   {
     "name": "Garibaldi",
@@ -528,7 +586,8 @@
     "categories": "autumn",
     "searchWords": "autumn, vermouth, orange, juice, garibaldi",
     "steps": "Pour vermouth, orange juice into a glass with ice and stir:highball_middle.svg, vermouth.svg, juice_orange.svg, ice.svg///Garnish with an orange slice and zest:highball_middle.svg, vermouth.svg, juice_orange.svg, ice.svg, orange_piece.svg, zest_orange.svg",
-    "ingredients": "Vermouth: 50 ml///Orange juice: 150 ml///Orange zest: 1 pcs///Orange: 1 slice///Ice: 100 gr"
+    "ingredients": "Vermouth: 50 ml///Orange juice: 150 ml///Orange zest: 1 pcs///Orange: 1 slice///Ice: 100 gr",
+    "colorCode": "478358"
   },
   {
     "name": "Grog",
@@ -537,7 +596,8 @@
     "categories": "autumn",
     "searchWords": "autumn, hot, rum, apple, juice, lime, cinnamon, spices, grog",
     "steps": "Place all ingredients in a saucepan:mulled_wine.svg, rum_darth.svg, juice_apple.svg, juice_lemon.svg, sugar.svg, cinnamon.svg, ginger.svg///Heat until sugar dissolves:mulled_wine.svg, rum_darth.svg, juice_apple.svg, juice_lemon.svg, sugar.svg, cinnamon.svg, ginger.svg///Strain and serve warm:mulled_wine.svg, rum_darth.svg, juice_apple.svg, juice_lemon.svg, sugar.svg, cinnamon.svg, ginger.svg",
-    "ingredients": "Dark rum: 60 ml///Apple juice: 100 ml///Lime juice: 1 pcs///Sugar: 1 tsp.///Cinnamon: 1 stick///Ginger: 1 piece"
+    "ingredients": "Dark rum: 60 ml///Apple juice: 100 ml///Lime juice: 1 pcs///Sugar: 1 tsp.///Cinnamon: 1 stick///Ginger: 1 piece",
+    "colorCode": "713FFF"
   },
   {
     "name": "Rose garden",
@@ -546,7 +606,8 @@
     "categories": "spring",
     "searchWords": "spring, gin, rose, raspberry, syrup, cucumber, tonic, litchi, garden, rose, rose garden",
     "steps": "Pour lemon juice and lychee juice and rose syrup into a glass with ice, stir:highball_middle.svg, juice_lemon.svg, juice_lychee.svg, syrup_rose.svg, ice.svg///Add raspberry syrup and gin:highball_middle.svg, juice_lemon.svg, juice_lychee.svg, syrup_rose.svg, ice.svg, syrup_raspberry.svg, gin.svg/// Pour in the tonic and stir gently:highball_middle.svg, juice_lemon.svg, juice_lychee.svg, syrup_rose.svg, ice.svg, syrup_raspberry.svg, gin.svg, tonic.svg///Garnish with cucumber slice and blackberry:highball_middle.svg, juice_lemon.svg, juice_lychee.svg, syrup_rose.svg, ice.svg, syrup_raspberry.svg, gin.svg, tonic.svg, cucumber.svg",
-    "ingredients": "Gin: 40 ml///Raspberry syrup: 10 ml///Rose syrup: 10 ml///Lemon juice: 20 ml///Litchi juice: 60 ml///Tonic: 60 ml///Blackberry: 12 gr///Cucumber: 30 gr///Ice: 180 gr"
+    "ingredients": "Gin: 40 ml///Raspberry syrup: 10 ml///Rose syrup: 10 ml///Lemon juice: 20 ml///Litchi juice: 60 ml///Tonic: 60 ml///Blackberry: 12 gr///Cucumber: 30 gr///Ice: 180 gr",
+    "colorCode": "F0C3E9"
   },
   {
     "name": "April in Paris",
@@ -555,16 +616,18 @@
     "categories": "spring",
     "searchWords": "spring, liquor, flowers, wine, violet, april, paris, april in paris",
     "steps": "Mix liquor, wine, rose water, vinegar and ice in a shaker:coctail.svg, liquor_elder_flowers.svg, wine_white.svg, water_pink.svg, vinegar_white_wine.svg, ice.svg///Pour into a chilled glass:coctail.svg, liquor_elder_flowers.svg, wine_white.svg, water_pink.svg, vinegar_white_wine.svg, ice.svg///Garnish with violet flowers:coctail.svg, liquor_elder_flowers.svg, wine_white.svg, water_pink.svg, vinegar_white_wine.svg, ice.svg, violet_flowers.svg",
-    "ingredients": "Eldelberry flower liquor: 25 ml///Sweet white wine: 35 ml///Rose water: 1 ml///Violet flowers: 3 pcs///White wine vinegar: 5 ml///Ice: 200 gr"
+    "ingredients": "Eldelberry flower liquor: 25 ml///Sweet white wine: 35 ml///Rose water: 1 ml///Violet flowers: 3 pcs///White wine vinegar: 5 ml///Ice: 200 gr",
+    "colorCode": "D3951A"
   },
   {
     "name": "White chamomile hot wine",
     "description": "Sweet build",
     "picPreview": "white_chamomile_mulled_wine_eng.svg",
     "categories": "spring",
-    "searchWords": "spring, ромашка, чай, вино, мед, специи, лимон, коктейль, ромашковый коктейль, ромашковый",
+    "searchWords": "spring, camomille, tea, wine, honey, spices, lemon, cocktail, camomille cocktail",
     "steps": "Mix all ingredients in a saucepan:mulled_wine.svg, wine_white.svg, tea_chamomile_bags.svg, honey.svg, cinnamon.svg, carnation.svg, zest_lemon.svg///Heat without boiling:mulled_wine.svg, wine_white.svg, tea_chamomile_bags.svg, honey.svg, cinnamon.svg, carnation.svg, zest_lemon.svg///Pour into a glass through a strainer:mulled_wine.svg, wine_white.svg, tea_chamomile_bags.svg, honey.svg, cinnamon.svg, carnation.svg, zest_lemon.svg",
-    "ingredients": "Dry white wine: 150 ml///Camomile tea bags: 2 gr///Honey: 20 ml///Cinnamon: 1 stick///Clove: 3 gr///Lemon zest: 1 pcs"
+    "ingredients": "Dry white wine: 150 ml///Camomile tea bags: 2 gr///Honey: 20 ml///Cinnamon: 1 stick///Clove: 3 gr///Lemon zest: 1 pcs",
+    "colorCode": "713FFF"
   },
   {
     "name": "Airmail",
@@ -573,7 +636,8 @@
     "categories": "spring",
     "searchWords": "spring, rum, syrup, sparkling wine, airmail",
     "steps": "Whisk rum, syrup and lime juice in a shaker:coctail.svg, rum.svg, syrup_honey_lavender.svg, juice_lime.svg///Pour into a chilled glass:coctail.svg, rum.svg, syrup_honey_lavender.svg, juice_lime.svg///Top with sparkling wine:coctail.svg, rum.svg, syrup_honey_lavender.svg, juice_lime.svg, wine_playful.svg",
-    "ingredients": "Rum: 50 ml///Honey-lavender syrup: 25 ml///Lime juice: 25 ml///Sparkling wine: 50 ml"
+    "ingredients": "Rum: 50 ml///Honey-lavender syrup: 25 ml///Lime juice: 25 ml///Sparkling wine: 50 ml",
+    "colorCode": "D76950"
   },
   {
     "name": "Cucumber martini",
@@ -582,7 +646,8 @@
     "categories": "spring",
     "searchWords": "spring, cucumber, mint, gin, vermouth, martini, cucumber, cucumber martini",
     "steps": "Mix cucumber, mint and tarragon in a blender:coctail.svg, cucumber.svg, mint.svg, estragon.svg///Strain the resulting mixture:coctail.svg, cucumber.svg, mint.svg, estragon.svg///In a shaker, mix the resulting juice, gin and vermouth:coctail.svg, cucumber.svg, mint.svg, estragon.svg, gin.svg, vermouth.svg///Pour into a glass, garnish with mint and cucumber slices, if desired:coctail.svg, cucumber.svg, mint.svg, estragon.svg, gin.svg, vermouth.svg, mint.svg, cucumber.svg",
-    "ingredients": "Gin: 40 ml///Vermouth: 20 ml///Mint: 4 leaves///Tarragon: 1 branch///Cucumber: 1 pcs"
+    "ingredients": "Gin: 40 ml///Vermouth: 20 ml///Mint: 4 leaves///Tarragon: 1 branch///Cucumber: 1 pcs",
+    "colorCode": "478358"
   },
   {
     "name": "Raspberry hound",
@@ -591,7 +656,8 @@
     "categories": "spring",
     "searchWords": "spring, vermouth, gin, raspberry, hound, raspberry, raspberry hound",
     "steps": "Mix two types of vermouth and gin in a shaker:coctail.svg, vermouth_sweet.svg, vermouth_dry.svg, gin.svg///Add the raspberries to the shaker and lightly crush them with a spoon:coctail.svg, vermouth_sweet.svg, vermouth_dry.svg, gin.svg, raspberry.svg///Stir and then strain into a glass through a sieve:coctail.svg, vermouth_sweet.svg, vermouth_dry.svg, gin.svg, raspberry.svg",
-    "ingredients": "Sweet vermouth: 25 ml///Dry vermouth: 25 ml///Gin: 75 ml///Raspberry: 6-7 pcs"
+    "ingredients": "Sweet vermouth: 25 ml///Dry vermouth: 25 ml///Gin: 75 ml///Raspberry: 6-7 pcs",
+    "colorCode": "B842A5"
   },
   {
     "name": "Sea breeze",
@@ -600,7 +666,8 @@
     "categories": "spring",
     "searchWords": "spring, vodka, cranberry, grapefruit, juice, mint, lime, breeze, sea, sea breeze",
     "steps": "Mix vodka, cranberry and grapefruit juices in a shaker:highball_middle.svg, vodka.svg, juice_cranberry.svg, juice_grapefruit.svg///Pour into glass and garnish with mint leaves and lime:highball_middle.svg, vodka.svg, juice_cranberry.svg, juice_grapefruit.svg, mint.svg, lime_piece.svg",
-    "ingredients": "Vodka: 60 ml///Cranberry juice: 120 ml///Grapefruit juice: 60 ml///Mint: 2 leaves///Lime: 1 circle"
+    "ingredients": "Vodka: 60 ml///Cranberry juice: 120 ml///Grapefruit juice: 60 ml///Mint: 2 leaves///Lime: 1 circle",
+    "colorCode": "4191CC"
   },
   {
     "name": "French marple tea",
@@ -609,7 +676,8 @@
     "categories": "spring",
     "searchWords": "spring, cognac, syrup, tea, lime, cinnamon, french tea, marple tea, french marple tea, marple, french",
     "steps": "Put orange, lime and cinnamon in a glass:mulled_wine.svg, orange_piece.svg, lime_piece.svg, cinnamon.svg///Pour syrup and cognac:mulled_wine.svg, orange_piece.svg, lime_piece.svg, cinnamon.svg, syrop_maple.svg, cognac.svg///Add hot tea and stir:mulled_wine.svg, orange_piece.svg, lime_piece.svg, cinnamon.svg, syrop_maple.svg, cognac.svg, tea_black.svg///Garnish with orange zest and mint:mulled_wine.svg, orange_piece.svg, lime_piece.svg, cinnamon.svg, syrop_maple.svg, cognac.svg, tea_black.svg, mint.svg, zest_orange.svg",
-    "ingredients": "Cognac: 50 ml///Marple syrup: 25 ml///Black tea: 120 ml///Lime: 1 slice///Orange: 1 slice///Cinnamon: 1 stick///Mint: 1 branch///Orange zest: 1 pcs"
+    "ingredients": "Cognac: 50 ml///Marple syrup: 25 ml///Black tea: 120 ml///Lime: 1 slice///Orange: 1 slice///Cinnamon: 1 stick///Mint: 1 branch///Orange zest: 1 pcs",
+    "colorCode": "3EC26B"
   },
   {
     "name": "Russian spring punch",
@@ -618,7 +686,8 @@
     "categories": "spring",
     "searchWords": "spring, vodka, liquor, sparkling wine, syrup, punch, russian punch, spring punch, russian spring punch, russion, spring",
     "steps": "Mix vodka, liquor, lemon juice and syrup in a shaker:champagne.svg, vodka.svg, liquor_black_currant.svg, juice_lemon.svg, syrup_shugar.svg///Pour into a glass:champagne.svg, vodka.svg, liquor_black_currant.svg, juice_lemon.svg, syrup_shugar.svg///Top with champagne:champagne.svg, vodka.svg, liquor_black_currant.svg, juice_lemon.svg, syrup_shugar.svg, wine_playful.svg///Garnish with lemon slice:champagne.svg, vodka.svg, liquor_black_currant.svg, juice_lemon.svg, syrup_shugar.svg, wine_playful.svg, lemon_piece.svg",
-    "ingredients": "Vodka: 25 ml///Cassis liquor: 15 ml///Lemon juice: 25 ml///Sugar syrup: 10 ml///Sparkling wine: 50 ml///Lemon: 1 slice"
+    "ingredients": "Vodka: 25 ml///Cassis liquor: 15 ml///Lemon juice: 25 ml///Sugar syrup: 10 ml///Sparkling wine: 50 ml///Lemon: 1 slice",
+    "colorCode": "6B291A"
   },
   {
     "name": "Strawberry mojito",
@@ -627,7 +696,8 @@
     "categories": "summer",
     "searchWords": "summer, cold, mint, lime, strawberry, rum, soda, mojito, strawberry mojito",
     "steps": "Put lime and mint in a glass:highball_middle.svg, mint.svg, lime_piece.svg///Add 5 strawberries and crush with a spoon:highball_middle.svg, mint.svg, lime_piece.svg, strawberry.svg///Fill glass with crushed ice:highball_middle.svg, mint.svg, lime_piece.svg, strawberry.svg, ice_crumb.svg///Pour in the rum and strawberry syrup:highball_middle.svg, mint.svg, lime_piece.svg, strawberry.svg, ice_crumb.svg, rum_white.svg, syrup_stawberry.svg///Add soda and stir gently:highball_middle.svg, mint.svg, lime_piece.svg, strawberry.svg, ice_crumb.svg, rum_white.svg, syrup_stawberry.svg, soda.svg///Garnish with a mint leave and a strawberry:highball_middle.svg, mint.svg, lime_piece.svg, strawberry.svg, ice_crumb.svg, rum_white.svg, syrup_stawberry.svg, soda.svg",
-    "ingredients": "White rum: 50 ml///Strawberry syrup: 15 ml///Soda: 100 ml///Lime: 60 gr///Strawberry: 120 gr///Mint: 3 gr///Ice: 200 gr"
+    "ingredients": "White rum: 50 ml///Strawberry syrup: 15 ml///Soda: 100 ml///Lime: 60 gr///Strawberry: 120 gr///Mint: 3 gr///Ice: 200 gr",
+    "colorCode": "FF9081"
   },
   {
     "name": "Soul punch",
@@ -636,7 +706,8 @@
     "categories": "summer",
     "searchWords": "summer, cold, punch, rum, wine, soda, orange, syrup, pineapple, soul, soul punch",
     "steps": "Place pineapple and strawberries in a punch bowl:punch_mug.svg, pineapple_piece.svg, strawberry.svg///Add orange, lime, mint and 100 ml of rum and leave to infuse:punch_mug.svg, pineapple_piece.svg, strawberry.svg, mint.svg, orange_piece.svg, lime_piece.svg, rum_white.svg///Add ice:punch_mug.svg, pineapple_piece.svg, strawberry.svg, mint.svg, orange_piece.svg, lime_piece.svg, rum_white.svg, ice.svg///Add 700 ml of rum, wine, syrup, cranberry juice, soda and mix well:punch_mug.svg, pineapple_piece.svg, strawberry.svg, mint.svg, orange_piece.svg, lime_piece.svg, rum_white.svg, ice.svg, wine_plum.svg, syrup_drunk_cherry.svg, soda.svg, juice_cranberry.svg///Serve immediately:punch_mug.svg, pineapple_piece.svg, strawberry.svg, mint.svg, orange_piece.svg, lime_piece.svg, rum_white.svg, ice.svg, wine_plum.svg, syrup_drunk_cherry.svg, soda.svg, juice_cranberry.svg",
-    "ingredients": "White rum: 800 ml///Plum wine: 700 ml///Syrup “brandied cherries”: 150 ml///Cranberry juice: 500 ml///Soda: 1 L///Canned pineapple: 360 gr///Orange: 150 gr///Lime: 80 gr///Strawberry: 200 gr///Mint: 10 gr///Ice: 2 kg"
+    "ingredients": "White rum: 800 ml///Plum wine: 700 ml///Syrup “brandied cherries”: 150 ml///Cranberry juice: 500 ml///Soda: 1 L///Canned pineapple: 360 gr///Orange: 150 gr///Lime: 80 gr///Strawberry: 200 gr///Mint: 10 gr///Ice: 2 kg",
+    "colorCode": "242320"
   },
   {
     "name": "Mint swizzle",
@@ -645,7 +716,8 @@
     "categories": "summer",
     "searchWords": "summer, cold, soda, gin, mint, lime, lemon, mint, swizzle, mint swizzle",
     "steps": "Put mint in the bottom of the glass:highball_middle.svg, mint.svg///Fill the glass ith ice:highball_middle.svg, mint.svg, ice.svg///Pour in lemon juice, syrup and gin:highball_middle.svg, mint.svg, ice.svg, juice_lemon.svg, syrup_shugar.svg, gin_dry.svg///Top with soda:highball_middle.svg, mint.svg, ice.svg, juice_lemon.svg, syrup_shugar.svg, gin_dry.svg, soda.svg///Garnish with mint leave:highball_middle.svg, mint.svg, ice.svg, juice_lemon.svg, syrup_shugar.svg, gin_dry.svg, soda.svg",
-    "ingredients": "Dry gin: 50 ml///Sugar syrup: 20 ml///Lemon juice: 15 ml///Soda: 100 ml///Mint: 2 gr///Ice: 200 gr"
+    "ingredients": "Dry gin: 50 ml///Sugar syrup: 20 ml///Lemon juice: 15 ml///Soda: 100 ml///Mint: 2 gr///Ice: 200 gr",
+    "colorCode": "477F83"
   },
   {
     "name": "Gin garden",
@@ -654,7 +726,8 @@
     "categories": "summer",
     "searchWords": "summer, cold. cucumber, gin, lemon, beer, ginger, gin garden, garden",
     "steps": "Add the cucumber to the shaker and crush it lightly:highball_big.svg, cucumber.svg///Pour in the gin, lemon juice and syrup and stir:highball_big.svg, cucumber.svg, gin_dry.svg, juice_lemon.svg, syrup_shugar.svg///Pour through a strainer into a glass with ice:highball_big.svg, cucumber.svg, gin_dry.svg, juice_lemon.svg, syrup_shugar.svg, ice.svg///Top with beer:highball_big.svg, cucumber.svg, gin_dry.svg, juice_lemon.svg, syrup_shugar.svg, ice.svg, beer_ginger.svg///Garnish with cucumber slice:highball_big.svg, cucumber.svg, gin_dry.svg, juice_lemon.svg, syrup_shugar.svg, ice.svg, beer_ginger.svg",
-    "ingredients": "Dry gin: 50 ml///Sugar syrup: 20 ml///Lemon juice: 15 ml///Ginger beer: 100 ml///Cucumber: 60 gr///Ice: 380 gr"
+    "ingredients": "Dry gin: 50 ml///Sugar syrup: 20 ml///Lemon juice: 15 ml///Ginger beer: 100 ml///Cucumber: 60 gr///Ice: 380 gr",
+    "colorCode": "4B93C7"
   },
   {
     "name": "Coffee gin-tonic with berries",
@@ -663,7 +736,8 @@
     "categories": "summer",
     "searchWords": "summer, cold, beer, gin, mint, lemon, gin-tonic, gin tonic, coffee gin-tonic, gin-tonic with berries, coffee gin-tonic with berries",
     "steps": "Put ice cubes and strawberries in a glass:wine.svg, ice.svg, strawberry.svg///Pour syrup and lemon juice:wine.svg, ice.svg, strawberry.svg, juice_lemon.svg, syrup_mint_mohito.svg///Add ginger beer and gin:wine.svg, ice.svg, strawberry.svg, juice_lemon.svg, syrup_mint_mohito.svg, beer_ginger.svg, gin_dry.svg/// Gently mix everything and pour the espresso on top:wine.svg, ice.svg, strawberry.svg, juice_lemon.svg, syrup_mint_mohito.svg, beer_ginger.svg, gin_dry.svg, espresso.svg///Garnish with mint leaves:wine.svg, ice.svg, strawberry.svg, juice_lemon.svg, syrup_mint_mohito.svg, beer_ginger.svg, gin_dry.svg, espresso.svg, mint.svg",
-    "ingredients": "Dry gin: 40 ml///Syrup “mint mojito”: 20 ml///Lemon juice: 10 ml///Ginger beer: 120 ml///Espresso: 30 ml///Strawberry: 12 gr///Raspberry: 10 gr///Mint: 3 gr///Ice: 60 gr"
+    "ingredients": "Dry gin: 40 ml///Syrup “mint mojito”: 20 ml///Lemon juice: 10 ml///Ginger beer: 120 ml///Espresso: 30 ml///Strawberry: 12 gr///Raspberry: 10 gr///Mint: 3 gr///Ice: 60 gr",
+    "colorCode": "6B291A"
   },
   {
     "name": "Cold tea with rum",
@@ -672,7 +746,8 @@
     "categories": "summer",
     "searchWords": "summer, cold, rum, tea, mint, tea with rum, cold tea, cold tea with rum",
     "steps": "Pour rum, tea, syrup, lemon juice into a glass with ice:whiskey.svg, ice.svg, rum.svg, tea_earl_grey_cold.svg, syrup_shugar.svg, juice_lemon.svg///Garnish with mint and serve:whiskey.svg, ice.svg, rum.svg, tea_earl_grey_cold.svg, syrup_shugar.svg, juice_lemon.svg, mint.svg",
-    "ingredients": "Rum: 40 ml///Earl grey ice tea: 100 ml///Sugar syrup: 15 ml///Lemon juice: 10 ml///Ice: 100 gr///Mint: 2 leaves"
+    "ingredients": "Rum: 40 ml///Earl grey ice tea: 100 ml///Sugar syrup: 15 ml///Lemon juice: 10 ml///Ice: 100 gr///Mint: 2 leaves",
+    "colorCode": "4CB469"
   },
   {
     "name": "Southern bell",
@@ -681,7 +756,8 @@
     "categories": "summer",
     "searchWords": "summer, bourbon, liquor, tea, syrup, lemon, southern bell, bell, southern",
     "steps": "Mix bourbon, liquor, syrup and lemon juice in a glass:rocks.svg, liquor_peach.svg, syrup_tea_black.svg, juice_lemon.svg///Garnish with a lemon wedge and serve:rocks.svg, liquor_peach.svg, syrup_tea_black.svg, juice_lemon.svg, lemon_piece.svg",
-    "ingredients": "Bourbon: 60 ml///Peach liquor: 10 ml///Black tea syrup: 25 ml///Lemon juice: 15 ml///Lemon: 1 slice"
+    "ingredients": "Bourbon: 60 ml///Peach liquor: 10 ml///Black tea syrup: 25 ml///Lemon juice: 15 ml///Lemon: 1 slice",
+    "colorCode": "CC4163"
   },
   {
     "name": "Carrot margarita",
@@ -690,7 +766,8 @@
     "categories": "summer",
     "searchWords": "summer, tequila, liquor, juice, lime, carrot, syrup, lemon, margarita, carrot margarita",
     "steps": "Dip the rim of the glass in salt:rocks.svg, salt.svg///Pour in the tequila, liquor, carrot and lime juices and syrup:rocks.svg, salt.svg, tequila.svg, liquor_citrus.svg, juice_carrot.svg, juice_lime.svg, syrup_agave.svg///Garnish with a slice of lemon:rocks.svg, salt.svg, tequila.svg, liquor_citrus.svg, juice_carrot.svg, juice_lime.svg, syrup_agave.svg, lemon_piece.svg",
-    "ingredients": "Tequila: 45 ml///liquor: 15 ml///Carrot juice: 30 ml///Lime juice: 15 ml///Agave syrup: 15 ml///Lemon: 1 slice"
+    "ingredients": "Tequila: 45 ml///liquor: 15 ml///Carrot juice: 30 ml///Lime juice: 15 ml///Agave syrup: 15 ml///Lemon: 1 slice",
+    "colorCode": "EAB144"
   },
   {
     "name": "Watermelon tequila",
@@ -699,7 +776,8 @@
     "categories": "summer",
     "searchWords": "summer, watermelon, tequila, lime, mint, watermelon, watermelon tequila",
     "steps": "Grind the pulp of watermelon in a blender and strain the juice:highball_middle.svg, watermelon_pulp.svg///Mix watermelon juice, lime juice, sugar syrup and tequila in a shaker:highball_middle.svg, watermelon_pulp.svg, juice_lime.svg, syrup_shugar.svg, tequila.svg///Pour into a chilled glass and garnish with mint leaves:highball_middle.svg, watermelon_pulp.svg, juice_lime.svg, syrup_shugar.svg, tequila.svg, mint.svg",
-    "ingredients": "Tequila: 100 ml///Sugar syrup: 20 ml///Lime juice: 20 ml///Watermelon pulp: 150 gr///Mint: 3-4 leaves"
+    "ingredients": "Tequila: 100 ml///Sugar syrup: 20 ml///Lime juice: 20 ml///Watermelon pulp: 150 gr///Mint: 3-4 leaves",
+    "colorCode": "C62E2E"
   },
   {
     "name": "Nectar",
@@ -708,7 +786,8 @@
     "categories": "summer",
     "searchWords": "summer, rum, melon, honey, lime, nectar",
     "steps": "Put the melon in a glass and crush it to release the juice:highball_small.svg, melon.svg///Add rum, lime juice and honey and mix well:highball_small.svg, melon.svg, rum.svg, juice_lemon.svg, honey.svg///Garnish with mint:highball_small.svg, melon.svg, rum.svg, juice_lemon.svg, honey.svg, mint.svg",
-    "ingredients": "Rum: 40 ml///Melon: 3 pcs///Lime juice: 20 ml///Honey: 3 tsp"
+    "ingredients": "Rum: 40 ml///Melon: 3 pcs///Lime juice: 20 ml///Honey: 3 tsp",
+    "colorCode": "3EC26B"
   },
   {
     "name": "New Year's Hot Wine",
@@ -717,7 +796,8 @@
     "categories": "new_year",
     "searchWords": "new year's, hot wine, hot, spiced, wine, new year",
     "steps": "Place all ingredients in a saucepan:mulled_wine.svg, wine.svg, sugar.svg, carnation.svg, cinnamon.svg, ginger.svg, zest_lemon.svg, zest_mandarin.svg///Heat the mulled wine, but do not bring it to a boil:mulled_wine.svg, wine.svg, sugar.svg, carnation.svg, cinnamon.svg, ginger.svg, zest_lemon.svg, zest_mandarin.svg///Pour into glasses and enjoy warm:mulled_wine.svg, wine.svg, sugar.svg, carnation.svg, cinnamon.svg, ginger.svg, zest_lemon.svg, zest_mandarin.svg",
-    "ingredients": "Red wine: 2 bottles///Sugar: 150 gr///Cloves: 15 pcs///Ginger: 2 cm///Cinnamon: 2 pcs///Lemon zest: 1 pcs///Tangerine zest: 1 pcs"
+    "ingredients": "Red wine: 2 bottles///Sugar: 150 gr///Cloves: 15 pcs///Ginger: 2 cm///Cinnamon: 2 pcs///Lemon zest: 1 pcs///Tangerine zest: 1 pcs",
+    "colorCode": "713FFF"
   },
   {
     "name": "Christman punch",
@@ -726,7 +806,8 @@
     "categories": "new_year",
     "searchWords": "new year's, punch, sparkling wine, lime, orange, juice, christmas, christmas punch",
     "steps": "Put the orange ice cream in a large bowl:punch_mug.svg, sorbet_orange.svg///Top with orange juice, then lemonade and finally champagne:punch_mug.svg, sorbet_orange.svg, juice_orange.svg, lemonade.svg, wine_playful.svg///Mix all ingredients:punch_mug.svg, sorbet_orange.svg, juice_orange.svg, lemonade.svg, wine_playful.svg///Pour into cups and serve to guests:punch_mug.svg, sorbet_orange.svg, juice_orange.svg, lemonade.svg, wine_playful.svg",
-    "ingredients": "Champagne: 2 bottles///Orange juice: 2 L///Lemonade: 2 L///Orange sorbet: 2 kg"
+    "ingredients": "Champagne: 2 bottles///Orange juice: 2 L///Lemonade: 2 L///Orange sorbet: 2 kg",
+    "colorCode": "D3951A"
   },
   {
     "name": "New Year's margarita",
@@ -735,7 +816,8 @@
     "categories": "new_year",
     "searchWords": "new year's, margarita, tequila, liquor, lime, juice, new year's margarita",
     "steps": "Place all ingredients in a shaker and mix thoroughly:wide_glass_with_thin_leg.svg, tequila_light.svg, liquor_cointreau.svg, ice.svg, juice_lime.svg///Moisten the glass and sprinkle with salt crumbs:wide_glass_with_thin_leg.svg, tequila_light.svg, liquor_cointreau.svg, ice.svg, juice_lime.svg, salt.svg///Pour the drink into a glass and garnish with a lime wedge:wide_glass_with_thin_leg.svg, tequila_light.svg, liquor_cointreau.svg, ice.svg, juice_lime.svg, salt.svg, lime_piece.svg",
-    "ingredients": "White tequila: 40 ml/// Cointreau: 20 ml///Lime juice: 40 ml///Ice: 150 gr"
+    "ingredients": "White tequila: 40 ml/// Cointreau: 20 ml///Lime juice: 40 ml///Ice: 150 gr",
+    "colorCode": "478358"
   },
   {
     "name": "Orange sunset",
@@ -744,7 +826,8 @@
     "categories": "new_year",
     "searchWords": "new year's, vodka, liquor, orange, lemon, juice, rosemary, sunsit, orange, orange sunset",
     "steps": "Squeeze the juice from half a lemon and two oranges:shot.svg, juice_lemon.svg, juice_orange.svg///Place vodka, liquor and lemon and orange juices in a shaker and mix:shot.svg, juice_lemon.svg, juice_orange.svg, vodka.svg, liquor_orange.svg///Pour the drink into a glass filled with ice and garnish with a sprig of rosemary:shot.svg, juice_lemon.svg, juice_orange.svg, vodka.svg, liquor_orange.svg, ice.svg, rosemary.svg",
-    "ingredients": "Vodka: 40 ml///Orange liquor: 15 ml///Orange: 2 pcs///Lemon: ½ pcs///Rosemary: 1 branch///Ice: some cubes"
+    "ingredients": "Vodka: 40 ml///Orange liquor: 15 ml///Orange: 2 pcs///Lemon: ½ pcs///Rosemary: 1 branch///Ice: some cubes",
+    "colorCode": "F29F23"
   },
   {
     "name": "Hot Toddy",
@@ -753,7 +836,8 @@
     "categories": "new_year",
     "searchWords": "new year's, toddy, hot, hot toddy, honey, spices, whiskey, lemon, cinnamon, nutmeg, clove",
     "steps": "Add honey, lemon, cinnamon and cloves to the mug:mulled_wine.svg, honey.svg, lemon_piece.svg, cinnamon.svg, carnation.svg///Pour boiling water and whiskey over everything and let it brew for two minutes:mulled_wine.svg, honey.svg, lemon_piece.svg, cinnamon.svg, carnation.svg, water_boiled.svg, whiskey.svg///Sprinkle nutmeg on top and serve hot:mulled_wine.svg, honey.svg, lemon_piece.svg, cinnamon.svg, carnation.svg, water_boiled.svg, whiskey.svg, muscat_nut.svg",
-    "ingredients": "Whiskey: 45 ml///Hot water: 60 ml///Honey: 1 tps.///Cinnamon: 1 pcs///Lemon: 1 slice///Cloves: 3 pcs///Nutmeg: a pinch"
+    "ingredients": "Whiskey: 45 ml///Hot water: 60 ml///Honey: 1 tps.///Cinnamon: 1 pcs///Lemon: 1 slice///Cloves: 3 pcs///Nutmeg: a pinch",
+    "colorCode": "477F83"
   },
   {
     "name": "Popular night",
@@ -762,7 +846,8 @@
     "categories": "new_year",
     "searchWords": "new year's, popular, night, popular night, ice-cream, sundae, rum, champagne",
     "steps": "Pour crushed ice and ice cream into a glass:coctail.svg, ice_crumb.svg, iceCream.svg///Pour the rum in. Add Champagne:coctail.svg, ice_crumb.svg, iceCream.svg, rum.svg, wine_playful.svg///Enjoy:coctail.svg, ice_crumb.svg, iceCream.svg, rum.svg, wine_playful.svg",
-    "ingredients": "Rum: 25 ml///Champagne: 50 ml///Sundae: 2 TSP.///Crushed ice: 100 gr"
+    "ingredients": "Rum: 25 ml///Champagne: 50 ml///Sundae: 2 TSP.///Crushed ice: 100 gr",
+    "colorCode": "421D40"
   },
   {
     "name": "Golden champagne",
@@ -771,7 +856,8 @@
     "categories": "new_year",
     "searchWords": "new year's, golden, champagne, golden champagne, martini, strawberries, syrup, mint",
     "steps": "Fill a glass with ice:champagne.svg, ice.svg///Add martini, champagne and strawberry syrup into it. Don't stir:champagne.svg, ice.svg, martini.svg, wine_playful.svg, syrup_stawberry.svg///Garnish with mint:champagne.svg, ice.svg, martini.svg, wine_playful.svg, syrup_stawberry.svg, mint.svg",
-    "ingredients": "Martini: 100 ml///Champagne: 150 ml///Strawberry syrup: 30 ml///Mint: 2-3 leaves///Ice: 150 gr"
+    "ingredients": "Martini: 100 ml///Champagne: 150 ml///Strawberry syrup: 30 ml///Mint: 2-3 leaves///Ice: 150 gr",
+    "colorCode": "EAB144"
   },
   {
     "name": "Mary's eyes",
@@ -780,7 +866,8 @@
     "categories": "new_year",
     "searchWords": "new year's eve, bloody mary, vodka, tomatoe, tomatoe juice, juice, tabasco, celery, worcester",
     "steps": "Mix everything except celery in a shaker:highball_middle.svg, vodka.svg, juice_tomato.svg, juice_lemon.svg, sauce_tabasco_red.svg, sauce_worcestershire.svg, salt_celery.svg, pepper_black.svg, ice.svg///Pour into a glass:highball_middle.svg, vodka.svg, juice_tomato.svg, juice_lemon.svg, sauce_tabasco_red.svg, sauce_worcestershire.svg, salt_celery.svg, pepper_black.svg, ice.svg///Garnish with celery:highball_middle.svg, vodka.svg, juice_tomato.svg, juice_lemon.svg, sauce_tabasco_red.svg, sauce_worcestershire.svg, salt_celery.svg, pepper_black.svg, ice.svg, celery.svg",
-    "ingredients": "Vodka:50 ml///Tomatoe juice:120 ml///Lemon juice:10 ml///Celery:15 gr///Red tabasco:1 ml///Worcester sauce:1 ml///Celery salt:1 gr///Black powdered pepper:1 gr///Ice:380 gr"
+    "ingredients": "Vodka:50 ml///Tomatoe juice:120 ml///Lemon juice:10 ml///Celery:15 gr///Red tabasco:1 ml///Worcester sauce:1 ml///Celery salt:1 gr///Black powdered pepper:1 gr///Ice:380 gr",
+    "colorCode": "242320"
   },
   {
     "name": "Apple surprise",
@@ -789,7 +876,8 @@
     "categories": "new_year",
     "searchWords": "new year's, surprise, apple, apple surprise, champagne, apple, egg",
     "steps": "Beat egg white and sugar in a bowl with a mixer until foamy:coctail.svg, egg_white.svg, sugar.svg///Grate the apple, add to the egg mixture and beat again:coctail.svg, egg_white.svg, sugar.svg, apple.svg///Add ice to the mixture and beat:coctail.svg, egg_white.svg, sugar.svg, apple.svg, ice.svg///Pour the resulting mixture into a glass, add champagne and stir:coctail.svg, egg_white.svg, sugar.svg, apple.svg, ice.svg, wine_playful.svg",
-    "ingredients": "Champagne: 150 ml///Apple: 1 pcs///Egg white: 1 pcs///Sugar: 1 tsp.///Ice: some cubes"
+    "ingredients": "Champagne: 150 ml///Apple: 1 pcs///Egg white: 1 pcs///Sugar: 1 tsp.///Ice: some cubes",
+    "colorCode": "0A9A3B"
   },
   {
     "name": "Orange dream",
@@ -798,7 +886,8 @@
     "categories": "new_year",
     "searchWords": "new year's, dream, orange, orange dream, liquor, milk, chocolate, orange",
     "steps": "Mix two types of liquor, milk and sugar in a shaker:coctail.svg, liquor_orange.svg, liquor_cream.svg, milk.svg, sugar.svg///Pour into glass and garnish with chocolate chips and orange slice:coctail.svg, liquor_orange.svg, liquor_cream.svg, milk.svg, sugar.svg, chocolate_bitter.svg, orange_piece.svg",
-    "ingredients": "Orange liquor: 30 ml///Cream liquor: 20 ml///Milk: 100 ml///Orange: 1 slice///Bitter chocolate: some slices///Sugar: 1 tsp"
+    "ingredients": "Orange liquor: 30 ml///Cream liquor: 20 ml///Milk: 100 ml///Orange: 1 slice///Bitter chocolate: some slices///Sugar: 1 tsp",
+    "colorCode": "3C47A5"
   },
   {
     "name": "Cranberry cocktail",
@@ -807,7 +896,8 @@
     "categories": "new_year",
     "searchWords": "new year's, cocktail, cranberry, cranberry cocktail, cranberry, vermouth, drink",
     "steps": "Boil water in a saucepan, add cranberries and sugar to it:rocks.svg, water.svg, sugar.svg, cranberry.svg///Cool the drink and let it brew:rocks.svg, water.svg, sugar.svg, cranberry.svg///Pour vermouth into glasses, diluting it with the resulting cranberry juice:rocks.svg, water.svg, sugar.svg, cranberry.svg, cranberry_mors.svg",
-    "ingredients": "Vermouth: 1 bottle///Water: 2 L///Cranberry: 2 glasses///Sugar: to taste"
+    "ingredients": "Vermouth: 1 bottle///Water: 2 L///Cranberry: 2 glasses///Sugar: to taste",
+    "colorCode": "B842A5"
   },
   {
     "name": "New Year's screwdriver",
@@ -816,7 +906,8 @@
     "categories": "new_year",
     "searchWords": "new year's, screwdriver, new year's screwdriver, vodka, orange, juice",
     "steps": "Pour vodka into a glass with ice first, then juice:highball_big.svg, ice.svg, vodka.svg, juice_orange.svg///Stir and garnish with an orange slice:highball_big.svg, ice.svg, vodka.svg, juice_orange.svg, orange_piece.svg",
-    "ingredients": "Водка: 50 мл///Апельсиновый сок: 150 мл///Лед: 4 кубика///Апельсин: 1 долька"
+    "ingredients": "Vodka: 50 ml///Orange juice: 150 ml///Ice: 4 cubes///Orange: 1 piece",
+    "colorCode": "6B291A"
   },
   {
     "name": "La Champagne",
@@ -825,7 +916,8 @@
     "categories": "new_year",
     "searchWords": "new year's, la champagne, sparkling wine, champagne, cognac",
     "steps": "Put some sugar in a glass:champagne.svg, sugar.svg///Pour cognac, then sparkling:champagne.svg, sugar.svg, cognac.svg, wine_white_playful.svg///Stir and enjoy:champagne.svg, sugar.svg, cognac.svg, wine_white_playful.svg",
-    "ingredients": "White sparkling wine: 125 ml///Cognac: 35 ml///Sugar: 6 gr"
+    "ingredients": "White sparkling wine: 125 ml///Cognac: 35 ml///Sugar: 6 gr",
+    "colorCode": "922B31"
   },
   {
     "name": "Feijoa champagne",
@@ -834,7 +926,8 @@
     "categories": "new_year",
     "searchWords": "new year's, la champagne, feijoa, feijoa champagne, gin, liquor, sparkling wine, champagne",
     "steps": "Grind feijoa with sugar and lemon juice in a blender:wide_glass_with_thin_leg.svg, sugar.svg, feijoa.svg, juice_lemon.svg///Mix all ingredients in a glass:wide_glass_with_thin_leg.svg, sugar.svg, feijoa.svg, juice_lemon.svg, gin.svg, liquor_orange.svg, wine_playful.svg",
-    "ingredients": "Gin: 30 ml///Orange liquor: 50 ml///Sparkling wine: 60 ml///Lemon juice: 5 ml///Feijoa: 2 pcs///Sugar: 5 gr"
+    "ingredients": "Gin: 30 ml///Orange liquor: 50 ml///Sparkling wine: 60 ml///Lemon juice: 5 ml///Feijoa: 2 pcs///Sugar: 5 gr",
+    "colorCode": "6B291A"
   },
   {
     "name": "Mimosa",
@@ -843,7 +936,8 @@
     "categories": "new_year",
     "searchWords": "new year's, mimosa, sparkling wine, champagne, juice, orange",
     "steps": "Pour juice and sparkling wine into a glass, stir:champagne.svg, juice_orange.svg, wine_playful.svg///Garnish with an orange slice and enjoy:champagne.svg, juice_orange.svg, wine_playful.svg, orange_piece.svg",
-    "ingredients": "Sparkling wine: 75 ml///Orange juice: 75 ml///Orange: 1 slice"
+    "ingredients": "Sparkling wine: 75 ml///Orange juice: 75 ml///Orange: 1 slice",
+    "colorCode": "FF3F6D"
   },
   {
     "name": "Tangerine bourbon",
@@ -852,7 +946,8 @@
     "categories": "new_year",
     "searchWords": "new year's, bourbon, tangerine, tangerine bourbon, tangerine, juice, spices, cinnamon, ginger, star anis",
     "steps": "In a shaker, combine bourbon, syrup, juice, ice, cinnamon and ginger:wide_glass_with_thin_leg.svg, bourbon.svg, syrup_shugar.svg, juice_mandarin.svg, ice.svg, cinnamon.svg, ginger.svg///Put ice cubes in a glass and pour the cocktail through a sieve:wide_glass_with_thin_leg.svg, bourbon.svg, syrup_shugar.svg, juice_mandarin.svg, ice.svg, cinnamon.svg, ginger.svg///Garnish the drink with a cinnamon stick and star anise:wide_glass_with_thin_leg.svg, bourbon.svg, syrup_shugar.svg, juice_mandarin.svg, ice.svg, cinnamon.svg, ginger.svg, star_anise.svg",
-    "ingredients": "Bourbon: 40 ml///Sugar syrup: 20 ml///Tangerine juice: 40 ml///Cinnamon, ginger: a pinch of each///Cinnamon stick: 1 pcs///Star anis: 2 pcs///Ice: 3 cubes"
+    "ingredients": "Bourbon: 40 ml///Sugar syrup: 20 ml///Tangerine juice: 40 ml///Cinnamon, ginger: a pinch of each///Cinnamon stick: 1 pcs///Star anis: 2 pcs///Ice: 3 cubes",
+    "colorCode": "4B93C7"
   },
   {
     "name": "Lemon slash",
@@ -861,7 +956,8 @@
     "categories": "new_year",
     "searchWords": "new year's, slash, lemon, lemon slash, vodka, lemon, juice",
     "steps": "Mix all ingredients in a shaker:coctail.svg, vodka.svg, ice.svg, juice_lemon.svg///Serve in chilled glasses:coctail.svg, vodka.svg, ice.svg, juice_lemon.svg",
-    "ingredients": "Vodka: 60 ml///Lemon juice: 1 pcs///Ice: 6 cubes"
+    "ingredients": "Vodka: 60 ml///Lemon juice: 1 pcs///Ice: 6 cubes",
+    "colorCode": "CC4163"
   },
   {
     "name": "Tropical margarita",
@@ -870,7 +966,8 @@
     "categories": "birthday",
     "searchWords": "Birthday, margarita, tropical, tropical margarita, juice, liquor, tequila",
     "steps": "Mix all ingredients in a shaker:highball_big.svg, tequila.svg, liquor_orange.svg, juice_tropical.svg, sugar.svg, salt.svg, ice.svg///Serve garnished with a lime wedge:highball_big.svg, tequila.svg, liquor_orange.svg, juice_tropical.svg, sugar.svg, salt.svg, ice.svg, lime_piece.svg",
-    "ingredients": "Tequila: 1 glass///Orange liquor: 0, 25 glass///Tropical juice: 1 glass///Sugar: 2 tsp///Salt: a pinch///Ice: 2 cubes"
+    "ingredients": "Tequila: 1 glass///Orange liquor: 0, 25 glass///Tropical juice: 1 glass///Sugar: 2 tsp///Salt: a pinch///Ice: 2 cubes",
+    "colorCode": "713FFF"
   },
   {
     "name": "Hot Mary",
@@ -879,7 +976,8 @@
     "categories": "birthday",
     "searchWords": "Birthday, mary, hot, hot mary, tabasco, tequila, juice, tomato, lemon",
     "steps": "Mix all ingredients in a shaker:highball_middle.svg, tequila.svg, juice_tomato.svg, sauce_tabasco.svg, pepper_black.svg, juice_lemon.svg, juice_lime.svg///Serve garnished with a cherry tomato:highball_middle.svg, tequila.svg, juice_tomato.svg, sauce_tabasco.svg, pepper_black.svg, juice_lemon.svg, juice_lime.svg",
-    "ingredients": "Tequila: 60 ml///Tomatoe juice: 120 ml///Tabasco: 3 drops///Black pepper: a pinch///Lemon juice: 60 ml///Lime juice: 30 ml"
+    "ingredients": "Tequila: 60 ml///Tomatoe juice: 120 ml///Tabasco: 3 drops///Black pepper: a pinch///Lemon juice: 60 ml///Lime juice: 30 ml",
+    "colorCode": "D3951A"
   },
   {
     "name": "Daiquiri",
@@ -888,7 +986,8 @@
     "categories": "birthday",
     "searchWords": "Birthday, daiquiri, rum, lime, syrup, juice",
     "steps": "Mix all ingredients in a shaker:wide_glass_with_thin_leg.svg, rum_white.svg, juice_lime.svg, ice.svg, syrup_shugar.svg///Pour into a cool glass and enjoy:wide_glass_with_thin_leg.svg, rum_white.svg, juice_lime.svg, ice.svg, syrup_shugar.svg",
-    "ingredients": "White rum: 60 ml///Lime juice: 30 ml///Sugar syrup: 1 tsp///Ice: 200 gr"
+    "ingredients": "White rum: 60 ml///Lime juice: 30 ml///Sugar syrup: 1 tsp///Ice: 200 gr",
+    "colorCode": "BC7745"
   },
   {
     "name": "Blue lagoon",
@@ -897,7 +996,8 @@
     "categories": "birthday",
     "searchWords": "Birthday, lagoon, blue, blue lagoon, curacao, vodka, liquor, pineapple",
     "steps": "Fill a glass with ice:hurricane.svg, ice.svg///Pour in vodka, liquor, and then lemonade:hurricane.svg, ice.svg, vodka.svg, liquor_curacau_blue.svg, lemonade.svg///Garnish with pineapple:hurricane.svg, ice.svg, vodka.svg, liquor_curacau_blue.svg, lemonade.svg, pineapple_piece.svg",
-    "ingredients": "Vodka: 50 ml///Blue curacao: 20 ml///Lemonade: 150 ml///Ice: 200 gr///Pineapple: 1 slice"
+    "ingredients": "Vodka: 50 ml///Blue curacao: 20 ml///Lemonade: 150 ml///Ice: 200 gr///Pineapple: 1 slice",
+    "colorCode": "F0C3E9"
   },
   {
     "name": "Pinacolada",
@@ -906,7 +1006,8 @@
     "categories": "birthday",
     "searchWords": "Birthday, pina colada, colada, pina, rum, pineapple, juice, coconut, milk, coconut milk",
     "steps": "Mix rum, pineapple juice, coconut milk and ice in a blender:hurricane.svg, rum_white.svg, juice_pineapple.svg, ice.svg, coconout_milk.svg///Pour into a glass and garnish with a pineapple wedge:hurricane.svg, rum_white.svg, juice_pineapple.svg, ice.svg, coconout_milk.svg, pineapple_piece.svg",
-    "ingredients": "White rum: 30 ml///Pineapple juice: 90 ml///Coconut milk: 30 ml///Ice: 50 gr///Pineapple: 1 slice"
+    "ingredients": "White rum: 30 ml///Pineapple juice: 90 ml///Coconut milk: 30 ml///Ice: 50 gr///Pineapple: 1 slice",
+    "colorCode": "E1B37E"
   },
   {
     "name": "Tropical blast",
@@ -915,7 +1016,8 @@
     "categories": "birthday",
     "searchWords": "Birthday, blast, tropical, tropical blast, champagne, sparkling wine, ice-cream, pineapple, mint",
     "steps": "In a blender, grind pineapple, ice cream, lemon and mint:champagne.svg, iceCream.svg, pineapple_piece.svg, lemon_piece.svg, mint.svg///Mix in a glass of sparkling:champagne.svg, iceCream.svg, pineapple_piece.svg, lemon_piece.svg, mint.svg, wine_playful.svg///Serve immediately:champagne.svg, iceCream.svg, pineapple_piece.svg, lemon_piece.svg, mint.svg, wine_playful.svg",
-    "ingredients": "Champagne: 125 ml///Sundae: 100 gr///Canned pineapple: 1 glass///Lemon: 1 slice///Mint: 4 leaves"
+    "ingredients": "Champagne: 125 ml///Sundae: 100 gr///Canned pineapple: 1 glass///Lemon: 1 slice///Mint: 4 leaves",
+    "colorCode": "477F83"
   },
   {
     "name": "French kiss",
@@ -924,7 +1026,8 @@
     "categories": "birthday",
     "searchWords": "Birthday, kiss, France, french, french kiss, raspberry, champagne, sparkling wine",
     "steps": "Pour the raspberry puree into the glass:champagne.svg, raspberry.svg///Pour champagne down the side of the glass:champagne.svg, raspberry.svg, wine_playful.svg///Enjoy:champagne.svg, raspberry.svg, wine_playful.svg",
-    "ingredients": "Champagne: 100 ml///Raspberry puree: 1 tsp"
+    "ingredients": "Champagne: 100 ml///Raspberry puree: 1 tsp",
+    "colorCode": "D76950"
   },
   {
     "name": "Boyarsky",
@@ -933,7 +1036,8 @@
     "categories": "birthday",
     "searchWords": "Birthday, boyarsky, vodka, tabasco, pomegranate, sauce",
     "steps": "Pour vodka into a glass:shot.svg, vodka.svg///Add pomegranate sauce and then tabasco:shot.svg, vodka.svg, sauce_pomegranate.svg,sauce_tabasco.svg",
-    "ingredients": "Vodka: 30 ml///Pomegranate sauce: 30 ml///Tabasco: 3 drops"
+    "ingredients": "Vodka: 30 ml///Pomegranate sauce: 30 ml///Tabasco: 3 drops",
+    "colorCode": "4B93C7"
   },
   {
     "name": "Martini dry",
@@ -941,8 +1045,9 @@
     "picPreview": "martini_dry_eng.svg",
     "categories": "birthday",
     "searchWords": "Birthday, martini, martini dry, dry, olives, gin",
-    "steps": "Fill the glass with ice:martini.svg, ice.svg///Add gin and martini to shot glass:martini.svg, ice.svg, gin.svg, martini_dry.svg///Украсьте оливкой:martini.svg, ice.svg, gin.svg, martini_dry.svg, olives_boneless.svg",
-    "ingredients": "Dry martini: 15 ml///Gin: 75 ml///Pitted olives: 5 gr///Ice: 200 gr"
+    "steps": "Fill the glass with ice:martini.svg, ice.svg///Add gin and martini to shot glass:martini.svg, ice.svg, gin.svg, martini_dry.svg///Garnish with an olive:martini.svg, ice.svg, gin.svg, martini_dry.svg, olives_boneless.svg",
+    "ingredients": "Dry martini: 15 ml///Gin: 75 ml///Pitted olives: 5 gr///Ice: 200 gr",
+    "colorCode": "CC4163"
   },
   {
     "name": "Sex on the beach",
@@ -951,7 +1056,8 @@
     "categories": "birthday",
     "searchWords": "Birthday, sex, beach, sex on the beach, vodka, liquor, juice, cranberry, pineapple, cherry",
     "steps": "Mix vodka, liquor, cranberry and pineapple juices in a shaker:hurricane.svg, vodka.svg, liquor_peach.svg, juice_cranberry.svg, juice_pineapple.svg///Pour into a glass with ice:hurricane.svg, vodka.svg, liquor_peach.svg, juice_cranberry.svg, juice_pineapple.svg, ice.svg///Garnish with pineapple and cherry:hurricane.svg, vodka.svg, liquor_peach.svg, juice_cranberry.svg, juice_pineapple.svg, ice.svg, pineapple_piece.svg, cherry_coctail.svg",
-    "ingredients": "Vodka: 50 ml///Peach liquor: 25 ml///Cranberry juice: 40 ml///Pineapple juice: 40 ml///Pineapple: 1 slice///Cocktail cherry: 1 pcs///Ice: 350 gr"
+    "ingredients": "Vodka: 50 ml///Peach liquor: 25 ml///Cranberry juice: 40 ml///Pineapple juice: 40 ml///Pineapple: 1 slice///Cocktail cherry: 1 pcs///Ice: 350 gr",
+    "colorCode": "D76950"
   },
   {
     "name": "Watermelon mojito",
@@ -960,7 +1066,8 @@
     "categories": "birthday",
     "searchWords": "Birthday, watermelon, mojito, watermelon mojito, rum, lime, thyme, mint, basil, juice",
     "steps": "Grind watermelon pulp in a blender:highball_big.svg, watermelon_pulp.svg///Mix watermelon juice with rum and lime juice in a shaker:highball_big.svg, watermelon_pulp.svg, rum_white.svg, juice_lime.svg///Pour the resulting cocktail into a glass with ice:highball_big.svg, watermelon_pulp.svg, rum_white.svg, juice_lime.svg, ice.svg///Garnish with basil, thyme and mint:highball_big.svg, watermelon_pulp.svg, rum_white.svg, juice_lime.svg, ice.svg, mint.svg, basil.svg, thyme.svg",
-    "ingredients": "White rum: 100 ml///Watermelon pulp: 450 gr///Lime juice: 1 pcs///Sugar: 2 tsp///Basil: 1 branch///Thyme: 1 branch///Mint: 3 branches///Ice: 6 cubes"
+    "ingredients": "White rum: 100 ml///Watermelon pulp: 450 gr///Lime juice: 1 pcs///Sugar: 2 tsp///Basil: 1 branch///Thyme: 1 branch///Mint: 3 branches///Ice: 6 cubes",
+    "colorCode": "4CB469"
   },
   {
     "name": "Sidecar",
@@ -969,7 +1076,8 @@
     "categories": "birthday",
     "searchWords": "Birthday, sidecar, cognac, liquor, sparkling wine, lemon",
     "steps": "Mix cognac with liquor in a glass:wide_glass_with_thin_leg.svg, cognac.svg, liquor_orange.svg///Add sparkling wine:wide_glass_with_thin_leg.svg, cognac.svg, liquor_orange.svg, wine_playful.svg///Garnish with lemon slice:wide_glass_with_thin_leg.svg, cognac.svg, liquor_orange.svg, wine_playful.svg, lemon_piece.svg",
-    "ingredients": "Orange liquor: 2 tsp///Cognac: 1 tsp///Sparkling wine: ½ cup///Lemon: 1 slice"
+    "ingredients": "Orange liquor: 2 tsp///Cognac: 1 tsp///Sparkling wine: ½ cup///Lemon: 1 slice",
+    "colorCode": "D65BC2"
   },
   {
     "name": "Long Island",
@@ -978,7 +1086,8 @@
     "categories": "birthday",
     "searchWords": "Birthday, long island, ice tea, vodka, gin, rum, tequila, liquor, lemon, lemonade",
     "steps": "Mix all ingredients in a glass with ice:highball_small.svg, vodka.svg, gin.svg, rum_white.svg, lemonade.svg, liquor_orange.svg, tequila.svg, ice.svg, syrup_shugar.svg///Garnish with a lemon wedge and serve:highball_small.svg, vodka.svg, gin.svg, rum_white.svg, lemonade.svg, liquor_orange.svg, tequila.svg, ice.svg, syrup_shugar.svg, lemon_piece.svg",
-    "ingredients": "Vodka: 15 ml///Gin: 15 ml///White rum: 15 ml///Tequila: 15 ml///Orange liquor: 15 ml///Sugar syrup: 15 ml///Lemonade: 15 ml///Lemon: 1 slice///Ice: 100 gr"
+    "ingredients": "Vodka: 15 ml///Gin: 15 ml///White rum: 15 ml///Tequila: 15 ml///Orange liquor: 15 ml///Sugar syrup: 15 ml///Lemonade: 15 ml///Lemon: 1 slice///Ice: 100 gr",
+    "colorCode": "6B291A"
   },
   {
     "name": "Pomegranate mimosa",
@@ -987,7 +1096,8 @@
     "categories": "birthday",
     "searchWords": "Birthday, mimosa, pomegranate, champagne, sparklin wine, juice, pomegranate mimosa, rosemary",
     "steps": "Pour chilled juice into a glass:champagne.svg, juice_pomegranate.svg///Add champagne to a juice:champagne.svg, juice_pomegranate.svg, wine_playful.svg///Garnish with pomegranate seeds and rosemary:champagne.svg, juice_pomegranate.svg, wine_playful.svg, pomegranate_seeds.svg, rosemary.svg",
-    "ingredients": "Sparkling wine: 60 ml///Pomegranate juice: 60 ml///Pomegranate seeds: 15 gr///Rsemary: 1 branch"
+    "ingredients": "Sparkling wine: 60 ml///Pomegranate juice: 60 ml///Pomegranate seeds: 15 gr///Rsemary: 1 branch",
+    "colorCode": "9D4633"
   },
   {
     "name": "Limoncello",
@@ -996,7 +1106,8 @@
     "categories": "birthday",
     "searchWords": "Birthday, limoncello, vodka, lemon",
     "steps": "Remove the zest from the lemon and pour it for half an hour with vodka in a glass:martini.svg, lemon_piece.svg, vodka.svg///Mix water and sugar in a saucepan, heat until dissolved, then cool:martini.svg, lemon_piece.svg, vodka.svg, vodka.svg, water.svg///Mix vodka with sugar solution in a glass and serve:martini.svg, lemon_piece.svg, vodka.svg, vodka.svg, water.svg",
-    "ingredients": "Vodka: 100 ml///Water: 100 ml///Lemon: 1 pcs///Sugar: 50 gr"
+    "ingredients": "Vodka: 100 ml///Water: 100 ml///Lemon: 1 pcs///Sugar: 50 gr",
+    "colorCode": "3EC26B"
   },
   {
     "name": "John Collins",
@@ -1005,7 +1116,8 @@
     "categories": "wedding",
     "searchWords": "wedding, john collins, john, collins, gin, syrup, mineral water, lemon",
     "steps": "Pour gin, syrup and mineral water into a glass with ice:highball_middle.svg, ice.svg, gin.svg, syrup_shugar.svg, water_mineral.svg///Squeeze the juice from half a lemon and add to the cocktail:highball_middle.svg, ice.svg, gin.svg, syrup_shugar.svg, water_mineral.svg, juice_lemon.svg///Garnish with a lemon wedge and enjoy:highball_middle.svg, ice.svg, gin.svg, syrup_shugar.svg, water_mineral.svg, juice_lemon.svg, lemon_piece.svg",
-    "ingredients": "Gin: 50 ml///Sugar syrup: 20 ml///Mineral water: 70 ml///Lemon: 1 pcs///Ice: 100 gr"
+    "ingredients": "Gin: 50 ml///Sugar syrup: 20 ml///Mineral water: 70 ml///Lemon: 1 pcs///Ice: 100 gr",
+    "colorCode": "6B291A"
   },
   {
     "name": "Tequila sunrise",
@@ -1014,7 +1126,8 @@
     "categories": "wedding",
     "searchWords": "wedding, tequila, sunrise, tequila sunrise, orange, juice, grenadine",
     "steps": "Combine tequila, orange juice and grenadine in a glass filled with ice:highball_big.svg, ice.svg, liquor_orange.svg, tequila.svg, grenadine.svg///Garnish with an orange slice and enjoy:highball_big.svg, ice.svg, liquor_orange.svg, tequila.svg, grenadine.svg, orange_piece.svg",
-    "ingredients": "Tequila: 50 ml///Orange juice: 2 pcs///Ice: 150 gr///Grenadine: 10 ml"
+    "ingredients": "Tequila: 50 ml///Orange juice: 2 pcs///Ice: 150 gr///Grenadine: 10 ml",
+    "colorCode": "371F1A"
   },
   {
     "name": "Now-a kiss!",
@@ -1023,7 +1136,8 @@
     "categories": "wedding",
     "searchWords": "wedding, kiss, champagne, liquor, peach, juice, lemon",
     "steps": "Mix all ingredients in a chilled glass:hurricane.svg, ice.svg, wine_playful.svg, liquor_peach.svg, juice_peach.svg, juice_lemon.svg, ice.svg///Congratulate the young and drink with pleasure:hurricane.svg, ice.svg, wine_playful.svg, liquor_peach.svg, juice_peach.svg, juice_lemon.svg, ice.svg",
-    "ingredients": "Champagne brut: 100 ml///Peach liquor: 30 ml///Peach juice: 60 ml///Lemon juice: 1 tsp///Ice: 7 cubes"
+    "ingredients": "Champagne brut: 100 ml///Peach liquor: 30 ml///Peach juice: 60 ml///Lemon juice: 1 tsp///Ice: 7 cubes",
+    "colorCode": "713FFF"
   },
   {
     "name": "Magic frost",
@@ -1032,7 +1146,8 @@
     "categories": "wedding",
     "searchWords": "wedding, frost, magic, magic frost, tequila, curacao, liquor, champagne, sparkling wine, lime, mint",
     "steps": "Mix tequila, curacao and lime juice in a shaker:coctail.svg, tequila.svg, liquor_curacau.svg, juice_lime.svg///Pour into a glass with ice:coctail.svg, tequila.svg, liquor_curacau.svg, juice_lime.svg, ice.svg///Top with champagne:coctail.svg, tequila.svg, liquor_curacau.svg, juice_lime.svg, ice.svg, wine_playful.svg///Garnish with lemon slice and mint sprig:coctail.svg, tequila.svg, liquor_curacau.svg, juice_lime.svg, ice.svg, wine_playful.svg, mint.svg, lemon_piece.svg",
-    "ingredients": "Champagne: 100 ml///Curacao liquor: 30 ml///Tequila: 30 ml///Lime juice: 30 ml///Ice: 5 cubes///Mint: 1 branch///Lemon: 1 slice"
+    "ingredients": "Champagne: 100 ml///Curacao liquor: 30 ml///Tequila: 30 ml///Lime juice: 30 ml///Ice: 5 cubes///Mint: 1 branch///Lemon: 1 slice",
+    "colorCode": "4B93C7"
   },
   {
     "name": "Love me again",
@@ -1041,7 +1156,8 @@
     "categories": "wedding",
     "searchWords": "wedding, love me, love me again, curacao, cognac, cream, lemon, juice",
     "steps": "Mix all ingredients in a mixing glass:wide_glass_with_thin_leg.svg, cognac.svg, liquor_orange.svg, juice_lemon.svg, cream.svg///Serve in a glass with ice and a rose:wide_glass_with_thin_leg.svg, cognac.svg, liquor_orange.svg, juice_lemon.svg, cream.svg, ice.svg",
-    "ingredients": "Curacao liquor: 25 ml///Cognac: 25 ml///Lemon juice: 15 ml///Cream 11%: 25 ml"
+    "ingredients": "Curacao liquor: 25 ml///Cognac: 25 ml///Lemon juice: 15 ml///Cream 11%: 25 ml",
+    "colorCode": "B842A5"
   },
   {
     "name": "Rhubarbe bellini",
@@ -1050,7 +1166,8 @@
     "categories": "wedding",
     "searchWords": "wedding, rhubarbe bellini, bellini, rhubarbe, sparkling wine, champagne, lemon",
     "steps": "Combine rhubarb, sugar, water, lemon juice and zest in a saucepan and bring to a boil:champagne.svg, rhubarb.svg, sugar.svg, water.svg, juice_lemon.svg, zest_lemon.svg///Cook over low heat for 15 minutes:champagne.svg, rhubarb.svg, sugar.svg, water.svg, juice_lemon.svg, zest_lemon.svg///Grind the rhubarb with a blender and cool:champagne.svg, rhubarb.svg, sugar.svg, water.svg, juice_lemon.svg, zest_lemon.svg///Pour 2 tablespoons of rhubarb puree into a glass:champagne.svg, rhubarb.svg, sugar.svg, water.svg, juice_lemon.svg, zest_lemon.svg///Pour sparkling wine and enjoy:champagne.svg, rhubarb.svg, sugar.svg, water.svg, juice_lemon.svg, zest_lemon.svg, wine_playful.svg",
-    "ingredients": "Sparkling wine: 1 bottle///Rhubarbe: 225 gr///Sugar: 120 gr///Water: 60 ml///Lemon: 1 pcs"
+    "ingredients": "Sparkling wine: 1 bottle///Rhubarbe: 225 gr///Sugar: 120 gr///Water: 60 ml///Lemon: 1 pcs",
+    "colorCode": "478358"
   },
   {
     "name": "Camomile cocktail",
@@ -1059,7 +1176,8 @@
     "categories": "wedding",
     "searchWords": "wedding, cocktail, camomile, camomile cocktail, gin, tea, camomile, soda",
     "steps": "Mix gin, lemon juice, tea and soda in a glass:highball_small.svg, gin.svg, juice_lemon.svg, tea_chamomile.svg, soda.svg///Garnish with chamomile flowers and enjoy:highball_small.svg, gin.svg, juice_lemon.svg, tea_chamomile.svg, soda.svg, chamomile_flowers.svg",
-    "ingredients": "Gin: 45 ml///Lemon juice: 30 ml///Camolile tea: 30 ml///Soda: 10 ml///Camomile flowers: 2 pcs"
+    "ingredients": "Gin: 45 ml///Lemon juice: 30 ml///Camolile tea: 30 ml///Soda: 10 ml///Camomile flowers: 2 pcs",
+    "colorCode": "CD67BD"
   },
   {
     "name": "Champagne ice",
@@ -1068,7 +1186,8 @@
     "categories": "wedding",
     "searchWords": "wedding, champagne, ice, champagne ice, strawberry, sparkling wine, mint, sundae, ice-cream",
     "steps": "Cut strawberries into large pieces, mint - finely:champagne.svg, mint.svg, strawberry.svg///Mix all ingredients in a glass:champagne.svg, mint.svg, strawberry.svg, wine_playful.svg, iceCream.svg",
-    "ingredients": "Sparkling wine: 50 ml///Sundae: 100 gr///Strawberries: 50 gr///Mint: 2 leaves"
+    "ingredients": "Sparkling wine: 50 ml///Sundae: 100 gr///Strawberries: 50 gr///Mint: 2 leaves",
+    "colorCode": "FF843F"
   },
   {
     "name": "Golden velvet",
@@ -1077,7 +1196,8 @@
     "categories": "wedding",
     "searchWords": "wedding, velvet, golden, golden velvet, sparkling wine, champagne, pineapple, juice, pineapple, beer",
     "steps": "Fill the glass first with champagne, then with juice and beer:beer_glass.svg, wine_playful.svg, juice_pineapple.svg, beer_light.svg///Stir with a cocktail tube and serve:beer_glass.svg, wine_playful.svg, juice_pineapple.svg, beer_light.svg",
-    "ingredients": "Sparkling wine: 100 ml///Light beer: 100 ml///Pineapple juice: 25 ml"
+    "ingredients": "Sparkling wine: 100 ml///Light beer: 100 ml///Pineapple juice: 25 ml",
+    "colorCode": "D76950"
   },
   {
     "name": "Valentino",
@@ -1086,16 +1206,18 @@
     "categories": "wedding",
     "searchWords": "wedding, valentino,whiskey, campari, vermouth, liquor",
     "steps": "Mix all the ingredients in a shaker:martini.svg, whiskey.svg, liquor_campari.svg, vermouth_red.svg///Pour into a glass and enjoy:martini.svg, whiskey.svg, liquor_campari.svg, vermouth_red.svg",
-    "ingredients": "Whiskey: 60 ml///Campari: 15 ml///Red vermouth: 15 ml"
+    "ingredients": "Whiskey: 60 ml///Campari: 15 ml///Red vermouth: 15 ml",
+    "colorCode": "CC4163"
   },
   {
-    "name": "Sparkling passion",
+    "name": "Pour campari, grapefruit juice, and then champagne into a chilled glass:champagne.svg, liquor_campari.svg, juice_grapefruit.svg, wine_playful.svg///Stir with a cocktail spoon:champagne.svg, liquor_campari.svg, juice_grapefruit.svg, wine_playful.svg///Garnish with an orange slice and a raspberry:champagne.svg, liquor_campari.svg, juice_grapefruit.svg, wine_playful.svg, orange_piece.svg, raspberry.svg",
     "description": "Sweet build",
-    "picPreview": "playful_passion_eng.svg",
+    "picPreview": "playful_passion.svg",
     "categories": "wedding",
     "searchWords": "wedding, passion, sparkling, sparkling passion, sparkling wine, champagne, campari, grapefruit, juice, orange, raspberry",
-    "steps": "Pour campari, grapefruit juice, and then champagne into a chilled glass:champagne.svg, liquor_campari.svg, juice_grapefruit.svg, wine_playful.svg///Stir with a cocktail spoon:champagne.svg, liquor_campari.svg, juice_grapefruit.svg, wine_playful.svg///Украсьте долькой апельсина и малиной:champagne.svg, liquor_campari.svg, juice_grapefruit.svg, wine_playful.svg, orange_piece.svg, raspberry.svg",
-    "ingredients": "Sparkling wine: 60 ml///Campari: 60 ml///Grapefruit juice: 30 ml///Orange: 1 slice///Raspberry: 1 pcs"
+    "steps": "Pour campari, grapefruit juice, and then champagne into a chilled glass:champagne.svg, liquor_campari.svg, juice_grapefruit.svg, wine_playful.svg///Stir with a cocktail spoon:champagne.svg, liquor_campari.svg, juice_grapefruit.svg, wine_playful.svg///Garnish with strawberry and raspberry:champagne.svg, liquor_campari.svg, juice_grapefruit.svg, wine_playful.svg, orange_piece.svg, raspberry.svg",
+    "ingredients": "Sparkling wine: 60 ml///Campari: 60 ml///Grapefruit juice: 30 ml///Orange: 1 slice///Raspberry: 1 pcs",
+    "colorCode": "6B291A"
   },
   {
     "name": "Blueberry mojito",
@@ -1104,7 +1226,8 @@
     "categories": "wedding",
     "searchWords": "wedding, mojito, blueberry, blueberry mojito, rum, champagne, sparkling wine, mint, lime, juice",
     "steps": "Put the blueberries, sugar, lime juice and mint into a glass:highball_middle.svg, blueberry.svg, sugar.svg, juice_lime.svg, mint.svg///Mash blueberries to release juice:highball_middle.svg, blueberry.svg, sugar.svg, juice_lime.svg, mint.svg///Pour in rum, champagne and pour ice:highball_middle.svg, blueberry.svg, sugar.svg, juice_lime.svg, mint.svg, ice.svg, rum_white.svg, wine_playful.svg///Stir and enjoy:highball_middle.svg, blueberry.svg, sugar.svg, juice_lime.svg, mint.svg, ice.svg, rum_white.svg, wine_playful.svg",
-    "ingredients": "White rum: 60 ml///Champagne: 60 ml///Blueberry: ⅓ cup///Mint: 6 leaves///Sugar: 1 tsp///Lime juice: 2,5 tsp///Ice: 150 gr"
+    "ingredients": "White rum: 60 ml///Champagne: 60 ml///Blueberry: ⅓ cup///Mint: 6 leaves///Sugar: 1 tsp///Lime juice: 2,5 tsp///Ice: 150 gr",
+    "colorCode": "3A3F6D"
   },
   {
     "name": "Pineapple-mango punch",
@@ -1113,7 +1236,8 @@
     "categories": "wedding",
     "searchWords": "wedding, punch, pineapple, mango, pineapple-mango punch, rum, pineapple, mango, orange, juice, lime",
     "steps": "Mix all the juices with rum:highball_middle.svg, rum.svg, juice_pineapple.svg, juice_mango.svg, juice_orange.svg///Pour into glass, garnish with lime and serve:highball_middle.svg, rum.svg, juice_pineapple.svg, juice_mango.svg, juice_orange.svg, lime_piece.svg",
-    "ingredients": "Rum: 90 ml///Pineapple juice: 90 ml///Mango juice: 30 ml///Orange juice: 30 ml///Lime: 1 slice"
+    "ingredients": "Rum: 90 ml///Pineapple juice: 90 ml///Mango juice: 30 ml///Orange juice: 30 ml///Lime: 1 slice",
+    "colorCode": "4191CC"
   },
   {
     "name": "Pink sunset",
@@ -1122,16 +1246,18 @@
     "categories": "wedding",
     "searchWords": "wedding, sunset, pink, pink sunset, rosé, champagne",
     "steps": "Mix wine, juice, syrup and egg white in a shaker:wide_glass_with_thin_leg.svg, juice_grapefruit.svg, wine_pink.svg, syrup_shugar.svg, egg_white.svg///Pour into a glasses and top with champagne:wide_glass_with_thin_leg.svg, juice_grapefruit.svg, wine_pink.svg, syrup_shugar.svg, egg_white.svg, wine_playful.svg///Decorate with rose petals as desired:wide_glass_with_thin_leg.svg, juice_grapefruit.svg, wine_pink.svg, syrup_shugar.svg, egg_white.svg, wine_playful.svg",
-    "ingredients": "Rosé: 45 ml///Champagne: 90 ml///Grapefruit juice: 150 ml///Sugar syrup: 150 ml///Egg white: 1 pcs"
+    "ingredients": "Rosé: 45 ml///Champagne: 90 ml///Grapefruit juice: 150 ml///Sugar syrup: 150 ml///Egg white: 1 pcs",
+    "colorCode": "7452D2"
   },
   {
-    "name": "Scented margarita",
+    "name": "Roast the peppers in the oven on a baking sheet for 10 minutes:highball_small.svg, jalapeno.svg///Mix all ingredients together with pepper in a shaker:highball_small.svg, jalapeno.svg///Pour into glasses and enjoy:highball_small.svg, jalapeno.svg, tequila.svg, liquor_orange.svg, juice_lime.svg, juice_pineapple.svg, syrup_shugar.svg",
     "description": "Sweet and sour shake",
     "picPreview": "fragrant_margarita_eng.svg",
     "categories": "wedding",
     "searchWords": "wedding, margarita, scented, scented margarita, tequila, pepper, jalapeno, pineapple, juice, lime, syrup, liquor, orange",
-    "steps": "Roast the peppers in the oven on a baking sheet for 10 minutes:highball_small.svg, jalapeno.svg///Mix all ingredients together with pepper in a shaker:highball_small.svg, jalapeno.svg///Разлейте по бокалам и наслаждайтесь:highball_small.svg, jalapeno.svg, tequila.svg, liquor_orange.svg, juice_lime.svg, juice_pineapple.svg, syrup_shugar.svg",
-    "ingredients": "Tequila: 45 ml///Orange liquor: 15 ml///Lime juice: 15 ml///Pineapple juice: 75 ml///Sugar syrup: 10 ml///Jalapeno: 1 pcs"
+    "steps": "Roast the peppers in the oven on a baking sheet for 10 minutes:highball_small.svg, jalapeno.svg///Mix all ingredients together with pepper in a shaker:highball_small.svg, jalapeno.svg///Pour into glasses and enjoy:highball_small.svg, jalapeno.svg, tequila.svg, liquor_orange.svg, juice_lime.svg, juice_pineapple.svg, syrup_shugar.svg",
+    "ingredients": "Tequila: 45 ml///Orange liquor: 15 ml///Lime juice: 15 ml///Pineapple juice: 75 ml///Sugar syrup: 10 ml///Jalapeno: 1 pcs",
+    "colorCode": "5A53B1"
   },
   {
     "name": "Strawberry margarita",
@@ -1140,7 +1266,8 @@
     "categories": "graduation",
     "searchWords": "graduation, margarita, strawberry, strawberry margarita, tequila, liquor, orange, lime",
     "steps": "Dip the glass in liquor and then in sugar:wide_glass_with_thin_leg.svg, liquor_orange.svg, sugar.svg///Add strawberries, tequila, liquor and lime juice to blender. grind:wide_glass_with_thin_leg.svg, liquor_orange.svg, sugar.svg, strawberry.svg, tequila.svg, juice_lime.svg///Add ice to the glass and pour the drink:wide_glass_with_thin_leg.svg, liquor_orange.svg, sugar.svg, strawberry.svg, tequila.svg, juice_lime.svg, ice.svg///Decorate with strawberries and enjoy:wide_glass_with_thin_leg.svg, liquor_orange.svg, sugar.svg, strawberry.svg, tequila.svg, juice_lime.svg, ice.svg",
-    "ingredients": "Tequila: 50 ml///Orange liquor: 30 ml///Lime: 1 pcs///Strawberries: 100 gr///Sugar: 2 gr///Ice: 160 gr"
+    "ingredients": "Tequila: 50 ml///Orange liquor: 30 ml///Lime: 1 pcs///Strawberries: 100 gr///Sugar: 2 gr///Ice: 160 gr",
+    "colorCode": "3E2121"
   },
   {
     "name": "Sangria",
@@ -1149,7 +1276,8 @@
     "categories": "graduation",
     "searchWords": "graduation, sangria, wine, liquor, orange, grape, juice, strawberry, mint",
     "steps": "Mash the mint leaves with a wooden spoon in a mortar:highball_middle.svg, mint.svg///Mix wine, liquor and grape juice in a pitcher:highball_middle.svg, mint.svg, wine.svg, liquor_orange.svg, juice_grape.svg///Add strawberry and stir:highball_middle.svg, mint.svg, wine.svg, liquor_orange.svg, juice_grape.svg, strawberry.svg///Pour into glasses and serve:highball_middle.svg, mint.svg, wine.svg, liquor_orange.svg, juice_grape.svg, strawberry.svg",
-    "ingredients": "Wine: 1 bottle///Orange liquor: ¼ cup///Grape juice: ¾ cup///Strawberries: ½ cup///Mint: 8 leaves"
+    "ingredients": "Wine: 1 bottle///Orange liquor: ¼ cup///Grape juice: ¾ cup///Strawberries: ½ cup///Mint: 8 leaves",
+    "colorCode": "713FFF"
   },
   {
     "name": "Raspberry beer cocktail",
@@ -1158,7 +1286,8 @@
     "categories": "graduation",
     "searchWords": "graduation, beer cocktail, raspberry cocktail, cocktail, raspberry, beer, vodka, lemon, juice, lime",
     "steps": "Crush raspberries with a spoon in a bowl and mix with beer:highball_middle.svg, raspberry.svg, beer.svg///Add vodka, lemon juice and ice. stir:highball_middle.svg, raspberry.svg, beer.svg, vodka.svg, ice.svg, juice_lemon.svg///Pour into glasses and garnish each with a lime wedge:highball_middle.svg, raspberry.svg, beer.svg, vodka.svg, ice.svg, juice_lemon.svg, lime_piece.svg",
-    "ingredients": "Beer: 3 bottles///Vodka: ½ cup///Raspberry: ¾ cup///Lemon juice: 100 ml///Lime: 1 pcs///Ice: 150 gr"
+    "ingredients": "Beer: 3 bottles///Vodka: ½ cup///Raspberry: ¾ cup///Lemon juice: 100 ml///Lime: 1 pcs///Ice: 150 gr",
+    "colorCode": "4191CC"
   },
   {
     "name": "Southern breeze",
@@ -1167,7 +1296,8 @@
     "categories": "graduation",
     "searchWords": "graduation, breeze, south, southern breeze, bourbon, abricot, liquor, lemon, dried apricots, dates, mint",
     "steps": "Put 1 dried apricots and dates on the bottom of the glass:highball_small.svg, kuraga.svg, finiki.svg///Fill the glass with ice:highball_small.svg, kuraga.svg, finiki.svg, ice.svg///Mix bourbon, liquor and lemon in a shaker:highball_small.svg, kuraga.svg, finiki.svg, ice.svg, bourbon.svg, lemon_piece.svg, liquor_apricot.svg///Pour into glass and garnish with mint:highball_small.svg, kuraga.svg, finiki.svg, ice.svg, bourbon.svg, lemon_piece.svg, liquor_apricot.svg, mint.svg",
-    "ingredients": "Bourbon: 40 ml///Apricot liquor: 25 ml///Lemon: 40 gr///Dried apricot: 1 pcs///Dates: 1 pcs///Mint: 2 branches///Ice: 50 gr"
+    "ingredients": "Bourbon: 40 ml///Apricot liquor: 25 ml///Lemon: 40 gr///Dried apricot: 1 pcs///Dates: 1 pcs///Mint: 2 branches///Ice: 50 gr",
+    "colorCode": "ED9A38"
   },
   {
     "name": "Pineapple-raspberry cocktail",
@@ -1176,7 +1306,8 @@
     "categories": "graduation",
     "searchWords": "graduation, pineapple, raspberry, pineapple-raspberry, rum, pineapple, coconut, juice, raspberry, mint",
     "steps": "Put the raspberries in a glass and lightly crush them with a spoon:highball_big.svg, raspberry_frozen.svg///Add ice to glass:highball_big.svg, raspberry_frozen.svg, ice.svg///Pour in the rum, pineapple juice, coconut water and stir:highball_big.svg, raspberry_frozen.svg, ice.svg, rum_white.svg, coconut_water.svg, juice_pineapple.svg///Garnish with mint and serve:highball_big.svg, raspberry_frozen.svg, ice.svg, rum_white.svg, coconut_water.svg, juice_pineapple.svg, mint.svg",
-    "ingredients": "White rum: 30 ml///Orange juice: 90 ml///Coconut water: 90 ml///Frozen raspberries: 2 tsp///Ice: ¼ cup///Mint: 2 leaves"
+    "ingredients": "White rum: 30 ml///Orange juice: 90 ml///Coconut water: 90 ml///Frozen raspberries: 2 tsp///Ice: ¼ cup///Mint: 2 leaves",
+    "colorCode": "E8A5DD"
   },
   {
     "name": "Lively Negroni",
@@ -1185,7 +1316,8 @@
     "categories": "graduation",
     "searchWords": "graduation, negroni, lively, lively negroni, gin, vermouth, aperol, syrup, orange, lemon",
     "steps": "Grill an orange until black:highball_small.svg, orange_piece.svg///Squeeze juice from a lemon:highball_small.svg, orange_piece.svg, juice_lemon.svg///Combine gin, vermouth, aperol, syrup and lemon juice in a glass with ice:highball_small.svg, orange_piece.svg, juice_lemon.svg, ice.svg, gin.svg, aperol.svg, vermouth.svg, syrup_orange.svg///Add a slice of toasted orange:highball_small.svg, orange_piece.svg, juice_lemon.svg, ice.svg, gin.svg, aperol.svg, vermouth.svg, syrup_orange.svg",
-    "ingredients": "Gin: 45 ml///Vermouth: 30 ml///Aperol: 15 ml///Orange syrup: 15 ml///Lemon: ½ pcs///Orange: 1 pcs///Ice: 4 cubes"
+    "ingredients": "Gin: 45 ml///Vermouth: 30 ml///Aperol: 15 ml///Orange syrup: 15 ml///Lemon: ½ pcs///Orange: 1 pcs///Ice: 4 cubes",
+    "colorCode": "D3951A"
   },
   {
     "name": "Clover club",
@@ -1194,7 +1326,8 @@
     "categories": "graduation",
     "searchWords": "graduation, club, clover, clover club, gin, raspberry, syrup, egg, white, lime",
     "steps": "Squeeze juice from a lime:wide_glass_with_thin_leg.svg, juice_lime.svg///Mix all ingredients in a shaker:wide_glass_with_thin_leg.svg, juice_lime.svg, gin.svg, syrup_raspberry.svg, egg_white.svg, ice.svg///Pour slowly into a glass:wide_glass_with_thin_leg.svg, juice_lime.svg, gin.svg, syrup_raspberry.svg, egg_white.svg, ice.svg",
-    "ingredients": "Gin: 50 ml///Raspberry syrup: 25 ml///Lime: ½ pcs///Egg white: 1 pcs///Ice: 4 cubes"
+    "ingredients": "Gin: 50 ml///Raspberry syrup: 25 ml///Lime: ½ pcs///Egg white: 1 pcs///Ice: 4 cubes",
+    "colorCode": "A85858"
   },
   {
     "name": "Champagne punch",
@@ -1203,7 +1336,8 @@
     "categories": "graduation",
     "searchWords": "graduation, punch, champagne, champagne punch, sparkling wine, lemon, pomegranate, juice",
     "steps": "Combine sugar, water and lemon zest in a saucepan and heat:highball_middle.svg, sugar.svg, water.svg, zest_lemon.svg///Cook over low heat for 5 minutes, stirring constantly:highball_middle.svg, sugar.svg, water.svg, zest_lemon.svg///Add lemon and pomegranate juice and refrigerate:highball_middle.svg, sugar.svg, water.svg, zest_lemon.svg, juice_lemon.svg, juice_pomegranate.svg///Pour into glasses:highball_middle.svg, sugar.svg, water.svg, zest_lemon.svg, juice_lemon.svg, juice_pomegranate.svg///Add sparkling wine to each glass and serve.:highball_middle.svg, sugar.svg, water.svg, zest_lemon.svg, juice_lemon.svg, juice_pomegranate.svg, wine_playful.svg",
-    "ingredients": "Sparkling wine: 1,7 L///Lemon juice: 3 tsp///Pomegranate juice: 1 glass///Water: ¼ cup///Sugar: ¼ cup///Lemon zest: 1 pcs///Lemon: 1 slice"
+    "ingredients": "Sparkling wine: 1,7 L///Lemon juice: 3 tsp///Pomegranate juice: 1 glass///Water: ¼ cup///Sugar: ¼ cup///Lemon zest: 1 pcs///Lemon: 1 slice",
+    "colorCode": "478358"
   },
   {
     "name": "Dirty martini",
@@ -1212,7 +1346,8 @@
     "categories": "graduation",
     "searchWords": "graduation, martini, dirty, dirty martini, vodka, vermouth, olives, dry",
     "steps": "Mix vodka and vermouth in a glass:martini.svg, vodka.svg, vermouth_dry.svg///Add olives and enjoy:martini.svg, vodka.svg, vermouth_dry.svg, olives_boneless.svg",
-    "ingredients": "Vodka: 40 ml///Dry vermouth: 35 ml///Olives: 2 pcs"
+    "ingredients": "Vodka: 40 ml///Dry vermouth: 35 ml///Olives: 2 pcs",
+    "colorCode": "69193F"
   },
   {
     "name": "White martini",
@@ -1221,7 +1356,8 @@
     "categories": "graduation",
     "searchWords": "graduation, russian, white, white russian, vodka, cream, liquor, coffee",
     "steps": "Mix all ingredients in a glass:rocks.svg, vodka.svg, cream.svg, liquor_coffee.svg///Garnish with chocolate:rocks.svg, vodka.svg, cream.svg, liquor_coffee.svg, chocolate_bitter.svg",
-    "ingredients": "Vodka: 30 ml///Cream: 30 ml///Coffee liquor: 30 ml"
+    "ingredients": "Vodka: 30 ml///Cream: 30 ml///Coffee liquor: 30 ml",
+    "colorCode": "75857A"
   },
   {
     "name": "Brumble",
@@ -1230,7 +1366,8 @@
     "categories": "graduation",
     "searchWords": "graduation, brumble, gin, liquor, blackberry, lemon, sugar, juice, syrup",
     "steps": "Mix ice, gin, sugar syrup and lemon juice in a glass:highball_middle.svg, ice.svg, gin.svg, juice_lemon.svg, syrup_shugar.svg///Pour in the blackberry liquor and do not stir.:highball_middle.svg, ice.svg, gin.svg, juice_lemon.svg, syrup_shugar.svg, liquor_blackberry.svg",
-    "ingredients": "Gin: 50 ml///Blackberry liquor: 15 ml///Lemon juice: 20 ml///Sugar syrup: 10 ml///Ice: 200 gr"
+    "ingredients": "Gin: 50 ml///Blackberry liquor: 15 ml///Lemon juice: 20 ml///Sugar syrup: 10 ml///Ice: 200 gr",
+    "colorCode": "6B291A"
   },
   {
     "name": "Mint Julep",
@@ -1239,7 +1376,8 @@
     "categories": "graduation",
     "searchWords": "graduation, julep, mint julep, bourbon, mint",
     "steps": "Put mint and powdered sugar in a glass:highball_middle.svg, mint.svg, sugar_powdered.svg///Add water and crush mint leaves:highball_middle.svg, mint.svg, sugar_powdered.svg, water.svg///Add ice:highball_middle.svg, mint.svg, sugar_powdered.svg, water.svg, ice.svg///Pour in the bourbon and stir:highball_middle.svg, mint.svg, sugar_powdered.svg, water.svg, ice.svg, bourbon.svg",
-    "ingredients": "Bourbon: 50 ml///Water: 10 ml///Mint: 2 leaves///Powdered sugar: 10 gr///Ice: 150 gr"
+    "ingredients": "Bourbon: 50 ml///Water: 10 ml///Mint: 2 leaves///Powdered sugar: 10 gr///Ice: 150 gr",
+    "colorCode": "4B93C7"
   },
   {
     "name": "Cosmopolitain",
@@ -1248,7 +1386,8 @@
     "categories": "womensDay",
     "searchWords": "international woman's day, cosmopomitain, cosmo, vodka, liquor, cranberry, lemon, juice, lime",
     "steps": "Mix vodka, liquor, cranberry and lemon juices in a shaker:margarita.svg, vodka.svg, liquor_orange.svg, juice_lemon.svg, juice_cranberry.svg///Pour the cocktail into a chilled glass:margarita.svg, vodka.svg, liquor_orange.svg, juice_lemon.svg, juice_cranberry.svg///Garnish with lime:margarita.svg, vodka.svg, liquor_orange.svg, juice_lemon.svg, juice_cranberry.svg, lime_piece.svg",
-    "ingredients": "Vodka: 50 ml///liquor: 25 ml///Cranberry juice: 50 ml///Lemon juice: 25 ml///Lime: 1 slice"
+    "ingredients": "Vodka: 50 ml///liquor: 25 ml///Cranberry juice: 50 ml///Lemon juice: 25 ml///Lime: 1 slice",
+    "colorCode": "4191CC"
   },
   {
     "name": "Tropical paradise",
@@ -1256,8 +1395,9 @@
     "picPreview": "tropical_heaven_eng.svg",
     "categories": "womensDay",
     "searchWords": "international woman's day, paradise, tropical, tropical paradise, rum, pineapple, coconut, juice, liquor, banana, strawberry",
-    "steps": "Mix rum, liquor, juice and banana in a blender:hurricane.svg, rum_white.svg, liquor_coconout.svg, juice_pineapple.svg, banana.svg///Перелейте в охлажденный бокал:hurricane.svg, rum_white.svg, liquor_coconout.svg, juice_pineapple.svg, banana.svg///Украсьте клубничкой:hurricane.svg, rum_white.svg, liquor_coconout.svg, juice_pineapple.svg, banana.svg, strawberry.svg",
-    "ingredients": "White rum: 50 ml///Pineapple juice: 100 ml///Coconut liquor: 50 ml///Banana: ⅓ pcs///Strawberry: 1 pcs"
+    "steps": "Mix rum, liquor, juice and banana in a blender:hurricane.svg, rum_white.svg, liquor_coconout.svg, juice_pineapple.svg, banana.svg///Pour into a cooled glass:hurricane.svg, rum_white.svg, liquor_coconout.svg, juice_pineapple.svg, banana.svg///Garnish with strawberry:hurricane.svg, rum_white.svg, liquor_coconout.svg, juice_pineapple.svg, banana.svg, strawberry.svg",
+    "ingredients": "White rum: 50 ml///Pineapple juice: 100 ml///Coconut liquor: 50 ml///Banana: ⅓ pcs///Strawberry: 1 pcs",
+    "colorCode": "FFBE3F"
   },
   {
     "name": "Azure dreams",
@@ -1266,7 +1406,8 @@
     "categories": "womensDay",
     "searchWords": "international woman's day, dreams, azure, azure dreams, vodka, liquor, curacao, lemon, juice, soda",
     "steps": "Mix lemon juice and soda in a mixing glass:martini.svg, soda.svg, juice_lemon.svg///Fill the glass with ice:martini.svg, soda.svg, juice_lemon.svg, ice.svg///Pour vodka and liquor in:martini.svg, soda.svg, juice_lemon.svg, ice.svg, vodka.svg, liquor_curacau.svg///Add soda and lemon juice:martini.svg, soda.svg, juice_lemon.svg, ice.svg, vodka.svg, liquor_curacau.svg",
-    "ingredients": "Vodka: 45 ml///Curacao liquor: 20 ml///Lemon juice: 30 ml///Soda: 120 ml///Ice: 150 gr"
+    "ingredients": "Vodka: 45 ml///Curacao liquor: 20 ml///Lemon juice: 30 ml///Soda: 120 ml///Ice: 150 gr",
+    "colorCode": "6B291A"
   },
   {
     "name": "Strawberry caresses",
@@ -1275,7 +1416,8 @@
     "categories": "womensDay",
     "searchWords": "international woman's day, caresses, strawberry, strawberry caresses, tequila, liquor, lime, strawberry, juice",
     "steps": "Grind strawberries with tequila, liquor and lime juice in a blender:margarita.svg, strawberry.svg, tequila.svg, liquor_orange.svg, juice_lime.svg///Pour the cocktail into a glass with ice:margarita.svg, strawberry.svg, tequila.svg, liquor_orange.svg, juice_lime.svg, ice.svg",
-    "ingredients": "Tequila: 50 ml///liquor: 20 ml///Lime juice: 30 ml///Strawberry: 30 gr///Ice: 4 cubes"
+    "ingredients": "Tequila: 50 ml///liquor: 20 ml///Lime juice: 30 ml///Strawberry: 30 gr///Ice: 4 cubes",
+    "colorCode": "E78173"
   },
   {
     "name": "Melon bellinni",
@@ -1284,7 +1426,8 @@
     "categories": "womensDay",
     "searchWords": "international woman's day, bellini, melon, melon bellini, sparkling wine, champagne, honey",
     "steps": "Place mashed melon into a glass:champagne.svg, melon.svg///Add ice, syrup and champagne:champagne.svg, melon.svg, ice.svg, syrup_honey.svg, wine_playful.svg///Mix and serve:champagne.svg, melon.svg, ice.svg, syrup_honey.svg, wine_playful.svg",
-    "ingredients": "Sparkling wine: 120 ml///Honey syrup: 20 ml///Melon: 160 gr///Ice: 200 gr"
+    "ingredients": "Sparkling wine: 120 ml///Honey syrup: 20 ml///Melon: 160 gr///Ice: 200 gr",
+    "colorCode": "478358"
   },
   {
     "name": "Old Judy",
@@ -1293,7 +1436,8 @@
     "categories": "womensDay",
     "searchWords": "international woman's day, judy, old, old judy, vodka, wine, sparkling wine, champagne, kiwi, marple, syrup, mint",
     "steps": "Put the kiwi fruit into a shaker and crush it lightly:martini.svg, kiwi.svg///Add all the resting ingredients and stir:martini.svg, kiwi.svg, vodka.svg, wine_white.svg, wine_playful.svg, syrop_maple.svg, juice_lime.svg, mint.svg, ice.svg///Pour into a glass and serve immediately:martini.svg, kiwi.svg, vodka.svg, wine_white.svg, wine_playful.svg, syrop_maple.svg, juice_lime.svg, mint.svg, ice.svg",
-    "ingredients": "Vodka: 40 ml///White dry wine: 40 ml///Sparkling wine: 40 ml///Marple syrup: 10 ml///Lime juice: 10 ml///Kiwi: 60 gr///Mint: 2 leaves///Ice: 200 gr"
+    "ingredients": "Vodka: 40 ml///White dry wine: 40 ml///Sparkling wine: 40 ml///Marple syrup: 10 ml///Lime juice: 10 ml///Kiwi: 60 gr///Mint: 2 leaves///Ice: 200 gr",
+    "colorCode": "B06969"
   },
   {
     "name": "Ceviche Mary",
@@ -1302,7 +1446,8 @@
     "categories": "womensDay",
     "searchWords": "international woman's day, mary, ceviche, ceviche mary, vodka, juice, lemon, tomatoe, hot, pepper, tabasco, worcester",
     "steps": "Mix all the ingredients in a shaker:highball_big.svg, vodka_pepper.svg, juice_lemon.svg, juice_tomato.svg, sauce_tabasco.svg, coriander.svg, sauce_oysters.svg, sauce_worcestershire.svg, pepper_black.svg, salt.svg///Pour the cocktail in a glass with ice:highball_big.svg, vodka_pepper.svg, juice_lemon.svg, juice_tomato.svg, sauce_tabasco.svg, coriander.svg, sauce_oysters.svg, sauce_worcestershire.svg, pepper_black.svg, salt.svg, ice.svg",
-    "ingredients": "Pepper vodka: 40 ml///Lemon juice: 15 ml///Tomatoe juice: 150 ml///Coriander: 2 gr///Tabasco: 2 ml///Oyster sauce: 20 ml///Worcester sauce: 3 ml///Black powdered pepper: a pinch///Salt: a pinch///Ice: 380 gr"
+    "ingredients": "Pepper vodka: 40 ml///Lemon juice: 15 ml///Tomatoe juice: 150 ml///Coriander: 2 gr///Tabasco: 2 ml///Oyster sauce: 20 ml///Worcester sauce: 3 ml///Black powdered pepper: a pinch///Salt: a pinch///Ice: 380 gr",
+    "colorCode": "C87BBC"
   },
   {
     "name": "French martini",
@@ -1311,7 +1456,8 @@
     "categories": "womensDay",
     "searchWords": "international woman's day, martini, french, french martini, vodka, raspberry, pineapple, juice, liquor",
     "steps": "Mix all the ingredients in a shaker:champagne.svg, vodka.svg, juice_pineapple.svg, liquor_raspberry.svg///Garnish with orange zest:champagne.svg, vodka.svg, juice_pineapple.svg, liquor_raspberry.svg, zest_orange.svg",
-    "ingredients": "Vodka: 45 ml///Pineapple juice: 15 ml///Raspberry liquor (or syrup): 15 ml"
+    "ingredients": "Vodka: 45 ml///Pineapple juice: 15 ml///Raspberry liquor (or syrup): 15 ml",
+    "colorCode": "D76950"
   },
   {
     "name": "Frenchman-75",
@@ -1320,7 +1466,8 @@
     "categories": "womensDay",
     "searchWords": "international woman's day, frenchman, frenchman-75, french 75, 75, gin, sparkling wine, champagne, syrup, lemon, juice",
     "steps": "Mix gin, lemon juice, sugar syrup in a shaker:champagne.svg, gin.svg, juice_lemon.svg, syrup_shugar.svg///Pour into a glass and add champagne:champagne.svg, gin.svg, juice_lemon.svg, syrup_shugar.svg, wine_playful.svg",
-    "ingredients": "Gin: 30 ml///Lemon juice: 15 ml///Sugar syrup: 5 ml///Champagne: 60 ml"
+    "ingredients": "Gin: 30 ml///Lemon juice: 15 ml///Sugar syrup: 5 ml///Champagne: 60 ml",
+    "colorCode": "4B93C7"
   },
   {
     "name": "Valencian water",
@@ -1328,8 +1475,9 @@
     "picPreview": "valencian_water_eng.svg",
     "categories": "womensDay",
     "searchWords": "international woman's day, water, valencian, valencian water, champagne, sparkling wine, gin, liquor, orange",
-    "steps": "Combine ice, sugar and orange juice in a pitcher:martini.svg, ice.svg, sugar.svg, juice_orange.svg///Stir until sugar dissolves:martini.svg, ice.svg, sugar.svg, juice_orange.svg///Add the remaining ingredients:martini.svg, ice.svg, sugar.svg, juice_orange.svg, wine_playful.svg, gin.svg, liquor_orange.svg///Разлейте по бокалам и подавайте:martini.svg, ice.svg, sugar.svg, juice_orange.svg, wine_playful.svg, gin.svg, liquor_orange.svg",
-    "ingredients": "Champagne: 700 ml///Orange juice: 300 ml///Gin: 150 ml///Citrus liquor: 150 ml///Sugar: 6 tsp///Ice: 200 gr"
+    "steps": "Combine ice, sugar and orange juice in a pitcher:martini.svg, ice.svg, sugar.svg, juice_orange.svg///Stir until sugar dissolves:martini.svg, ice.svg, sugar.svg, juice_orange.svg///Add the remaining ingredients:martini.svg, ice.svg, sugar.svg, juice_orange.svg, wine_playful.svg, gin.svg, liquor_orange.svg///Pour into glasses and enjoy:martini.svg, ice.svg, sugar.svg, juice_orange.svg, wine_playful.svg, gin.svg, liquor_orange.svg",
+    "ingredients": "Champagne: 700 ml///Orange juice: 300 ml///Gin: 150 ml///Citrus liquor: 150 ml///Sugar: 6 tsp///Ice: 200 gr",
+    "colorCode": "3E5BC2"
   },
   {
     "name": "Adventuress",
@@ -1338,7 +1486,8 @@
     "categories": "womensDay",
     "searchWords": "international woman's day, avanturess, vodka, wine, champagne, sparkling wine, vanilla, syrup, kiwi, mint, lime",
     "steps": "Crush the kiwi with a fork in a shaker:champagne.svg, kiwi.svg///Add all other ingredients except champagne to shaker and stir.:champagne.svg, kiwi.svg, vodka.svg, wine_white.svg, syrup_vanilla.svg, juice_lime.svg, mint.svg///Pour a cocktail into a glass:champagne.svg, kiwi.svg, vodka.svg, wine_white.svg, syrup_vanilla.svg, juice_lime.svg, mint.svg///Add champagne and serve:champagne.svg, kiwi.svg, vodka.svg, wine_white.svg, syrup_vanilla.svg, juice_lime.svg, mint.svg, wine_playful.svg",
-    "ingredients": "Vodka: 40 ml///White wine: 40 ml///Champagne: 40 ml///Vanilla syrup: 20 ml///Lime juice: 10 ml///Kiwi: 1 pcs///Mint: 1 leave"
+    "ingredients": "Vodka: 40 ml///White wine: 40 ml///Champagne: 40 ml///Vanilla syrup: 20 ml///Lime juice: 10 ml///Kiwi: 1 pcs///Mint: 1 leave",
+    "colorCode": "4191CC"
   },
   {
     "name": "Raspberry breeze",
@@ -1347,7 +1496,8 @@
     "categories": "womensDay",
     "searchWords": "international woman's day, breeze, raspberry, raspberry breeze, martini, gin, liquor, champagne, sparkling wine, raspberry, lemon, juice",
     "steps": "Place all the ingredients into a large glass:highball_middle.svg, gin.svg, martini.svg, liquor_raspberry.svg, wine_playful.svg, juice_lemon.svg, raspberry.svg, sugar_powdered.svg///Sirt gently:highball_middle.svg, gin.svg, martini.svg, liquor_raspberry.svg, wine_playful.svg, juice_lemon.svg, raspberry.svg, sugar_powdered.svg",
-    "ingredients": "Martini: 25 ml///Gin: 15 ml///Raspberry liquor: 20 ml///Champagne: 150 ml///Lemon juice: 10 ml///Raspberries: 3 pcs///Powdered sugar: ½ tsp"
+    "ingredients": "Martini: 25 ml///Gin: 15 ml///Raspberry liquor: 20 ml///Champagne: 150 ml///Lemon juice: 10 ml///Raspberries: 3 pcs///Powdered sugar: ½ tsp",
+    "colorCode": "6B291A"
   },
   {
     "name": "Lava",
@@ -1356,7 +1506,8 @@
     "categories": "womensDay",
     "searchWords": "international woman's day, lava, coconut, liquor, milk, pineapple, juice",
     "steps": "Mix liquor with strawberry puree in a separate glass:coctail.svg, liquor_coconout.svg, puree_strawberry.svg///In another glass, mash the banana with milk with a fork.:coctail.svg, banana.svg, coconout_milk.svg///Pour the white part (banana with milk) into a cocktail glass first:coctail.svg, banana.svg, coconout_milk.svg///Pour, without stirring, the red part (liquor with strawberry puree) on top:coctail.svg, banana.svg, coconout_milk.svg, liquor_coconout.svg, puree_strawberry.svg",
-    "ingredients": "Coconut liquor: 50 ml///Coconut milk: 50 ml///Pineapple juice: 50 ml///Banana: 1 pcs///Strawberry puree: 50 gr"
+    "ingredients": "Coconut liquor: 50 ml///Coconut milk: 50 ml///Pineapple juice: 50 ml///Banana: 1 pcs///Strawberry puree: 50 gr",
+    "colorCode": "242320"
   },
   {
     "name": "Green Mary",
@@ -1365,7 +1516,8 @@
     "categories": "patrick",
     "searchWords": "patrick, saint patrick, saint patrick's day, mary, green, green mary, vodka, physalis, cucumber, sauce, hot, celery",
     "steps": "Mix all ingredients but celery in a blender:hurricane.svg, vodka.svg, vegetable_physalis.svg, cucumber.svg, grated_horseradish.svg, sauce_worcestershire.svg, sauce_green_hot.svg, salt.svg///Pour into a glass and garnish with celery:hurricane.svg, vodka.svg, vegetable_physalis.svg, cucumber.svg, grated_horseradish.svg, sauce_worcestershire.svg, sauce_green_hot.svg, salt.svg, red_celery.svg",
-    "ingredients": "Vodka: 180 ml///Physalis: 450 gr///Cucumber: ½ pcs///Grated horseradish: 2 tsp///Worcestershire sauce: 2 drops///Green hot sauce: 2 drops///Salt: a pinch///Red celery: 1 stem"
+    "ingredients": "Vodka: 180 ml///Physalis: 450 gr///Cucumber: ½ pcs///Grated horseradish: 2 tsp///Worcestershire sauce: 2 drops///Green hot sauce: 2 drops///Salt: a pinch///Red celery: 1 stem",
+    "colorCode": "06451B"
   },
   {
     "name": "Green Margarita",
@@ -1374,7 +1526,8 @@
     "categories": "patrick",
     "searchWords": "patrick, saint patrick, saint patrick's day, margarita, green margarita, tequila, liquor, green, lime, juice",
     "steps": "Mix all the ingredients in a shaker:margarita.svg, tequila.svg, liquor_green.svg, ice.svg, juice_lime.svg///Decorate the rim of the glass with salt:margarita.svg, salt.svg///Pour a cocktail into a glass:margarita.svg, tequila.svg, liquor_green.svg, ice.svg, juice_lime.svg, salt.svg",
-    "ingredients": "Tequila: 35 ml///Green liquor: 25 ml///Lime juice: 15 ml///Ice: 4 cubes"
+    "ingredients": "Tequila: 35 ml///Green liquor: 25 ml///Lime juice: 15 ml///Ice: 4 cubes",
+    "colorCode": "697548"
   },
   {
     "name": "Surfer on the absinthe",
@@ -1383,7 +1536,8 @@
     "categories": "patrick",
     "searchWords": "patrick, saint patrick, saint patrick's day, surfer, absinthe, surfer on the absinthe, rum, coconut, pineapple, juice",
     "steps": "Mix all the ingredients in a shaker:highball_small.svg, absinthe.svg, rum_coconut.svg, juice_pineapple.svg///Pour into a chilled glass and enjoy:highball_small.svg, absinthe.svg, rum_coconut.svg, juice_pineapple.svg",
-    "ingredients": "Absinthe: 30 ml///Coconut rum: 30 ml///Pineapple juice: 30 ml"
+    "ingredients": "Absinthe: 30 ml///Coconut rum: 30 ml///Pineapple juice: 30 ml",
+    "colorCode": "135F28"
   },
   {
     "name": "Basil sambuca",
@@ -1392,7 +1546,8 @@
     "categories": "patrick",
     "searchWords": "patrick, saint patrick, saint patrick's day, sambuca, basil, basil sambuca, soda, apple, ginger, lemon, juice",
     "steps": "Chop the basil and ginger with a knife:wide_glass_with_thin_leg.svg, basil.svg, ginger.svg///Mix the sambuca, lemon juice, club soda, basil and ginger in a shaker:wide_glass_with_thin_leg.svg, basil.svg, ginger.svg, sambuca.svg, juice_lemon.svg, soda.svg///Pour into a glass:wide_glass_with_thin_leg.svg, basil.svg, ginger.svg, sambuca.svg, juice_lemon.svg, soda.svg///Garnish with an apple:wide_glass_with_thin_leg.svg, basil.svg, ginger.svg, sambuca.svg, juice_lemon.svg, soda.svg, apple.svg",
-    "ingredients": "Sambuca: 60 ml///Lemon juice: 30 ml///Soda: 90 ml///Apple: 1 pcs///Basil: 2 branches///Ginger: 2 cm"
+    "ingredients": "Sambuca: 60 ml///Lemon juice: 30 ml///Soda: 90 ml///Apple: 1 pcs///Basil: 2 branches///Ginger: 2 cm",
+    "colorCode": "26871B"
   },
   {
     "name": "Emerald island",
@@ -1401,7 +1556,8 @@
     "categories": "patrick",
     "searchWords": "patrick, saint patrick, saint patrick's day, emerald, island, emerald island, gin, liquor, mint",
     "steps": "Mix all the ingredients in a shaker:martini.svg, gin.svg, ice.svg, liquor_mint.svg///Pour into a glass:martini.svg, gin.svg, ice.svg, liquor_mint.svg",
-    "ingredients": "Gin: 60 ml///Mint liquor: 1 tsp///Ice: 4 cubes"
+    "ingredients": "Gin: 60 ml///Mint liquor: 1 tsp///Ice: 4 cubes",
+    "colorCode": "275322"
   },
   {
     "name": "Green mexican",
@@ -1410,7 +1566,8 @@
     "categories": "patrick",
     "searchWords": "patrick, saint patrick, saint patrick's day, green, mexican, green mexican, tequila, liquor, juice, lemon",
     "steps": "Pour all the ingredients into a glass one by one:shot.svg, liquor_green.svg, tequila.svg, juice_lemon.svg///Enjoy:shot.svg, liquor_green.svg, tequila.svg, juice_lemon.svg",
-    "ingredients": "Green liquor: 25 ml///Lemon juice: 10 ml///Tequila: 25 ml"
+    "ingredients": "Green liquor: 25 ml///Lemon juice: 10 ml///Tequila: 25 ml",
+    "colorCode": "49BC70"
   },
   {
     "name": "Green devil",
@@ -1418,8 +1575,9 @@
     "picPreview": "green_devil_eng.svg",
     "categories": "patrick",
     "searchWords": "patrick, saint patrick, saint patrick's day, devil, green, green devil, gin, liquor, mint, lime, juice, soda",
-    "steps": "Mix gin, liquor and lime juice in a shaker:highball_small.svg, gin.svg, juice_lime.svg, liquor_mint.svg///Перелейте в стакан, добавьте содовую и наслаждайтесь:highball_small.svg, gin.svg, juice_lime.svg, liquor_mint.svg, soda.svg",
-    "ingredients": "Gin: 15 ml///Mint liquor: 20 ml///Lime juice: 15 ml///Soda: 60 ml"
+    "steps": "Mix gin, liquor and lime juice in a shaker:highball_small.svg, gin.svg, juice_lime.svg, liquor_mint.svg///Pour into glass, add soda and enjoy:highball_small.svg, gin.svg, juice_lime.svg, liquor_mint.svg, soda.svg",
+    "ingredients": "Gin: 15 ml///Mint liquor: 20 ml///Lime juice: 15 ml///Soda: 60 ml",
+    "colorCode": "C7A44B"
   },
   {
     "name": "Joker",
@@ -1428,16 +1586,18 @@
     "categories": "patrick",
     "searchWords": "patrick, saint patrick, saint patrick's day, joker, vodka, rum, liquor, melon",
     "steps": "Shake all ingredients in a shaker:highball_middle.svg, vodka.svg, rum_white.svg, liquor_melon.svg, ice.svg///Pour into a glass:highball_middle.svg, vodka.svg, rum_white.svg, liquor_melon.svg, ice.svg",
-    "ingredients": "Vodka: 50 ml///White rum: 15 ml///Melon liquor: 25 ml///Ice: 4 cubes"
+    "ingredients": "Vodka: 50 ml///White rum: 15 ml///Melon liquor: 25 ml///Ice: 4 cubes",
+    "colorCode": "1F3930"
   },
   {
-    "name": "Shamrock",
+    "name": "Mix whiskey, liquor and cream in a shaker:highball_small.svg, whiskey.svg, liquor_mint.svg, cream.svg///Pour into glass:highball_small.svg, whiskey.svg, liquor_mint.svg, cream.svg///Garnish with a cherry:highball_small.svg, whiskey.svg, liquor_mint.svg, cream.svg, cherry_coctail.svg",
     "description": "Bitter shake",
     "picPreview": "shamrock_eng.svg",
     "categories": "patrick",
     "searchWords": "patrick, saint patrick, saint patrick's day, shamrock, whiskey, liquor, mint, cream, cherry",
-    "steps": "Mix whiskey, liquor and cream in a shaker:highball_small.svg, whiskey.svg, liquor_mint.svg, cream.svg///Налейте в бокал:highball_small.svg, whiskey.svg, liquor_mint.svg, cream.svg///Garnish with a cherry:highball_small.svg, whiskey.svg, liquor_mint.svg, cream.svg, cherry_coctail.svg",
-    "ingredients": "Whiskey: 15 ml///Mint liquor: 20 ml///Cream: 60 ml///Cocktail cherry: 1 pcs"
+    "steps": "Mix whiskey, liquor and cream in a shaker:highball_small.svg, whiskey.svg, liquor_mint.svg, cream.svg///Pour into a glass:highball_small.svg, whiskey.svg, liquor_mint.svg, cream.svg///Garnish with a cherry:highball_small.svg, whiskey.svg, liquor_mint.svg, cream.svg, cherry_coctail.svg",
+    "ingredients": "Whiskey: 15 ml///Mint liquor: 20 ml///Cream: 60 ml///Cocktail cherry: 1 pcs",
+    "colorCode": "3F9D34"
   },
   {
     "name": "Irish legend",
@@ -1446,7 +1606,8 @@
     "categories": "patrick",
     "searchWords": "patrick, saint patrick, saint patrick's day, legend, irish, irish legend, whiskey, liquor, amaretto, juice, blackberry, rosemary, apple,lemon, lime, egg",
     "steps": "Mix everything except blackberry syrup and rosemary in a shaker:highball_small.svg, whiskey.svg, liquor_amaretto.svg, juice_apple.svg, juice_lemon.svg, juice_lime.svg, syrup_shugar.svg, egg_white.svg///Pour into a glass:highball_small.svg, whiskey.svg, liquor_amaretto.svg, juice_apple.svg, juice_lemon.svg, juice_lime.svg, syrup_shugar.svg, egg_white.svg///Add blackberry syrup:highball_small.svg, whiskey.svg, liquor_amaretto.svg, juice_apple.svg, juice_lemon.svg, juice_lime.svg, syrup_shugar.svg, egg_white.svg, syrup_blackberry.svg///Garnish with rosemary:highball_small.svg, whiskey.svg, liquor_amaretto.svg, juice_apple.svg, juice_lemon.svg, juice_lime.svg, syrup_shugar.svg, egg_white.svg, syrup_blackberry.svg, rosemary.svg",
-    "ingredients": "Whiskey: 45 ml///Amaretto: 15 ml///Apple juice: 40 ml///Lemon juice: 10 ml///Lime juice: 10 ml///Sugar syrup: 5 ml///Blackberry syrup: 10 ml///Egg white: 1 pcs///Rosemary: 1 branch"
+    "ingredients": "Whiskey: 45 ml///Amaretto: 15 ml///Apple juice: 40 ml///Lemon juice: 10 ml///Lime juice: 10 ml///Sugar syrup: 5 ml///Blackberry syrup: 10 ml///Egg white: 1 pcs///Rosemary: 1 branch",
+    "colorCode": "54B931"
   },
   {
     "name": "irish frog",
@@ -1455,7 +1616,8 @@
     "categories": "patrick",
     "searchWords": "patrick, saint patrick, saint patrick's day, frog, irish, irish frog, liquor, melon, irish",
     "steps": "Pour melon liquor into a shot:shot.svg, liquor_melon.svg///Top with cream liqeur, dont stir:shot.svg, liquor_melon.svg, liquor_irish_cream.svg",
-    "ingredients": "Melon liquor: 100 ml///Irish cream liquor: 100 ml"
+    "ingredients": "Melon liquor: 100 ml///Irish cream liquor: 100 ml",
+    "colorCode": "1F3930"
   },
   {
     "name": "Apple pleasure",
@@ -1464,6 +1626,7 @@
     "categories": "patrick",
     "searchWords": "patrick, saint patrick, saint patrick's day, pleasure, apple, apple pleasure, vodka, liquor, apple, juice, lemon",
     "steps": "Mix all the ingredients but apple in a shaker:martini.svg, vodka.svg, liquor_apple.svg, juice_lemon.svg, juice_apple.svg, syrup_shugar.svg///Pour into a glass and garnish with an apple slice:martini.svg, vodka.svg, liquor_apple.svg, juice_lemon.svg, juice_apple.svg, syrup_shugar.svg, apple.svg",
-    "ingredients": "Vodka: 30 ml///Apple liquor: 20 ml///Apple juice: 20 ml///Lemon juice: 10 ml///Sugar syrup: 10 ml///Apple: 1 slice"
+    "ingredients": "Vodka: 30 ml///Apple liquor: 20 ml///Apple juice: 20 ml///Lemon juice: 10 ml///Sugar syrup: 10 ml///Apple: 1 slice",
+    "colorCode": "566B1A"
   }
 ]

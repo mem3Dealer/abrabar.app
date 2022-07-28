@@ -86,6 +86,12 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  @override
+  void dispose() {
+    moneyBloc.dispose();
+    super.dispose();
+  }
+
   final cockBloc = GetIt.I.get<CoctailBloc>();
 
   final moneyBloc = GetIt.I.get<MonetizationBloc>();

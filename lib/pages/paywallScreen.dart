@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:abrabar/shared/picPaths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,20 +15,33 @@ import '../logic/services/analytic_service.dart';
 
 class PaywallScreen extends StatelessWidget {
   PaywallScreen({Key? key}) : super(key: key);
+  late bool tf;
+
+  Future<bool?> _internetCheckUp() async {
+    try {
+      final result = await InternetAddress.lookup('example.com');
+      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
+        print('we trued');
+        tf = true;
+        return true;
+      }
+    } on SocketException catch (_) {
+      tf = false;
+      return false;
+    }
+    return null;
+  }
 
   @override
   Widget build(BuildContext context) {
+    _internetCheckUp();
     final theme = Theme.of(context);
     final paths = PicPaths();
     var t = AppLocalizations.of(context)!;
     final moneyBloc = GetIt.I.get<MonetizationBloc>();
-    InAppPurchase _iap = InAppPurchase.instance;
-
-    void _buyProduct(ProductDetails prod) {
-      final PurchaseParam purchaseParam = PurchaseParam(productDetails: prod);
-      _iap.buyNonConsumable(purchaseParam: purchaseParam);
-    }
-
+    final String defaultLocale = Platform.localeName;
+    late bool isAvailable = true;
+    print(isAvailable);
     Widget buildTextRow(String text) {
       return Padding(
         padding: EdgeInsets.only(bottom: 2.5.h, left: 10.w),
@@ -65,8 +80,8 @@ class PaywallScreen extends StatelessWidget {
       body: BlocConsumer<MonetizationBloc, MonetizationState>(
         listener: (context, state) {},
         builder: (context, state) {
-          print(state.purchases);
-          print(state.products);
+          ProductDetails product = state.products.first;
+
           return SafeArea(
               top: false,
               child: Center(
@@ -95,28 +110,40 @@ class PaywallScreen extends StatelessWidget {
                         buildTextRow(t.coctailsSeasonal),
                         buildTextRow(t.coctailsAuthor),
                         SizedBox(
-                          height: 8.h,
+                          height: 3.h,
                         ),
-                        RichText(
-                          text: TextSpan(children: [
-                            TextSpan(
-                                text: t.onlyfor,
-                                style: theme.textTheme.headline1!
-                                    .copyWith(fontSize: 50.sp)),
-                            TextSpan(
-                                text: "999Р",
-                                style: theme.textTheme.headline1!.copyWith(
-                                    fontSize: 50.sp,
-                                    color: const Color(0xffFFBE3F)))
-                          ]),
-                        ),
-                        Text(
-                          t.onceAndForEver,
-                          textAlign: TextAlign.center,
-                          style: theme.textTheme.headline1,
-                        ),
+                        isAvailable
+                            ? Padding(
+                                padding: const EdgeInsets.only(
+                                  left: 16,
+                                  right: 16,
+                                ),
+                                child: RichText(
+                                  textAlign: TextAlign.center,
+                                  text: TextSpan(children: [
+                                    TextSpan(
+                                        text: t.onlyfor,
+                                        style: theme.textTheme.headline1!
+                                            .copyWith(fontSize: 50.sp)),
+                                    TextSpan(
+                                        text: defaultLocale == 'ru_RU'
+                                            ? "${product.rawPrice} Р"
+                                            : product.price,
+                                        style: theme.textTheme.headline1!
+                                            .copyWith(
+                                                fontSize: 50.sp,
+                                                color:
+                                                    const Color(0xffFFBE3F))),
+                                    TextSpan(
+                                      text: '\n${t.onceAndForEver}',
+                                      style: theme.textTheme.headline1,
+                                    )
+                                  ]),
+                                ),
+                              )
+                            : const SizedBox.shrink(),
                         SizedBox(
-                          height: 8.h,
+                          height: 4.h,
                         ),
                         Padding(
                           padding: EdgeInsets.only(bottom: 6.h),
