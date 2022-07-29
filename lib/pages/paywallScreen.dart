@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:abrabar/shared/picPaths.dart';
@@ -23,6 +24,7 @@ class PaywallScreen extends StatelessWidget {
     var t = AppLocalizations.of(context)!;
     final moneyBloc = GetIt.I.get<MonetizationBloc>();
     final String defaultLocale = Platform.localeName;
+    late ProductDetails product;
 
     Widget buildTextRow(String text) {
       return Padding(
@@ -62,7 +64,18 @@ class PaywallScreen extends StatelessWidget {
       body: BlocConsumer<MonetizationBloc, MonetizationState>(
         listener: (context, state) async {},
         builder: (context, state) {
-          ProductDetails product = state.products.first;
+          if (state.products.isEmpty) {
+            product = ProductDetails(
+                id: '',
+                title: "",
+                description: "",
+                price: "0",
+                rawPrice: 0,
+                currencyCode: 'ru_Ru');
+          } else {
+            product = state.products.first;
+          }
+
           moneyBloc.internetCheckUp();
           return SafeArea(
               top: false,
