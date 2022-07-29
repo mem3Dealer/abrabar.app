@@ -158,89 +158,92 @@ class SeasonPage extends StatelessWidget {
         }
 
         return Scaffold(
-          appBar: AppBar(
-            elevation: 0,
-            bottomOpacity: 0,
-            backgroundColor: color,
-            leading: IconButton(
-              onPressed: (() => Navigator.of(context).pop()),
-              icon: SvgPicture.asset(
-                "${paths.systemImages}back_arrow.svg",
-                color: isWhite ? Colors.white : Colors.black,
-              ),
-            ),
-          ),
-          backgroundColor: theme.scaffoldBackgroundColor,
-          body: ListView(
-            shrinkWrap: true,
-            children: [
-              Container(
-                width: 100.w,
-                height: 40.h,
-                color: color,
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: 6.25.h,
-                        left: 6.1.w,
-                      ),
-                      child: Align(
-                        alignment: Alignment.topLeft,
-                        child: Text(
-                          title,
-                          style: theme.textTheme.headline2!.copyWith(
-                              color: isWhite
-                                  ? Colors.white
-                                  : const Color(0xff242320)),
+          body: CustomScrollView(
+            slivers: [
+              SliverAppBar(
+                // pinned: true,
+                floating: true,
+                backgroundColor: color,
+                expandedHeight: 44.h,
+                leading: IconButton(
+                  onPressed: (() => Navigator.of(context).pop()),
+                  icon: SvgPicture.asset(
+                    "${paths.systemImages}back_arrow.svg",
+                    color: isWhite ? Colors.white : Colors.black,
+                  ),
+                ),
+                flexibleSpace: FlexibleSpaceBar(
+                  background: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                          top: 6.25.h,
+                          left: 6.1.w,
+                        ),
+                        child: Align(
+                          alignment: Alignment(-0.85, -0.6),
+                          child: Text(
+                            title,
+                            style: theme.textTheme.headline2!.copyWith(
+                                color: isWhite
+                                    ? Colors.white
+                                    : const Color(0xff242320)),
+                          ),
                         ),
                       ),
-                    ),
-                    Align(
-                      alignment: Alignment.bottomRight,
-                      child: SizedBox(
-                        height: 25.h,
-                        width: 45.w,
-                        child: SvgPicture.asset(
-                          "${paths.categoryPics}$categoryName.svg",
-                          alignment: Alignment.bottomRight,
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: SizedBox(
+                          height: 25.h,
+                          width: 45.w,
+                          child: SvgPicture.asset(
+                            "${paths.categoryPics}$categoryName.svg",
+                            alignment: Alignment.bottomRight,
+                          ),
                         ),
-                      ),
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
               ),
-              Stack(
-                children: [
-                  GridView.builder(
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2),
-                      itemCount: categoryCoctails.length,
-                      itemBuilder: (BuildContext ctx, index) {
-                        return categoryCoctails[index].createGridCell(
-                            collectionName: collectionName(categoryName),
-                            setName: categoryName,
-                            coctail: categoryCoctails[index],
-                            context: context);
-                      }),
-                  Positioned.fill(
-                      child: OverlayWithLock(
-                    screenName: categoryName,
-                    isSeasonal: true,
-                  ))
-                  // OverlayWithLock()
-                ],
-              ),
+              buildGrid(categoryCoctails, collectionName(categoryName), context)
             ],
           ),
         );
       },
     );
   }
+
+  Widget buildGrid(List<Coctail> categoryCoctails, String categoryName,
+          BuildContext context) =>
+      SliverToBoxAdapter(
+        child: Stack(
+          children: [
+            GridView.builder(
+                padding: EdgeInsets.zero,
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                primary: false,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2),
+                itemCount: categoryCoctails.length,
+                itemBuilder: (BuildContext ctx, index) {
+                  return categoryCoctails[index].createGridCell(
+                      collectionName: categoryName,
+                      setName: categoryName,
+                      coctail: categoryCoctails[index],
+                      context: context);
+                }),
+            Positioned.fill(
+                child: OverlayWithLock(
+              screenName: categoryName,
+              isSeasonal: true,
+            ))
+            // OverlayWithLock()
+          ],
+        ),
+      );
 }
 
 class OverlayWithLock extends StatelessWidget {
