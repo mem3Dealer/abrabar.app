@@ -38,6 +38,7 @@ class FavoritesView extends StatelessWidget {
         } else {
           return GridView.builder(
               // physics: const BouncingScrollPhysics(),
+              physics: const ClampingScrollPhysics(),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2),
               itemCount: state.favoriteCoctails.length,

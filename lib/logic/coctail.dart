@@ -128,9 +128,10 @@ class Coctail {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                SvgPicture.asset(defaultLocale == 'ru_RU'
-                    ? paths.previewsRu + coctail.picPreview!
-                    : paths.previewsEng + coctail.picPreview!),
+                SvgPicture.asset(
+                    defaultLocale.contains('ru') || defaultLocale.contains('RU')
+                        ? paths.previewsRu + coctail.picPreview!
+                        : paths.previewsEng + coctail.picPreview!),
                 isFav
                     ? Padding(
                         padding: EdgeInsets.only(right: 3.w, top: 1.5.h),

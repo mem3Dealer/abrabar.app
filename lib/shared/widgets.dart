@@ -159,6 +159,7 @@ class SeasonPage extends StatelessWidget {
 
         return Scaffold(
           body: CustomScrollView(
+            physics: const ClampingScrollPhysics(),
             slivers: [
               SliverAppBar(
                 // pinned: true,

@@ -45,10 +45,10 @@ var api = RecipesApi();
 var notes = Notifications();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   FlutterBranchSdk.initSession().listen((data) {});
   // FlutterBranchSdk.validateSDKIntegration();
 
-  await Firebase.initializeApp();
   // await Reci pesApi.init();
 
   notes.subscribeToNotes(flnPlugin, channel);

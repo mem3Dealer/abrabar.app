@@ -153,6 +153,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         listener: (context, state) {},
         builder: (context, state) {
           return SafeArea(
+            bottom: false,
             child: TabBarView(
               controller: _tabController,
               children: views,

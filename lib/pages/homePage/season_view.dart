@@ -15,10 +15,11 @@ class SeasonView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final String defaultLocale = Platform.localeName;
-    bool isRu = defaultLocale == 'ru_RU';
+    bool isRu = defaultLocale.contains('ru') || defaultLocale.contains('RU');
     var t = AppLocalizations.of(context)!;
     return Center(
       child: ListView(
+        physics: const ClampingScrollPhysics(),
         children: [
           abrabarWidget.seasonTile(
               seasonName: t.winter,

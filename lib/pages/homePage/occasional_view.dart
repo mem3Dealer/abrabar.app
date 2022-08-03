@@ -11,10 +11,11 @@ class OccasionalView extends StatelessWidget {
   Widget build(BuildContext context) {
     var t = AppLocalizations.of(context)!;
     final String defaultLocale = Platform.localeName;
-    bool isRu = defaultLocale == 'ru_RU';
+    bool isRu = defaultLocale.contains('ru') || defaultLocale.contains('RU');
     final aWidgets = AbrabarWidgets();
     return Center(
       child: ListView(
+        physics: const ClampingScrollPhysics(),
         children: [
           aWidgets.seasonTile(
               seasonName: t.new_year,

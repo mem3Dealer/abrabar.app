@@ -60,15 +60,17 @@ class _CoctailPageState extends State<CoctailPage>
 
         return SafeArea(
             top: false,
+            bottom: false,
             child: Scaffold(
               backgroundColor: theme.scaffoldBackgroundColor,
               body: NestedScrollView(
+                  physics: const ClampingScrollPhysics(),
                   floatHeaderSlivers: true,
                   controller: controller,
                   headerSliverBuilder:
                       (BuildContext context, bool innerBoxIsScrolled) {
                     Color color = coc.color!;
-
+                    // print(state.currentCoctail.isFav);
                     return <Widget>[
                       SliverAppBar(
                         // forceElevated: innerBoxIsScrolled,
@@ -115,6 +117,7 @@ class _CoctailPageState extends State<CoctailPage>
                     //     SvgPicture.asset(paths.previewsEng + coc.picPreview!);
                     // print(pic.);
                     return SingleChildScrollView(
+                      physics: const ClampingScrollPhysics(),
                       padding: EdgeInsets.zero,
                       child: Column(
                         children: [

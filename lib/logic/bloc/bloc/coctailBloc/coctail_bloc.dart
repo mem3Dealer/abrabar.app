@@ -36,12 +36,13 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
   Future<void> _onCoctailInitialize(
       CoctailsInitialize event, Emitter emitter) async {
     final String defaultLocale = Platform.localeName;
-
+    print(defaultLocale);
     // List<Coctail> fetchedCocs = [];
     // fetchedCocs = await RecipesApi.fetchRecipes();
-    final String source = await rootBundle.loadString(defaultLocale == 'ru_RU'
-        ? 'assets/recepies_ru.json'
-        : 'assets/recepies_eng.json');
+    final String source = await rootBundle.loadString(
+        defaultLocale.contains('ru') || defaultLocale.contains('RU')
+            ? 'assets/recepies_ru.json'
+            : 'assets/recepies_eng.json');
     List data = await json.decode(source);
 
     data.forEach((element) {
@@ -71,6 +72,9 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
   Future<void> _onSelectCoctail(SelectCoctail event, Emitter emitter) async {
     Coctail thisCoctail = event.coctail
         .copyWith(isFav: await storage.containsKey(key: event.coctail.name!));
+    // await storage.deleteAll();
+    var res = await storage.containsKey(key: event.coctail.name!);
+    log(res.toString());
     emitter(state.copyWith(currentCoctail: thisCoctail));
     Navigator.of(event.context).push(MaterialPageRoute<void>(
         builder: (BuildContext context) => CoctailPage(),
@@ -91,6 +95,7 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
   Future<void> _onChangeFav(ChangeFavorite event, Emitter emitter) async {
     Coctail updated = event.coctail.copyWith(isFav: event.isFav);
     anal.star(event.coctail);
+
     state.allCoctails[state.allCoctails
         .indexWhere((element) => element.name == event.coctail.name)] = updated;
     if (event.isFav == true) {

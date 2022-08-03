@@ -12,14 +12,14 @@ class AllCotailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Center(
+    return Center(
       child: BlocConsumer<CoctailBloc, CoctailState>(
         listener: (context, state) {},
         builder: (context, state) {
           return Stack(
             children: [
               GridView.builder(
+                  physics: const ClampingScrollPhysics(),
                   // physics: const BouncingScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2),
@@ -39,6 +39,6 @@ class AllCotailsView extends StatelessWidget {
           );
         },
       ),
-    ));
+    );
   }
 }

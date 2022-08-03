@@ -21,6 +21,7 @@ class ClassicView extends StatelessWidget {
         }
 
         return GridView.builder(
+            physics: const ClampingScrollPhysics(),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2),
             itemCount: classicCoctails.length,

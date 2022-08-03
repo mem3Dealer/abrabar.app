@@ -51,6 +51,7 @@ class _CookingPageState extends State<CookingPage> {
         Coctail curCoc = state.currentCoctail;
         return SafeArea(
           top: false,
+          bottom: false,
           child: Scaffold(
               appBar: AppBar(
                 backgroundColor: Colors.transparent,
@@ -106,7 +107,8 @@ class _CookingPageState extends State<CookingPage> {
                                       EdgeInsets.only(top: 3.h, bottom: 2.3.h),
                                   child: Center(
                                     child: Text(
-                                      defaultLocale == 'ru_RU'
+                                      defaultLocale.contains('ru') ||
+                                              defaultLocale.contains('RU')
                                           ? '${pageIndex + 1} ШАГ ИЗ ${curCoc.steps!.length}'
                                           : 'Step ${pageIndex + 1} OUT OF ${curCoc.steps!.length}',
                                       style: theme.textTheme.headline3!
