@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>704531474168-5jslsn75e7qg48h1jjeeo55lk22cvrj1.apps.googleusercontent.com</string>
+	<string>704531474168-ulhfijq5s01jl412u8hiblf31epv31nk.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.704531474168-5jslsn75e7qg48h1jjeeo55lk22cvrj1</string>
+	<string>com.googleusercontent.apps.704531474168-ulhfijq5s01jl412u8hiblf31epv31nk</string>
 	<key>API_KEY</key>
 	<string>AIzaSyADxzh7sYGhR_8W51Bq1paRF0OS2ynw5So</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.adchampagne.abrabar</string>
+	<string>com.adchampagne.abrabarr</string>
 	<key>PROJECT_ID</key>
 	<string>abrabarandroid</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:704531474168:ios:09a67b1d01f4bf54963d0d</string>
+	<string>1:704531474168:ios:96fd1ef770b6c2ef963d0d</string>
 </dict>
 </plist>

@@ -1,4 +1,5 @@
 import 'package:abrabar/logic/api/recipes_api.dart';
+import 'package:abrabar/pages/onboardScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
@@ -25,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(duration, () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute<void>(
-            builder: (BuildContext context) => const MyHomePage(),
+            builder: (BuildContext context) => OnboardScreen(),
             settings: RouteSettings(name: 'HomePage')),
       );
     });
