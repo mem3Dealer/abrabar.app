@@ -20,7 +20,7 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
   }
   final anal = GetIt.I.get<AnalyticsService>();
   InAppPurchase iap = InAppPurchase.instance;
-  final String productId = 'test_purchase1';
+  final String productId = 'upgrade_full_access';
   late StreamSubscription<List<PurchaseDetails>> _subscription;
   late bool isStoreAvailable;
   final FlutterSecureStorage storage = const FlutterSecureStorage();
@@ -41,7 +41,8 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
       MonetizationInit event, Emitter emitter) async {
     await _wasAppPurchased();
     bool available = await iap.isAvailable();
-    emitter(state.copyWith(isAppAvailableToBuy: available));
+    // emitter(state.copyWith(isAppAvailableToBuy: available));
+    print('hlllo, ${available}');
     if (available && state.isPurchased == false) {
       await _getProducts();
       await _getPastPurchases();
@@ -112,22 +113,6 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
   Future<bool> _verifyPurchase(PurchaseDetails? purchase) async {
     //TODO запилить верификацию покупок?
 
-    // PurchaseDetails? purchase = hasPurchased(productId);
-    // purchase ??= _hasPurchased(productId);
-    // log(purchase!.status.toString());
-    // if (purchase != null) {
-    //   if (purchase.pendingCompletePurchase ||
-    //       purchase.status == PurchaseStatus.purchased ||
-    //       purchase.status == PurchaseStatus.restored) {
-    //     log('DO WE EVEN GET HERE?');
-    //     await iap.completePurchase(purchase).then((value) => print(
-    //         'PURCHASE COMPLETED ${purchase?.purchaseID},$purchase, ${purchase?.verificationData}'));
-    //     emit(state.copyWith(isPurchased: true));
-    //     log('HERE?...');
-    //   }
-    // } else {
-    //   log('no purchase');
-    // }
     return true;
   }
 
