@@ -19,6 +19,7 @@ class SeasonView extends StatelessWidget {
     var t = AppLocalizations.of(context)!;
     return Center(
       child: ListView(
+        padding: EdgeInsets.zero,
         physics: const ClampingScrollPhysics(),
         children: [
           abrabarWidget.seasonTile(

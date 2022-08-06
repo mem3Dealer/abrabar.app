@@ -46,6 +46,7 @@ flutter:
         - assets/images/parts/
         - assets/images/test/
         - assets/images/system/
+        - assets/images/system/onboard/
         - assets/images/previews/ru/
         - assets/images/previews/eng/
         - assets/images/category_pic/

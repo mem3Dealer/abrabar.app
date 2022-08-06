@@ -15,6 +15,7 @@ class OccasionalView extends StatelessWidget {
     final aWidgets = AbrabarWidgets();
     return Center(
       child: ListView(
+        padding: EdgeInsets.zero,
         physics: const ClampingScrollPhysics(),
         children: [
           aWidgets.seasonTile(

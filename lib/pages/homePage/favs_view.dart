@@ -31,13 +31,21 @@ class FavoritesView extends StatelessWidget {
                   )),
               Align(
                   alignment: Alignment.bottomCenter,
-                  child: SvgPicture.asset(
-                      '${paths.systemImages}empty_favs_banner.svg')),
+                  child: SizedBox(
+                    // color: Colors.red,
+                    height: 50.h,
+                    width: 100.w,
+                    child: SvgPicture.asset(
+                      '${paths.systemImages}empty_favs_banner.svg',
+                      fit: BoxFit.cover,
+                    ),
+                  )),
             ],
           );
         } else {
           return GridView.builder(
               // physics: const BouncingScrollPhysics(),
+              padding: EdgeInsets.zero,
               physics: const ClampingScrollPhysics(),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2),

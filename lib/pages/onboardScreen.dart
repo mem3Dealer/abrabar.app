@@ -1,7 +1,12 @@
+import 'dart:io';
+import 'package:flutter_gen/gen_l10n/app_localz.dart';
+import 'package:abrabar/pages/homePage/homePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
-
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import '../logic/services/analytic_service.dart';
 import '../shared/picPaths.dart';
 
 class OnboardScreen extends StatefulWidget {
@@ -13,12 +18,15 @@ class OnboardScreen extends StatefulWidget {
 
 class _OnboardScreenState extends State<OnboardScreen> {
   final PageController controller = PageController();
-
+  final anal = GetIt.I.get<AnalyticsService>();
   int selectedindex = 0;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    if (selectedindex == 0) {
+      anal.onboardSwipe(index: 0);
+    }
     return Column(
       children: [
         Expanded(
@@ -29,6 +37,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
             onPageChanged: (int page) {
               setState(() {
                 selectedindex = page;
+                anal.onboardSwipe(index: selectedindex);
               });
             },
           ),
@@ -47,7 +56,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
               ),
               Padding(
                 padding: EdgeInsets.only(bottom: 6.2.h, top: 3.h),
-                child: _buildButton(theme, selectedindex),
+                child: _buildButton(theme, selectedindex, context),
               )
             ],
           ),
@@ -57,15 +66,17 @@ class _OnboardScreenState extends State<OnboardScreen> {
   }
 
   List<Widget> _buildPages(int index, BuildContext context) {
+    var t = AppLocalizations.of(context)!;
     List<Widget> list = [];
     List<String> texts = [
-      'ПРИГОТОВЬТЕ ДОМА ЛЮБЫЕ КОКТЕЙЛИ НА ВАШ ВЫБОР',
-      'Коктейли на любой случай в тематических подборках',
-      'Добавляйте свои коктейли в избранное и делитесь ими с друзьями',
-      'Пошаговые инструкции по приготовлению коктейлей сделают из вас настоящего бармена',
-      'Наслаждайтесь своими навыками миксологии вместе с AbraBar',
+      t.onboard0,
+      t.onboard1,
+      t.onboard2,
+      t.onboard3,
+      t.onboard4
     ];
     for (var i = 0; i < 5; i++) {
+      final String defaultLocale = Platform.localeName;
       final theme = Theme.of(context);
       final paths = PicPaths();
       String _content = texts[i];
@@ -74,26 +85,18 @@ class _OnboardScreenState extends State<OnboardScreen> {
         body: Container(
           color: theme.scaffoldBackgroundColor,
           child: Stack(
-            // fit: StackFit.passthrough,
-            // mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Align(
                   alignment: _isonBottom
                       ? const Alignment(0, -0.4)
                       : Alignment.bottomCenter,
-                  child:
-                      // i == 0
-                      //     ? Text(
-                      //         'Расширьте свою миксологию и приготовьте коктейль как настоящий бармен с',
-                      //         textAlign: TextAlign.center,
-                      //         style: theme.textTheme.headline2!
-                      //             .copyWith(color: Colors.white),
-                      //       )
-                      //     :
-                      SizedBox(
+                  child: SizedBox(
                     width: 100.w,
                     child: SvgPicture.asset(
-                      '${paths.systemImages}onboard_$i.svg',
+                      defaultLocale.contains('ru') ||
+                              defaultLocale.contains('RU')
+                          ? '${paths.onboard}onboard_$i.svg'
+                          : '${paths.onboard}onboard_${i}_eng.svg',
                       fit: BoxFit.fill,
                     ),
                   )),
@@ -109,7 +112,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                     style: TextStyle(
                         fontFamily: 'zet_regular',
                         color: Colors.white,
-                        fontSize: 30),
+                        fontSize: 30.sp),
                   ),
                 ),
               )
@@ -121,18 +124,28 @@ class _OnboardScreenState extends State<OnboardScreen> {
     return list;
   }
 
-  Widget _buildButton(ThemeData theme, int index) {
+  Widget _buildButton(ThemeData theme, int index, BuildContext context) {
+    FlutterSecureStorage storage = FlutterSecureStorage();
+    var t = AppLocalizations.of(context)!;
     return SizedBox(
       width: 72.w,
       height: 7.h,
       child: ElevatedButton(
-          onPressed: () {
-            index != 4
-                ? controller.nextPage(
-                    duration: Duration(milliseconds: 500),
-                    curve: Curves.easeInOut)
-                : () {};
-          },
+          onPressed: index == 4
+              ? () async {
+                  await storage.write(key: 'watchedOnboard', value: 'true');
+                  // Navigator.of(context).push(MaterialPageRoute<void>(
+                  //     builder: (BuildContext context) => const MyHomePage(),
+                  //     settings: const RouteSettings(name: 'HomePage')));
+                  Navigator.of(context).pushReplacement(MaterialPageRoute<void>(
+                      builder: (BuildContext context) => const MyHomePage(),
+                      settings: const RouteSettings(name: 'HomePage')));
+                }
+              : () {
+                  controller.nextPage(
+                      duration: Duration(milliseconds: 400),
+                      curve: Curves.easeInOut);
+                },
           style: ElevatedButton.styleFrom(
               //  primary: null,
               onPrimary: Colors.transparent,
@@ -144,10 +157,10 @@ class _OnboardScreenState extends State<OnboardScreen> {
               primary: Colors.transparent),
           child: Text(
             index == 0
-                ? 'ИНТЕРЕСНО'
+                ? t.interesting
                 : index == 4
-                    ? "насладиться"
-                    : 'далее',
+                    ? t.enjoy
+                    : t.next,
             style: theme.textTheme.subtitle1!.copyWith(fontSize: 24.sp),
           )),
     );

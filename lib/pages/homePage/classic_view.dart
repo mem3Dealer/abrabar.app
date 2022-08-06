@@ -21,6 +21,7 @@ class ClassicView extends StatelessWidget {
         }
 
         return GridView.builder(
+            padding: EdgeInsets.zero,
             physics: const ClampingScrollPhysics(),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2),

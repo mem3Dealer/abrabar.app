@@ -25,6 +25,7 @@ class AuthortsView extends StatelessWidget {
             fit: StackFit.expand,
             children: [
               GridView.builder(
+                  padding: EdgeInsets.zero,
                   physics: const ClampingScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2),

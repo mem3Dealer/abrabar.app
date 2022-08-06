@@ -19,6 +19,7 @@ class AllCotailsView extends StatelessWidget {
           return Stack(
             children: [
               GridView.builder(
+                  padding: EdgeInsets.zero,
                   physics: const ClampingScrollPhysics(),
                   // physics: const BouncingScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

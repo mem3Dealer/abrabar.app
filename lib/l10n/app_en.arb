@@ -30,6 +30,13 @@
     "continue1":"CONTINUE",
     "howToCook":"HOW TO COOK",
     "coctails": "COCTAILS",
-    "zombieSays":"I want\nrecipessss,\nI need\nrecipessss!"
-
+    "zombieSays":"I want\nrecipessss,\nI need\nrecipessss!",
+    "onboard0": "Prepare any cocktail of your choice at home",
+    "onboard1":"Cocktails of any choice in thematic selections",
+    "onboard2":"Add your cocktails to favorites and share with friends",
+    "onboard3":"A step-by-step cocktail preparation guide will turn you into a real barman",
+    "onboard4":"Enjoy your mixology skills with ABRABAR",
+    "interesting":"interesting",
+    "next":"next",
+     "enjoy":"enjoy"
 }

@@ -100,4 +100,9 @@ class AnalyticsService {
       'actual_price': actualPrice
     });
   }
+
+  Future<void> onboardSwipe({required int index}) async {
+    // print(index);
+    analytics.logEvent(name: 'onb_$index', parameters: {});
+  }
 }
