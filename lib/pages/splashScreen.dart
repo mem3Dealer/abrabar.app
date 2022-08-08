@@ -1,4 +1,3 @@
-import 'package:abrabar/logic/api/recipes_api.dart';
 import 'package:abrabar/pages/onboardScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -26,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
     // print("???");
     Future.delayed(duration, () async {
       final bool isOnboardWatched =
-          await storage.containsKey(key: "watchedOnboard");
+          await storage.read(key: "watchedOnboard") == "true";
       // print(isOnboardWatched);
       Navigator.of(context).pushReplacement(
         MaterialPageRoute<void>(

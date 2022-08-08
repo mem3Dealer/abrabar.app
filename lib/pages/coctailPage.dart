@@ -115,7 +115,7 @@ class _CoctailPageState extends State<CoctailPage>
                     Color color = coc.color!;
                     // var pic =
                     //     SvgPicture.asset(paths.previewsEng + coc.picPreview!);
-                    // print(pic.);
+
                     return SingleChildScrollView(
                       physics: const ClampingScrollPhysics(),
                       padding: EdgeInsets.zero,

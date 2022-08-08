@@ -126,6 +126,9 @@ PODS:
   - PromisesObjC (2.1.1)
 
 DEPENDENCIES:
+  - Firebase/Analytics
+  - Firebase/Core
+  - Firebase/Messaging
   - firebase_analytics (from `.symlinks/plugins/firebase_analytics/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - firebase_messaging (from `.symlinks/plugins/firebase_messaging/ios`)
@@ -192,6 +195,6 @@ SPEC CHECKSUMS:
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
 
-PODFILE CHECKSUM: 7368163408c647b7eb699d0d788ba6718e18fb8d
+PODFILE CHECKSUM: 2b7c2650ad85a9a5ecfcc3830ae8fc7c4ea707af
 
 COCOAPODS: 1.11.3

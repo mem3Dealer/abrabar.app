@@ -42,7 +42,7 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
     await _wasAppPurchased();
     bool available = await iap.isAvailable();
     // emitter(state.copyWith(isAppAvailableToBuy: available));
-    print('hlllo, ${available}');
+
     if (available && state.isPurchased == false) {
       await _getProducts();
       await _getPastPurchases();
@@ -60,7 +60,8 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
   }
 
   Future<void> _wasAppPurchased() async {
-    if (await storage.containsKey(key: 'wasPurchased')) {
+    var readVal = await storage.read(key: "wasPurchased");
+    if (readVal == 'true') {
       if (state.isPurchased == false) {
         emit(state.copyWith(isPurchased: true));
       }

@@ -45,6 +45,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
+
     controller = TextEditingController();
     _tabController = TabController(length: 6, vsync: this);
     _tabController.addListener(() {

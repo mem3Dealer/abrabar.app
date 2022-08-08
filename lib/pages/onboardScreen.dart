@@ -92,6 +92,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                       : Alignment.bottomCenter,
                   child: SizedBox(
                     width: 100.w,
+                    // height: 50.h,
                     child: SvgPicture.asset(
                       defaultLocale.contains('ru') ||
                               defaultLocale.contains('RU')
@@ -105,14 +106,14 @@ class _OnboardScreenState extends State<OnboardScreen> {
                     ? Alignment.bottomCenter
                     : const Alignment(0, -0.6),
                 child: Padding(
-                  padding: EdgeInsets.only(bottom: 20.0, right: 5.w, left: 5.w),
+                  padding: EdgeInsets.only(bottom: 13.0, right: 5.w, left: 5.w),
                   child: Text(
                     _content,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontFamily: 'zet_regular',
                         color: Colors.white,
-                        fontSize: 30.sp),
+                        fontSize: 27.sp),
                   ),
                 ),
               )

@@ -50,30 +50,38 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
     });
 
     state.allCoctails.shuffle();
-    emitter(state.copyWith(allCoctails: state.allCoctails));
+    // emitter(state.copyWith(allCoctails: state.allCoctails));
 
     List list = [];
     Map<String, String> allValues = await storage.readAll();
-
+    List<String> allFavNames = [];
+    state.favoriteCoctails.forEach((coc) {
+      allFavNames.add(coc.name!);
+    });
+    print(allValues);
     allValues.forEach((key, value) {
       list.add(key);
     });
 
     for (Coctail coc in state.allCoctails) {
-      if (list.contains(coc.name)) {
-        state.favoriteCoctails.add(coc);
+      if (!allFavNames.contains(coc.name)) {
+        if (list.contains(coc.name)) {
+          state.favoriteCoctails.add(coc.copyWith(isFav: true));
+        }
       }
     }
     emitter(state.copyWith(
+      allCoctails: state.allCoctails,
       favoriteCoctails: state.favoriteCoctails,
     ));
   }
 
   Future<void> _onSelectCoctail(SelectCoctail event, Emitter emitter) async {
-    Coctail thisCoctail = event.coctail
-        .copyWith(isFav: await storage.containsKey(key: event.coctail.name!));
+    bool isItFav = await storage.read(key: event.coctail.name!) != null;
+
+    Coctail thisCoctail = event.coctail.copyWith(isFav: isItFav);
     // await storage.deleteAll();
-    var res = await storage.containsKey(key: event.coctail.name!);
+    var res = await storage.read(key: event.coctail.name!);
     log(res.toString());
     emitter(state.copyWith(currentCoctail: thisCoctail));
     Navigator.of(event.context).push(MaterialPageRoute<void>(
@@ -94,13 +102,15 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
 
   Future<void> _onChangeFav(ChangeFavorite event, Emitter emitter) async {
     Coctail updated = event.coctail.copyWith(isFav: event.isFav);
-    anal.star(event.coctail);
 
     state.allCoctails[state.allCoctails
         .indexWhere((element) => element.name == event.coctail.name)] = updated;
+
     if (event.isFav == true) {
+      anal.star(event.coctail);
       await storage.write(
           key: event.coctail.name!, value: event.isFav.toString());
+      // if(state.favoriteCoctails.contains(element))
 
       state.favoriteCoctails.add(updated);
       emitter(state.copyWith(

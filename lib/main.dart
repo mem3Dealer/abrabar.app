@@ -1,5 +1,4 @@
 import 'package:abrabar/logic/bloc/bloc/monetizationBloc/monetization_bloc.dart';
-
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_branch_sdk/flutter_branch_sdk.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
@@ -31,7 +30,9 @@ final FlutterLocalNotificationsPlugin flnPlugin =
 
 final initializationSettingsAndroid =
     AndroidInitializationSettings('@drawable/ic_abrabar_note');
+
 final initializationSettingsIOS = IOSInitializationSettings();
+
 final initializationSettings = InitializationSettings(
   android: initializationSettingsAndroid,
   iOS: initializationSettingsIOS,
@@ -48,7 +49,6 @@ Future<void> main() async {
   await Firebase.initializeApp();
   FlutterBranchSdk.initSession().listen((data) {});
   // FlutterBranchSdk.validateSDKIntegration();
-
   // await Reci pesApi.init();
 
   notes.subscribeToNotes(flnPlugin, channel);
