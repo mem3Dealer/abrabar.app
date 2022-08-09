@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
-
+import 'package:in_app_purchase_ios/store_kit_wrappers.dart';
 import 'package:abrabar/logic/bloc/bloc/monetizationBloc/monetization_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
@@ -24,6 +26,7 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
   late StreamSubscription<List<PurchaseDetails>> _subscription;
   late bool isStoreAvailable;
   final FlutterSecureStorage storage = const FlutterSecureStorage();
+  var paymentWrapper = SKPaymentQueueWrapper();
 
   Future<void> _onMonetizationPurchase(
       MonetizationPurchase event, Emitter emitter) async {
@@ -31,15 +34,19 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
         PurchaseParam(productDetails: state.products.first);
 
     await iap.buyNonConsumable(purchaseParam: purchaseParam);
+
     anal.buyApp(
         purchaseParam.productDetails.rawPrice,
         purchaseParam.productDetails.rawPrice,
         purchaseParam.productDetails.currencySymbol);
+    if (state.isPurchased) {
+      Navigator.of(event.context).pop();
+    }
   }
 
   FutureOr<void> _onMonetizationInit(
       MonetizationInit event, Emitter emitter) async {
-    await _wasAppPurchased();
+    // await _wasAppPurchased();
     bool available = await iap.isAvailable();
     // emitter(state.copyWith(isAppAvailableToBuy: available));
 
@@ -73,14 +80,16 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
   }
 
   Future<void> _listenToPurchaseUpdated(
-      List<PurchaseDetails> purchaseDetailsList, Emitter emitter) async {
+    List<PurchaseDetails> purchaseDetailsList,
+    Emitter emitter,
+  ) async {
     for (final PurchaseDetails purchaseDetails in purchaseDetailsList) {
       if (purchaseDetails.status == PurchaseStatus.pending) {
-        log('purchase has PENDING status');
-        // showPendingUI();
+        _handlePendingPurchases();
+      } else if (purchaseDetails.status == PurchaseStatus.canceled) {
+        await _handleCancelledPurchases();
       } else {
         if (purchaseDetails.status == PurchaseStatus.error) {
-          log('THERE IS FOOKIN ERROR, ${purchaseDetails.error}');
           _handleErrorPurchase(purchaseDetails, emitter);
         } else if (purchaseDetails.status == PurchaseStatus.purchased ||
             purchaseDetails.status == PurchaseStatus.restored) {
@@ -88,7 +97,8 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
           if (valid) {
             await storage.write(
                 key: 'wasPurchased', value: purchaseDetails.purchaseID);
-            emit(state.copyWith(isPurchased: true));
+            emit(state.copyWith(
+                isPurchased: true, isTherePendingPurchase: false));
           } else {
             return;
           }
@@ -100,8 +110,23 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
     }
   }
 
+  Future<void> _handleCancelledPurchases() async {
+    log('purchase has CANCELLED status');
+    var transactions = await paymentWrapper.transactions();
+    transactions.forEach((transaction) async {
+      await paymentWrapper.finishTransaction(transaction);
+    });
+    emit(state.copyWith(isTherePendingPurchase: false));
+  }
+
+  void _handlePendingPurchases() {
+    log('purchase has PENDING status');
+    emit(state.copyWith(isTherePendingPurchase: true));
+  }
+
   FutureOr<void> _handleErrorPurchase(
       PurchaseDetails purchaseDetails, Emitter emitter) async {
+    log('THERE IS FOOKIN ERROR, ${purchaseDetails.error}');
     if (purchaseDetails.error?.message == 'BillingResponse.itemAlreadyOwned') {
       await storage.write(
           key: 'wasPurchased', value: purchaseDetails.purchaseID);
@@ -128,6 +153,10 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
 
   Future<void> _getPastPurchases() async {
     await iap.restorePurchases();
+    var transactions = await paymentWrapper.transactions();
+    transactions.forEach((transaction) async {
+      await paymentWrapper.finishTransaction(transaction);
+    });
   }
 
   Future<void> internetCheckUp() async {

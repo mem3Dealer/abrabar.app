@@ -6,6 +6,9 @@ abstract class MonetizationEvent {
 
 class MonetizationInit extends MonetizationEvent {}
 
-class MonetizationPurchase extends MonetizationEvent {}
+class MonetizationPurchase extends MonetizationEvent {
+  BuildContext context;
+  MonetizationPurchase(this.context);
+}
 
 class Monetization extends MonetizationEvent {}

@@ -46,23 +46,27 @@ class PaywallScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        leading: IconButton(
-          splashColor: Colors.transparent,
-          hoverColor: Colors.transparent,
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          icon: SvgPicture.asset(
-            "${paths.systemImages}close.svg",
-            color: Colors.white,
-          ),
-        ),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.transparent,
+      //   leading: IconButton(
+      //     splashColor: Colors.transparent,
+      //     hoverColor: Colors.transparent,
+      //     onPressed: () {
+      //       Navigator.of(context).pop();
+      //     },
+      //     icon: SvgPicture.asset(
+      //       "${paths.systemImages}close.svg",
+      //       color: Colors.white,
+      //     ),
+      //   ),
+      // ),
       backgroundColor: theme.scaffoldBackgroundColor,
       body: BlocConsumer<MonetizationBloc, MonetizationState>(
-        listener: (context, state) async {},
+        listener: (context, state) async {
+          if (state.isPurchased) {
+            Navigator.of(context).pop();
+          }
+        },
         builder: (context, state) {
           if (state.products.isEmpty) {
             product = ProductDetails(
@@ -79,97 +83,97 @@ class PaywallScreen extends StatelessWidget {
           moneyBloc.internetCheckUp();
           return SafeArea(
               top: false,
-              child: Center(
-                child: ListView(
+              child: SingleChildScrollView(
+                child: Column(
                   children: [
-                    Column(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(top: 5.h),
-                          child: Text(
-                            t.getAccess,
-                            style: theme.textTheme.headline1
-                                ?.copyWith(fontSize: 32.sp),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 1.25.h, bottom: 8.75.h),
-                          child: Text(
-                            t.moreThan,
-                            style: theme.textTheme.subtitle1
-                                ?.copyWith(fontSize: 24.sp),
-                          ),
-                        ),
-                        buildTextRow(t.coctailsOccaisonal),
-                        buildTextRow(t.coctailsSeasonal),
-                        buildTextRow(t.coctailsAuthor),
-                        SizedBox(
-                          height: 3.h,
-                        ),
-                        state.isAppAvailableToBuy
-                            ? Padding(
-                                padding: const EdgeInsets.only(
-                                  left: 16,
-                                  right: 16,
-                                ),
-                                child: RichText(
-                                  textAlign: TextAlign.center,
-                                  text: TextSpan(children: [
-                                    TextSpan(
-                                        text: t.onlyfor,
-                                        style: theme.textTheme.headline1!
-                                            .copyWith(fontSize: 50.sp)),
-                                    TextSpan(
-                                        text: defaultLocale == 'ru_RU'
-                                            ? "${product.rawPrice} Р"
-                                            : product.price,
-                                        style: theme.textTheme.headline1!
-                                            .copyWith(
-                                                fontSize: 50.sp,
-                                                color:
-                                                    const Color(0xffFFBE3F))),
-                                    TextSpan(
-                                      text: '\n${t.onceAndForEver}',
-                                      style: theme.textTheme.headline1,
-                                    )
-                                  ]),
-                                ),
-                              )
-                            : const SizedBox.shrink(),
-                        SizedBox(
-                          height: 4.h,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(bottom: 6.h),
-                          child: SizedBox(
-                            // height: 7.h,
-                            width: 72.w,
-                            child: ElevatedButton(
-                                onPressed: () {
-                                  moneyBloc.add(MonetizationPurchase());
-                                  Navigator.of(context).pop();
-                                },
-                                style: ButtonStyle(
-                                    shape: MaterialStateProperty.all(
-                                        const RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.zero)),
-                                    backgroundColor: MaterialStateProperty.all(
-                                        const Color(0xffFFBE3F))),
-                                child: Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(vertical: 2.2.h),
-                                  child: Text(
-                                    t.continue1,
-                                    textAlign: TextAlign.center,
-                                    style: theme.textTheme.headline4
-                                        ?.copyWith(color: Colors.black),
-                                  ),
-                                )),
-                          ),
-                        )
-                      ],
+                    Padding(
+                      padding: EdgeInsets.only(top: 6.h),
+                      child: Text(
+                        t.getAccess,
+                        style: theme.textTheme.headline1
+                            ?.copyWith(fontSize: 32.sp),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 1.25.h, bottom: 6.h),
+                      child: Text(
+                        t.moreThan,
+                        style: theme.textTheme.subtitle1
+                            ?.copyWith(fontSize: 24.sp),
+                      ),
+                    ),
+                    buildTextRow(t.coctailsOccaisonal),
+                    buildTextRow(t.coctailsSeasonal),
+                    buildTextRow(t.coctailsAuthor),
+                    SizedBox(
+                      height: 2.h,
+                    ),
+                    state.isAppAvailableToBuy
+                        ? Padding(
+                            padding: const EdgeInsets.only(
+                              left: 16,
+                              right: 16,
+                            ),
+                            child: RichText(
+                              textAlign: TextAlign.center,
+                              text: TextSpan(children: [
+                                TextSpan(
+                                    text: t.onlyfor + "\n",
+                                    style: theme.textTheme.headline1!
+                                        .copyWith(fontSize: 50.sp)),
+                                TextSpan(
+                                    text: "899.9 P",
+
+                                    // text: defaultLocale == 'ru_RU'
+                                    //     ? "${product.rawPrice} Р"
+                                    //     : product.price,
+
+                                    style: theme.textTheme.headline1!.copyWith(
+                                        overflow: TextOverflow.fade,
+                                        fontSize: 50.sp,
+                                        color: const Color(0xffFFBE3F))),
+                                TextSpan(
+                                  text: '\n${t.onceAndForEver}',
+                                  style: theme.textTheme.headline1,
+                                )
+                              ]),
+                            ),
+                          )
+                        : const SizedBox.shrink(),
+                    SizedBox(
+                      height: 4.h,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 6.h),
+                      child: SizedBox(
+                        // height: 7.h,
+                        width: 72.w,
+                        child: ElevatedButton(
+                            onPressed: () {
+                              moneyBloc.add(MonetizationPurchase(context));
+                            },
+                            style: ButtonStyle(
+                                shape: MaterialStateProperty.all(
+                                    const RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.zero)),
+                                backgroundColor: MaterialStateProperty.all(
+                                    const Color(0xffFFBE3F))),
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(vertical: 2.2.h),
+                              child: state.isTherePendingPurchase
+                                  ? CircularProgressIndicator(
+                                      color: theme.scaffoldBackgroundColor,
+                                    )
+                                  : Text(
+                                      t.continue1,
+                                      textAlign: TextAlign.center,
+                                      style: theme.textTheme.headline4
+                                          ?.copyWith(color: Colors.black),
+                                    ),
+                            )),
+                      ),
+                    )
                   ],
                 ),
               ));
