@@ -123,12 +123,11 @@ class PaywallScreen extends StatelessWidget {
                                     style: theme.textTheme.headline1!
                                         .copyWith(fontSize: 50.sp)),
                                 TextSpan(
-                                    text: "899.9 P",
-
+                                    text: product.price,
+                                    // text: '999.999999999999999999 ₽',
                                     // text: defaultLocale == 'ru_RU'
                                     //     ? "${product.rawPrice} Р"
                                     //     : product.price,
-
                                     style: theme.textTheme.headline1!.copyWith(
                                         overflow: TextOverflow.fade,
                                         fontSize: 50.sp,

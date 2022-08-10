@@ -51,6 +51,7 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
     // emitter(state.copyWith(isAppAvailableToBuy: available));
 
     if (available && state.isPurchased == false) {
+      // await _wasAppPurchased();
       await _getProducts();
       await _getPastPurchases();
       final Stream<List<PurchaseDetails>> purchaseUpdated = iap.purchaseStream;
@@ -95,10 +96,10 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
             purchaseDetails.status == PurchaseStatus.restored) {
           final bool valid = await _verifyPurchase(purchaseDetails);
           if (valid) {
-            await storage.write(
-                key: 'wasPurchased', value: purchaseDetails.purchaseID);
-            emit(state.copyWith(
-                isPurchased: true, isTherePendingPurchase: false));
+            // await storage.write(
+            //     key: 'wasPurchased', value: purchaseDetails.purchaseID);
+            // emit(state.copyWith(
+            //     isPurchased: true, isTherePendingPurchase: false));
           } else {
             return;
           }

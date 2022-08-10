@@ -18,31 +18,31 @@ class FavoritesView extends StatelessWidget {
     return BlocConsumer<CoctailBloc, CoctailState>(
       listener: (context, state) {},
       builder: (context, state) {
-        state.favoriteCoctails.forEach((element) {
-          // log(element.toString());
-        });
         if (state.favoriteCoctails.isEmpty) {
           return Stack(
             children: [
               Align(
                   alignment: const Alignment(0, -0.85),
-                  child: Text(
-                    t.zombieSays,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 40.sp,
-                        fontWeight: FontWeight.w400),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 2.6),
+                    child: Text(
+                      t.zombieSays,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 35.sp,
+                          fontWeight: FontWeight.w400),
+                    ),
                   )),
               Align(
-                  alignment: Alignment.bottomCenter,
+                  alignment: Alignment(0, 1.8),
                   child: SizedBox(
                     // color: Colors.red,
-                    height: 50.h,
                     width: 100.w,
+                    // heightFactor: 0.9,
                     child: SvgPicture.asset(
                       '${paths.systemImages}empty_favs_banner.svg',
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fill,
                     ),
                   )),
             ],

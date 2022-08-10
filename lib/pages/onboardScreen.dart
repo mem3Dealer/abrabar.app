@@ -27,46 +27,55 @@ class _OnboardScreenState extends State<OnboardScreen> {
     if (selectedindex == 0) {
       anal.onboardSwipe(index: 0);
     }
-    return Column(
-      children: [
-        Expanded(
-          child: PageView(
-            physics: const ClampingScrollPhysics(),
-            controller: controller,
-            children: _buildPages(selectedindex, context),
-            onPageChanged: (int page) {
-              setState(() {
-                selectedindex = page;
-                anal.onboardSwipe(index: selectedindex);
-              });
-            },
+    return SafeArea(
+      top: false,
+      bottom: false,
+      child: Column(
+        children: [
+          Expanded(
+            child: PageView(
+              physics: const ClampingScrollPhysics(),
+              controller: controller,
+              children: _buildPages(selectedindex, context),
+              onPageChanged: (int page) {
+                setState(() {
+                  selectedindex = page;
+                  anal.onboardSwipe(index: selectedindex);
+                });
+              },
+            ),
           ),
-        ),
-        Container(
-          height: 180,
-          // color: Colors.red,
-          color: theme.scaffoldBackgroundColor,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: _buildPageIndicator(),
-              ),
-              Padding(
-                padding: EdgeInsets.only(bottom: 6.2.h, top: 3.h),
-                child: _buildButton(theme, selectedindex, context),
-              )
-            ],
-          ),
-        )
-      ],
+          Container(
+            height: 20.h,
+            // color: Colors.red,
+            color: theme.scaffoldBackgroundColor,
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: _buildPageIndicator(),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 3.2.h, top: 3.h),
+                  child: _buildButton(theme, selectedindex, context),
+                )
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 
   List<Widget> _buildPages(int index, BuildContext context) {
     var t = AppLocalizations.of(context)!;
+    late double heightFactor;
+    late Alignment alignment;
+    final String defaultLocale = Platform.localeName;
+    final theme = Theme.of(context);
+    final paths = PicPaths();
     List<Widget> list = [];
     List<String> texts = [
       t.onboard0,
@@ -76,37 +85,50 @@ class _OnboardScreenState extends State<OnboardScreen> {
       t.onboard4
     ];
     for (var i = 0; i < 5; i++) {
-      final String defaultLocale = Platform.localeName;
-      final theme = Theme.of(context);
-      final paths = PicPaths();
+      if (i == 0) {
+        alignment = const Alignment(0, -1);
+        heightFactor = 0.85;
+      } else if (i == 1) {
+        heightFactor = 0.65;
+        alignment = const Alignment(0, -0.4);
+      } else if (i == 2) {
+        heightFactor = 0.74;
+      } else if (i == 3 || i == 4) {
+        heightFactor = 0.7;
+      }
+
       String _content = texts[i];
       bool _isonBottom = i == 0 || i == 1;
       list.add(Scaffold(
         body: Container(
           color: theme.scaffoldBackgroundColor,
+          // color: Colors.blue,
           child: Stack(
             children: [
               Align(
-                  alignment: _isonBottom
-                      ? const Alignment(0, -0.4)
-                      : Alignment.bottomCenter,
-                  child: SizedBox(
-                    width: 100.w,
-                    // height: 50.h,
-                    child: SvgPicture.asset(
-                      defaultLocale.contains('ru') ||
-                              defaultLocale.contains('RU')
-                          ? '${paths.onboard}onboard_$i.svg'
-                          : '${paths.onboard}onboard_${i}_eng.svg',
-                      fit: BoxFit.fill,
+                  alignment: _isonBottom ? alignment : Alignment.bottomCenter,
+                  child: FractionallySizedBox(
+                    widthFactor: 1,
+                    heightFactor: heightFactor,
+                    child: Container(
+                      // color: Colors.green,
+                      // width: 100.w,
+                      // height: 50.h,
+                      child: SvgPicture.asset(
+                        defaultLocale.contains('ru') ||
+                                defaultLocale.contains('RU')
+                            ? '${paths.onboard}onboard_$i.svg'
+                            : '${paths.onboard}onboard_${i}_eng.svg',
+                        fit: BoxFit.fill,
+                        // clipBehavior: Clip.antiAlias,
+                      ),
                     ),
                   )),
               Align(
-                alignment: _isonBottom
-                    ? Alignment.bottomCenter
-                    : const Alignment(0, -0.6),
+                alignment:
+                    _isonBottom ? Alignment(0, 1) : const Alignment(0, -0.8),
                 child: Padding(
-                  padding: EdgeInsets.only(bottom: 13.0, right: 5.w, left: 5.w),
+                  padding: EdgeInsets.only(right: 5.w, left: 5.w),
                   child: Text(
                     _content,
                     textAlign: TextAlign.center,
