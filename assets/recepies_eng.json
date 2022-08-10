@@ -285,7 +285,7 @@
     "picPreview": "pina_colada_eng.svg",
     "categories": "classic",
     "searchWords": "classic, blend, pineapple, coconut, syrup, sweet, rum, lime, cherry, pina, colada, pina colada",
-    "steps": "Squeeze 100 ml juice from a pineapple:hurricane.svg, juice_pineapple.svg///In a blender, mix everything but cherries and pineapple leaf:hurricane.svg, juice_pineapple.svg, rum_darth.svg, rum_white.svg, syrop_coconout.svg, ice,svg///Pour into a glass and garnish with a cocktail cherry and pineapple leaf:hurricane.svg, juice_pineapple.svg, rum_darth.svg, rum_white.svg, syrop_coconout.svg, ice.svg, cherry_coctail.svg, leaf_pineapple.svg",
+    "steps": "Squeeze 100 ml juice from a pineapple:hurricane.svg, juice_pineapple.svg///In a blender, mix everything but cherries and pineapple leaf:hurricane.svg, juice_pineapple.svg, rum_darth.svg, rum_white.svg, syrop_coconout.svg, ice.svg///Pour into a glass and garnish with a cocktail cherry and pineapple leaf:hurricane.svg, juice_pineapple.svg, rum_darth.svg, rum_white.svg, syrop_coconout.svg, ice.svg, cherry_coctail.svg, leaf_pineapple.svg",
     "ingredients": "White rum:60 ml///Dark rum:15 ml///Coconut syrup:40 ml///Lime juice:20 ml///Pineapple leaves:1 pcs///Pineapple:1 kg///Cocktail cherry:2 pcs///Ice:60 gr",
     "colorCode": "E1B37E"
   },
@@ -1000,9 +1000,9 @@
     "colorCode": "F0C3E9"
   },
   {
-    "name": "Pinacolada",
+    "name": "Pina Colada light",
     "description": "Sweet blend",
-    "picPreview": "pina_colada_eng.svg",
+    "picPreview": "pina_colada_light_eng.svg",
     "categories": "birthday",
     "searchWords": "Birthday, pina colada, colada, pina, rum, pineapple, juice, coconut, milk, coconut milk",
     "steps": "Mix rum, pineapple juice, coconut milk and ice in a blender:hurricane.svg, rum_white.svg, juice_pineapple.svg, ice.svg, coconout_milk.svg///Pour into a glass and garnish with a pineapple wedge:hurricane.svg, rum_white.svg, juice_pineapple.svg, ice.svg, coconout_milk.svg, pineapple_piece.svg",

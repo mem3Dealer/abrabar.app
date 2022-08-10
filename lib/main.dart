@@ -49,7 +49,7 @@ Future<void> main() async {
   await Firebase.initializeApp();
   FlutterBranchSdk.initSession().listen((data) {});
   // FlutterBranchSdk.validateSDKIntegration();
-  // await Reci pesApi.init();
+  // await RecipesApi.init();
 
   notes.subscribeToNotes(flnPlugin, channel);
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);

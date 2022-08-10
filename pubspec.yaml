@@ -26,7 +26,7 @@ dependencies:
   flutter_local_notifications: ^9.7.0
   flutter_branch_sdk: ^6.0.0
   in_app_purchase: ^3.0.6
-  in_app_purchase_ios: ^0.2.0+1
+
  
 
 dev_dependencies:

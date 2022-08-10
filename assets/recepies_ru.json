@@ -1,6 +1,6 @@
 [
   {
-    "name": "Bloody Mary",
+    "name": "Кровавая Мэри",
     "description": "Кислый шейк",
     "picPreview": "bloody_mary.svg",
     "categories": "classic",
@@ -281,11 +281,11 @@
   },
   {
     "name": "Пина Колада",
-    "description": "Сладкий блэнд",
+    "description": "Сладкий бленд",
     "picPreview": "pina_colada.svg",
     "categories": "classic",
     "searchWords": "классика, блэнд, ананас, кокос, сироп, сладкий, ром, лайм, вишня, пина, колада, пина колада",
-    "steps": "Выжмите 100 мл сока из ананаса:hurricane.svg, juice_pineapple.svg///В блендере смешайте все, кроме вишни и ананасового листа:hurricane.svg, juice_pineapple.svg, rum_darth.svg, rum_white.svg, syrop_coconout.svg, ice,svg///Перелейте в бокал и украсьте коктейльной вишней и листом ананаса:hurricane.svg, juice_pineapple.svg, rum_darth.svg, rum_white.svg, syrop_coconout.svg, ice,svg, cherry_coctail.svg, leaf_pineapple.svg",
+    "steps": "Выжмите 100 мл сока из ананаса:hurricane.svg, juice_pineapple.svg///В блендере смешайте все, кроме вишни и ананасового листа:hurricane.svg, juice_pineapple.svg, rum_darth.svg, rum_white.svg, syrop_coconout.svg, ice.svg///Перелейте в бокал и украсьте коктейльной вишней и листом ананаса:hurricane.svg, juice_pineapple.svg, rum_darth.svg, rum_white.svg, syrop_coconout.svg, ice.svg, cherry_coctail.svg, leaf_pineapple.svg",
     "ingredients": "Белый ром:60 мл///Темный ром:15 мл///Кокосовый сироп:40 мл///Сок лайма:20 мл///Листья ананаса:1 шт///Ананас:1 кг///Коктейльная вишня:2 шт///Лед:60 гр",
     "colorCode": "E1B37E"
   },
@@ -1000,9 +1000,9 @@
     "colorCode": "F0C3E9"
   },
   {
-    "name": "Пина колада",
+    "name": "Пина колада лайт",
     "description": "Сладкий бленд",
-    "picPreview": "pina_colada.svg",
+    "picPreview": "pina_colada_light.svg",
     "categories": "birthday",
     "searchWords": "ДР, день рождения, деньрожденческие, пина колада, колада, пина, ром, ананас, сок, кокос, молоко, кокосовое молоко",
     "steps": "Смешайте ром, ананасовый сок, кокосовое молоко и лед в блендере:hurricane.svg, rum_white.svg, juice_pineapple.svg, ice.svg, coconout_milk.svg///Перелейте в бокал и украсьте долькой ананаса:hurricane.svg, rum_white.svg, juice_pineapple.svg, ice.svg, coconout_milk.svg, pineapple_piece.svg",
