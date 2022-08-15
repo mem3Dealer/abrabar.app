@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
-// import 'package:in_app_purchase_ios/store_kit_wrappers.dart';
+import 'package:flutter_gen/gen_l10n/app_localz.dart';
 import 'package:abrabar/logic/bloc/bloc/monetizationBloc/monetization_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
@@ -19,6 +19,7 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
   MonetizationBloc() : super(MonetizationInitial()) {
     on<MonetizationPurchase>(_onMonetizationPurchase);
     on<MonetizationInit>(_onMonetizationInit);
+    on<RestorePurchases>(_onRestorePurchase);
   }
   final anal = GetIt.I.get<AnalyticsService>();
   InAppPurchase iap = InAppPurchase.instance;
@@ -46,12 +47,11 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
 
   FutureOr<void> _onMonetizationInit(
       MonetizationInit event, Emitter emitter) async {
-    // await _wasAppPurchased();
+    await _wasAppPurchased();
     bool available = await iap.isAvailable();
     // emitter(state.copyWith(isAppAvailableToBuy: available));
-
+    print(state.isPurchased);
     if (available && state.isPurchased == false) {
-      // await _wasAppPurchased();
       await _getProducts();
       await _getPastPurchases();
       final Stream<List<PurchaseDetails>> purchaseUpdated = iap.purchaseStream;
@@ -69,9 +69,12 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
 
   Future<void> _wasAppPurchased() async {
     var readVal = await storage.read(key: "wasPurchased");
+
     if (readVal == 'true') {
       if (state.isPurchased == false) {
         emit(state.copyWith(isPurchased: true));
+      } else {
+        emit(state.copyWith(isPurchased: false));
       }
     }
   }
@@ -92,17 +95,19 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
       } else {
         if (purchaseDetails.status == PurchaseStatus.error) {
           _handleErrorPurchase(purchaseDetails, emitter);
-        } else if (purchaseDetails.status == PurchaseStatus.purchased ||
-            purchaseDetails.status == PurchaseStatus.restored) {
+        } else if (purchaseDetails.status == PurchaseStatus.purchased) {
           final bool valid = await _verifyPurchase(purchaseDetails);
           if (valid) {
-            // await storage.write(
-            //     key: 'wasPurchased', value: purchaseDetails.purchaseID);
-            // emit(state.copyWith(
-            //     isPurchased: true, isTherePendingPurchase: false));
+            await storage.write(key: 'wasPurchased', value: 'true');
+            emit(state.copyWith(
+                isPurchased: true, isTherePendingPurchase: false));
           } else {
             return;
           }
+        } else if (purchaseDetails.status == PurchaseStatus.restored) {
+          state.purchases.add(purchaseDetails);
+          emit(state.copyWith(purchases: state.purchases));
+          log('There is restored purchase');
         }
         try {
           if (purchaseDetails.pendingCompletePurchase) {
@@ -134,8 +139,7 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
       PurchaseDetails purchaseDetails, Emitter emitter) async {
     log('THERE IS FOOKIN ERROR, ${purchaseDetails.error}');
     if (purchaseDetails.error?.message == 'BillingResponse.itemAlreadyOwned') {
-      await storage.write(
-          key: 'wasPurchased', value: purchaseDetails.purchaseID);
+      await storage.write(key: 'wasPurchased', value: 'true');
       emit(state.copyWith(isPurchased: true));
     } else {
       log('there is some other error occured. ${purchaseDetails.error}');
@@ -144,7 +148,6 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
 
   Future<bool> _verifyPurchase(PurchaseDetails? purchase) async {
     //TODO запилить верификацию покупок?
-
     return true;
   }
 
@@ -159,10 +162,6 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
 
   Future<void> _getPastPurchases() async {
     await iap.restorePurchases();
-    // var transactions = await paymentWrapper.transactions();
-    // transactions.forEach((transaction) async {
-    //   await paymentWrapper.finishTransaction(transaction);
-    // });
   }
 
   Future<void> internetCheckUp() async {
@@ -181,6 +180,26 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
       emit(state.copyWith(isAppAvailableToBuy: true));
     } else {
       emit(state.copyWith(isAppAvailableToBuy: false));
+    }
+  }
+
+  Future<void> _onRestorePurchase(
+      RestorePurchases event, Emitter emitter) async {
+    var t = AppLocalizations.of(event.context)!;
+    bool isTherePurchases = state.purchases.isNotEmpty;
+    if (isTherePurchases) {
+      emitter(state.copyWith(isTherePendingPurchase: true));
+      await iap.completePurchase(state.purchases.first).then((_) => emitter(
+          state.copyWith(isTherePendingPurchase: false, isPurchased: true)));
+      storage.write(key: 'wasPurchased', value: 'true');
+    } else {
+      ScaffoldMessenger.of(event.context).showSnackBar(SnackBar(
+        content: Text(
+          t.noPurchases,
+          style: TextStyle(color: Color(0xffFFBE3F)),
+        ),
+        backgroundColor: Color(0xff242320),
+      ));
     }
   }
 }

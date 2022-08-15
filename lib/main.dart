@@ -108,6 +108,7 @@ class _MyAppState extends State<MyApp> {
       child: Sizer(builder: (context, orientation, deviceType) {
         return MaterialApp(
             title: 'abrabar',
+            debugShowCheckedModeBanner: false,
             builder: (context, child) {
               return ScrollConfiguration(behavior: MyBehavior(), child: child!);
             },

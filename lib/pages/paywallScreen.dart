@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:abrabar/shared/picPaths.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -83,6 +84,7 @@ class PaywallScreen extends StatelessWidget {
           moneyBloc.internetCheckUp();
           return SafeArea(
               top: false,
+              bottom: false,
               child: SingleChildScrollView(
                 child: Column(
                   children: [
@@ -119,17 +121,20 @@ class PaywallScreen extends StatelessWidget {
                               textAlign: TextAlign.center,
                               text: TextSpan(children: [
                                 TextSpan(
-                                    text: t.onlyfor + "\n",
+                                    text: "${t.onlyfor}\n",
                                     style: theme.textTheme.headline1!
                                         .copyWith(fontSize: 50.sp)),
                                 TextSpan(
-                                    text: product.price,
-                                    // text: '999.999999999999999999 ₽',
-                                    // text: defaultLocale == 'ru_RU'
-                                    //     ? "${product.rawPrice} Р"
-                                    //     : product.price,
+                                    text: '${product.rawPrice} ',
                                     style: theme.textTheme.headline1!.copyWith(
                                         overflow: TextOverflow.fade,
+                                        fontSize: 50.sp,
+                                        color: const Color(0xffFFBE3F))),
+                                TextSpan(
+                                    text: product.currencySymbol,
+                                    style: TextStyle(
+                                        fontFamily: "Roboto",
+                                        // fontStyle: FontStyle.italic,
                                         fontSize: 50.sp,
                                         color: const Color(0xffFFBE3F))),
                                 TextSpan(
@@ -143,36 +148,74 @@ class PaywallScreen extends StatelessWidget {
                     SizedBox(
                       height: 4.h,
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(bottom: 6.h),
-                      child: SizedBox(
-                        // height: 7.h,
-                        width: 72.w,
-                        child: ElevatedButton(
-                            onPressed: () {
-                              moneyBloc.add(MonetizationPurchase(context));
-                            },
-                            style: ButtonStyle(
-                                shape: MaterialStateProperty.all(
-                                    const RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.zero)),
-                                backgroundColor: MaterialStateProperty.all(
-                                    const Color(0xffFFBE3F))),
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(vertical: 2.2.h),
-                              child: state.isTherePendingPurchase
-                                  ? CircularProgressIndicator(
-                                      color: theme.scaffoldBackgroundColor,
-                                    )
-                                  : Text(
-                                      t.continue1,
-                                      textAlign: TextAlign.center,
-                                      style: theme.textTheme.headline4
-                                          ?.copyWith(color: Colors.black),
-                                    ),
-                            )),
-                      ),
-                    )
+                    SizedBox(
+                      // height: 7.h,
+                      width: 72.w,
+                      child: ElevatedButton(
+                          onPressed: () {
+                            moneyBloc.add(MonetizationPurchase(context));
+                          },
+                          style: ButtonStyle(
+                              shape: MaterialStateProperty.all(
+                                  const RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.zero)),
+                              backgroundColor: MaterialStateProperty.all(
+                                  const Color(0xffFFBE3F))),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(vertical: 2.2.h),
+                            child: state.isTherePendingPurchase
+                                ? CircularProgressIndicator(
+                                    color: theme.scaffoldBackgroundColor,
+                                  )
+                                : Text(
+                                    t.continue1,
+                                    textAlign: TextAlign.center,
+                                    style: theme.textTheme.headline4
+                                        ?.copyWith(color: Colors.black),
+                                  ),
+                          )),
+                    ),
+                    Platform.isIOS
+                        ? Padding(
+                            padding: EdgeInsets.symmetric(vertical: 3.h),
+                            child: SizedBox(
+                              width: 60.w,
+                              child: ElevatedButton(
+                                  onPressed: () {
+                                    moneyBloc.add(RestorePurchases(context));
+                                  },
+                                  style: ButtonStyle(
+                                      elevation: MaterialStateProperty.all(5),
+                                      shadowColor: MaterialStateProperty.all(
+                                          const Color(0xffFFBE3F)),
+                                      side: MaterialStateProperty.all(
+                                          BorderSide(
+                                              color: const Color(0xffFFBE3F))),
+                                      shape: MaterialStateProperty.all(
+                                          const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.zero)),
+                                      backgroundColor:
+                                          MaterialStateProperty.all(
+                                              theme.scaffoldBackgroundColor)),
+                                  child: Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(vertical: 2.2.h),
+                                    child: state.isTherePendingPurchase
+                                        ? const CircularProgressIndicator(
+                                            color: Color(0xffFFBE3F),
+                                          )
+                                        : Text(
+                                            t.allreadyBoudght,
+                                            textAlign: TextAlign.center,
+                                            style: theme.textTheme.headline4
+                                                ?.copyWith(
+                                                    color: const Color(
+                                                        0xffFFBE3F)),
+                                          ),
+                                  )),
+                            ),
+                          )
+                        : const SizedBox.shrink()
                   ],
                 ),
               ));

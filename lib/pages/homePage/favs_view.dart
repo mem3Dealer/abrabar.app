@@ -24,7 +24,7 @@ class FavoritesView extends StatelessWidget {
               Align(
                   alignment: const Alignment(0, -0.85),
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 2.6),
+                    padding: EdgeInsets.symmetric(horizontal: 3.w),
                     child: Text(
                       t.zombieSays,
                       textAlign: TextAlign.center,
@@ -35,14 +35,15 @@ class FavoritesView extends StatelessWidget {
                     ),
                   )),
               Align(
-                  alignment: Alignment(0, 1.8),
-                  child: SizedBox(
+                  alignment: Alignment(0, 1),
+                  child: Container(
                     // color: Colors.red,
                     width: 100.w,
                     // heightFactor: 0.9,
+                    // height: 50.h,
                     child: SvgPicture.asset(
                       '${paths.systemImages}empty_favs_banner.svg',
-                      fit: BoxFit.fill,
+                      // fit: BoxFit.fitHeight,
                     ),
                   )),
             ],

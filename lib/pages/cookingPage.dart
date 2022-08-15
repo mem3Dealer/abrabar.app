@@ -49,6 +49,37 @@ class _CookingPageState extends State<CookingPage> {
       listener: (context, state) {},
       builder: (context, state) {
         Coctail curCoc = state.currentCoctail;
+
+        Function? _swipeBack() {
+          if (pageIndex == 0) {
+            return null;
+          } else {
+            anal.stepChanged(
+                isForward: false,
+                name: curCoc.name!,
+                stepNum: pageIndex,
+                totalSteps: curCoc.steps!.length);
+            controller.previousPage(
+                duration: const Duration(milliseconds: 1000),
+                curve: Curves.ease);
+          }
+        }
+
+        Function? _swipeForward() {
+          if (pageIndex == curCoc.steps!.length - 1) {
+            return null;
+          } else {
+            controller.nextPage(
+                duration: const Duration(milliseconds: 1000),
+                curve: Curves.ease);
+            anal.stepChanged(
+                isForward: true,
+                name: curCoc.name!,
+                stepNum: pageIndex + 2,
+                totalSteps: curCoc.steps!.length);
+          }
+        }
+
         return SafeArea(
           top: false,
           bottom: false,
@@ -74,15 +105,11 @@ class _CookingPageState extends State<CookingPage> {
                 onPanUpdate: (details) {
                   // Swiping in right direction.
                   if (details.delta.dx > 0) {
-                    controller.previousPage(
-                        duration: const Duration(milliseconds: 1000),
-                        curve: Curves.ease);
+                    _swipeBack();
                   }
                   // Swiping in left direction.
                   if (details.delta.dx < 0) {
-                    controller.nextPage(
-                        duration: const Duration(milliseconds: 1000),
-                        curve: Curves.ease);
+                    _swipeForward();
                   }
                 },
                 child: Center(
@@ -172,20 +199,7 @@ class _CookingPageState extends State<CookingPage> {
                                   children: [
                                     IconButton(
                                         // onPressed: null,
-                                        onPressed: pageIndex == 0
-                                            ? null
-                                            : () {
-                                                anal.stepChanged(
-                                                    isForward: false,
-                                                    name: curCoc.name!,
-                                                    stepNum: pageIndex,
-                                                    totalSteps:
-                                                        curCoc.steps!.length);
-                                                controller.previousPage(
-                                                    duration: const Duration(
-                                                        milliseconds: 1000),
-                                                    curve: Curves.ease);
-                                              },
+                                        onPressed: () => _swipeBack(),
                                         splashColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         icon: Transform(
@@ -199,21 +213,7 @@ class _CookingPageState extends State<CookingPage> {
                                           ),
                                         )),
                                     IconButton(
-                                        onPressed: pageIndex ==
-                                                curCoc.steps!.length - 1
-                                            ? null
-                                            : () {
-                                                controller.nextPage(
-                                                    duration: const Duration(
-                                                        milliseconds: 1000),
-                                                    curve: Curves.ease);
-                                                anal.stepChanged(
-                                                    isForward: true,
-                                                    name: curCoc.name!,
-                                                    stepNum: pageIndex + 2,
-                                                    totalSteps:
-                                                        curCoc.steps!.length);
-                                              },
+                                        onPressed: () => _swipeForward(),
                                         splashColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         icon: SvgPicture.asset(

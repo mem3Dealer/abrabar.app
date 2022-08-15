@@ -38,5 +38,7 @@
     "onboard4":"Enjoy your mixology skills with ABRABAR",
     "interesting":"interesting",
     "next":"next",
-     "enjoy":"enjoy"
+     "enjoy":"enjoy",
+     "allreadyBoudght":"Restore purchases",
+     "noPurchases":"There are no purchases :("
 }

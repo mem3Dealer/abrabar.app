@@ -11,4 +11,7 @@ class MonetizationPurchase extends MonetizationEvent {
   MonetizationPurchase(this.context);
 }
 
-class Monetization extends MonetizationEvent {}
+class RestorePurchases extends MonetizationEvent {
+  BuildContext context;
+  RestorePurchases(this.context);
+}

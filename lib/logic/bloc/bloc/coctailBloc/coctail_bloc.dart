@@ -58,7 +58,7 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
     state.favoriteCoctails.forEach((coc) {
       allFavNames.add(coc.name!);
     });
-    print(allValues);
+    print('ХРАНИЛИЩЕ: $allValues');
     allValues.forEach((key, value) {
       list.add(key);
     });
@@ -82,7 +82,7 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
     Coctail thisCoctail = event.coctail.copyWith(isFav: isItFav);
     // await storage.deleteAll();
     var res = await storage.read(key: event.coctail.name!);
-    log(res.toString());
+
     emitter(state.copyWith(currentCoctail: thisCoctail));
     Navigator.of(event.context).push(MaterialPageRoute<void>(
         builder: (BuildContext context) => CoctailPage(),
