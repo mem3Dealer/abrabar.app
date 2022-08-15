@@ -4,9 +4,7 @@ import 'dart:io';
 import 'package:flutter_gen/gen_l10n/app_localz.dart';
 import 'package:abrabar/logic/bloc/bloc/monetizationBloc/monetization_state.dart';
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
@@ -36,9 +34,7 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
 
     await iap.buyNonConsumable(purchaseParam: purchaseParam);
 
-    anal.buyApp(
-        purchaseParam.productDetails.rawPrice,
-        purchaseParam.productDetails.rawPrice,
+    anal.buyApp(state.actualPrice, state.basePrice,
         purchaseParam.productDetails.currencySymbol);
     if (state.isPurchased) {
       Navigator.of(event.context).pop();
@@ -49,8 +45,8 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
       MonetizationInit event, Emitter emitter) async {
     await _wasAppPurchased();
     bool available = await iap.isAvailable();
-    // emitter(state.copyWith(isAppAvailableToBuy: available));
-    print(state.isPurchased);
+    emitter(state.copyWith(isAppAvailableToBuy: available));
+
     if (available && state.isPurchased == false) {
       await _getProducts();
       await _getPastPurchases();
@@ -112,6 +108,7 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
         try {
           if (purchaseDetails.pendingCompletePurchase) {
             await iap.completePurchase(purchaseDetails);
+            anal.purchaseSuccess(state.actualPrice, state.basePrice);
           }
         } on Exception catch (e) {
           log(e.toString());
@@ -122,10 +119,7 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
 
   Future<void> _handleCancelledPurchases(PurchaseDetails details) async {
     log('purchase has CANCELLED status');
-    // var transactions = await paymentWrapper.transactions();
-    // transactions.forEach((transaction) async {
-    //   await paymentWrapper.finishTransaction(transaction);
-    // });
+    anal.purchaseFailure();
     await iap.completePurchase(details);
     emit(state.copyWith(isTherePendingPurchase: false));
   }
@@ -143,6 +137,7 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
       emit(state.copyWith(isPurchased: true));
     } else {
       log('there is some other error occured. ${purchaseDetails.error}');
+      anal.purchaseFailure();
     }
   }
 
@@ -158,6 +153,11 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
       log('THERE ARE NO PRODUCTS');
     }
     emit(state.copyWith(products: response.productDetails));
+    ProductDetails product = state.products.first;
+    //TODO
+    //Нужно разобраться как будут работать скидки, чтобы это делать нормально
+    emit(state.copyWith(
+        actualPrice: product.rawPrice, basePrice: product.rawPrice));
   }
 
   Future<void> _getPastPurchases() async {

@@ -64,14 +64,12 @@ class AnalyticsService {
         .logEvent(name: 'change_collection', parameters: {'target': target});
   }
 
-//TBD
   Future<void> purchaseSuccess(num actualPrice, num basePice) async {
     analytics.logEvent(
         name: 'purchase_success',
         parameters: {'base_price': basePice, 'actual_price': actualPrice});
   }
 
-//TBD
   Future<void> purchaseFailure() async {
     analytics.logEvent(name: 'purchase_faulure');
   }

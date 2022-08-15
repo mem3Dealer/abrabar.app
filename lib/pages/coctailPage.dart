@@ -24,6 +24,7 @@ class _CoctailPageState extends State<CoctailPage>
   final anal = GetIt.I.get<AnalyticsService>();
   final cockBloc = GetIt.I.get<CoctailBloc>();
   late ScrollController controller;
+  bool needsAnalytic = true;
 
   @override
   void initState() {
@@ -44,6 +45,7 @@ class _CoctailPageState extends State<CoctailPage>
   @override
   void dispose() {
     controller.dispose();
+    needsAnalytic = false;
     super.dispose();
   }
 
@@ -108,8 +110,12 @@ class _CoctailPageState extends State<CoctailPage>
                       if (innerScrollController.position.atEdge) {
                         isTop
                             ? null
-                            : anal
-                                .readIngredients(cockBloc.state.currentCoctail);
+                            : needsAnalytic
+                                ? setState(() {
+                                    anal.readIngredients(state.currentCoctail);
+                                    needsAnalytic = false;
+                                  })
+                                : null;
                       }
                     });
                     Color color = coc.color!;
