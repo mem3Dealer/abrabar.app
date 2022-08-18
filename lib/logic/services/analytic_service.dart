@@ -33,6 +33,7 @@ class AnalyticsService {
           "step_num": stepNum,
           "total_steps": totalSteps
         });
+    print(isForward);
   }
 
   Future<void> howToCook(Coctail coctail) async {

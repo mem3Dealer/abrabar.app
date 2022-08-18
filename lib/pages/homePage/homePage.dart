@@ -95,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     }
 
     // moneyBloc.storage.write(key: 'wasPurchased', value: 'true1');
-    // moneyBloc.storage.deleteAll();
+    // moneyBloc.storage.deleteAll();s
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(18.h),
@@ -136,8 +136,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                                 ));
                                 anal.paywallOpened(
                                     fromWhere: 'search',
-                                    basePrice: 399,
-                                    actualPrice: 999);
+                                    basePrice: state.basePrice.toInt(),
+                                    actualPrice: state.actualPrice.toInt());
                               },
                         child:
                             SvgPicture.asset("${paths.systemImages}loopa.svg"),

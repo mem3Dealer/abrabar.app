@@ -6,7 +6,10 @@
 	<string>development</string>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>dbm1o.app.link</string>
+		<string>applinks:abrabar.app.link</string>
+		<string>applinks:abrabar-alternate.app.link</string>
+		<string>applinks:abrabar.test.app.link</string>
+        <string>applinks:abrabar-alternate.test.app.link</string>
 	</array>
 </dict>
 </plist>

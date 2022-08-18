@@ -87,14 +87,12 @@ class _OnboardScreenState extends State<OnboardScreen> {
     for (var i = 0; i < 5; i++) {
       if (i == 0) {
         alignment = const Alignment(0, -1);
-        heightFactor = 0.85;
+        heightFactor = 70.h;
       } else if (i == 1) {
-        heightFactor = 0.65;
+        heightFactor = 41.75.h;
         alignment = const Alignment(0, -0.4);
-      } else if (i == 2) {
-        heightFactor = 0.74;
-      } else if (i == 3 || i == 4) {
-        heightFactor = 0.7;
+      } else {
+        heightFactor = 53.h;
       }
 
       String _content = texts[i];
@@ -107,21 +105,18 @@ class _OnboardScreenState extends State<OnboardScreen> {
             children: [
               Align(
                   alignment: _isonBottom ? alignment : Alignment.bottomCenter,
-                  child: FractionallySizedBox(
-                    widthFactor: 1,
-                    heightFactor: heightFactor,
-                    child: Container(
-                      // color: Colors.green,
-                      // width: 100.w,
-                      // height: 50.h,
-                      child: SvgPicture.asset(
-                        defaultLocale.contains('ru') ||
-                                defaultLocale.contains('RU')
-                            ? '${paths.onboard}onboard_$i.svg'
-                            : '${paths.onboard}onboard_${i}_eng.svg',
-                        fit: BoxFit.fill,
-                        // clipBehavior: Clip.antiAlias,
-                      ),
+                  child: SizedBox(
+                    width: 100.w,
+                    height: heightFactor,
+                    // widthFactor: 1,
+                    // heightFactor: heightFactor,
+                    child: SvgPicture.asset(
+                      defaultLocale.contains('ru') ||
+                              defaultLocale.contains('RU')
+                          ? '${paths.onboard}onboard_$i.svg'
+                          : '${paths.onboard}onboard_${i}_eng.svg',
+                      fit: BoxFit.fill,
+                      // clipBehavior: Clip.antiAlias,
                     ),
                   )),
               Align(

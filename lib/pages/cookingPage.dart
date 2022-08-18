@@ -27,10 +27,10 @@ class _CookingPageState extends State<CookingPage> {
   int pageIndex = 0;
   final listController = ScrollController();
   final String defaultLocale = Platform.localeName;
+
   @override
   void initState() {
     controller = PageController();
-    // listController.jumpTo(0.0);
     super.initState();
   }
 
@@ -102,13 +102,12 @@ class _CookingPageState extends State<CookingPage> {
               backgroundColor: state.currentCoctail.color,
               // backgroundColor: Colors.black54,
               body: GestureDetector(
-                onPanUpdate: (details) {
-                  // Swiping in right direction.
-                  if (details.delta.dx > 0) {
+                onHorizontalDragEnd: (details) {
+                  if (details.primaryVelocity! > 0) {
+                    // User swiped Left
                     _swipeBack();
-                  }
-                  // Swiping in left direction.
-                  if (details.delta.dx < 0) {
+                  } else if (details.primaryVelocity! < 0) {
+                    // User swiped Right
                     _swipeForward();
                   }
                 },
@@ -151,10 +150,12 @@ class _CookingPageState extends State<CookingPage> {
                                   height: 25.h,
                                   child: PageView.builder(
                                     onPageChanged: (index) {
+                                      bool isForward = pageIndex < index;
                                       setState(() {
                                         pageIndex = index;
                                       });
-                                      cockBloc.add(AnotherStep(index: index));
+                                      cockBloc.add(AnotherStep(
+                                          index: index, isForward: isForward));
                                     },
                                     controller: controller,
                                     itemCount: curCoc.steps!.length,

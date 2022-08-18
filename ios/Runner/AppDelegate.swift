@@ -2,16 +2,27 @@ import UIKit
 import Flutter
 import FirebaseCore
 import FirebaseMessaging
+import Branch
 
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
-    let gcmMessageIDKey = "gcm.Message_ID"
+  // let window: UIWindow?
+  let gcmMessageIDKey = "gcm.Message_ID"
+
   override func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
+
+       // if you are using the TEST key
+  Branch.setUseTestBranchKey(false)
+  // listener for Branch Deep Link data
+  Branch.getInstance().initSession(launchOptions: launchOptions) { (params, error) in
+       // do stuff with deep link data (nav to page, display content, etc)
+      print(params as? [String: AnyObject] ?? {})
+      }
+
       FirebaseApp.configure()
-      
       if #available(iOS 10.0, *) {
         // For iOS 10 display notification (sent via APNS)
         UNUserNotificationCenter.current().delegate = self
@@ -35,7 +46,7 @@ import FirebaseMessaging
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
     
-  override  func application(_ application: UIApplication,
+    override func application(_ application: UIApplication,
                      didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult)
                        -> Void) {
@@ -50,6 +61,9 @@ import FirebaseMessaging
       if let messageID = userInfo[gcmMessageIDKey] {
         print("Message ID: \(messageID)")
       }
+
+       // handler for Push Notifications
+        Branch.getInstance().handlePushNotification(userInfo)
 
       // Print full message.
       print(userInfo)
@@ -73,6 +87,13 @@ extension AppDelegate : MessagingDelegate{
       // Note: This callback is fired at each app startup and whenever a new token is generated.
     }
 
+}
+func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    return Branch.getInstance().application(app, open: url, options: options)
+}
+func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+  // handler for Universal Links
+    return Branch.getInstance().continue(userActivity)
 }
 
 func application(_ application: UIApplication,

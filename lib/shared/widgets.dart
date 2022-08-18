@@ -283,8 +283,8 @@ class OverlayWithLock extends StatelessWidget {
                       ));
                       anal.paywallOpened(
                           fromWhere: screenName,
-                          basePrice: 399,
-                          actualPrice: 999);
+                          basePrice: state.basePrice.toInt(),
+                          actualPrice: state.actualPrice.toInt());
                     },
                     child: SvgPicture.asset('${paths.systemImages}lock.svg')),
               ),

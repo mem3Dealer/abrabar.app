@@ -32,9 +32,14 @@ class RecipesApi {
 
     res = await russianRecipes!.values.map.allRows();
     engRes = await englishRecipes!.values.map.allRows();
-
+    //вот здесь ниже строчкой нужно менять res/engRe
     String json = jsonEncode(engRes);
+    // косноль отпечатывает огромный лог со всем джейсоном, который я копировал и вставлял
+    // сюда: https://codebeautify.org/string-to-json-online
+    // а после просто заменяется файлик с рецептами в ассетах
     log(json);
+
+    //но чтобы это заработало нужно перейти в coctailBloc, метод _onCoctailInitialize
     List<Coctail> allCocs = [];
     // await writeJson(res!);
     // if (engRes != null) {
@@ -48,31 +53,10 @@ class RecipesApi {
     // }
   }
 
-  // static Future<void> writeJson(List<Map<String, dynamic>> import) async {
-  //   final directory = await getApplicationDocumentsDirectory();
-  //   final path = directory.path;
-  //   final File file = File("${path}/recepies_ru.json");
-
-  //   // String path =
-  //   //     'C:/Users/Iaroslav/AndroidStudioProjects/Abrabar/abrabar/assets/';
-  //   // final File file = File(
-  //   //     'C:/Users/Iaroslav/AndroidStudioProjects/Abrabar/abrabar/assets/recepies_ru.json');
-  //   // if (await file.exists() == false) {
-  //   String json = jsonEncode(import);
-  //   log(json);
-  //   //   File anotherFile =
-  //   //       await File("${path}recepes_ru.json").create(recursive: true);
-  //   //   anotherFile.writeAsStringSync(json);
-  //   // }
-  //   print(await file.exists());
-  //   file.writeAsString(json).then((value) {
-  //     print('written');
-  //   });
-  //   // print(json);
-  // }
-
   static Future init() async {
     final spreadsheet = await gsheets.spreadsheet(spreadSheetId);
+
+    // это названия листов в таблице
     russianRecipes = await getSheet(spreadsheet, title: "recipes");
     englishRecipes = await getSheet(spreadsheet, title: "recipes_eng");
   }

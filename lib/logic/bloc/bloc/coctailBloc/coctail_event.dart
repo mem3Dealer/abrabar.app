@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 part of 'coctail_bloc.dart';
 
 abstract class CoctailEvent {}
@@ -15,8 +16,10 @@ class SelectCoctail extends CoctailEvent {
 
 class AnotherStep extends CoctailEvent {
   int index;
+  bool? isForward;
   AnotherStep({
     required this.index,
+    this.isForward,
   });
 }
 

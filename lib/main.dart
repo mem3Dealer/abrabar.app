@@ -47,8 +47,10 @@ var notes = Notifications();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  FlutterBranchSdk.initSession().listen((data) {});
   // FlutterBranchSdk.validateSDKIntegration();
+  FlutterBranchSdk.initSession().listen((data) {});
+
+  //Чтобы стянуть джейсон рецептов нужно сначачала раскоментить это, и перейти в RecipesApi.
   // await RecipesApi.init();
 
   notes.subscribeToNotes(flnPlugin, channel);

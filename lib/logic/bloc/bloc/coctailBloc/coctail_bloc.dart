@@ -37,6 +37,7 @@ class CoctailBloc extends Bloc<CoctailEvent, CoctailState> {
       CoctailsInitialize event, Emitter emitter) async {
     final String defaultLocale = Platform.localeName;
 
+    //Нужно также раскоментить две строчки ниже (ну или переработайте как удобней будет). И все.
     // List<Coctail> fetchedCocs = [];
     // fetchedCocs = await RecipesApi.fetchRecipes();
     final String source = await rootBundle.loadString(
