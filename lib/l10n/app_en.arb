@@ -40,5 +40,6 @@
     "next":"next",
      "enjoy":"enjoy",
      "allreadyBoudght":"Restore purchases",
-     "noPurchases":"There are no purchases :("
+     "noPurchases":"There are no purchases :(",
+     "notFound":"Brain swam away, try again"
 }

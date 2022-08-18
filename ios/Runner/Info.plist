@@ -36,12 +36,12 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.adchampagne.abrabarr</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>abrabar</string>
 			</array>
-			<key>CFBundleURLName</key>
-			<string>com.adchampagne.abrabarr</string>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
@@ -80,13 +80,6 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>branch_universal_link_domains</key>
-	<array>
-		<string>abrabar.app.link</string>
-		<string>abrabar-alternate.app.link</string>
-		<string>abrabar.test.app.link</string>
-		<string>abrabar-alternate.test.app.link</string>
-	</array>
 	<key>branch_key</key>
 	<dict>
 		<key>live</key>
@@ -94,5 +87,12 @@
 		<key>test</key>
 		<string>secret_live_TBkAT6VjkwiZIX8gOQDiR6tQc6LPLIUv</string>
 	</dict>
+	<key>branch_universal_link_domains</key>
+	<array>
+		<string>abrabar.app.link</string>
+		<string>abrabar-alternate.app.link</string>
+		<string>abrabar.test.app.link</string>
+		<string>abrabar-alternate.test.app.link</string>
+	</array>
 </dict>
 </plist>

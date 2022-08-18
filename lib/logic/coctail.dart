@@ -81,6 +81,10 @@ class Coctail {
       ingredients.add(mappedIngredient);
     });
 
+    ingredients.forEach((element) {
+      searchWords.add(element['what']);
+    });
+
     return Coctail(
       name: json['name']!.trim(),
       picPreview: json['picPreview']!.trim(),

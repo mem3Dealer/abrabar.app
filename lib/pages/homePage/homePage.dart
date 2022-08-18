@@ -94,8 +94,9 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       return r;
     }
 
-    // moneyBloc.storage.write(key: 'wasPurchased', value: 'true1');
-    // moneyBloc.storage.deleteAll();s
+    // moneyBloc.storage.write(key: 'wasPurchased', value: 'true');
+    // moneyBloc.storage.deleteAll();
+
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(18.h),
