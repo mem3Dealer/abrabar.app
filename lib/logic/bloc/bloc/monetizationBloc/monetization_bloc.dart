@@ -9,6 +9,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
 
+import '../../../../shared/theme.dart';
 import '../../../services/analytic_service.dart';
 
 part 'monetization_event.dart';
@@ -46,11 +47,13 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
     await _wasAppPurchased();
     bool available = await iap.isAvailable();
     emitter(state.copyWith(isAppAvailableToBuy: available));
-
     if (available && state.isPurchased == false) {
       await _getProducts();
-      await _getPastPurchases();
+      // await _getPastPurchases();
+
+      // print("$available, ${state.isPurchased}");
       final Stream<List<PurchaseDetails>> purchaseUpdated = iap.purchaseStream;
+
       _subscription = purchaseUpdated.listen(
           (List<PurchaseDetails> purchaseDetailsList) async {
         log('stream of purchases initiatied');
@@ -58,7 +61,7 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
       }, onDone: () {
         _subscription.cancel();
       }, onError: (Object error) {
-        // handle error here.
+        log(error.toString());
       });
     }
   }
@@ -101,9 +104,9 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
             return;
           }
         } else if (purchaseDetails.status == PurchaseStatus.restored) {
+          log('There is restored purchase');
           state.purchases.add(purchaseDetails);
           emit(state.copyWith(purchases: state.purchases));
-          log('There is restored purchase');
         }
         try {
           if (purchaseDetails.pendingCompletePurchase) {
@@ -131,12 +134,29 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
 
   FutureOr<void> _handleErrorPurchase(
       PurchaseDetails purchaseDetails, Emitter emitter) async {
-    log('THERE IS FOOKIN ERROR, ${purchaseDetails.error}');
+    final Map<String, dynamic> errorMap =
+        Map.from(purchaseDetails.error?.details);
+    final reason = errorMap["NSUnderlyingError"]["userInfo"]
+        ["NSUnderlyingError"]["userInfo"]["NSLocalizedFailureReason"];
+
+    //TODO не все ошибки отрабатывает. К примеру - ошибка аутентификации
+    // log('THERE IS FOOKIN ERROR, ${purchaseDetails.error}');
     if (purchaseDetails.error?.message == 'BillingResponse.itemAlreadyOwned') {
       await storage.write(key: 'wasPurchased', value: 'true');
       emit(state.copyWith(isPurchased: true));
+    } else if (reason == 'The authentication failed.') {
+      emit(state.copyWith(isTherePendingPurchase: false));
+      SnackBar snackBar = const SnackBar(
+        content: Text(
+          'Store authentication failed, please try again.',
+          style: TextStyle(color: Color(0xffFFBE3F)),
+        ),
+        backgroundColor: Color(0xff242320),
+      );
+      snackbarKey.currentState?.showSnackBar(snackBar);
+      anal.purchaseFailure();
     } else {
-      log('there is some other error occured. ${purchaseDetails.error}');
+      log('there is some other error occured. ${purchaseDetails.error?.details}');
       anal.purchaseFailure();
     }
   }
@@ -149,6 +169,7 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
   Future<void> _getProducts() async {
     Set<String> ids = Set.from([productId]);
     ProductDetailsResponse response = await iap.queryProductDetails(ids);
+    print(response.productDetails.first);
     if (response.productDetails.isEmpty) {
       log('THERE ARE NO PRODUCTS');
     }
@@ -160,9 +181,12 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
         actualPrice: product.rawPrice, basePrice: product.rawPrice));
   }
 
-  Future<void> _getPastPurchases() async {
-    await iap.restorePurchases();
-  }
+  // Future<void> _getPastPurchases() async {
+  //   // print(await iap.purchaseStream.first);
+  //   // print(await iap.restorePurchases().toString());
+  //   await iap.restorePurchases().then((value) => print('wtf'));
+  //   print('???');
+  // }
 
   Future<void> internetCheckUp() async {
     bool isThereInternet = true;
@@ -196,9 +220,9 @@ class MonetizationBloc extends Bloc<MonetizationEvent, MonetizationState> {
       ScaffoldMessenger.of(event.context).showSnackBar(SnackBar(
         content: Text(
           t.noPurchases,
-          style: TextStyle(color: Color(0xffFFBE3F)),
+          style: const TextStyle(color: const Color(0xffFFBE3F)),
         ),
-        backgroundColor: Color(0xff242320),
+        backgroundColor: const Color(0xff242320),
       ));
     }
   }

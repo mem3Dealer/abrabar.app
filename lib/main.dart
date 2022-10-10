@@ -109,6 +109,7 @@ class _MyAppState extends State<MyApp> {
       ],
       child: Sizer(builder: (context, orientation, deviceType) {
         return MaterialApp(
+            scaffoldMessengerKey: snackbarKey,
             title: 'abrabar',
             debugShowCheckedModeBanner: false,
             builder: (context, child) {

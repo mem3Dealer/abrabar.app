@@ -87,8 +87,12 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       List<Tab> r = [];
       for (var name in names) {
         r.add(Tab(
-          height: _tabHeight,
-          child: Text(name),
+          iconMargin: EdgeInsets.zero,
+          height: 5.h,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 4.0),
+            child: Text(name),
+          ),
         ));
       }
       return r;

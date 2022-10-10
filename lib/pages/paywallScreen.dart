@@ -47,20 +47,6 @@ class PaywallScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.transparent,
-      //   leading: IconButton(
-      //     splashColor: Colors.transparent,
-      //     hoverColor: Colors.transparent,
-      //     onPressed: () {
-      //       Navigator.of(context).pop();
-      //     },
-      //     icon: SvgPicture.asset(
-      //       "${paths.systemImages}close.svg",
-      //       color: Colors.white,
-      //     ),
-      //   ),
-      // ),
       backgroundColor: theme.scaffoldBackgroundColor,
       body: BlocConsumer<MonetizationBloc, MonetizationState>(
         listener: (context, state) async {
@@ -152,9 +138,11 @@ class PaywallScreen extends StatelessWidget {
                       // height: 7.h,
                       width: 72.w,
                       child: ElevatedButton(
-                          onPressed: () {
-                            moneyBloc.add(MonetizationPurchase(context));
-                          },
+                          onPressed: state.isTherePendingPurchase
+                              ? null
+                              : () {
+                                  moneyBloc.add(MonetizationPurchase(context));
+                                },
                           style: ButtonStyle(
                               shape: MaterialStateProperty.all(
                                   const RoundedRectangleBorder(
